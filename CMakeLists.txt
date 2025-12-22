@@ -28,6 +28,32 @@ qt_add_qml_module(appPoloOS
         Polo.qml
         RESOURCES
                 # This tells CMake to include every .mesh file in the meshes folder
+                meshes/chassis_mesh.mesh
+                meshes/imvlm_lighting_mesh.mesh
+                meshes/interior_And_engine_mesh.mesh
+                meshes/glass_interior_001_mesh.mesh
+                meshes/taillight_red_glass_001_mesh.mesh
+                meshes/bonnet_ok_001_mesh.mesh
+                meshes/boot_ok_mesh.mesh
+                meshes/boot_ok_003_mesh.mesh
+                meshes/bumper_front_ok_mesh.mesh
+                meshes/bump_rear_ok_mesh.mesh
+                meshes/door_lr_ok_mesh.mesh
+                meshes/door_lf_ok_mesh.mesh
+                meshes/door_lf_ok_003_mesh.mesh
+                meshes/wing_lf_ok_001_mesh.mesh
+                meshes/wing_rf_ok_001_mesh.mesh
+                meshes/door_rf_ok_mesh.mesh
+                meshes/door_rf_ok_003_mesh.mesh
+                meshes/door_rr_ok_mesh.mesh
+                meshes/windscreen_ok_001_mesh.mesh
+                meshes/steering_ok_mesh.mesh
+                meshes/speedook_mesh.mesh
+                meshes/tahook_mesh.mesh
+                meshes/vent_001_mesh.mesh
+                meshes/chassis_003_mesh.mesh
+                meshes/wheel_mesh.mesh
+                meshes/wheel_001_mesh.mesh
                 meshes/wheel_002_mesh.mesh
                 meshes/wheel_003_mesh.mesh
                 # Add all other .mesh files here, or use a wildcard if using CMake 3.20+
