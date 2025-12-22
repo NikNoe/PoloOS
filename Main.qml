@@ -1,47 +1,76 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import QtQuick3D
+import QtQuick3D.Helpers // Required for OrbitCameraController
 
 ApplicationWindow {
     id: window
-    visible: true
     width: 1280
     height: 720
-    title: "PoloOS - Tesla Style"
-    color: "#050505" // Tesla Deep Black
+    visible: true
+    color: "black"
 
     RowLayout {
         anchors.fill: parent
         spacing: 0
 
-        // --- LEFT PANE: Car Visualization ---
+        // --- LEFT PANE: 3D Polo Model ---
         Rectangle {
-            Layout.preferredWidth: parent.width * 0.35
+            Layout.preferredWidth: parent.width * 0.4
             Layout.fillHeight: true
-            color: "transparent"
+            color: "#050505" // Dark background for the car
 
-            ColumnLayout {
-                anchors.centerIn: parent
-                spacing: 20
+            View3D {
+                id: carView
+                anchors.fill: parent
 
-                Text {
-                    text: "Polo IV"
-                    color: "white"
-                    font.pixelSize: 28; font.bold: true
-                    Layout.alignment: Qt.AlignHCenter
+                environment: SceneEnvironment {
+                    clearColor: "#050505"
+                    backgroundMode: SceneEnvironment.Color
+                    antialiasingMode: SceneEnvironment.MSAA
+                    antialiasingQuality: SceneEnvironment.High
                 }
 
-                // Placeholder for Car Image
-                Rectangle {
-                    width: 250; height: 400
-                    color: "#1a1a1a"
-                    radius: 20
-                    Text { text: "Car Top View\n(Insert Polo Image)"; color: "gray"; anchors.centerIn: parent }
+                // Node used as the pivot point for rotation
+                Node {
+                    id: carOrigin
+
+                    // Your 3D Polo component
+                    Polo {
+                        id: poloModel
+                        scale: Qt.vector3d(1.5, 1.5, 1.5)
+                    }
+
+                    PerspectiveCamera {
+                        id: carCamera
+                        z: 600 // Distance from the car
+                    }
+                }
+
+                // Navigation Controller: Allows dragging to rotate and scrolling to zoom
+                OrbitCameraController {
+                    anchors.fill: parent
+                    origin: carOrigin
+                    camera: carCamera
+                    mouseEnabled: true
+                }
+
+                DirectionalLight {
+                    eulerRotation.x: -30
+                    eulerRotation.y: 45
+                    brightness: 2.0
+                }
+
+                DirectionalLight {
+                    eulerRotation.x: 30
+                    eulerRotation.y: -135
+                    brightness: 1.0
                 }
             }
         }
 
-        // --- RIGHT PANE: Maps & Media ---
+        // --- RIGHT PANE: Maps & Media (Unchanged) ---
         Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -56,7 +85,7 @@ ApplicationWindow {
         }
     }
 
-    // --- BOTTOM BAR: Controls ---
+    // --- BOTTOM BAR: Controls (Unchanged) ---
     footer: Rectangle {
         height: 90
         color: "black"
