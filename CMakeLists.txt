@@ -1,44 +1,29 @@
 cmake_minimum_required(VERSION 3.16)
-
 project(PoloOS VERSION 0.1 LANGUAGES CXX)
 
-# 1. Essential: Qt 6 requires C++17 or higher
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# --- 1. FIND QT FIRST ---
+# This "loads" the commands like qt_standard_project_setup
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick Qml)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+# --- 2. SETUP THE PROJECT ---
+# Now CMake knows what this command is.
+qt_standard_project_setup(REQUIRES 6.5)
 
-# 2. Setup standard paths and layout (Required for 6.8)
-qt_standard_project_setup(REQUIRES 6.8)
+# --- 3. AUTOMATION ---
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 
+# --- 4. BUILD THE APP ---
 qt_add_executable(appPoloOS
     main.cpp
 )
 
-# 3. Add QML Module - Note: URI should usually be lowercase or CamelCase
-# matching your folder structure (e.g., "PoloOS.Main")
+# --- 5. ADD QML MODULE ---
 qt_add_qml_module(appPoloOS
     URI PoloOS
     VERSION 1.0
-    QML_FILES
-        Main.qml
+    QML_FILES Main.qml
 )
 
-set_target_properties(appPoloOS PROPERTIES
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
-)
-
-target_link_libraries(appPoloOS
-    PRIVATE Qt6::Quick
-)
-
-# 4. Deployment/Installation
-include(GNUInstallDirs)
-install(TARGETS appPoloOS
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
+target_link_libraries(appPoloOS PRIVATE Qt6::Core Qt6::Gui Qt6::Quick Qt6::Qml)
