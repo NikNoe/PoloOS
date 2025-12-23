@@ -2,7 +2,9 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick3D
-import QtQuick3D.Helpers // Required for OrbitCameraController
+import QtQuick3D.Helpers
+import Polo.CAN 1.0
+
 
 ApplicationWindow {
     id: window
@@ -19,7 +21,7 @@ ApplicationWindow {
         Rectangle {
             Layout.preferredWidth: parent.width * 0.4
             Layout.fillHeight: true
-            color: "#050505" // Dark background for the car
+            color: "#050505"
 
             View3D {
                 id: carView
@@ -35,16 +37,20 @@ ApplicationWindow {
                 // Node used as the pivot point for rotation
                 Node {
                     id: carOrigin
+                    // TESLA INITIAL POSITION: Slight tilt and front-side angle
+                    eulerRotation: Qt.vector3d(-15, 45, 0)
 
-                    // Your 3D Polo component
                     Polo {
                         id: poloModel
-                        scale: Qt.vector3d(1.5, 1.5, 1.5)
+                        // Scale adjusted so the car fits nicely in the left pane
+                        scale: Qt.vector3d(1.2, 1.2, 1.2)
                     }
 
                     PerspectiveCamera {
                         id: carCamera
-                        z: 600 // Distance from the car
+                        z: 550 // Distance from car
+                        clipNear: 1
+                        clipFar: 5000
                     }
                 }
 
@@ -54,18 +60,39 @@ ApplicationWindow {
                     origin: carOrigin
                     camera: carCamera
                     mouseEnabled: true
+
+                    // Makes the rotation feel more natural
+                    xSpeed: 0.15
+                    ySpeed: 0.15
                 }
 
+                // Double tap the 3D area to reset the view to "Tesla Position"
+                TapHandler {
+                    onDoubleTapped: {
+                        resetAnimation.start()
+                    }
+                }
+
+                PropertyAnimation {
+                    id: resetAnimation
+                    target: carOrigin
+                    property: "eulerRotation"
+                    to: Qt.vector3d(-15, 45, 0)
+                    duration: 1000
+                    easing.type: Easing.InOutQuad
+                }
+
+                // Lights positioned to highlight the car's curves
                 DirectionalLight {
                     eulerRotation.x: -30
                     eulerRotation.y: 45
-                    brightness: 2.0
+                    brightness: 2.5
                 }
 
                 DirectionalLight {
                     eulerRotation.x: 30
                     eulerRotation.y: -135
-                    brightness: 1.0
+                    brightness: 1.5
                 }
             }
         }
@@ -74,13 +101,14 @@ ApplicationWindow {
         Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: "#111" // Slightly lighter gray
+            color: "#111"
             radius: 15
 
             Text {
                 text: "Navigation / Map View"
                 color: "gray"
                 anchors.centerIn: parent
+                font.pixelSize: 24
             }
         }
     }
@@ -99,4 +127,18 @@ ApplicationWindow {
             Button { text: "Settings"; flat: true }
         }
     }
+    CanHandler {
+            id: carCan
+        }
+
+        // Add this inside your Left Pane (over the 3D car)
+        Text {
+            anchors.top: parent.top
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 40
+            text: carCan.rpm + " RPM"
+            color: "white"
+            font.pixelSize: 48
+            font.family: "Orbitron" // Or any tech font
+        }
 }

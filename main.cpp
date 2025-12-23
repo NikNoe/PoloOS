@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include "canhandler.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,5 +15,17 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
 
+    return app.exec();
+}
+
+
+int main(int argc, char *argv[]) {
+    QGuiApplication app(argc, argv);
+
+    // Register the class so QML can see it
+    qmlRegisterType<CanHandler>("Polo.CAN", 1, 0, "CanHandler");
+
+    QQmlApplicationEngine engine;
+    engine.loadFromModule("PoloOS", "Main");
     return app.exec();
 }
