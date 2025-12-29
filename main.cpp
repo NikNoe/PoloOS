@@ -1,31 +1,28 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QUrl>
 #include "canhandler.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
-    QQmlApplicationEngine engine;
 
-    // --- The Modern Way ---
-    // "PoloOS" is your URI from CMake
-    // "Main" is the name of your file (without .qml)
-    engine.loadFromModule("PoloOS", "Main");
-
-    if (engine.rootObjects().isEmpty())
-        return -1;
-
-    return app.exec();
-}
-
-
-int main(int argc, char *argv[]) {
-    QGuiApplication app(argc, argv);
-
-    // Register the class so QML can see it
+    // 1. Register the C++ CAN logic for QML
     qmlRegisterType<CanHandler>("Polo.CAN", 1, 0, "CanHandler");
 
     QQmlApplicationEngine engine;
-    engine.loadFromModule("PoloOS", "Main");
+
+    // 2. Use the standard QUrl constructor (No special suffixes like _s or _u)
+    const QUrl url(QStringLiteral("qrc:/qt/qml/PoloOS/Main.qml"));
+
+    // 3. Connect error handling to ensure we know if the QML fails to load
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+                     &app, [url](QObject *obj, const QUrl &objUrl) {
+                         if (!obj && url == objUrl)
+                             QCoreApplication::exit(-1);
+                     }, Qt::QueuedConnection);
+
+    engine.load(url);
+
     return app.exec();
 }
