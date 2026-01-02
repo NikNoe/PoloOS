@@ -97,18 +97,58 @@ ApplicationWindow {
             }
         }
 
-        // --- RIGHT PANE: Maps & Media (Unchanged) ---
+        // --- RIGHT PANE: Car Vitals ---
         Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: "#111"
+            color: "#111111"
             radius: 15
 
-            Text {
-                text: "Navigation / Map View"
-                color: "gray"
-                anchors.centerIn: parent
-                font.pixelSize: 24
+            ColumnLayout {
+                anchors.fill: parent
+                anchors.margins: 30
+                spacing: 20
+
+                Text {
+                    text: "VEHICLE STATUS"
+                    color: "#666"
+                    font.pixelSize: 14
+                    font.bold: true
+                    Layout.alignment: Qt.AlignTop
+                }
+
+                // --- Data Grid ---
+                GridLayout {
+                    columns: 2
+                    rowSpacing: 25
+                    columnSpacing: 40
+                    Layout.fillWidth: true
+
+                    // Engine Speed
+                    VitalsItem { label: "Engine RPM"; value: carCan.rpm; unit: "rpm" }
+
+                    // Engine Temp
+                    VitalsItem {
+                        label: "Coolant Temp";
+                        value: carCan.temp;
+                        unit: "°C";
+                        iconColor: carCan.temp > 100 ? "red" : "cyan"
+                    }
+
+                    // Fuel Level
+                    VitalsItem { label: "Fuel Level"; value: carCan.fuel; unit: "%" }
+
+                    // Consumption
+                    VitalsItem { label: "Average"; value: carCan.consumption.toFixed(1); unit: "L/100km" }
+
+                    // Door Status
+                    VitalsItem { label: "Doors"; value: carCan.doorOpen ? "OPEN" : "CLOSED"; unit: "" }
+
+                    // OBD Status
+                    VitalsItem { label: "OBD Errors"; value: "0"; unit: "Active"; iconColor: "green" }
+                }
+
+                Item { Layout.fillHeight: true } // Spacer to push items to the top
             }
         }
     }
@@ -131,6 +171,8 @@ ApplicationWindow {
             id: carCan
         }
 
+
+        /*
         // Add this inside your Left Pane (over the 3D car)
         Text {
             anchors.top: parent.top
@@ -141,4 +183,33 @@ ApplicationWindow {
             font.pixelSize: 48
             font.family: "Orbitron" // Or any tech font
         }
+        */
+
+        component VitalsItem : Column {
+            property string label: ""
+            property string value: ""
+            property string unit: ""
+            property color iconColor: "white"
+
+            spacing: 5
+            Text { text: label; color: "#888"; font.pixelSize: 14 }
+            Row {
+                spacing: 5
+                Text {
+                    text: value;
+                    color: iconColor;
+                    font.pixelSize: 24;
+                    font.bold: true
+                }
+                Text {
+                    text: unit;
+                    color: "#555";
+                    font.pixelSize: 12;
+                    anchors.bottom: parent.bottom;
+                    anchors.bottomMargin: 4
+                }
+            }
+        }
 }
+
+
