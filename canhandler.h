@@ -3,92 +3,118 @@
 
 #include <QObject>
 #include <QTimer>
-#include <QRandomGenerator>// Added for Qt 6 compatibility
-
+#include <QRandomGenerator>
 #include <QCanBusDevice>
-
 
 class CanHandler : public QObject {
     Q_OBJECT
-    // Define all the data points we want to show on the right side
+
+    // --- Performance & Engine ---
     Q_PROPERTY(int rpm READ rpm NOTIFY dataChanged)
     Q_PROPERTY(int temp READ temp NOTIFY dataChanged)
-    Q_PROPERTY(int fuel READ fuel NOTIFY dataChanged)
-    Q_PROPERTY(bool doorOpen READ doorOpen NOTIFY dataChanged)
     Q_PROPERTY(double consumption READ consumption NOTIFY dataChanged)
+    Q_PROPERTY(double steeringAngle READ steeringAngle NOTIFY dataChanged)
+
+    // --- Fuel ---
+    Q_PROPERTY(int fuel READ fuel NOTIFY dataChanged)
+    Q_PROPERTY(double fuelLiters READ fuelLiters NOTIFY dataChanged)
+
+    // --- Safety & Lights ---
     Q_PROPERTY(bool handbrake READ handbrake NOTIFY dataChanged)
+    Q_PROPERTY(bool brakeActive READ brakeActive NOTIFY dataChanged) // For "STOP" overlay
     Q_PROPERTY(bool highBeam READ highBeam NOTIFY dataChanged)
     Q_PROPERTY(int blinkerStatus READ blinkerStatus NOTIFY dataChanged) // 0=off, 1=left, 2=right
+
+    // --- Doors & Windows ---
+    Q_PROPERTY(bool isLocked READ isLocked NOTIFY dataChanged)
+    Q_PROPERTY(bool doorOpen READ doorOpen NOTIFY dataChanged) // Master "Any door"
     Q_PROPERTY(bool doorFL READ doorFL NOTIFY dataChanged)
     Q_PROPERTY(bool doorFR READ doorFR NOTIFY dataChanged)
+    Q_PROPERTY(bool doorRL READ doorRL NOTIFY dataChanged)
+    Q_PROPERTY(bool doorRR READ doorRR NOTIFY dataChanged)
     Q_PROPERTY(bool trunk READ trunk NOTIFY dataChanged)
-    Q_PROPERTY(bool brakeActive READ brakeActive NOTIFY dataChanged)
-    Q_PROPERTY(bool seatbelt READ seatbelt NOTIFY dataChanged)
-    Q_PROPERTY(bool washerFluid READ washerFluid NOTIFY dataChanged)
+    Q_PROPERTY(int windowPos READ windowPos NOTIFY dataChanged)
 
-
+    // --- Comfort ---
+    Q_PROPERTY(bool acActive READ acActive NOTIFY dataChanged)
+    Q_PROPERTY(bool interiorLight READ interiorLight NOTIFY dataChanged)
 
 public:
-    explicit CanHandler(QObject *parent = nullptr) : QObject(parent),
-        m_rpm(800), m_temp(20), m_fuel(75), m_doorOpen(false), m_consumption(5.5)
-    {
+    explicit CanHandler(QObject *parent = nullptr) : QObject(parent) {
         QTimer *timer = new QTimer(this);
         connect(timer, &QTimer::timeout, this, [this]() {
-            // SIMULATION LOGIC:
-            m_rpm = 800 + QRandomGenerator::global()->bounded(200);
-            if (m_temp < 90) m_temp += 1; // Engine warming up
-            if (m_rpm > 950) m_doorOpen = false; // Simulate auto-lock
-            m_consumption = 5.0 + (m_rpm / 1000.0);
+            // --- SIMULATION LOGIC ---
 
-            // Let's simulate pressing the brake pedal every 3 seconds
-            static int count = 0; count++;
-            m_brakeActive = (count % 3 == 0);
+            // 1. Engine & Driving
+            m_rpm = 800 + QRandomGenerator::global()->bounded(2000);
+            if (m_temp < 90) m_temp += 1;
+            m_consumption = 5.2 + (m_rpm / 1500.0);
 
-            // Simulate a washer fluid warning (common on 9N3)
-            m_washerFluid = true;
+            // 2. Steering Swing (For 3D Wheel Rotation)
+            static double angleDir = 1.0;
+            m_steeringAngle += (5.0 * angleDir);
+            if (m_steeringAngle > 45 || m_steeringAngle < -45) angleDir *= -1;
 
-            // Let's simulate the Handbrake being ON
-            m_handbrake = true;
+            // 3. Safety Signals
+            m_handbrake = (m_rpm < 1000); // Set brake if idling
+            m_brakeActive = (m_rpm > 2500); // Simulate braking at high revs
 
-            // Let's simulate the high beam being OFF
-            m_highBeam = false;
+            // 4. Blinker Logic (Left, then Right, then Off)
+            static int cycle = 0;
+            cycle = (cycle + 1) % 30;
+            if (cycle < 10) m_blinkerStatus = 1;
+            else if (cycle < 20) m_blinkerStatus = 2;
+            else m_blinkerStatus = 0;
 
-            // Simulate the left blinker flashing every 2 seconds
-            static int tick = 0;
-            tick++;
-            if (tick % 2 == 0) m_blinkerStatus = 1; else m_blinkerStatus = 0;
+            // 5. Door & Trunk Logic
+            m_doorFL = (cycle == 5); // Pop the door open occasionally
+            m_trunk = (m_rpm < 900 && cycle > 25);
 
+            // 6. Fuel Depletion
+            if (m_fuelLiters > 5.0) m_fuelLiters -= 0.01;
+            m_fuel = static_cast<int>((m_fuelLiters / 45.0) * 100);
 
             emit dataChanged();
         });
-
-        timer->start(1000);
+        timer->start(100); // Fast update for smooth 3D movement
     }
 
-    // Getters for QML
+    // --- Getters (Required for QML to READ the data) ---
     int rpm() const { return m_rpm; }
     int temp() const { return m_temp; }
     int fuel() const { return m_fuel; }
-    bool doorOpen() const { return m_doorOpen; }
+    double fuelLiters() const { return m_fuelLiters; }
     double consumption() const { return m_consumption; }
+    double steeringAngle() const { return m_steeringAngle; }
+
     bool handbrake() const { return m_handbrake; }
+    bool brakeActive() const { return m_brakeActive; }
     bool highBeam() const { return m_highBeam; }
     int blinkerStatus() const { return m_blinkerStatus; }
+
+    bool isLocked() const { return m_isLocked; }
+    bool doorOpen() const { return m_doorFL || m_doorFR || m_doorRL || m_doorRR || m_trunk; }
     bool doorFL() const { return m_doorFL; }
     bool doorFR() const { return m_doorFR; }
+    bool doorRL() const { return m_doorRL; }
+    bool doorRR() const { return m_doorRR; }
     bool trunk() const { return m_trunk; }
-    bool brakeActive() const { return m_brakeActive; }
-    bool seatbelt() const { return m_seatbelt; }
-    bool washerFluid() const { return m_washerFluid; }
+    int windowPos() const { return m_windowPos; }
+
+    bool acActive() const { return m_acActive; }
+    bool interiorLight() const { return m_interiorLight; }
 
 signals:
     void dataChanged();
 
 private:
-    int m_rpm, m_temp, m_fuel, m_blinkerStatus;
-    bool m_doorOpen, m_handbrake, m_highBeam;
-    bool m_doorFL = true, m_doorFR = false, m_trunk = false;
-    bool m_brakeActive = false, m_seatbelt = true, m_washerFluid = false;
-    double m_consumption;};
+    // Initial Values (Polo 9N3 Defaults)
+    int m_rpm = 0, m_temp = 20, m_fuel = 100, m_blinkerStatus = 0;
+    int m_windowPos = 0;
+    bool m_handbrake = true, m_brakeActive = false, m_highBeam = false;
+    bool m_isLocked = false, m_acActive = false, m_interiorLight = false;
+    bool m_doorFL = false, m_doorFR = false, m_doorRL = false, m_doorRR = false, m_trunk = false;
+    double m_consumption = 0.0, m_steeringAngle = 0.0, m_fuelLiters = 45.0;
+};
 
 #endif
