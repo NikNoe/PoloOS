@@ -24,46 +24,128 @@ ApplicationWindow {
             color: "#050505"
 
 
-            // Place this at the top of your Left Pane (the 3D car area)
-            Row {
-                anchors.horizontalCenter: parent.horizontalCenter
+        // --- 1. NEW: Top Dashboard Bar ---
+            Column {
                 anchors.top: parent.top
-                anchors.topMargin: 20
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.margins: 20
                 spacing: 15
-                z: 10 // Make sure it stays on top of the 3D car
+                z: 10 // Ensures this stays on top of the 3D car
 
-                // Handbrake Icon
-                Text {
-                    text: "(P)"
-                    font.pixelSize: 20
-                    font.bold: true
-                    color: carCan.handbrake ? "red" : "#222" // Glows red when active
+                // Row for Safety Icons (Blinkers, Handbrake, Doors)
+                Row {
+                    spacing: 25
+                    anchors.horizontalCenter: parent.horizontalCenter
+
+                    // Left Blinker
+                    DashboardIcon {
+                        text: "◀"
+                        activeColor: "#00FF00"
+                        isActive: carCan.blinkerStatus === 1
+                    }
+
+                    // Handbrake (P)
+                    DashboardIcon {
+                        text: "(P)"
+                        activeColor: "red"
+                        isActive: carCan.handbrake
+                    }
+
+                    // Door State Icon
+                    DashboardIcon {
+                        text: "🚗" // You can replace with an SVG icon later
+                        activeColor: "orange"
+                        isActive: carCan.doorOpen
+                        label: carCan.doorOpen ? "DOOR OPEN" : ""
+                    }
+
+                    // Right Blinker
+                    DashboardIcon {
+                        text: "▶"
+                        activeColor: "#00FF00"
+                        isActive: carCan.blinkerStatus === 2
+                    }
                 }
 
-                // High Beam Icon
-                Text {
-                    text: "D" // You can replace these with real SVG icons later
-                    font.pixelSize: 20
-                    color: carCan.highBeam ? "#3366FF" : "#222"
-                }
+                // Fuel Level Progress Bar (Tesla Style)
+                Row {
+                    spacing: 10
+                    anchors.horizontalCenter: parent.horizontalCenter
 
-                // Left Blinker
-                Text {
-                    text: "◀"
-                    font.pixelSize: 24
-                    color: carCan.blinkerStatus === 1 ? "#00FF00" : "#222"
-                    opacity: carCan.blinkerStatus === 1 ? 1.0 : 0.3
-                }
+                    Text { text: "⛽"; color: "white"; font.pixelSize: 14 }
 
-                // Right Blinker
-                Text {
-                    text: "▶"
-                    font.pixelSize: 24
-                    color: carCan.blinkerStatus === 2 ? "#00FF00" : "#222"
-                    opacity: carCan.blinkerStatus === 2 ? 1.0 : 0.3
+                    Rectangle {
+                        width: 150
+                        height: 6
+                        color: "#333"
+                        radius: 3
+
+                        Rectangle {
+                            width: (carCan.fuel / 100) * parent.width
+                            height: parent.height
+                            color: carCan.fuel < 15 ? "red" : "#00FF00"
+                            radius: 3
+                        }
+                    }
+
+                    Text {
+                        text: carCan.fuel + "%"
+                        color: "white"
+                        font.pixelSize: 12
+                        font.bold: true
+                    }
                 }
             }
 
+
+            Item {
+                anchors.fill: parent
+
+                // --- BRAKE / STOP LIGHT INDICATOR ---
+                Rectangle {
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 100
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: 200; height: 40
+                    color: carCan.brakeActive ? "#FF0000" : "#110000"
+                    border.color: carCan.brakeActive ? "#FF5555" : "#330000"
+                    radius: 5
+                    opacity: carCan.brakeActive ? 1.0 : 0.2
+
+                    Text {
+                        text: "BRAKE ACTIVE"
+                        color: "white"
+                        anchors.centerIn: parent
+                        font.bold: true
+                        visible: carCan.brakeActive
+                    }
+                }
+
+                // --- COOL 9N3 STATUS ICONS (Right side of 3D car) ---
+                Column {
+                    anchors.right: parent.right
+                    anchors.rightMargin: 20
+                    anchors.verticalCenter: parent.verticalCenter
+                    spacing: 20
+
+                    // Seatbelt
+                    DashboardIcon {
+                        text: "ൠ" // Replace with seatbelt icon
+                        activeColor: "red"
+                        isActive: carCan.seatbelt
+                        label: "SEATBELT"
+                    }
+
+                    // Washer Fluid (Classic VW warning)
+                    DashboardIcon {
+                        text: "Ⓦ"
+                        activeColor: "yellow"
+                        isActive: carCan.washerFluid
+                        label: "WASHER LOW"
+                    }
+                }
+            }
 
             View3D {
                 id: carView
@@ -250,6 +332,28 @@ ApplicationWindow {
                     anchors.bottom: parent.bottom;
                     anchors.bottomMargin: 4
                 }
+            }
+        }
+
+        component DashboardIcon : Column {
+            property string text: ""
+            property color activeColor: "white"
+            property bool isActive: false
+            property string label: ""
+
+            spacing: 2
+            Text {
+                text: parent.text
+                font.pixelSize: 24
+                font.bold: true
+                color: parent.isActive ? parent.activeColor : "#151515" // Dim when off
+                Behavior on color { ColorAnimation { duration: 200 } }
+            }
+            Text {
+                text: parent.label
+                font.pixelSize: 8
+                color: "white"
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
 }

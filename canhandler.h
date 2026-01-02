@@ -19,6 +19,12 @@ class CanHandler : public QObject {
     Q_PROPERTY(bool handbrake READ handbrake NOTIFY dataChanged)
     Q_PROPERTY(bool highBeam READ highBeam NOTIFY dataChanged)
     Q_PROPERTY(int blinkerStatus READ blinkerStatus NOTIFY dataChanged) // 0=off, 1=left, 2=right
+    Q_PROPERTY(bool doorFL READ doorFL NOTIFY dataChanged)
+    Q_PROPERTY(bool doorFR READ doorFR NOTIFY dataChanged)
+    Q_PROPERTY(bool trunk READ trunk NOTIFY dataChanged)
+    Q_PROPERTY(bool brakeActive READ brakeActive NOTIFY dataChanged)
+    Q_PROPERTY(bool seatbelt READ seatbelt NOTIFY dataChanged)
+    Q_PROPERTY(bool washerFluid READ washerFluid NOTIFY dataChanged)
 
 
 
@@ -33,6 +39,13 @@ public:
             if (m_temp < 90) m_temp += 1; // Engine warming up
             if (m_rpm > 950) m_doorOpen = false; // Simulate auto-lock
             m_consumption = 5.0 + (m_rpm / 1000.0);
+
+            // Let's simulate pressing the brake pedal every 3 seconds
+            static int count = 0; count++;
+            m_brakeActive = (count % 3 == 0);
+
+            // Simulate a washer fluid warning (common on 9N3)
+            m_washerFluid = true;
 
             // Let's simulate the Handbrake being ON
             m_handbrake = true;
@@ -61,6 +74,12 @@ public:
     bool handbrake() const { return m_handbrake; }
     bool highBeam() const { return m_highBeam; }
     int blinkerStatus() const { return m_blinkerStatus; }
+    bool doorFL() const { return m_doorFL; }
+    bool doorFR() const { return m_doorFR; }
+    bool trunk() const { return m_trunk; }
+    bool brakeActive() const { return m_brakeActive; }
+    bool seatbelt() const { return m_seatbelt; }
+    bool washerFluid() const { return m_washerFluid; }
 
 signals:
     void dataChanged();
@@ -68,6 +87,8 @@ signals:
 private:
     int m_rpm, m_temp, m_fuel, m_blinkerStatus;
     bool m_doorOpen, m_handbrake, m_highBeam;
+    bool m_doorFL = true, m_doorFR = false, m_trunk = false;
+    bool m_brakeActive = false, m_seatbelt = true, m_washerFluid = false;
     double m_consumption;};
 
 #endif
