@@ -16,6 +16,11 @@ class CanHandler : public QObject {
     Q_PROPERTY(int fuel READ fuel NOTIFY dataChanged)
     Q_PROPERTY(bool doorOpen READ doorOpen NOTIFY dataChanged)
     Q_PROPERTY(double consumption READ consumption NOTIFY dataChanged)
+    Q_PROPERTY(bool handbrake READ handbrake NOTIFY dataChanged)
+    Q_PROPERTY(bool highBeam READ highBeam NOTIFY dataChanged)
+    Q_PROPERTY(int blinkerStatus READ blinkerStatus NOTIFY dataChanged) // 0=off, 1=left, 2=right
+
+
 
 public:
     explicit CanHandler(QObject *parent = nullptr) : QObject(parent),
@@ -29,8 +34,21 @@ public:
             if (m_rpm > 950) m_doorOpen = false; // Simulate auto-lock
             m_consumption = 5.0 + (m_rpm / 1000.0);
 
+            // Let's simulate the Handbrake being ON
+            m_handbrake = true;
+
+            // Let's simulate the high beam being OFF
+            m_highBeam = false;
+
+            // Simulate the left blinker flashing every 2 seconds
+            static int tick = 0;
+            tick++;
+            if (tick % 2 == 0) m_blinkerStatus = 1; else m_blinkerStatus = 0;
+
+
             emit dataChanged();
         });
+
         timer->start(1000);
     }
 
@@ -40,14 +58,16 @@ public:
     int fuel() const { return m_fuel; }
     bool doorOpen() const { return m_doorOpen; }
     double consumption() const { return m_consumption; }
+    bool handbrake() const { return m_handbrake; }
+    bool highBeam() const { return m_highBeam; }
+    int blinkerStatus() const { return m_blinkerStatus; }
 
 signals:
     void dataChanged();
 
 private:
-    int m_rpm, m_temp, m_fuel;
-    bool m_doorOpen;
-    double m_consumption;
-};
+    int m_rpm, m_temp, m_fuel, m_blinkerStatus;
+    bool m_doorOpen, m_handbrake, m_highBeam;
+    double m_consumption;};
 
 #endif

@@ -23,6 +23,48 @@ ApplicationWindow {
             Layout.fillHeight: true
             color: "#050505"
 
+
+            // Place this at the top of your Left Pane (the 3D car area)
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.topMargin: 20
+                spacing: 15
+                z: 10 // Make sure it stays on top of the 3D car
+
+                // Handbrake Icon
+                Text {
+                    text: "(P)"
+                    font.pixelSize: 20
+                    font.bold: true
+                    color: carCan.handbrake ? "red" : "#222" // Glows red when active
+                }
+
+                // High Beam Icon
+                Text {
+                    text: "D" // You can replace these with real SVG icons later
+                    font.pixelSize: 20
+                    color: carCan.highBeam ? "#3366FF" : "#222"
+                }
+
+                // Left Blinker
+                Text {
+                    text: "◀"
+                    font.pixelSize: 24
+                    color: carCan.blinkerStatus === 1 ? "#00FF00" : "#222"
+                    opacity: carCan.blinkerStatus === 1 ? 1.0 : 0.3
+                }
+
+                // Right Blinker
+                Text {
+                    text: "▶"
+                    font.pixelSize: 24
+                    color: carCan.blinkerStatus === 2 ? "#00FF00" : "#222"
+                    opacity: carCan.blinkerStatus === 2 ? 1.0 : 0.3
+                }
+            }
+
+
             View3D {
                 id: carView
                 anchors.fill: parent
