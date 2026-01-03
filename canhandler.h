@@ -10,17 +10,17 @@ class CanHandler : public QObject {
     Q_OBJECT
 
     // --- Performance & Engine ---
-    Q_PROPERTY(int rpm READ rpm NOTIFY dataChanged)
+    Q_PROPERTY(int rpm READ rpm WRITE setRpm NOTIFY dataChanged)
     Q_PROPERTY(int temp READ temp NOTIFY dataChanged)
     Q_PROPERTY(double consumption READ consumption NOTIFY dataChanged)
-    Q_PROPERTY(double steeringAngle READ steeringAngle NOTIFY dataChanged)
+    Q_PROPERTY(double steeringAngle READ steeringAngle WRITE setSteeringAngle NOTIFY dataChanged)
 
     // --- Fuel ---
     Q_PROPERTY(int fuel READ fuel NOTIFY dataChanged)
     Q_PROPERTY(double fuelLiters READ fuelLiters NOTIFY dataChanged)
 
     // --- Safety & Lights ---
-    Q_PROPERTY(bool handbrake READ handbrake NOTIFY dataChanged)
+    Q_PROPERTY(bool handbrake READ handbrake WRITE setHandbrake NOTIFY dataChanged)
     Q_PROPERTY(bool brakeActive READ brakeActive NOTIFY dataChanged) // For "STOP" overlay
     Q_PROPERTY(bool highBeam READ highBeam NOTIFY dataChanged)
     Q_PROPERTY(int blinkerStatus READ blinkerStatus NOTIFY dataChanged) // 0=off, 1=left, 2=right
@@ -104,6 +104,28 @@ public:
     bool acActive() const { return m_acActive; }
     bool interiorLight() const { return m_interiorLight; }
 
+public slots:
+    void setRpm(int val) {
+        if(m_rpm != val) {
+            m_rpm = val;
+            emit dataChanged();
+        }
+    }
+
+    void setSteeringAngle(double val) {
+        if(m_steeringAngle != val) {
+            m_steeringAngle = val;
+            emit dataChanged();
+        }
+    }
+
+    void setHandbrake(bool val) {
+        if(m_handbrake != val) {
+            m_handbrake = val;
+            emit dataChanged();
+        }
+    }
+
 signals:
     void dataChanged();
 
@@ -116,5 +138,6 @@ private:
     bool m_doorFL = false, m_doorFR = false, m_doorRL = false, m_doorRR = false, m_trunk = false;
     double m_consumption = 0.0, m_steeringAngle = 0.0, m_fuelLiters = 45.0;
 };
+
 
 #endif

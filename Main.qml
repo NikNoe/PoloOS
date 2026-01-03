@@ -17,6 +17,10 @@ ApplicationWindow {
         id: carCan
     }
 
+    CockpitWindow {
+            id: cockpit
+        }
+
     RowLayout {
         anchors.fill: parent
         spacing: 0
@@ -82,7 +86,7 @@ ApplicationWindow {
                     id: carOrigin
 
                     // Independent properties (Not linked to carCan)
-                    property real pitch: -15
+                    property real pitch: 15
                     property real yaw: 45
                     property real roll: 0
 
