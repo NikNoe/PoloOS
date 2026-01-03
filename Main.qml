@@ -199,6 +199,24 @@ ApplicationWindow {
                         VitalsItem { label: "A/C State"; value: carCan.acActive ? "COOLING" : "OFF"; iconColor: carCan.acActive ? "#00AAFF" : "#333" }
                         VitalsItem { label: "Windows"; value: carCan.windowPos; unit: "% Open" }
                         VitalsItem { label: "Int. Lights"; value: carCan.interiorLight ? "ON" : "OFF" }
+
+
+                        // Gear Indicator
+                        VitalsItem { label: "Current Gear"; value: carCan.gear; unit: "MT" }
+
+                        // Wiper Status
+                        VitalsItem {
+                            label: "Wipers";
+                            value: ["OFF", "INT", "LOW", "HIGH"][carCan.wiperLevel];
+                            iconColor: carCan.wiperLevel > 0 ? "cyan" : "#444"
+                        }
+
+                        // Heating Indicator
+                        VitalsItem {
+                            label: "Front Defrost";
+                            value: carCan.windshieldHeater ? "HEATING" : "OFF";
+                            iconColor: carCan.windshieldHeater ? "orange" : "#444"
+                        }
                     }
                 }
             }

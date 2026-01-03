@@ -2,142 +2,74 @@
 #define CANHANDLER_H
 
 #include <QObject>
-#include <QTimer>
-#include <QRandomGenerator>
-#include <QCanBusDevice>
 
 class CanHandler : public QObject {
     Q_OBJECT
 
-    // --- Performance & Engine ---
+    // --- Properties with READ and WRITE ---
     Q_PROPERTY(int rpm READ rpm WRITE setRpm NOTIFY dataChanged)
-    Q_PROPERTY(int temp READ temp NOTIFY dataChanged)
-    Q_PROPERTY(double consumption READ consumption NOTIFY dataChanged)
     Q_PROPERTY(double steeringAngle READ steeringAngle WRITE setSteeringAngle NOTIFY dataChanged)
-
-    // --- Fuel ---
-    Q_PROPERTY(int fuel READ fuel NOTIFY dataChanged)
-    Q_PROPERTY(double fuelLiters READ fuelLiters NOTIFY dataChanged)
-
-    // --- Safety & Lights ---
     Q_PROPERTY(bool handbrake READ handbrake WRITE setHandbrake NOTIFY dataChanged)
-    Q_PROPERTY(bool brakeActive READ brakeActive NOTIFY dataChanged) // For "STOP" overlay
-    Q_PROPERTY(bool highBeam READ highBeam NOTIFY dataChanged)
-    Q_PROPERTY(int blinkerStatus READ blinkerStatus NOTIFY dataChanged) // 0=off, 1=left, 2=right
-
-    // --- Doors & Windows ---
-    Q_PROPERTY(bool isLocked READ isLocked NOTIFY dataChanged)
-    Q_PROPERTY(bool doorOpen READ doorOpen NOTIFY dataChanged) // Master "Any door"
-    Q_PROPERTY(bool doorFL READ doorFL NOTIFY dataChanged)
-    Q_PROPERTY(bool doorFR READ doorFR NOTIFY dataChanged)
-    Q_PROPERTY(bool doorRL READ doorRL NOTIFY dataChanged)
-    Q_PROPERTY(bool doorRR READ doorRR NOTIFY dataChanged)
-    Q_PROPERTY(bool trunk READ trunk NOTIFY dataChanged)
-    Q_PROPERTY(int windowPos READ windowPos NOTIFY dataChanged)
-
-    // --- Comfort ---
-    Q_PROPERTY(bool acActive READ acActive NOTIFY dataChanged)
-    Q_PROPERTY(bool interiorLight READ interiorLight NOTIFY dataChanged)
+    Q_PROPERTY(int blinkerStatus READ blinkerStatus WRITE setBlinkerStatus NOTIFY dataChanged)
+    Q_PROPERTY(bool highBeam READ highBeam WRITE setHighBeam NOTIFY dataChanged)
+    Q_PROPERTY(bool acActive READ acActive WRITE setAcActive NOTIFY dataChanged)
+    Q_PROPERTY(int windowPos READ windowPos WRITE setWindowPos NOTIFY dataChanged)
+    Q_PROPERTY(bool doorFL READ doorFL WRITE setDoorFL NOTIFY dataChanged)
+    Q_PROPERTY(bool doorFR READ doorFR WRITE setDoorFR NOTIFY dataChanged)
+    Q_PROPERTY(bool isLocked READ isLocked WRITE setIsLocked NOTIFY dataChanged)
+    Q_PROPERTY(bool interiorLight READ interiorLight WRITE setInteriorLight NOTIFY dataChanged)
+    Q_PROPERTY(bool windshieldHeater READ windshieldHeater WRITE setWindshieldHeater NOTIFY dataChanged)
+    Q_PROPERTY(int wiperLevel READ wiperLevel WRITE setWiperLevel NOTIFY dataChanged) // 0=Off, 1=Int, 2=Low, 3=High
+    Q_PROPERTY(int gear READ gear WRITE setGear NOTIFY dataChanged) // 1, 2, 3, 4, 5
 
 public:
-    explicit CanHandler(QObject *parent = nullptr) : QObject(parent) {
-        QTimer *timer = new QTimer(this);
-        connect(timer, &QTimer::timeout, this, [this]() {
-            // --- SIMULATION LOGIC ---
+    explicit CanHandler(QObject *parent = nullptr) : QObject(parent) {}
 
-            // 1. Engine & Driving
-            m_rpm = 800 + QRandomGenerator::global()->bounded(2000);
-            if (m_temp < 90) m_temp += 1;
-            m_consumption = 5.2 + (m_rpm / 1500.0);
-
-            // 2. Steering Swing (For 3D Wheel Rotation)
-            static double angleDir = 1.0;
-            m_steeringAngle += (5.0 * angleDir);
-            if (m_steeringAngle > 45 || m_steeringAngle < -45) angleDir *= -1;
-
-            // 3. Safety Signals
-            m_handbrake = (m_rpm < 1000); // Set brake if idling
-            m_brakeActive = (m_rpm > 2500); // Simulate braking at high revs
-
-            // 4. Blinker Logic (Left, then Right, then Off)
-            static int cycle = 0;
-            cycle = (cycle + 1) % 30;
-            if (cycle < 10) m_blinkerStatus = 1;
-            else if (cycle < 20) m_blinkerStatus = 2;
-            else m_blinkerStatus = 0;
-
-            // 5. Door & Trunk Logic
-            m_doorFL = (cycle == 5); // Pop the door open occasionally
-            m_trunk = (m_rpm < 900 && cycle > 25);
-
-            // 6. Fuel Depletion
-            if (m_fuelLiters > 5.0) m_fuelLiters -= 0.01;
-            m_fuel = static_cast<int>((m_fuelLiters / 45.0) * 100);
-
-            emit dataChanged();
-        });
-        timer->start(100); // Fast update for smooth 3D movement
-    }
-
-    // --- Getters (Required for QML to READ the data) ---
+    // --- GETTERS ---
     int rpm() const { return m_rpm; }
-    int temp() const { return m_temp; }
-    int fuel() const { return m_fuel; }
-    double fuelLiters() const { return m_fuelLiters; }
-    double consumption() const { return m_consumption; }
     double steeringAngle() const { return m_steeringAngle; }
-
     bool handbrake() const { return m_handbrake; }
-    bool brakeActive() const { return m_brakeActive; }
-    bool highBeam() const { return m_highBeam; }
     int blinkerStatus() const { return m_blinkerStatus; }
-
-    bool isLocked() const { return m_isLocked; }
-    bool doorOpen() const { return m_doorFL || m_doorFR || m_doorRL || m_doorRR || m_trunk; }
+    bool highBeam() const { return m_highBeam; }
+    bool acActive() const { return m_acActive; }
+    int windowPos() const { return m_windowPos; }
     bool doorFL() const { return m_doorFL; }
     bool doorFR() const { return m_doorFR; }
-    bool doorRL() const { return m_doorRL; }
-    bool doorRR() const { return m_doorRR; }
-    bool trunk() const { return m_trunk; }
-    int windowPos() const { return m_windowPos; }
-
-    bool acActive() const { return m_acActive; }
+    bool isLocked() const { return m_isLocked; }
     bool interiorLight() const { return m_interiorLight; }
+    bool windshieldHeater()  const {return m_windshieldHeater; }
+    bool wiperLevel() const{ return m_wiperLevel; }
+    bool gear() const{ return m_wiperLevel; }
 
 public slots:
-    void setRpm(int val) {
-        if(m_rpm != val) {
-            m_rpm = val;
-            emit dataChanged();
-        }
-    }
-
-    void setSteeringAngle(double val) {
-        if(m_steeringAngle != val) {
-            m_steeringAngle = val;
-            emit dataChanged();
-        }
-    }
-
-    void setHandbrake(bool val) {
-        if(m_handbrake != val) {
-            m_handbrake = val;
-            emit dataChanged();
-        }
-    }
+    // --- SETTERS (The Simulator uses these) ---
+    void setRpm(int v) { if(m_rpm != v) { m_rpm = v; emit dataChanged(); } }
+    void setSteeringAngle(double v) { if(m_steeringAngle != v) { m_steeringAngle = v; emit dataChanged(); } }
+    void setHandbrake(bool v) { if(m_handbrake != v) { m_handbrake = v; emit dataChanged(); } }
+    void setBlinkerStatus(int v) { if(m_blinkerStatus != v) { m_blinkerStatus = v; emit dataChanged(); } }
+    void setHighBeam(bool v) { if(m_highBeam != v) { m_highBeam = v; emit dataChanged(); } }
+    void setAcActive(bool v) { if(m_acActive != v) { m_acActive = v; emit dataChanged(); } }
+    void setWindowPos(int v) { if(m_windowPos != v) { m_windowPos = v; emit dataChanged(); } }
+    void setDoorFL(bool v) { if(m_doorFL != v) { m_doorFL = v; emit dataChanged(); } }
+    void setDoorFR(bool v) { if(m_doorFR != v) { m_doorFR = v; emit dataChanged(); } }
+    void setIsLocked(bool v) { if(m_isLocked != v) { m_isLocked = v; emit dataChanged(); } }
+    void setInteriorLight(bool v) { if(m_interiorLight != v) { m_interiorLight = v; emit dataChanged(); } }
+    void setWindshieldHeater(bool v) { if(m_windshieldHeater != v) { m_windshieldHeater = v; emit dataChanged(); } }
+    void setWiperLevel(int v) { if(m_wiperLevel != v) { m_wiperLevel = v; emit dataChanged(); } }
+    void setGear(int v) { if(m_gear != v) { m_gear = v; emit dataChanged(); } }
 
 signals:
     void dataChanged();
 
 private:
-    // Initial Values (Polo 9N3 Defaults)
-    int m_rpm = 0, m_temp = 20, m_fuel = 100, m_blinkerStatus = 0;
-    int m_windowPos = 0;
-    bool m_handbrake = true, m_brakeActive = false, m_highBeam = false;
-    bool m_isLocked = false, m_acActive = false, m_interiorLight = false;
-    bool m_doorFL = false, m_doorFR = false, m_doorRL = false, m_doorRR = false, m_trunk = false;
-    double m_consumption = 0.0, m_steeringAngle = 0.0, m_fuelLiters = 45.0;
+    int m_rpm = 0, m_blinkerStatus = 0, m_windowPos = 0;
+    double m_steeringAngle = 0.0;
+    bool m_handbrake = true, m_highBeam = false, m_acActive = false, m_isLocked = true;
+    bool m_doorFL = false, m_doorFR = false;
+    bool m_interiorLight = false;
+    bool m_windshieldHeater = false;
+    int m_wiperLevel = 0;
+    int m_gear = 1;
 };
-
 
 #endif

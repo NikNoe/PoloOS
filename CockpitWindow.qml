@@ -4,62 +4,92 @@ import QtQuick.Layouts
 
 Window {
     width: 400
-    height: 600
+    height: 850
     visible: true
-    title: "Polo 9N3 Simulator Cockpit"
-    color: "#222"
+    title: "VW Polo 9N3 Manual Control"
+    color: "#121212"
 
-    ColumnLayout {
+    ScrollView {
         anchors.fill: parent
-        anchors.margins: 20
-        spacing: 30
-
-        Text { text: "SIMULATOR CONTROLS"; color: "white"; font.bold: true }
-
-        // --- STEERING WHEEL ---
         ColumnLayout {
-            Text { text: "Steering Wheel: " + steerSlider.value.toFixed(0) + "°"; color: "white" }
-            Slider {
-                id: steerSlider
-                from: -450; to: 450; value: 0
-                Layout.fillWidth: true
-                onMoved: carCan.steeringAngle = value
-            }
-        }
+            width: parent.width - 30
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 15
 
-        // --- GAS PEDAL (RPM) ---
-        ColumnLayout {
-            Text { text: "Gas Pedal (RPM): " + rpmSlider.value.toFixed(0); color: "white" }
-            Slider {
-                id: rpmSlider
-                from: 800; to: 7000; value: 800
-                Layout.fillWidth: true
-                onMoved: carCan.rpm = value
-            }
-        }
+            Text { text: "9N3 COCKPIT SIMULATOR"; color: "#00ccff"; font.bold: true; Layout.topMargin: 10 }
 
-        // --- SWITCHES ---
-        RowLayout {
-            spacing: 20
-            Button {
-                text: "HANDBRAKE"
-                palette.button: carCan.handbrake ? "red" : "#444"
-                onClicked: carCan.handbrake = !carCan.handbrake
+            // --- TRANSMISSION (Gearbox) ---
+            GroupBox {
+                title: "GEARBOX"; Layout.fillWidth: true
+                RowLayout {
+                    spacing: 10
+                    Repeater {
+                        model: [1, 2, 3, 4, 5]
+                        Button {
+                            text: modelData
+                            Layout.fillWidth: true
+                            palette.button: carCan.gear === modelData ? "#00ccff" : "#333"
+                            onClicked: carCan.gear = modelData
+                        }
+                    }
+                }
             }
 
-            Button {
-                text: "LEFT BLINKER"
-                onClicked: carCan.blinkerStatus = (carCan.blinkerStatus === 1 ? 0 : 1)
+            // --- CENTER CONSOLE (Heating & Wipers) ---
+            GroupBox {
+                title: "CENTER CONSOLE"; Layout.fillWidth: true
+                ColumnLayout {
+                    width: parent.width
+
+                    CheckBox {
+                        text: "Windshield Heating (Defrost)"; checked: carCan.windshieldHeater
+                        onClicked: carCan.windshieldHeater = checked; palette.text: "white"
+                    }
+
+                    CheckBox {
+                        text: "Interior Cabin Light"; checked: carCan.interiorLight
+                        onClicked: carCan.interiorLight = checked; palette.text: "white"
+                    }
+
+                    Text { text: "Wiper Mode: " + ["OFF", "INTERMITTENT", "LOW", "HIGH"][carCan.wiperLevel]; color: "white" }
+                    RowLayout {
+                        Repeater {
+                            model: ["OFF", "INT", "LOW", "HIGH"]
+                            Button {
+                                text: modelData; Layout.fillWidth: true
+                                palette.button: carCan.wiperLevel === index ? "#ffcc00" : "#333"
+                                onClicked: carCan.wiperLevel = index
+                            }
+                        }
+                    }
+                }
+            }
+
+            // --- CHASSIS CONTROLS ---
+            GroupBox {
+                title: "CHASSIS"; Layout.fillWidth: true
+                ColumnLayout {
+                    width: parent.width
+                    Button {
+                        text: "HANDBRAKE (P)"; Layout.fillWidth: true
+                        palette.button: carCan.handbrake ? "red" : "#333"
+                        onClicked: carCan.handbrake = !carCan.handbrake
+                    }
+                }
+            }
+
+            // --- RE-USE PREVIOUS SLIDERS (RPM/STEER) ---
+            GroupBox {
+                title: "ENGINE & STEERING"; Layout.fillWidth: true
+                ColumnLayout {
+                    width: parent.width
+                    Text { text: "RPM: " + carCan.rpm; color: "white" }
+                    Slider { from: 0; to: 7000; value: carCan.rpm; onMoved: carCan.rpm = value; Layout.fillWidth: true }
+
+                    Text { text: "Steering: " + carCan.steeringAngle.toFixed(0) + "°"; color: "white" }
+                    Slider { from: -450; to: 450; value: carCan.steeringAngle; onMoved: carCan.steeringAngle = value; Layout.fillWidth: true }
+                }
             }
         }
-
-        // --- DOOR TOGGLES ---
-        GridLayout {
-            columns: 2
-            Button { text: "Front Left"; onClicked: carCan.doorFL = !carCan.doorFL }
-            Button { text: "Front Right"; onClicked: carCan.doorFR = !carCan.doorFR }
-        }
-
-        Item { Layout.fillHeight: true } // Spacer
     }
 }
