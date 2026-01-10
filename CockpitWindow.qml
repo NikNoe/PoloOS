@@ -7,7 +7,10 @@ Window {
     height: 900
     visible: true
     title: "9N3 Complete Simulator"
-    color: "#0f0f0f"
+
+
+    property bool isInverted: false
+    color: isInverted ? "#f5f5f7" : "#1a1a1a"
 
     ScrollView {
         anchors.fill: parent

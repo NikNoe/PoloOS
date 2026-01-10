@@ -4,6 +4,24 @@ import QtQuick3D
 Node {
     id: node
 
+    // --- STEP 1: Create an alias to the body material color ---
+        // Change 'bodyMesh' to the actual ID of the car body model inside this file
+        property alias bodyColor: bodyMaterial.baseColor
+
+        Model {
+            id: bodyMesh
+            source: "meshes/car_body.mesh" // Your mesh path
+
+            materials: [
+                PrincipledMaterial {
+                    id: bodyMaterial
+                    baseColor: "black" // Default color
+                    metalness: 0.6
+                    roughness: 0.2
+                }
+            ]
+        }
+
     // Resources
     Texture {
         id: undercarriage_PNG_texture

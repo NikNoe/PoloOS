@@ -58,6 +58,8 @@ qt_add_qml_module(appPoloOS
                 meshes/wheel_003_mesh.mesh
                 SOURCES canhandler.h
                 QML_FILES CockpitWindow.qml
+                QML_FILES DashboardIcon.qml
+                QML_FILES VitalsItem.qml
                 # Add all other .mesh files here, or use a wildcard if using CMake 3.20+
 )
 
