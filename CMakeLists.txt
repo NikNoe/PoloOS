@@ -63,6 +63,12 @@ qt_add_qml_module(appPoloOS
  QML_FILES VehiclePage.qml
  QML_FILES EnginePage.qml
  QML_FILES EngineLive.qml
+ QML_FILES EnergyPage.qml
+ QML_FILES ClimatePage.qml
+ QML_FILES BodyPage.qml
+ QML_FILES DiagnosticsPage.qml
+ QML_FILES SettingsPage.qml
+ QML_FILES ChassisPage.qml
                 # Add all other .mesh files here, or use a wildcard if using CMake 3.20+
 )
 
