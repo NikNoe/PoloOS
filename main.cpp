@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QUrl>
 #include "canhandler.h"
+#include <QQmlContext>
 
 int main(int argc, char *argv[])
 {
@@ -22,7 +23,12 @@ int main(int argc, char *argv[])
                              QCoreApplication::exit(-1);
                      }, Qt::QueuedConnection);
 
+    CanHandler *canHandler = new CanHandler(&app);
+    engine.rootContext()->setContextProperty("canHandler", canHandler);
+
     engine.load(url);
 
     return app.exec();
 }
+
+

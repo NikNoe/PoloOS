@@ -21,6 +21,7 @@ class CanHandler : public QObject {
     Q_PROPERTY(bool isLocked READ isLocked WRITE setIsLocked NOTIFY dataChanged)
     Q_PROPERTY(bool doorFL READ doorFL WRITE setDoorFL NOTIFY dataChanged)
     Q_PROPERTY(bool doorFR READ doorFR WRITE setDoorFR NOTIFY dataChanged)
+    Q_PROPERTY(bool trunk READ trunk WRITE setTrunk NOTIFY dataChanged)
     Q_PROPERTY(int windowPos READ windowPos WRITE setWindowPos NOTIFY dataChanged)
 
     // --- 4. COMFORT & INTERIOR ---
@@ -47,6 +48,7 @@ public:
     bool isLocked() const { return m_isLocked; }
     bool doorFL() const { return m_doorFL; }
     bool doorFR() const { return m_doorFR; }
+    bool trunk() const { return m_trunk; }
     int windowPos() const { return m_windowPos; }
 
     // Comfort
@@ -68,6 +70,7 @@ public slots:
     void setIsLocked(bool v) { if(m_isLocked != v) { m_isLocked = v; emit dataChanged(); } }
     void setDoorFL(bool v) { if(m_doorFL != v) { m_doorFL = v; emit dataChanged(); } }
     void setDoorFR(bool v) { if(m_doorFR != v) { m_doorFR = v; emit dataChanged(); } }
+    void setTrunk(bool v) { if(m_trunk != v) { m_trunk = v; emit dataChanged(); } }
     void setWindowPos(int v) { if(m_windowPos != v) { m_windowPos = v; emit dataChanged(); } }
 
     void setAcActive(bool v) { if(m_acActive != v) { m_acActive = v; emit dataChanged(); } }
@@ -93,6 +96,7 @@ private:
     bool m_isLocked = true;
     bool m_doorFL = false;
     bool m_doorFR = false;
+    bool m_trunk = false;
     int m_windowPos = 0;
 
     // Comfort
