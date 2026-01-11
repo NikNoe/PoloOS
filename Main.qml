@@ -57,20 +57,83 @@ ApplicationWindow {
                 Node {
                     id: carOrigin
                     eulerRotation: Qt.vector3d(15, yaw, 0)
-                    property real yaw: 45
+                    property real yaw: 0
 
                     Polo {
                         id: poloModel
                         scale: Qt.vector3d(1.2, 1.2, 1.2)
-                        bodyColor: window.carInverted ? "#ffffff" : "#0a0a0a"
+                        bodyColor: window.carInverted ? "white" : "#0000FF"
                     }
 
-                    NumberAnimation on yaw { from: 0; to: 360; duration: 20000; loops: Animation.Infinite; running: !mouseArea.pressed }
+                    // Place this INSIDE your carOrigin Node so it stays linked to the car
+                    Model {
+                        id: roadPlane
+                        source: "#Rectangle"
+
+                        // Position: x=0 (centered), y=-1 (under tires), z=0
+                        position: Qt.vector3d(0, -1, 0)
+
+                        // Scale: Wide (20), Very Long (100)
+                        scale: Qt.vector3d(20, 100, 1)
+
+                        eulerRotation.x: -90 // Lay flat on the ground
+
+                        materials: [
+                            PrincipledMaterial {
+                                id: roadMaterial
+                                // THE COLOR TOGGLE:
+                                // Dark Mode = Dark Asphalt (#111111)
+                                // Light Mode = Light Concrete (#cccccc)
+                                baseColor: window.carInverted ? "#cccccc" : "#111111"
+
+                                roughness: 0.8
+                                metalness: 0.0
+                                lighting: PrincipledMaterial.Fragments // Ensures it reacts to your DirectionalLight
+                            }
+                        ]
+                    }
+
+                    //NumberAnimation on yaw { from: 0; to: 360; duration: 20000; loops: Animation.Infinite; running: !mouseArea.pressed }
                 }
 
-                PerspectiveCamera { id: carCamera; z: 550 }
-                DirectionalLight { brightness: window.carInverted ? 1.5 : 2.5; eulerRotation.x: -30 }
+
+
+
+                PerspectiveCamera {
+                    id: carCamera;
+                    position: Qt.vector3d(0, 150, 600) // Default starting position
+
+                    // --- MANUAL CONSTRAINTS ---
+                    onPositionChanged: {
+                        // 1. ZOOM LIMIT (Distance)
+                        // We calculate the length of the vector to the center
+                        let distance = Math.sqrt(x*x + y*y + z*z);
+                        if (distance < 750) z = 750; // Too close
+                        if (distance > 800) z = 800; // Too far
+
+                        // 2. HEIGHT LIMIT (Angle/Pitch)
+                        // Prevent camera from going below ground (y=0)
+                        if (y < 20) y = 20;
+                    }
+                }
+
+                DirectionalLight {
+                    id: cameraLight
+                    // Binds the light direction to the camera so the car is always well-lit
+                    eulerRotation: carCamera.eulerRotation
+
+                    // Adjusted brightness:
+                    // Dark mode (carInverted: false) needs more light to see the deep blue.
+                    // Light mode (carInverted: true) needs less to avoid "blinding" white.
+                    brightness: window.carInverted ? 1.0 : 2.0
+
+                    castsShadow: true
+                    shadowFactor: 15 // Softens the shadow edge
+                }
+
                 OrbitCameraController { anchors.fill: parent; origin: carOrigin; camera: carCamera }
+
+
                 MouseArea { id: mouseArea; anchors.fill: parent; propagateComposedEvents: true; onPressed: (m)=> m.accepted = false }
 
             }
@@ -178,26 +241,46 @@ ApplicationWindow {
             anchors.leftMargin: 40
             anchors.rightMargin: 40
 
-            // Temperature Control
-            Button {
-                id: tempBtn
-                flat: true
-                contentItem: Text {
-                    text: "❄️ 21.0°"
-                    font.pixelSize: 18
-                    font.bold: true
-                    // BINDING: Text turns black when bar is light
-                    color: window.carInverted ? "black" : "white"
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
+            // --- GROUP 1: Time & Climate ---
+            Row {
+                spacing: 15
+                Layout.alignment: Qt.AlignVCenter
+
+                Text {
+                    id: timeDisplay
+                    text: Qt.formatDateTime(new Date(), "hh:mm")
+                    font.pixelSize: 22 // Slightly smaller to match UI balance
+                    font.weight: Font.DemiBold
+                    color: window.carInverted ? "#000000" : "#FFFFFF"
+
+                    Timer {
+                        interval: 1000
+                        running: true
+                        repeat: true
+                        onTriggered: timeDisplay.text = Qt.formatDateTime(new Date(), "hh:mm")
+                    }
+                }
+
+                Button {
+                    id: tempBtn
+                    flat: true
+                    contentItem: Text {
+                        // Displays the real-time temperature from the API
+                        text: "🌡️ " + weatherService.tempValue
+                        font.pixelSize: 22
+                        font.bold: true
+                        color: window.carInverted ? "black" : "white"
+                    }
                 }
             }
 
-            Item { Layout.fillWidth: true } // Spacer
+            Item { Layout.fillWidth: true } // SPACER (Pushes next group to center)
 
-            // Navigation & Media Group
+            // --- GROUP 2: Navigation & Media ---
             Row {
                 spacing: 30
+                Layout.alignment: Qt.AlignVCenter
+
                 Button {
                     text: "MEDIA"
                     flat: true
@@ -216,14 +299,16 @@ ApplicationWindow {
                 }
             }
 
-            Item { Layout.fillWidth: true } // Spacer
+            Item { Layout.fillWidth: true } // SPACER (Pushes next group to right)
 
-            // Settings
+            // --- GROUP 3: Settings ---
             Button {
-                text: "SETTINGS"
+                text: "MENU"
                 flat: true
+                Layout.alignment: Qt.AlignVCenter
                 contentItem: Text {
                     text: parent.text;
+                    font.bold: true
                     color: window.carInverted ? "black" : "white"
                 }
             }
@@ -250,6 +335,45 @@ ApplicationWindow {
         MouseArea { anchors.fill: parent; onClicked: window.carInverted = !window.carInverted }
     }
 
+    //--- item for weather ---
+
+    Item {
+        id: weatherService
+
+        // Example: Paris (Replace with your city's coordinates)
+        property real lat: 48.8566
+        property real lon: 2.3522
+        property string tempValue: "--"
+
+        function fetchWeather() {
+            var xhr = new XMLHttpRequest();
+            // Open-Meteo URL (No Key Needed!)
+            var url = "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon + "&current_weather=true";
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        // Open-Meteo returns 'current_weather' object
+                        weatherService.tempValue = Math.round(response.current_weather.temperature) + "°";
+                    } else {
+                        console.log("Weather Error: " + xhr.status);
+                    }
+                }
+            }
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+        // Refresh every 15 minutes
+        Timer {
+            interval: 900000
+            running: true
+            repeat: true
+            triggeredOnStart: true
+            onTriggered: weatherService.fetchWeather()
+        }
+    }
 
 }
 

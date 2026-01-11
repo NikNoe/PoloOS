@@ -10,14 +10,16 @@ Node {
 
         Model {
             id: bodyMesh
-            source: "meshes/car_body.mesh" // Your mesh path
+            source: "meshes/chassis_mesh.mesh" // Your mesh path
 
             materials: [
                 PrincipledMaterial {
                     id: bodyMaterial
-                    baseColor: "black" // Default color
+                    baseColor: polo_root.BodyColor
                     metalness: 0.6
                     roughness: 0.2
+                    specularAmount: 1.0
+                    indexOfRefraction: 1.5
                 }
             ]
         }
