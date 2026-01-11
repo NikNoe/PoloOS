@@ -142,6 +142,8 @@ ApplicationWindow {
         // ==========================================
         // --- RIGHT PANE: Full Vehicle Vitals ---
         // ==========================================
+
+        // --- welcome ---
         Rectangle {
             id: rightPane
             Layout.fillWidth: true
@@ -219,6 +221,43 @@ ApplicationWindow {
             }
         }
 
+        // submenu like tesla
+        Rectangle {
+            id: menuSidebar
+            width: parent.width * 0.3 // Occupies 30% of the screen like a Tesla
+            height: parent.height
+            anchors.right: parent.right
+            color: window.carInverted ? "#f0f0f0" : "#1a1a1a"
+            visible: false // Hidden by default
+
+            Column {
+                anchors.fill: parent
+                spacing: 10
+                topPadding: 20
+
+                // Navigation Buttons
+                Repeater {
+                    model: ["Vehicle", "Engine", "Chassis", "Energy", "Climate", "Body", "Diagnostics", "Settings"]
+                    Button {
+                        width: parent.width - 20
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        text: modelData
+                        onClicked: {
+                            // Logic to change the StackView page
+                            pageStack.replace(modelData + "Page.qml")
+                        }
+                    }
+                }
+
+                // The actual StackView where pages are loaded
+                StackView {
+                    id: pageStack
+                    width: parent.width
+                    height: parent.height - 400 // Adjust based on button list height
+                    initialItem: "VehiclePage.qml"
+                }
+            }
+        }
 
     }
 
@@ -306,8 +345,12 @@ ApplicationWindow {
                 text: "MENU"
                 flat: true
                 Layout.alignment: Qt.AlignVCenter
+                onClicked: {
+                    // Toggle the sidebar
+                    menuSidebar.visible = !menuSidebar.visible
+                }
                 contentItem: Text {
-                    text: parent.text;
+                    text: parent.text
                     font.bold: true
                     color: window.carInverted ? "black" : "white"
                 }

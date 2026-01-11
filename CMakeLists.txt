@@ -60,6 +60,7 @@ qt_add_qml_module(appPoloOS
                 QML_FILES CockpitWindow.qml
                 QML_FILES DashboardIcon.qml
  QML_FILES VitalsItem.qml
+ QML_FILES VehiclePage.qml
                 # Add all other .mesh files here, or use a wildcard if using CMake 3.20+
 )
 
