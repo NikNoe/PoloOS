@@ -219,45 +219,100 @@ ApplicationWindow {
                     }
                 }
             }
-        }
-
-        // submenu like tesla
-        Rectangle {
-            id: menuSidebar
-            width: parent.width * 0.3 // Occupies 30% of the screen like a Tesla
-            height: parent.height
-            anchors.right: parent.right
-            color: window.carInverted ? "#f0f0f0" : "#1a1a1a"
-            visible: false // Hidden by default
-
-            Column {
+            // submenu like tesla
+            // --- 1. THE MAIN MENU CONTAINER ---
+            Item {
+                id: mainMenuContainer
                 anchors.fill: parent
-                spacing: 10
-                topPadding: 20
+                visible: false
+                z: 10 // Stays on top of the 3D Car
 
-                // Navigation Buttons
-                Repeater {
-                    model: ["Vehicle", "Engine", "Chassis", "Energy", "Climate", "Body", "Diagnostics", "Settings"]
-                    Button {
-                        width: parent.width - 20
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: modelData
-                        onClicked: {
-                            // Logic to change the StackView page
-                            pageStack.replace(modelData + "Page.qml")
+                Row {
+                    anchors.fill: parent
+
+                    // --- 2. THE LEFT SIDEBAR (The Submenu buttons) ---
+                    Rectangle {
+                        id: menuSidebar
+                        width: parent.width * 0.25 // Occupies 25% of the width
+                        height: parent.height
+                        color: window.carInverted ? "#F5F5F7" : "#111111"
+
+                        Column {
+                            anchors.fill: parent
+                            anchors.margins: 20
+                            spacing: 10
+
+                            Text {
+                                text: "PoloOS"
+                                color: window.carInverted ? "#666666" : "#888888"
+                                font.pixelSize: 12; font.weight: Font.Bold
+                                bottomPadding: 10
+                            }
+
+                            Repeater {
+                                model: [
+                                    { name: "Vehicle", file: "VehiclePage.qml" },
+                                    { name: "Engine", file: "EnginePage.qml" },
+                                    { name: "Chassis", file: "ChassisPage.qml" },
+                                    { name: "Energy", file: "EnergyPage.qml" },
+                                   { name: "Climate", file: "ClimatePage.qml" },
+                                   { name: "Body", file: "BodyPage.qml" },
+                                   { name: "Diagnostics", file: "DiagnosticsPage.qml" },
+                                   { name: "Settings", file: "SettingsPage.qml" }
+                                ]
+
+                                Rectangle {
+                                    width: parent.width; height: 50; radius: 10
+                                    color: pageStack.currentItemName === modelData.name
+                                           ? (window.carInverted ? "#E0E0E0" : "#222222") : "transparent"
+
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: modelData.name.toUpperCase()
+                                        color: window.carInverted ? "black" : "white"
+                                        font.pixelSize: 14; font.weight: Font.DemiBold
+                                    }
+
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            pageStack.replace(modelData.file)
+                                            pageStack.currentItemName = modelData.name
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // Visual separator line (Tesla style)
+                        Rectangle {
+                            anchors.right: parent.right
+                            width: 1
+                            height: parent.height
+                            color: window.carInverted ? "#DDDDDD" : "#333333"
+                        }
+                    }
+
+                    // --- 3. THE CONTENT AREA (The Page itself) ---
+                    StackView {
+                        id: pageStack
+                        width: parent.width * 0.75 // Occupies the remaining 75%
+                        height: parent.height
+                        clip: true
+
+                        property string currentItemName: "Vehicle"
+                        initialItem: "VehiclePage.qml"
+
+                        // Background for the page area
+                        background: Rectangle {
+                            color: window.carInverted ? "#F5F5F7" : "#111111"
                         }
                     }
                 }
-
-                // The actual StackView where pages are loaded
-                StackView {
-                    id: pageStack
-                    width: parent.width
-                    height: parent.height - 400 // Adjust based on button list height
-                    initialItem: "VehiclePage.qml"
-                }
             }
         }
+
+
 
     }
 
@@ -345,10 +400,12 @@ ApplicationWindow {
                 text: "MENU"
                 flat: true
                 Layout.alignment: Qt.AlignVCenter
+
                 onClicked: {
-                    // Toggle the sidebar
-                    menuSidebar.visible = !menuSidebar.visible
+                    // Toggle the entire Menu System (Sidebar + Pages)
+                    mainMenuContainer.visible = !mainMenuContainer.visible
                 }
+
                 contentItem: Text {
                     text: parent.text
                     font.bold: true
