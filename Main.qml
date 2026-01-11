@@ -394,6 +394,12 @@ ApplicationWindow {
                 Button {
                     text: "MAPS"
                     flat: true
+                    onClicked: {
+                            // Hide the settings menu if it's open
+                            mainMenuContainer.visible = false
+                            // Show the Map overlay
+                            mapOverlay.visible = !mapOverlay.visible
+                        }
                     contentItem: Text {
                         text: parent.text; font.bold: true;
                         color: window.carInverted ? "black" : "white"
@@ -465,5 +471,15 @@ ApplicationWindow {
         }
     }
 
+    //item for view MAP
+    Loader {
+        id: mapOverlay
+        anchors.fill: parent
+        visible: false
+        source: "MapPage.qml"
+
+        // Ensure the top bar and footer are still visible over the map
+        z: 5
+    }
 }
 
