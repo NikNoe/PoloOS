@@ -359,6 +359,30 @@ Window {
                 }
             }
 
+            GroupBox {
+                title: "DIAGNOSTIC SIMULATOR"
+                Layout.fillWidth: true
+                ColumnLayout {
+                    width: parent.width
+
+                    RowLayout {
+                        CheckBox { text: "Engine Bus"; checked: carCan.busEngineActive; onToggled: carCan.setBusEngineActive(checked) }
+                        CheckBox { text: "Comfort Bus"; checked: carCan.busComfortActive; onToggled: carCan.setBusComfortActive(checked) }
+                    }
+
+                    Button {
+                        text: "TRIGGER P0300 FAULT"; Layout.fillWidth: true
+                        onClicked: carCan.setLastFaultCode("P0300 - Random Misfire")
+                    }
+
+                    Slider {
+                        from: 0; to: 120; value: carCan.engineFps
+                        onMoved: carCan.setEngineFps(value)
+                        Layout.fillWidth: true
+                    }
+                }
+            }
+
             Item { height: 40 } // Bottom padding
         }
     }

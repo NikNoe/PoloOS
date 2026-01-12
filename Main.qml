@@ -272,14 +272,13 @@ ApplicationWindow {
 
                             Repeater {
                                 model: [
-                                    { name: "Vehicle", file: "VehiclePage.qml" },
                                     { name: "Engine", file: "EnginePage.qml" },
                                     { name: "Chassis", file: "ChassisPage.qml" },
                                     { name: "Energy", file: "EnergyPage.qml" },
-                                   { name: "Climate", file: "ClimatePage.qml" },
                                    { name: "Body", file: "BodyPage.qml" },
                                    { name: "Diagnostics", file: "DiagnosticsPage.qml" },
-                                   { name: "Settings", file: "SettingsPage.qml" }
+                                   { name: "Settings", file: "SettingsPage.qml" },
+                                    { name: "About", file: "AboutPage.qml" }
                                 ]
 
                                 Rectangle {

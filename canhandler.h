@@ -2,6 +2,7 @@
 #define CANHANDLER_H
 
 #include <QObject>
+#include <QString>
 
 class CanHandler : public QObject {
     Q_OBJECT
@@ -58,6 +59,17 @@ class CanHandler : public QObject {
     Q_PROPERTY(double fuelInst READ fuelInst WRITE setFuelInst NOTIFY fuelChanged)
     Q_PROPERTY(double fuelAvg READ fuelAvg WRITE setFuelAvg NOTIFY fuelChanged)
 
+    // --- 5. DIAGNOSTICS & BUS HEALTH ---
+    Q_PROPERTY(bool busEngineActive READ busEngineActive WRITE setBusEngineActive NOTIFY diagChanged)
+    Q_PROPERTY(bool busComfortActive READ busComfortActive WRITE setBusComfortActive NOTIFY diagChanged)
+    Q_PROPERTY(int engineFps READ engineFps WRITE setEngineFps NOTIFY diagChanged)
+    Q_PROPERTY(int comfortFps READ comfortFps WRITE setComfortFps NOTIFY diagChanged)
+    Q_PROPERTY(int errorFrames READ errorFrames WRITE setErrorFrames NOTIFY diagChanged)
+    Q_PROPERTY(QString lastFaultCode READ lastFaultCode WRITE setLastFaultCode NOTIFY diagChanged)
+    Q_PROPERTY(bool ecuEngineOnline READ ecuEngineOnline WRITE setEcuEngineOnline NOTIFY ecuStatusChanged)
+    Q_PROPERTY(bool ecuAbsOnline READ ecuAbsOnline WRITE setEcuAbsOnline NOTIFY ecuStatusChanged)
+    Q_PROPERTY(bool ecuBodyOnline READ ecuBodyOnline WRITE setEcuBodyOnline NOTIFY ecuStatusChanged)
+
 public:
     explicit CanHandler(QObject *parent = nullptr) : QObject(parent) {}
 
@@ -106,6 +118,15 @@ public:
     int fuelToFill() const { return m_fuelToFill; }
     double fuelInst() const { return m_fuelInst; }
     double fuelAvg() const { return m_fuelAvg; }
+    bool busEngineActive() const { return m_busEngineActive; }
+    bool busComfortActive() const { return m_busComfortActive; }
+    int engineFps() const { return m_engineFps; }
+    int comfortFps() const { return m_comfortFps; }
+    int errorFrames() const { return m_errorFrames; }
+    QString lastFaultCode() const { return m_lastFaultCode; }
+    bool ecuEngineOnline() const { return m_ecuEngineOnline; }
+    bool ecuAbsOnline() const { return m_ecuAbsOnline; }
+    bool ecuBodyOnline() const { return m_ecuBodyOnline; }
 
 public slots:
     // --- SETTERS ---
@@ -153,6 +174,15 @@ public slots:
     void setFuelToFill(int v) { if(m_fuelToFill != v) { m_fuelToFill = v; emit fuelLevelChanged(); } }
     void setFuelInst(double v) { if(m_fuelInst != v) { m_fuelInst = v; emit fuelChanged(); } }
     void setFuelAvg(double v) { if(m_fuelAvg != v) { m_fuelAvg = v; emit fuelChanged(); } }
+    void setBusEngineActive(bool v) { if(m_busEngineActive != v) { m_busEngineActive = v; emit diagChanged(); } }
+    void setBusComfortActive(bool v) { if(m_busComfortActive != v) { m_busComfortActive = v; emit diagChanged(); } }
+    void setEngineFps(int v) { if(m_engineFps != v) { m_engineFps = v; emit diagChanged(); } }
+    void setComfortFps(int v) { if(m_comfortFps != v) { m_comfortFps = v; emit diagChanged(); } }
+    void setErrorFrames(int v) { if(m_errorFrames != v) { m_errorFrames = v; emit diagChanged(); } }
+    void setLastFaultCode(QString v) { if(m_lastFaultCode != v) { m_lastFaultCode = v; emit diagChanged(); } }
+    void setEcuEngineOnline(bool v) { if(m_ecuEngineOnline != v) { m_ecuEngineOnline = v; emit ecuStatusChanged(); } }
+    void setEcuAbsOnline(bool v) { if(m_ecuAbsOnline != v) { m_ecuAbsOnline = v; emit ecuStatusChanged(); } }
+    void setEcuBodyOnline(bool v) { if(m_ecuBodyOnline != v) { m_ecuBodyOnline = v; emit ecuStatusChanged(); } }
 
 signals:
     void engineMetricChanged();
@@ -172,6 +202,8 @@ signals:
     void elecChanged();
     void fuelLevelChanged();
     void fuelChanged();
+    void diagChanged();
+    void ecuStatusChanged();
 
 private:
     int m_rpm = 0;
@@ -218,6 +250,15 @@ private:
     int m_fuelToFill = 15;
     double m_fuelInst = 0.0;
     double m_fuelAvg = 6.5;
+    bool m_busEngineActive = false;
+    bool m_busComfortActive = false;
+    int m_engineFps = 0;
+    int m_comfortFps = 0;
+    int m_errorFrames = 0;
+    QString m_lastFaultCode = "";
+    bool m_ecuEngineOnline = false;
+    bool m_ecuAbsOnline = false;
+    bool m_ecuBodyOnline = false;
 };
 
 #endif
