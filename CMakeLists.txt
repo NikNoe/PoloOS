@@ -70,6 +70,7 @@ qt_add_qml_module(appPoloOS
  QML_FILES SettingsPage.qml
  QML_FILES ChassisPage.qml
  QML_FILES MapPage.qml
+ QML_FILES TempCard.qml
                 # Add all other .mesh files here, or use a wildcard if using CMake 3.20+
 )
 

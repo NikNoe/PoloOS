@@ -43,6 +43,32 @@ Window {
             }
 
             GroupBox {
+                title: "POWERTRAIN CONTROL"; Layout.fillWidth: true
+                GridLayout {
+                    columns: 2; width: parent.width
+
+                    Button {
+                        text: "IGNITION"; checkable: true; checked: carCan.ignitionOn
+                        onToggled: carCan.setIgnitionOn(checked)
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "START ENGINE"; checkable: true; checked: carCan.engineRunning
+                        enabled: carCan.ignitionOn // Real car logic: need ignition to start
+                        onToggled: carCan.setEngineRunning(checked)
+                        Layout.fillWidth: true
+                    }
+
+                    Label { text: "Speed (km/h)"; color: "white"; Layout.columnSpan: 2 }
+                    Slider {
+                        from: 0; to: 240; value: carCan.speed
+                        onMoved: carCan.setSpeed(value)
+                        Layout.columnSpan: 2; Layout.fillWidth: true
+                    }
+                }
+            }
+
+            GroupBox {
                 title: "ENGINE PERFORMANCE"; Layout.fillWidth: true
                 ColumnLayout {
                     width: parent.width
@@ -153,6 +179,54 @@ Window {
                             text: carCan.handbrake ? "HANDBRAKE (ON)" : "HANDBRAKE (OFF)"
                             palette.button: carCan.handbrake ? "red" : "#444"
                             onClicked: carCan.setHandbrake(!carCan.handbrake)
+                            Layout.fillWidth: true
+                        }
+                    }
+                }
+            }
+
+            // energy
+            GroupBox {
+                title: "FUEL & ENERGY MANAGEMENT"
+                Layout.fillWidth: true
+                palette.windowText: "white"
+
+                ColumnLayout {
+                    width: parent.width
+                    spacing: 10
+
+                    Label {
+                        text: "Current Fuel: " + fuelSlider.value.toFixed(1) + " Liters"
+                        color: "white"
+                    }
+
+                    Slider {
+                        id: fuelSlider
+                        from: 0
+                        to: 45  // Polo 9N3 Tank Capacity
+                        value: 22.5 // Start at half tank
+                        Layout.fillWidth: true
+
+                        onMoved: {
+                            // 1. Update the fuel level
+                            // (Note: You might need to add setFuelLevel to canhandler if not there,
+                            // or just use it to drive the other setters)
+
+                            // 2. Calculate and update Range (Max 860km / 45L = 19.11 km/L)
+                            let calculatedRange = value * 19.11;
+                            carCan.setRangePossible(calculatedRange);
+
+                            // 3. Calculate Liters needed to fill (45L - current)
+                            let toFill = 45 - value;
+                            carCan.setFuelToFill(toFill);
+                        }
+                    }
+
+                    RowLayout {
+                        Label { text: "Fuel Temp (°C)"; color: "white" }
+                        Slider {
+                            from: -10; to: 60; value: carCan.tempFuel
+                            onMoved: carCan.setTempFuel(value)
                             Layout.fillWidth: true
                         }
                     }
