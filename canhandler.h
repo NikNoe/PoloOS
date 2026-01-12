@@ -4,6 +4,14 @@
 #include <QObject>
 #include <QString>
 
+#ifndef GIT_COMMIT_HASH
+#define GIT_COMMIT_HASH "no-git-hash"
+#endif
+
+#ifndef BUILD_DATE
+#define BUILD_DATE "2026-01-12"
+#endif
+
 class CanHandler : public QObject {
     Q_OBJECT
 
@@ -70,6 +78,12 @@ class CanHandler : public QObject {
     Q_PROPERTY(bool ecuAbsOnline READ ecuAbsOnline WRITE setEcuAbsOnline NOTIFY ecuStatusChanged)
     Q_PROPERTY(bool ecuBodyOnline READ ecuBodyOnline WRITE setEcuBodyOnline NOTIFY ecuStatusChanged)
 
+    // --- SYSTEM INFO ---
+    Q_PROPERTY(QString vin READ vin CONSTANT)
+    Q_PROPERTY(double mileage READ mileage NOTIFY mileageChanged)
+    Q_PROPERTY(QString gitHash READ gitHash CONSTANT)
+    Q_PROPERTY(QString buildDate READ buildDate CONSTANT)
+
 public:
     explicit CanHandler(QObject *parent = nullptr) : QObject(parent) {}
 
@@ -127,6 +141,10 @@ public:
     bool ecuEngineOnline() const { return m_ecuEngineOnline; }
     bool ecuAbsOnline() const { return m_ecuAbsOnline; }
     bool ecuBodyOnline() const { return m_ecuBodyOnline; }
+    QString vin() const { return "WVWZZZ9NZ6Yxxxxxx"; } // Mock VIN for Polo 9N3
+    double mileage() const { return m_mileage; }
+    QString gitHash() const { return GIT_COMMIT_HASH; }
+    QString buildDate() const { return BUILD_DATE; }
 
 public slots:
     // --- SETTERS ---
@@ -204,6 +222,7 @@ signals:
     void fuelChanged();
     void diagChanged();
     void ecuStatusChanged();
+    void mileageChanged();
 
 private:
     int m_rpm = 0;
@@ -259,6 +278,7 @@ private:
     bool m_ecuEngineOnline = false;
     bool m_ecuAbsOnline = false;
     bool m_ecuBodyOnline = false;
+    double m_mileage = 0.0;
 };
 
 #endif

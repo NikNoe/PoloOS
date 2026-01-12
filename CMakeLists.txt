@@ -73,6 +73,7 @@ qt_add_qml_module(appPoloOS
  QML_FILES TempCard.qml
  QML_FILES BusStatusCard.qml
  QML_FILES EcuTag.qml
+ QML_FILES EngineerRow.qml
                 # Add all other .mesh files here, or use a wildcard if using CMake 3.20+
 )
 
@@ -93,3 +94,18 @@ target_link_libraries(appPoloOS PRIVATE
 target_link_libraries(appPoloOS PRIVATE
     Qt6::Core Qt6::Gui Qt6::Quick Qt6::Qml Qt6::Quick3D Qt6::Quick3DHelpers Qt6::SerialBus Qt6::SerialPort
 )
+
+# Get the Git Hash
+execute_process(
+    COMMAND git rev-parse --short HEAD
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    OUTPUT_VARIABLE GIT_HASH
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+# Get the Build Date
+string(TIMESTAMP BUILD_DATE "%Y-%m-%d")
+
+# Pass these to your C++ code
+add_definitions(-DGIT_COMMIT_HASH="${GIT_HASH}")
+add_definitions(-DBUILD_DATE="${BUILD_DATE}")
