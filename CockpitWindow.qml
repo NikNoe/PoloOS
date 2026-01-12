@@ -84,6 +84,29 @@ Window {
                 }
             }
 
+            // --- SAFETY SECTION ---
+            GroupBox {
+                title: "SAFETY & PASSENGERS";
+                Layout.fillWidth: true;
+                palette.windowText: "white"
+
+                RowLayout {
+                    width: parent.width
+                    Button {
+                        text: "Driver Belt"
+                        highlighted: carCan.beltDriver
+                        onClicked: carCan.setBeltDriver(!carCan.beltDriver)
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: "Pass. Belt"
+                        highlighted: carCan.beltPassenger
+                        onClicked: carCan.setBeltPassenger(!carCan.beltPassenger)
+                        Layout.fillWidth: true
+                    }
+                }
+            }
+
             // --- COMFORT & INTERIOR ---
             GroupBox {
                 title: "INTERIOR & COMFORT"; Layout.fillWidth: true; palette.windowText: "white"
@@ -105,13 +128,59 @@ Window {
 
             // --- BODY ---
             GroupBox {
-                title: "DOORS & LOCKS"; Layout.fillWidth: true; palette.windowText: "white"
+                title: "DOORS & LOCKS";
+                Layout.fillWidth: true;
+                palette.windowText: "white"
+
                 GridLayout {
-                    columns: 2; width: parent.width
-                    Button { text: "Front Left Door"; onClicked: carCan.doorFL = !carCan.doorFL; Layout.fillWidth: true }
-                    Button { text: "Front Right Door"; onClicked: carCan.doorFR = !carCan.doorFR; Layout.fillWidth: true }
-                    Button { text: carCan.isLocked ? "UNLOCK CAR" : "LOCK CAR"; Layout.columnSpan: 2; Layout.fillWidth: true;
-                             onClicked: carCan.isLocked = !carCan.isLocked }
+                    columns: 2;
+                    width: parent.width
+                    rowSpacing: 10
+                    columnSpacing: 10
+
+                    // FRONT DOORS
+                    Button {
+                        text: carCan.doorFL ? "CLOSE FL" : "OPEN FL"
+                        highlighted: carCan.doorFL
+                        // CRITICAL: Use the setter function so C++ emits the signal!
+                        onClicked: carCan.setDoorFL(!carCan.doorFL)
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: carCan.doorFR ? "CLOSE FR" : "OPEN FR"
+                        highlighted: carCan.doorFR
+                        onClicked: carCan.setDoorFR(!carCan.doorFR)
+                        Layout.fillWidth: true
+                    }
+
+                    // REAR DOORS (New for your 4-door setup)
+                    Button {
+                        text: carCan.doorRL ? "CLOSE RL" : "OPEN RL"
+                        highlighted: carCan.doorRL
+                        onClicked: carCan.setDoorRL(!carCan.doorRL)
+                        Layout.fillWidth: true
+                    }
+                    Button {
+                        text: carCan.doorRR ? "CLOSE RR" : "OPEN RR"
+                        highlighted: carCan.doorRR
+                        onClicked: carCan.setDoorRR(!carCan.doorRR)
+                        Layout.fillWidth: true
+                    }
+
+                    // TRUNK & LOCKS
+                    Button {
+                        text: carCan.trunk ? "CLOSE TRUNK" : "OPEN TRUNK"
+                        highlighted: carCan.trunk
+                        onClicked: carCan.setTrunk(!carCan.trunk)
+                        Layout.fillWidth: true
+                    }
+
+                    Button {
+                        text: carCan.isLocked ? "UNLOCK CAR" : "LOCK CAR"
+                        palette.buttonText: carCan.isLocked ? "orange" : "white"
+                        Layout.fillWidth: true
+                        onClicked: carCan.setIsLocked(!carCan.isLocked)
+                    }
                 }
             }
 

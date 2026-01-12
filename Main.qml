@@ -3,7 +3,8 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick3D
 import QtQuick3D.Helpers
-import Polo.CAN 1.0
+
+
 
 ApplicationWindow {
     id: window
@@ -14,9 +15,14 @@ ApplicationWindow {
     property bool carInverted: false
     color: carInverted ? "#f5f5f7" : "black" // Main background
 
-    CanHandler { id: carCan }
     CockpitWindow {id: cockpit }
 
+    Connections {
+        target: carCan
+        function onDoorFLChanged() {
+            console.log("SIMULATOR MESSAGE: Door FL is now " + carCan.doorFL)
+        }
+    }
 
     RowLayout {
         anchors.fill: parent
@@ -137,6 +143,21 @@ ApplicationWindow {
                 MouseArea { id: mouseArea; anchors.fill: parent; propagateComposedEvents: true; onPressed: (m)=> m.accepted = false }
 
             }
+
+            // safety signal for belt when car move
+            Image {
+                source: "icons/seatbelt_warning.svg"
+                visible: carCan.rpm > 900 && !carCan.beltDriver // Engine running + no belt
+                width: 50; height: 50
+
+                SequentialAnimation on opacity {
+                    running: parent.visible
+                    loops: Animation.Infinite
+                    NumberAnimation { from: 1; to: 0; duration: 500 }
+                    NumberAnimation { from: 0; to: 1; duration: 500 }
+                }
+            }
+
         }
 
         // ==========================================

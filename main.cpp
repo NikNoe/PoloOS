@@ -1,34 +1,37 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QUrl>
-#include "canhandler.h"
 #include <QQmlContext>
+#include "canhandler.h"
 
 int main(int argc, char *argv[])
 {
+    // Use high DPI scaling for your Mac/Pi display
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
-    // 1. Register the C++ CAN logic for QML
-    qmlRegisterType<CanHandler>("Polo.CAN", 1, 0, "CanHandler");
+    // --- 1. CREATE THE SHARED INSTANCE ---
+    // This is the SINGLE "Brain" of the car.
+    CanHandler *canHandler = new CanHandler(&app);
 
     QQmlApplicationEngine engine;
 
-    // 2. Use the standard QUrl constructor (No special suffixes like _s or _u)
+    // --- 2. SHARE THE INSTANCE ---
+    // We name it "carCan" so it matches your BodyPage code
+    engine.rootContext()->setContextProperty("carCan", canHandler);
+
+    // Also keeping "canHandler" alias just in case you used it elsewhere
+    engine.rootContext()->setContextProperty("canHandler", canHandler);
+
     const QUrl url(QStringLiteral("qrc:/qt/qml/PoloOS/Main.qml"));
 
-    // 3. Connect error handling to ensure we know if the QML fails to load
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
                          if (!obj && url == objUrl)
                              QCoreApplication::exit(-1);
                      }, Qt::QueuedConnection);
 
-    CanHandler *canHandler = new CanHandler(&app);
-    engine.rootContext()->setContextProperty("canHandler", canHandler);
-
     engine.load(url);
 
     return app.exec();
 }
-
-
