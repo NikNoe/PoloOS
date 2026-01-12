@@ -42,18 +42,119 @@ Window {
                 }
             }
 
-            // --- CHASSIS & STEERING ---
             GroupBox {
-                title: "CHASSIS"; Layout.fillWidth: true; palette.windowText: "white"
+                title: "ENGINE PERFORMANCE"; Layout.fillWidth: true
                 ColumnLayout {
                     width: parent.width
-                    Text { text: "Steering Angle: " + carCan.steeringAngle.toFixed(0) + "°"; color: "white" }
-                    Slider { from: -450; to: 450; value: carCan.steeringAngle; onMoved: carCan.steeringAngle = value; Layout.fillWidth: true }
 
-                    Button {
-                        text: "HANDBRAKE (P)"; Layout.fillWidth: true
-                        palette.button: carCan.handbrake ? "red" : "#333"
-                        onClicked: carCan.handbrake = !carCan.handbrake
+                    RowLayout {
+                        Label { text: "Accelerator"; color: "white" }
+                        Slider {
+                            from: 0; to: 100; value: carCan.pedalPos
+                            onMoved: {
+                                carCan.setPedalPos(value)
+                                // Simulate engine response: Throttle follows pedal with slight delay/offset
+                                carCan.setThrottlePos(value * 0.95)
+                                carCan.setRpm(800 + (value * 50))
+                            }
+                            Layout.fillWidth: true
+                        }
+                    }
+
+                    RowLayout {
+                        CheckBox { text: "Limp Mode"; checked: carCan.limpMode; onToggled: carCan.setLimpMode(checked) }
+                        CheckBox { text: "Overheat"; checked: carCan.overheat; onToggled: carCan.setOverheat(checked) }
+                        CheckBox { text: "Cruise"; checked: carCan.cruiseActive; onToggled: carCan.setCruiseActive(checked) }
+                    }
+                }
+            }
+
+            // --- CHASSIS & STEERING ---
+            GroupBox {
+                title: "CHASSIS & DYNAMICS";
+                Layout.fillWidth: true;
+                palette.windowText: "white"
+
+                ColumnLayout {
+                    width: parent.width
+                    spacing: 15
+
+                    // 1. Steering Control
+                    ColumnLayout {
+                        Layout.fillWidth: true
+                        Text {
+                            text: "Steering Angle: " + carCan.steeringAngle.toFixed(0) + "°"
+                            color: "white"
+                        }
+                        Slider {
+                            from: -450; to: 450;
+                            value: carCan.steeringAngle
+                            // Use the setter function for proper signal emission
+                            onMoved: carCan.setSteeringAngle(value)
+                            Layout.fillWidth: true
+                        }
+                    }
+
+                    // 2. Wheel Speeds (FL, FR, RL, RR)
+                    Text { text: "Wheel Speeds (km/h)"; color: "#888"; font.pixelSize: 12 }
+                    GridLayout {
+                        columns: 2; rowSpacing: 10; columnSpacing: 10; Layout.fillWidth: true
+
+                        ColumnLayout {
+                            Label { text: "Front Left"; color: "white"; font.pointSize: 8 }
+                            Slider { from: 0; to: 250; value: carCan.wheelFL; onMoved: carCan.setWheelFL(value); Layout.fillWidth: true }
+                        }
+                        ColumnLayout {
+                            Label { text: "Front Right"; color: "white"; font.pointSize: 8 }
+                            Slider { from: 0; to: 250; value: carCan.wheelFR; onMoved: carCan.setWheelFR(value); Layout.fillWidth: true }
+                        }
+                        ColumnLayout {
+                            Label { text: "Rear Left"; color: "white"; font.pointSize: 8 }
+                            Slider { from: 0; to: 250; value: carCan.wheelRL; onMoved: carCan.setWheelRL(value); Layout.fillWidth: true }
+                        }
+                        ColumnLayout {
+                            Label { text: "Rear Right"; color: "white"; font.pointSize: 8 }
+                            Slider { from: 0; to: 250; value: carCan.wheelRR; onMoved: carCan.setWheelRR(value); Layout.fillWidth: true }
+                        }
+                    }
+
+                    // 3. Safety Systems & Braking
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: 10
+
+                        Button {
+                            text: "ABS"; checkable: true; checked: carCan.absActive
+                            onToggled: carCan.setAbsActive(checked)
+                            Layout.fillWidth: true
+                        }
+                        Button {
+                            text: "ESP"; checkable: true; checked: carCan.espActive
+                            onToggled: carCan.setEspActive(checked)
+                            Layout.fillWidth: true
+                        }
+                        Button {
+                            text: "TCS"; checkable: true; checked: carCan.tractionActive
+                            onToggled: carCan.setTractionActive(checked)
+                            Layout.fillWidth: true
+                        }
+                    }
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Button {
+                            text: "BRAKE PEDAL"
+                            highlighted: carCan.brakePressed
+                            onPressed: carCan.setBrakePressed(true)
+                            onReleased: carCan.setBrakePressed(false)
+                            Layout.fillWidth: true
+                        }
+                        Button {
+                            text: carCan.handbrake ? "HANDBRAKE (ON)" : "HANDBRAKE (OFF)"
+                            palette.button: carCan.handbrake ? "red" : "#444"
+                            onClicked: carCan.setHandbrake(!carCan.handbrake)
+                            Layout.fillWidth: true
+                        }
                     }
                 }
             }

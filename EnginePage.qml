@@ -1,42 +1,135 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 
 Item {
-    id: enginePageRoot
+    id: enginePage
 
-    // This ensures the sub-page background is identical to the sidebar
+    // RED OVERLAY for Limp Mode or Overheating
     Rectangle {
         anchors.fill: parent
-        color: window.carInverted ? "#F5F5F7" : "#111111"
+        color: "#AA0000"
+        opacity: (carCan.limpMode || carCan.overheat) ? 0.3 : 0
+        visible: opacity > 0
+        z: 10
+
+        Text {
+            anchors.centerIn: parent
+            text: carCan.overheat ? "ENGINE OVERHEAT" : "LIMP MODE ACTIVE"
+            color: "white"; font.pixelSize: 40; font.bold: true
+        }
     }
 
-    SwipeView {
-        id: engineSwipe
+    ColumnLayout {
         anchors.fill: parent
-        currentIndex: indicator.currentIndex
+        anchors.margins: 20
+        spacing: 15
 
-        // Your 3 sub-pages
-        Loader { source: "EngineLive.qml" }
-        Loader { source: "EngineConsumption.qml" }
-        Loader { source: "EngineFlags.qml" }
-    }
+        // --- TOP: GAUGES ---
+        RowLayout {
+            Layout.fillWidth: true
+            Layout.preferredHeight: parent.height * 0.4
+            spacing: 30
 
-    // Tesla-style dot indicator at the bottom
-    PageIndicator {
-        id: indicator
-        count: engineSwipe.count
-        currentIndex: engineSwipe.currentIndex
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 20
-        anchors.horizontalCenter: parent.horizontalCenter
+            // RPM GAUGE
+            Rectangle {
+                Layout.preferredWidth: 200; Layout.preferredHeight: 200
+                radius: 100
+                color: "transparent"; border.color: carCan.rpm > 5500 ? "red" : "#444"; border.width: 8
 
-        delegate: Rectangle {
-            implicitWidth: 8; implicitHeight: 8
-            radius: 4
-            color: window.carInverted ? "black" : "white"
-            opacity: index === indicator.currentIndex ? 0.9 : 0.2
+                Column {
+                    anchors.centerIn: parent
+                    Text {
+                        text: carCan.rpm; color: "white"; font.pixelSize: 42; font.bold: true
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
+                    Text { text: "RPM"; color: "#888"; anchors.horizontalCenter: parent.horizontalCenter }
+                }
+            }
 
-            Behavior on opacity { NumberAnimation { duration: 200 } }
+            // ENGINE LOAD GAUGE
+            VitalsItem {
+                label: "Engine Load"
+                value: carCan.engineLoad
+                unit: "%"
+                Layout.alignment: Qt.AlignVCenter
+            }
+        }
+
+        // --- MIDDLE: PEDALS & THROTTLE ---
+        ColumnLayout {
+            Layout.fillWidth: true
+            Layout.preferredHeight: parent.height * 0.3
+            spacing: 10
+
+            Text { text: "DRIVE-BY-WIRE INPUTS"; color: "#888"; font.bold: true; font.pixelSize: 12 }
+
+            // Accelerator
+            RowLayout {
+                Text { text: "Pedal"; color: "white"; Layout.preferredWidth: 70 }
+                ProgressBar {
+                    value: carCan.pedalPos / 100
+                    Layout.fillWidth: true
+                    background: Rectangle { color: "#222"; radius: 4 }
+                }
+                Text { text: carCan.pedalPos + "%"; color: "white"; Layout.preferredWidth: 40 }
+            }
+
+            // Throttle
+            RowLayout {
+                Text { text: "Throttle"; color: "white"; Layout.preferredWidth: 70 }
+                ProgressBar {
+                    value: carCan.throttlePos / 100
+                    Layout.fillWidth: true
+                    palette.highlight: "cyan"
+                    background: Rectangle { color: "#222"; radius: 4 }
+                }
+                Text { text: carCan.throttlePos + "%"; color: "white"; Layout.preferredWidth: 40 }
+            }
+        }
+
+        // --- BOTTOM: CONSUMPTION & FLAGS ---
+        Rectangle {
+            Layout.fillWidth: true
+            Layout.preferredHeight: parent.height * 0.3
+            color: window.carInverted ? "#EEE" : "#111"
+            radius: 10
+
+            RowLayout {
+                anchors.fill: parent
+                anchors.margins: 15
+
+                // Fuel Stats
+                ColumnLayout {
+                    Text { text: "FUEL ECONOMY"; color: "#888"; font.bold: true; font.pixelSize: 10 }
+                    Text { text: carCan.fuelInst.toFixed(1) + " L/100km"; color: "white"; font.pixelSize: 20 }
+                    Text { text: "AVG: " + carCan.fuelAvg.toFixed(1); color: "#666" }
+                }
+
+                // Separator (The fix for your "Divider" issue)
+                Rectangle { width: 1; Layout.fillHeight: true; color: "#333" }
+
+                // Torque Info
+                ColumnLayout {
+                    VitalsItem { label: "Actual Torque"; value: carCan.torqueActual; unit: "Nm" }
+                    VitalsItem { label: "Req. Torque"; value: carCan.torqueRequest; unit: "Nm" }
+                }
+
+                // Flags
+                ColumnLayout {
+                    Layout.alignment: Qt.AlignRight
+                    Row {
+                        spacing: 10
+                        Rectangle { width: 12; height: 12; radius: 6; color: carCan.idleState ? "green" : "#333" }
+                        Text { text: "IDLE"; color: "white"; font.pixelSize: 12 }
+                    }
+                    Row {
+                        spacing: 10
+                        Rectangle { width: 12; height: 12; radius: 6; color: carCan.cruiseActive ? "cyan" : "#333" }
+                        Text { text: "CRUISE"; color: "white"; font.pixelSize: 12 }
+                    }
+                }
+            }
         }
     }
 }
