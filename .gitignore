@@ -1,6 +1,18 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 
+# --- macOS specific (CRITICAL for kenny) ---
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# --- Qt Creator / CMake (Cleaned up) ---
+build/
+.qtc_clangd/
+*.user
+
+
 *~
 *.autosave
 *.a
