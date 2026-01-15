@@ -4,6 +4,7 @@
 #include <QQmlContext>
 #include "canhandler.h"
 
+//
 int main(int argc, char *argv[])
 {
     // Use high DPI scaling for your Mac/Pi display
