@@ -179,66 +179,7 @@ ApplicationWindow {
                 boundsBehavior: Flickable.StopAtBounds
                 ScrollBar.vertical: ScrollBar { policy: ScrollBar.AsNeeded }
 
-                Column {
-                    id: contentContainer
-                    width: parent.width
-                    padding: 30
-                    spacing: 25
 
-                    Text {
-                        text: "VEHICLE STATUS"
-                        color: window.carInverted ? "#999" : "#444"
-                        font.pixelSize: 12; font.bold: true
-                    }
-
-                    // The Grid now has a defined width, allowing Column 2 to appear
-                    GridLayout {
-                        width: parent.width - 60 // Account for padding
-                        columns: 2
-                        rowSpacing: 35
-                        columnSpacing: 20
-
-                        // --- PERFORMANCE ---
-                        VitalsItem { label: "Engine RPM"; value: carCan.rpm; unit: "rpm" }
-                        VitalsItem { label: "Coolant"; value: carCan.temp; unit: "°C";
-                                     iconColor: carCan.temp > 105 ? "red" : (window.carInverted ? "#005577" : "cyan") }
-
-                        // --- GEAR & SAFETY ---
-                        VitalsItem { label: "Current Gear"; value: carCan.gear; unit: "MT" }
-                        VitalsItem { label: "Steering"; value: carCan.steeringAngle.toFixed(1); unit: "°" }
-
-                        // --- DOORS/LOCKS ---
-                        VitalsItem { label: "Status"; value: carCan.isLocked ? "LOCKED" : "UNLOCKED";
-                                     iconColor: carCan.isLocked ? "#888" : "orange" }
-                        VitalsItem { label: "Driver Door"; value: carCan.doorFL ? "OPEN" : "CLOSED";
-                                     iconColor: carCan.doorFL ? "red" : (window.carInverted ? "black" : "white") }
-                        VitalsItem { label: "Trunk/Boot"; value: carCan.trunk ? "OPEN" : "CLOSED";
-                                        iconColor: carCan.trunk ? "red" : "#555" }
-
-
-
-                        // --- COMFORT ---
-                        VitalsItem { label: "A/C State"; value: carCan.acActive ? "COOLING" : "OFF";
-                                     iconColor: carCan.acActive ? "#00AAFF" : (window.carInverted ? "#aaa" : "#333") }
-                        VitalsItem { label: "Windows"; value: carCan.windowPos; unit: "% Open" }
-
-
-
-                        VitalsItem {
-                            label: "Wipers"
-                            value: ["OFF", "INT", "LOW", "HIGH"][carCan.wiperLevel]
-                            iconColor: carCan.wiperLevel > 0 ? (window.carInverted ? "#007aff" : "cyan") : (window.carInverted ? "#444" : "#222")
-                        }
-                        VitalsItem {
-                            label: "Defrost"
-                            value: carCan.windshieldHeater ? "ON" : "OFF"
-                            iconColor: carCan.windshieldHeater ? "orange" : (window.carInverted ? "#aaa" : "#222")
-
-                        VitalsItem { label: "Int. Lights"; value: carCan.interiorLight ? "ON" : "OFF" }
-
-                        }
-                    }
-                }
             }
             // submenu like tesla
             // --- 1. THE MAIN MENU CONTAINER ---

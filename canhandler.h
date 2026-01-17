@@ -51,8 +51,14 @@ class CanHandler : public QObject {
     Q_PROPERTY(bool doorRR READ doorRR WRITE setDoorRR NOTIFY doorChanged)
     Q_PROPERTY(bool trunk READ trunk WRITE setTrunk NOTIFY doorChanged)
     Q_PROPERTY(int windowPos READ windowPos WRITE setWindowPos NOTIFY windowChanged)
+    Q_PROPERTY(int windowPos READ windowPos WRITE setWindowPos NOTIFY windowChanged)
+    Q_PROPERTY(int windshieldHeater READ windshieldHeater WRITE setWindshieldHeater NOTIFY windshieldChanged)
     Q_PROPERTY(bool beltDriver READ beltDriver WRITE setBeltDriver NOTIFY beltChanged)
     Q_PROPERTY(bool beltPassenger READ beltPassenger WRITE setBeltPassenger NOTIFY beltChanged)
+    Q_PROPERTY(int blinkerStatus READ blinkerStatus WRITE setBlinkerStatus NOTIFY blinkerChanged)
+    Q_PROPERTY(int wiperLevel READ wiperLevel WRITE setWiperLevel NOTIFY wiperChanged)
+    Q_PROPERTY(bool interiorLight READ interiorLight WRITE setInteriorLight NOTIFY lightChanged)
+    Q_PROPERTY(bool acActive READ acActive WRITE setAcActive NOTIFY acChanged)
 
     // --- 4. ENERGY, THERMAL & ELECTRICAL ---
     Q_PROPERTY(double tempCoolant READ tempCoolant WRITE setTempCoolant NOTIFY tempChanged)
@@ -119,6 +125,7 @@ public:
     bool doorRR() const { return m_doorRR; }
     bool trunk() const { return m_trunk; }
     int windowPos() const { return m_windowPos; }
+    bool windshieldHeater() const { return m_windshieldHeater; }
     bool beltDriver() const { return m_beltDriver; }
     bool beltPassenger() const { return m_beltPassenger; }
     double tempCoolant() const { return m_tempCoolant; }
@@ -145,6 +152,10 @@ public:
     double mileage() const { return m_mileage; }
     QString gitHash() const { return GIT_COMMIT_HASH; }
     QString buildDate() const { return BUILD_DATE; }
+    int blinkerStatus() const { return m_blinkerStatus; }
+    int wiperLevel() const { return m_wiperLevel; }
+    bool interiorLight() const { return m_interiorLight; }
+    bool acActive() const { return m_acActive; }
 
 public slots:
     // --- SETTERS ---
@@ -178,6 +189,7 @@ public slots:
     void setDoorRL(bool v) { if(m_doorRL != v) { m_doorRL = v; emit doorChanged(); } }
     void setDoorRR(bool v) { if(m_doorRR != v) { m_doorRR = v; emit doorChanged(); } }
     void setTrunk(bool v) { if(m_trunk != v) { m_trunk = v; emit doorChanged(); } }
+    void setWindshieldHeater(bool v ) { if(m_windshieldHeater != v) { m_windshieldHeater = v ; emit windshieldChanged();}}
     void setWindowPos(int v) { if(m_windowPos != v) { m_windowPos = v; emit windowChanged(); } }
     void setBeltDriver(bool v) { if(m_beltDriver != v) { m_beltDriver = v; emit beltChanged(); } }
     void setBeltPassenger(bool v) { if(m_beltPassenger != v) { m_beltPassenger = v; emit beltChanged(); } }
@@ -201,6 +213,34 @@ public slots:
     void setEcuEngineOnline(bool v) { if(m_ecuEngineOnline != v) { m_ecuEngineOnline = v; emit ecuStatusChanged(); } }
     void setEcuAbsOnline(bool v) { if(m_ecuAbsOnline != v) { m_ecuAbsOnline = v; emit ecuStatusChanged(); } }
     void setEcuBodyOnline(bool v) { if(m_ecuBodyOnline != v) { m_ecuBodyOnline = v; emit ecuStatusChanged(); } }
+    void setBlinkerStatus(int v) {
+        if (m_blinkerStatus != v) {
+            m_blinkerStatus = v;
+            emit blinkerChanged();
+        }
+    }
+
+    void setWiperLevel(int v) {
+        if (m_wiperLevel != v) {
+            m_wiperLevel = v;
+            emit wiperChanged();
+        }
+    }
+
+    void setInteriorLight(bool v) {
+        if (m_interiorLight != v) {
+            m_interiorLight = v;
+            emit lightChanged();
+        }
+    }
+
+    void setAcActive(bool v) {
+        if (m_acActive != v) {
+            m_acActive = v;
+            emit acChanged();
+        }
+    }
+
 
 signals:
     void engineMetricChanged();
@@ -215,6 +255,7 @@ signals:
     void lockStatusChanged();
     void doorChanged();
     void windowChanged();
+    void windshieldChanged();
     void beltChanged();
     void tempChanged();
     void elecChanged();
@@ -223,6 +264,10 @@ signals:
     void diagChanged();
     void ecuStatusChanged();
     void mileageChanged();
+    void blinkerChanged();
+    void wiperChanged();
+    void lightChanged();
+    void acChanged();
 
 private:
     int m_rpm = 0;
@@ -256,6 +301,7 @@ private:
     bool m_doorRR = false;
     bool m_trunk = false;
     int m_windowPos = 0;
+    bool m_windshieldHeater = false ;
     bool m_beltDriver = false;
     bool m_beltPassenger = false;
     double m_tempCoolant = 90.0;
@@ -279,6 +325,10 @@ private:
     bool m_ecuAbsOnline = false;
     bool m_ecuBodyOnline = false;
     double m_mileage = 0.0;
+    int m_blinkerStatus = 0; // 0=Off, 1=Left, 2=Right
+    int m_wiperLevel = 0;    // 0=Off, 1=Int, 2=Low, 3=High
+    bool m_interiorLight = false;
+    bool m_acActive = false;
 };
 
 #endif
