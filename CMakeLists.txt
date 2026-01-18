@@ -74,6 +74,7 @@ qt_add_qml_module(appPoloOS
  QML_FILES BusStatusCard.qml
  QML_FILES EcuTag.qml
  QML_FILES EngineerRow.qml
+ RESOURCES icons.qrc
                 # Add all other .mesh files here, or use a wildcard if using CMake 3.20+
 )
 

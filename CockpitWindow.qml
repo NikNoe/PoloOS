@@ -245,6 +245,28 @@ Window {
                         Button { text: "R Blinker"; onClicked: carCan.blinkerStatus = 2; Layout.fillWidth: true }
                     }
 
+                        CheckBox {
+                                    text: "Position Lights"
+                                    checked: carCan.posLights
+                                    onToggled: carCan.setPosLights(checked)
+                                    palette.text: "white"
+                                }
+
+                        CheckBox {
+                            text: "Low Beam (Croisement)"
+                            checked: carCan.lowBeam
+                            onToggled: carCan.setLowBeam(checked)
+                            palette.text: "white"
+                        }
+
+                        CheckBox {
+                            text: "High Beam (Route)"
+                            checked: carCan.highBeam
+                            onToggled: carCan.setHighBeam(checked)
+                            palette.text: "white"
+                        }
+
+
                     Text { text: "Wiper Speed"; color: "white"; Layout.topMargin: 10 }
                     RowLayout {
                         Repeater {
@@ -258,6 +280,7 @@ Window {
                     }
                 }
             }
+
 
             // --- SAFETY SECTION ---
             GroupBox {

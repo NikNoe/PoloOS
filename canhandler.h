@@ -90,6 +90,11 @@ class CanHandler : public QObject {
     Q_PROPERTY(QString gitHash READ gitHash CONSTANT)
     Q_PROPERTY(QString buildDate READ buildDate CONSTANT)
 
+
+    Q_PROPERTY(bool posLights READ posLights WRITE setPosLights NOTIFY lightsChanged)
+    Q_PROPERTY(bool lowBeam READ lowBeam WRITE setLowBeam NOTIFY lightsChanged)
+    Q_PROPERTY(bool highBeam READ highBeam WRITE setHighBeam NOTIFY lightsChanged)
+
 public:
     explicit CanHandler(QObject *parent = nullptr) : QObject(parent) {}
 
@@ -156,6 +161,9 @@ public:
     int wiperLevel() const { return m_wiperLevel; }
     bool interiorLight() const { return m_interiorLight; }
     bool acActive() const { return m_acActive; }
+    bool posLights() const { return m_posLights; }
+    bool lowBeam() const { return m_lowBeam; }
+    bool highBeam() const { return m_highBeam; }
 
 public slots:
     // --- SETTERS ---
@@ -240,6 +248,29 @@ public slots:
             emit acChanged();
         }
     }
+    void setPosLights(bool v) {
+        if (m_posLights != v) {
+            m_posLights = v;
+            emit lightsChanged();
+        }
+    }
+
+    void setLowBeam(bool v) {
+        if (m_lowBeam != v) {
+            m_lowBeam = v;
+            // Si on éteint les codes, on force l'extinction des pleins phares
+            if (!v) setHighBeam(false);
+            emit lightsChanged();
+        }
+    }
+
+    void setHighBeam(bool v) {
+        if (m_highBeam != v) {
+            m_highBeam = v;
+            emit lightsChanged();
+        }
+    }
+
 
 
 signals:
@@ -268,6 +299,7 @@ signals:
     void wiperChanged();
     void lightChanged();
     void acChanged();
+    void lightsChanged();
 
 private:
     int m_rpm = 0;
@@ -329,6 +361,9 @@ private:
     int m_wiperLevel = 0;    // 0=Off, 1=Int, 2=Low, 3=High
     bool m_interiorLight = false;
     bool m_acActive = false;
+    bool m_posLights = false;
+    bool m_lowBeam = false;
+    bool m_highBeam = false;
 };
 
 #endif

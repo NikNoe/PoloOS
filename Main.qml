@@ -43,12 +43,33 @@ ApplicationWindow {
                 z: 10; spacing: 15
 
                 Row {
-                    spacing: 25
-                    DashboardIcon { text: "◀"; activeColor: "#00FF00"; isActive: carCan.blinkerStatus === 1 }
-                    DashboardIcon { text: "(P)"; activeColor: "red"; isActive: carCan.handbrake; label: "BRAKE" }
-                    DashboardIcon { text: "☼"; activeColor: "#3366FF"; isActive: carCan.highBeam; label: "BEAM" }
-                    DashboardIcon { text: "▶"; activeColor: "#00FF00"; isActive: carCan.blinkerStatus === 2 }
-                }
+                            spacing: 15 // Réduit légèrement pour laisser de la place
+
+                            // Clignotant Gauche
+                            DashboardIcon { text: "◀"; activeColor: "#00FF00"; isActive: carCan.blinkerStatus === 1 }
+
+                            // Frein à main
+                            DashboardIcon { text: "(P)"; activeColor: "red"; isActive: carCan.handbrake; label: "BRAKE" }
+
+                            // Feux de Croisement (Low Beam) - Typiquement VERT chez VW
+                            DashboardIcon {
+                                text: "D"; // Ou un symbole de phare bas
+                                activeColor: "#2ecc71";
+                                isActive: carCan.lowBeam;
+                                label: "LOW"
+                            }
+
+                            // Feux de Route (High Beam) - Typiquement BLEU
+                            DashboardIcon {
+                                text: "D≡";
+                                activeColor: "#0055FF";
+                                isActive: carCan.highBeam;
+                                label: "HIGH"
+                            }
+
+                            // Clignotant Droit
+                            DashboardIcon { text: "▶"; activeColor: "#00FF00"; isActive: carCan.blinkerStatus === 2 }
+                        }
             }
 
             View3D {
