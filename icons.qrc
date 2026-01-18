@@ -1,1 +1,21 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons Dashboard/doors-svgrepo-com.svg</file>
+        <file>icons Dashboard/engine-coolant-svgrepo-com.svg</file>
+        <file>icons Dashboard/fa-solid--car-battery.svg</file>
+        <file>icons Dashboard/fa-solid--oil-can.svg</file>
+        <file>icons Dashboard/fa7-solid--gas-pump.svg</file>
+        <file>icons Dashboard/fuel-filling-svgrepo-com.svg</file>
+        <file>icons Dashboard/mdi--car-brake-abs.svg</file>
+        <file>icons Dashboard/mdi--high-beam.svg</file>
+        <file>icons Dashboard/mdi--low-beam.svg</file>
+        <file>icons Dashboard/mingcute--brake-line.svg</file>
+        <file>icons Dashboard/mingcute--parking-lights-line.svg</file>
+        <file>icons Dashboard/ph--arrow-fat-left-fill.svg</file>
+        <file>icons Dashboard/ph--arrow-fat-right-fill.svg</file>
+        <file>icons Dashboard/rear-window-defrost-svgrepo-com.svg</file>
+        <file>icons Dashboard/trunk-svgrepo-com.svg</file>
+        <file>icons Dashboard/ventilating-fan-svgrepo-com.svg</file>
+        <file>icons Dashboard/winshield-wiper-svgrepo-com.svg</file>
+    </qresource>
+</RCC>

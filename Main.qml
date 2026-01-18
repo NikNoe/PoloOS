@@ -43,32 +43,84 @@ ApplicationWindow {
                 z: 10; spacing: 15
 
                 Row {
-                            spacing: 15 // Réduit légèrement pour laisser de la place
+                            spacing: 10 // Espace entre les icônes
 
-                            // Clignotant Gauche
-                            DashboardIcon { text: "◀"; activeColor: "#00FF00"; isActive: carCan.blinkerStatus === 1 }
-
-                            // Frein à main
-                            DashboardIcon { text: "(P)"; activeColor: "red"; isActive: carCan.handbrake; label: "BRAKE" }
-
-                            // Feux de Croisement (Low Beam) - Typiquement VERT chez VW
+                            // Clignotant Gauche (Clignote)
                             DashboardIcon {
-                                text: "D"; // Ou un symbole de phare bas
-                                activeColor: "#2ecc71";
-                                isActive: carCan.lowBeam;
-                                label: "LOW"
+                                iconSource: "qrc:/icons/icons Dashbord/ph--arrow-fat-left-fill.svg"
+                                activeColor: "#00FF00"
+                                isActive: carCan.blinkerStatus === 1
+                                isBlinking: true // Clignote
                             }
 
-                            // Feux de Route (High Beam) - Typiquement BLEU
+                            // Feux de croisement (Vert)
                             DashboardIcon {
-                                text: "D≡";
-                                activeColor: "#0055FF";
-                                isActive: carCan.highBeam;
-                                label: "HIGH"
+                                iconSource: "qrc:/icons/lowbeam.svg"
+                                activeColor: "#2ecc71"
+                                isActive: carCan.lowBeam
                             }
 
-                            // Clignotant Droit
-                            DashboardIcon { text: "▶"; activeColor: "#00FF00"; isActive: carCan.blinkerStatus === 2 }
+                            // Feux de route (Bleu)
+                            DashboardIcon {
+                                iconSource: "qrc:/icons/highbeam.svg"
+                                activeColor: "#0055FF"
+                                isActive: carCan.highBeam
+                            }
+
+                            // Frein à main (Rouge)
+                            DashboardIcon {
+                                iconSource: "qrc:/icons/handbrake.svg"
+                                activeColor: "red"
+                                isActive: carCan.handbrake
+                            }
+
+                            // Clignotant Droit (Clignote)
+                            DashboardIcon {
+                                iconSource: "qrc:/icons/icons Dashbord/ph--arrow-fat-right-fill.svg"
+                                activeColor: "#00FF00"
+                                isActive: carCan.blinkerStatus === 2
+                                isBlinking: true // Clignote
+                            }
+                        }
+
+                        // Rangée du bas (Témoins Moteur/Frein/Batterie)
+                        Row {
+                            spacing: 10
+
+                            // ABS (Orange/Jaune)
+                            DashboardIcon {
+                                iconSource: "qrc:/icons/abs.svg"
+                                activeColor: "#FFCC00"
+                                isActive: carCan.absActive
+                            }
+
+                            // EPC (Orange/Jaune)
+                            DashboardIcon {
+                                iconSource: "qrc:/icons/epc.svg"
+                                activeColor: "#FFCC00"
+                                isActive: carCan.epcActive
+                            }
+
+                            // Check Engine (Orange/Jaune)
+                            DashboardIcon {
+                                iconSource: "qrc:/icons/checkengine.svg"
+                                activeColor: "#FFCC00"
+                                isActive: carCan.checkEngine
+                            }
+
+                            // Préchauffage (Orange/Jaune) - Spécifique Diesel
+                            DashboardIcon {
+                                iconSource: "qrc:/icons/glowplug.svg"
+                                activeColor: "#FFCC00"
+                                isActive: carCan.glowPlug
+                            }
+
+                            // Batterie (Rouge)
+                            DashboardIcon {
+                                iconSource: "qrc:/icons/battery.svg"
+                                activeColor: "red"
+                                isActive: carCan.batteryWarning
+                            }
                         }
             }
 

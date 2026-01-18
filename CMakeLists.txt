@@ -3,7 +3,7 @@ project(PoloOS VERSION 0.1 LANGUAGES CXX)
 
 # --- 1. FIND QT + 3D MODULES ---
 # Added Quick3D and Quick3DHelpers for the Tesla-style view
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick Qml Quick3D Quick3DHelpers SerialBus SerialPort Location Positioning)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick Qml Quick3D Quick3DHelpers SerialBus SerialPort Location Positioning Qt5Compat)
 
 # --- 2. SETUP THE PROJECT ---
 qt_standard_project_setup(REQUIRES 6.5)
@@ -74,7 +74,9 @@ qt_add_qml_module(appPoloOS
  QML_FILES BusStatusCard.qml
  QML_FILES EcuTag.qml
  QML_FILES EngineerRow.qml
+ RESOURCES
  RESOURCES icons.qrc
+ QML_FILES DashboardIcon.qml
                 # Add all other .mesh files here, or use a wildcard if using CMake 3.20+
 )
 
@@ -89,6 +91,7 @@ target_link_libraries(appPoloOS PRIVATE
     Qt6::Quick3DHelpers
     Qt6::Location
     Qt6::Positioning
+    Qt6::Qt5Compat
 )
 
 # Add SerialBus to the link list

@@ -95,6 +95,13 @@ class CanHandler : public QObject {
     Q_PROPERTY(bool lowBeam READ lowBeam WRITE setLowBeam NOTIFY lightsChanged)
     Q_PROPERTY(bool highBeam READ highBeam WRITE setHighBeam NOTIFY lightsChanged)
 
+
+    Q_PROPERTY(bool absActive READ absActive WRITE setAbsActive NOTIFY absChanged)
+    Q_PROPERTY(bool epcActive READ epcActive WRITE setEpcActive NOTIFY epcChanged)
+    Q_PROPERTY(bool checkEngine READ checkEngine WRITE setCheckEngine NOTIFY checkEngineChanged)
+    Q_PROPERTY(bool glowPlug READ glowPlug WRITE setGlowPlug NOTIFY glowPlugChanged)
+    Q_PROPERTY(bool batteryWarning READ batteryWarning WRITE setBatteryWarning NOTIFY batteryWarningChanged)
+
 public:
     explicit CanHandler(QObject *parent = nullptr) : QObject(parent) {}
 
@@ -164,6 +171,11 @@ public:
     bool posLights() const { return m_posLights; }
     bool lowBeam() const { return m_lowBeam; }
     bool highBeam() const { return m_highBeam; }
+    bool absActive() const { return m_absActive; }
+    bool epcActive() const { return m_epcActive; }
+    bool checkEngine() const { return m_checkEngine; }
+    bool glowPlug() const { return m_glowPlug; }
+    bool batteryWarning() const { return m_batteryWarning; }
 
 public slots:
     // --- SETTERS ---
@@ -270,7 +282,11 @@ public slots:
             emit lightsChanged();
         }
     }
-
+    void setAbsActive(bool v) { if (m_absActive != v) { m_absActive = v; emit absChanged(); } }
+    void setEpcActive(bool v) { if (m_epcActive != v) { m_epcActive = v; emit epcChanged(); } }
+    void setCheckEngine(bool v) { if (m_checkEngine != v) { m_checkEngine = v; emit checkEngineChanged(); } }
+    void setGlowPlug(bool v) { if (m_glowPlug != v) { m_glowPlug = v; emit glowPlugChanged(); } }
+    void setBatteryWarning(bool v) { if (m_batteryWarning != v) { m_batteryWarning = v; emit batteryWarningChanged(); } }
 
 
 signals:
@@ -300,6 +316,11 @@ signals:
     void lightChanged();
     void acChanged();
     void lightsChanged();
+    void absChanged();
+    void epcChanged();
+    void checkEngineChanged();
+    void glowPlugChanged();
+    void batteryWarningChanged();
 
 private:
     int m_rpm = 0;
@@ -364,6 +385,11 @@ private:
     bool m_posLights = false;
     bool m_lowBeam = false;
     bool m_highBeam = false;
+    bool m_absActive = false;
+    bool m_epcActive = false;
+    bool m_checkEngine = false;
+    bool m_glowPlug = false;
+    bool m_batteryWarning = false;
 };
 
 #endif
