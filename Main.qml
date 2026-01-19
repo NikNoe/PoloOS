@@ -19,8 +19,8 @@ ApplicationWindow {
 
     Connections {
         target: carCan
-        function onDoorFLChanged() {
-            console.log("SIMULATOR MESSAGE: Door FL is now " + carCan.doorFL)
+        function anyDoorOpenChanged() {
+            console.log("SIMULATOR MESSAGE: blinker is now " + carCan.DoorOpen)
         }
     }
 
@@ -42,95 +42,69 @@ ApplicationWindow {
 
             // --- INDICATEURS (UI LAYER) ---
             Column {
-                anchors.top: parent.top
-                anchors.topMargin: 20
-                anchors.horizontalCenter: parent.horizontalCenter
-                z: 10 // Assure que les icônes restent au-dessus de la 3D
-                spacing: 20
-
-                // LIGNE 1 : DIRECTION ET PHARES
-                Row {
-                    spacing: 15
+                    anchors.top: parent.top; anchors.topMargin: 30
                     anchors.horizontalCenter: parent.horizontalCenter
+                    spacing: 30 // Espace vertical entre les lignes
+                    z: 10
 
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/ph--arrow-fat-left-fill.svg"
-                        activeColor: "#00FF00"
-                        isActive: carCan.blinkerStatus === 1
-                        isBlinking: true
+                    // --- 1ère LIGNE : CONDUITE ---
+                    Row {
+                        spacing: 25
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/mynaui--fat-arrow-left-solid.svg"
+                            isActive: carCan.blinkerStatus === 1; isBlinking: true
+
+                        }
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/mdi--low-beam-2.svg"
+                            isActive: carCan.lowBeam
+                        }
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/mdi--high-beam-2.svg"
+                            isActive: carCan.highBeam
+                        }
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/mynaui--fat-arrow-right-solid.svg"
+                            isActive: carCan.blinkerStatus === 2; isBlinking: true
+
+
+                        }
                     }
 
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/mdi--low-beam.svg"
-                        activeColor: "#2ecc71"
-                        isActive: carCan.lowBeam
+                    // --- 2ème LIGNE : SÉCURITÉ ---
+                    Row {
+                        spacing: 25
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/ph--seatbelt-bold.svg"
+                            isActive: carCan.rpm > 900 && !carCan.beltDriver; isBlinking: true
+                        }
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/mdi--car-brake-parking.svg"
+                            isActive: carCan.handbrake
+                        }
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/mingcute--car-door-line.svg"
+                            isActive: carCan.anyDoorOpen
+                        }
                     }
 
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/mdi--high-beam.svg"
-                        activeColor: "#0055FF"
-                        isActive: carCan.highBeam
-                    }
-
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/ph--arrow-fat-right-fill.svg"
-                        activeColor: "#00FF00"
-                        isActive: carCan.blinkerStatus === 2
-                        isBlinking: true
+                    // --- 3ème LIGNE : TECHNIQUE (ABS, Huile, Batterie) ---
+                    Row {
+                        spacing: 25
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/mdi--car-brake-abs-2.svg"
+                            isActive: carCan.absActive
+                        }
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/fa-solid--oil-can-2.svg"
+                            isActive: carCan.oilWarning
+                        }
+                        DashboardIcon {
+                            iconSource: "qrc:/icons/iconsDashboard/fa-solid--car-battery-2.svg"
+                            isActive: carCan.batteryWarning
+                        }
                     }
                 }
-
-                // LIGNE 2 : ALERTES SÉCURITÉ & MOTEUR
-                Row {
-                    spacing: 15
-                    anchors.horizontalCenter: parent.horizontalCenter
-
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/mdi--car-brake-abs.svg"
-                        activeColor: "#FFCC00"
-                        isActive: carCan.absActive
-                    }
-
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/mingcute--brake-line.svg"
-                        activeColor: "red"
-                        isActive: carCan.handbrake
-                    }
-
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/fa-solid--car-battery.svg"
-                        activeColor: "red"
-                        isActive: carCan.batteryWarning
-                    }
-
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/fa-solid--oil-can.svg"
-                        activeColor: "red"
-                        isActive: carCan.oilWarning
-                    }
-                }
-
-                // LIGNE 3 : ALERTES SPÉCIFIQUES (Ceinture, Portes, etc.)
-                Row {
-                    spacing: 15
-                    anchors.horizontalCenter: parent.horizontalCenter
-
-                    // Alerte ceinture (on réutilise DashboardIcon pour le style cohérent)
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/seatbelt_warning.svg"
-                        activeColor: "red"
-                        isActive: carCan.rpm > 900 && !carCan.beltDriver
-                        isBlinking: true
-                    }
-
-                    // Témoin de préchauffage (Glow Plug) pour ta Polo TDI
-                    DashboardIcon {
-                        iconSource: "qrc:/icons/iconsDashboard/fuel-filling-svgrepo-com.svg" // Exemple
-                        activeColor: "#FFCC00"
-                        isActive: carCan.glowPlug
-                    }
-                }
-            }
 
             // --- VUE 3D DE LA VOITURE ---
             View3D {
@@ -219,13 +193,31 @@ ApplicationWindow {
             clip: true
 
             Flickable {
-                anchors.fill: parent
-                contentHeight: contentContainer.height // Linked to the container below
-                boundsBehavior: Flickable.StopAtBounds
-                ScrollBar.vertical: ScrollBar { policy: ScrollBar.AsNeeded }
+                    anchors.fill: parent
+                    // Le Flickable regarde la hauteur du rectangle bleu/conteneur ci-dessous
+                    contentHeight: contentContainer.height
+                    boundsBehavior: Flickable.StopAtBounds
+                    ScrollBar.vertical: ScrollBar { policy: ScrollBar.AsNeeded }
 
+                    // --- C'EST ICI QU'IL MANQUAIT L'ID ---
+                    Column {
+                        id: contentContainer // On donne enfin l'ID attendu
+                        width: parent.width
+                        spacing: 20
+                        anchors.top: parent.top
+                        anchors.margins: 15
 
-            }
+                        // Ajoute tes éléments ici (Welcome, Textes, Boutons...)
+                        Text {
+                            text: "Bienvenue dans votre Polo"
+                            color: window.carInverted ? "black" : "white"
+                            font.pixelSize: 24
+                        }
+
+                        Rectangle { width: 100; height: 500; color: "blue" } // Juste pour tester le scroll
+                    }
+                }
+
             // submenu like tesla
             // --- 1. THE MAIN MENU CONTAINER ---
             Item {
@@ -306,8 +298,8 @@ ApplicationWindow {
                         height: parent.height
                         clip: true
 
-                        property string currentItemName: "Vehicle"
-                        initialItem: "VehiclePage.qml"
+                        property string currentItemName: "Engine"
+                        initialItem: "EnginePage.qml"
 
                         // --- REMOVE ALL ANIMATIONS ---
                             replaceEnter: Transition { }

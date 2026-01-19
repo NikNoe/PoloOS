@@ -18,5 +18,19 @@
         <file>iconsDashboard/trunk-svgrepo-com.svg</file>
         <file>iconsDashboard/ventilating-fan-svgrepo-com.svg</file>
         <file>iconsDashboard/winshield-wiper-svgrepo-com.svg</file>
+        <file>iconsDashboard/fa-solid--car-battery-2.svg</file>
+        <file>iconsDashboard/fa-solid--oil-can-2.svg</file>
+        <file>iconsDashboard/fa6-solid--gas-pump.svg</file>
+        <file>iconsDashboard/mdi--car-brake-abs-2.svg</file>
+        <file>iconsDashboard/mdi--car-brake-parking.svg</file>
+        <file>iconsDashboard/mdi--high-beam-2.svg</file>
+        <file>iconsDashboard/mdi--low-beam-2.svg</file>
+        <file>iconsDashboard/mingcute--brake-line-2.svg</file>
+        <file>iconsDashboard/mynaui--fat-arrow-left-solid.svg</file>
+        <file>iconsDashboard/mynaui--fat-arrow-right-solid.svg</file>
+        <file>iconsDashboard/ph--seatbelt-bold.svg</file>
+        <file>iconsDashboard/roentgen--engine.svg</file>
+        <file>iconsDashboard/streamline-plump--candle-remix.svg</file>
+        <file>iconsDashboard/mingcute--car-door-line.svg</file>
     </qresource>
 </RCC>

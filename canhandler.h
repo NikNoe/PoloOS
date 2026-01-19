@@ -9,7 +9,7 @@
 #endif
 
 #ifndef BUILD_DATE
-#define BUILD_DATE "2026-01-12"
+#define BUILD_DATE "2026-01-19"
 #endif
 
 class CanHandler : public QObject {
@@ -45,6 +45,7 @@ class CanHandler : public QObject {
 
     // --- 3. BODY & SECURITY ---
     Q_PROPERTY(bool isLocked READ isLocked WRITE setIsLocked NOTIFY lockStatusChanged)
+    Q_PROPERTY(bool anyDoorOpen READ anyDoorOpen NOTIFY doorChanged)
     Q_PROPERTY(bool doorFL READ doorFL WRITE setDoorFL NOTIFY doorChanged)
     Q_PROPERTY(bool doorFR READ doorFR WRITE setDoorFR NOTIFY doorChanged)
     Q_PROPERTY(bool doorRL READ doorRL WRITE setDoorRL NOTIFY doorChanged)
@@ -130,6 +131,9 @@ public:
     bool brakePressed() const { return m_brakePressed; }
     bool handbrake() const { return m_handbrake; }
     bool isLocked() const { return m_isLocked; }
+    bool anyDoorOpen() const {
+        return m_doorFL || m_doorFR || m_doorRL || m_doorRR;
+    }
     bool doorFL() const { return m_doorFL; }
     bool doorFR() const { return m_doorFR; }
     bool doorRL() const { return m_doorRL; }
