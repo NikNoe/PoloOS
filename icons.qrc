@@ -1,21 +1,22 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>icons Dashboard/doors-svgrepo-com.svg</file>
-        <file>icons Dashboard/engine-coolant-svgrepo-com.svg</file>
-        <file>icons Dashboard/fa-solid--car-battery.svg</file>
-        <file>icons Dashboard/fa-solid--oil-can.svg</file>
-        <file>icons Dashboard/fa7-solid--gas-pump.svg</file>
-        <file>icons Dashboard/fuel-filling-svgrepo-com.svg</file>
-        <file>icons Dashboard/mdi--car-brake-abs.svg</file>
-        <file>icons Dashboard/mdi--high-beam.svg</file>
-        <file>icons Dashboard/mdi--low-beam.svg</file>
-        <file>icons Dashboard/mingcute--brake-line.svg</file>
-        <file>icons Dashboard/mingcute--parking-lights-line.svg</file>
-        <file>icons Dashboard/ph--arrow-fat-left-fill.svg</file>
-        <file>icons Dashboard/ph--arrow-fat-right-fill.svg</file>
-        <file>icons Dashboard/rear-window-defrost-svgrepo-com.svg</file>
-        <file>icons Dashboard/trunk-svgrepo-com.svg</file>
-        <file>icons Dashboard/ventilating-fan-svgrepo-com.svg</file>
-        <file>icons Dashboard/winshield-wiper-svgrepo-com.svg</file>
+        <file>iconsDashboard/doors-svgrepo-com.svg</file>
+        <file>iconsDashboard/engine-coolant-svgrepo-com.svg</file>
+        <file>iconsDashboard/fa-solid--car-battery.svg</file>
+        <file>iconsDashboard/fa-solid--oil-can.svg</file>
+        <file>iconsDashboard/fa7-solid--gas-pump.svg</file>
+        <file>iconsDashboard/fuel-filling-svgrepo-com.svg</file>
+        <file>iconsDashboard/icons.qrc</file>
+        <file>iconsDashboard/mdi--car-brake-abs.svg</file>
+        <file>iconsDashboard/mdi--high-beam.svg</file>
+        <file>iconsDashboard/mdi--low-beam.svg</file>
+        <file>iconsDashboard/mingcute--brake-line.svg</file>
+        <file>iconsDashboard/mingcute--parking-lights-line.svg</file>
+        <file>iconsDashboard/ph--arrow-fat-left-fill.svg</file>
+        <file>iconsDashboard/ph--arrow-fat-right-fill.svg</file>
+        <file>iconsDashboard/rear-window-defrost-svgrepo-com.svg</file>
+        <file>iconsDashboard/trunk-svgrepo-com.svg</file>
+        <file>iconsDashboard/ventilating-fan-svgrepo-com.svg</file>
+        <file>iconsDashboard/winshield-wiper-svgrepo-com.svg</file>
     </qresource>
 </RCC>

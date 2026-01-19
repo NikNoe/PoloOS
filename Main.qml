@@ -3,7 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick3D
 import QtQuick3D.Helpers
-
+import "."
 
 
 ApplicationWindow {
@@ -31,104 +31,114 @@ ApplicationWindow {
         // ==========================================
         // --- LEFT PANE ---
         // ==========================================
+        // ==========================================
+        // --- LEFT PANE ---
+        // ==========================================
         Rectangle {
+            id: leftPane
             Layout.preferredWidth: parent.width * 0.45
             Layout.fillHeight: true
-            // BINDING: Changed from #050505 to a dynamic color
             color: window.carInverted ? "#eeeeee" : "#050505"
 
+            // --- INDICATEURS (UI LAYER) ---
             Column {
-                anchors.top: parent.top; anchors.margins: 20
+                anchors.top: parent.top
+                anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
-                z: 10; spacing: 15
+                z: 10 // Assure que les icônes restent au-dessus de la 3D
+                spacing: 20
 
+                // LIGNE 1 : DIRECTION ET PHARES
                 Row {
-                            spacing: 10 // Espace entre les icônes
+                    spacing: 15
+                    anchors.horizontalCenter: parent.horizontalCenter
 
-                            // Clignotant Gauche (Clignote)
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/icons Dashbord/ph--arrow-fat-left-fill.svg"
-                                activeColor: "#00FF00"
-                                isActive: carCan.blinkerStatus === 1
-                                isBlinking: true // Clignote
-                            }
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/ph--arrow-fat-left-fill.svg"
+                        activeColor: "#00FF00"
+                        isActive: carCan.blinkerStatus === 1
+                        isBlinking: true
+                    }
 
-                            // Feux de croisement (Vert)
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/lowbeam.svg"
-                                activeColor: "#2ecc71"
-                                isActive: carCan.lowBeam
-                            }
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/mdi--low-beam.svg"
+                        activeColor: "#2ecc71"
+                        isActive: carCan.lowBeam
+                    }
 
-                            // Feux de route (Bleu)
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/highbeam.svg"
-                                activeColor: "#0055FF"
-                                isActive: carCan.highBeam
-                            }
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/mdi--high-beam.svg"
+                        activeColor: "#0055FF"
+                        isActive: carCan.highBeam
+                    }
 
-                            // Frein à main (Rouge)
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/handbrake.svg"
-                                activeColor: "red"
-                                isActive: carCan.handbrake
-                            }
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/ph--arrow-fat-right-fill.svg"
+                        activeColor: "#00FF00"
+                        isActive: carCan.blinkerStatus === 2
+                        isBlinking: true
+                    }
+                }
 
-                            // Clignotant Droit (Clignote)
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/icons Dashbord/ph--arrow-fat-right-fill.svg"
-                                activeColor: "#00FF00"
-                                isActive: carCan.blinkerStatus === 2
-                                isBlinking: true // Clignote
-                            }
-                        }
+                // LIGNE 2 : ALERTES SÉCURITÉ & MOTEUR
+                Row {
+                    spacing: 15
+                    anchors.horizontalCenter: parent.horizontalCenter
 
-                        // Rangée du bas (Témoins Moteur/Frein/Batterie)
-                        Row {
-                            spacing: 10
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/mdi--car-brake-abs.svg"
+                        activeColor: "#FFCC00"
+                        isActive: carCan.absActive
+                    }
 
-                            // ABS (Orange/Jaune)
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/abs.svg"
-                                activeColor: "#FFCC00"
-                                isActive: carCan.absActive
-                            }
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/mingcute--brake-line.svg"
+                        activeColor: "red"
+                        isActive: carCan.handbrake
+                    }
 
-                            // EPC (Orange/Jaune)
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/epc.svg"
-                                activeColor: "#FFCC00"
-                                isActive: carCan.epcActive
-                            }
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/fa-solid--car-battery.svg"
+                        activeColor: "red"
+                        isActive: carCan.batteryWarning
+                    }
 
-                            // Check Engine (Orange/Jaune)
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/checkengine.svg"
-                                activeColor: "#FFCC00"
-                                isActive: carCan.checkEngine
-                            }
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/fa-solid--oil-can.svg"
+                        activeColor: "red"
+                        isActive: carCan.oilWarning
+                    }
+                }
 
-                            // Préchauffage (Orange/Jaune) - Spécifique Diesel
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/glowplug.svg"
-                                activeColor: "#FFCC00"
-                                isActive: carCan.glowPlug
-                            }
+                // LIGNE 3 : ALERTES SPÉCIFIQUES (Ceinture, Portes, etc.)
+                Row {
+                    spacing: 15
+                    anchors.horizontalCenter: parent.horizontalCenter
 
-                            // Batterie (Rouge)
-                            DashboardIcon {
-                                iconSource: "qrc:/icons/battery.svg"
-                                activeColor: "red"
-                                isActive: carCan.batteryWarning
-                            }
-                        }
+                    // Alerte ceinture (on réutilise DashboardIcon pour le style cohérent)
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/seatbelt_warning.svg"
+                        activeColor: "red"
+                        isActive: carCan.rpm > 900 && !carCan.beltDriver
+                        isBlinking: true
+                    }
+
+                    // Témoin de préchauffage (Glow Plug) pour ta Polo TDI
+                    DashboardIcon {
+                        iconSource: "qrc:/icons/iconsDashboard/fuel-filling-svgrepo-com.svg" // Exemple
+                        activeColor: "#FFCC00"
+                        isActive: carCan.glowPlug
+                    }
+                }
             }
 
+            // --- VUE 3D DE LA VOITURE ---
             View3D {
                 id: carView
                 anchors.fill: parent
+                z: 1 // Derrière les icônes
+
                 environment: SceneEnvironment {
-                    // BINDING: Environment must match the theme
                     clearColor: window.carInverted ? "#eeeeee" : "#050505"
                     backgroundMode: SceneEnvironment.Color
                 }
@@ -144,94 +154,56 @@ ApplicationWindow {
                         bodyColor: window.carInverted ? "white" : "#0000FF"
                     }
 
-                    // Place this INSIDE your carOrigin Node so it stays linked to the car
                     Model {
                         id: roadPlane
                         source: "#Rectangle"
-
-                        // Position: x=0 (centered), y=-1 (under tires), z=0
                         position: Qt.vector3d(0, -1, 0)
-
-                        // Scale: Wide (20), Very Long (100)
                         scale: Qt.vector3d(20, 100, 1)
-
-                        eulerRotation.x: -90 // Lay flat on the ground
-
+                        eulerRotation.x: -90
                         materials: [
                             PrincipledMaterial {
-                                id: roadMaterial
-                                // THE COLOR TOGGLE:
-                                // Dark Mode = Dark Asphalt (#111111)
-                                // Light Mode = Light Concrete (#cccccc)
                                 baseColor: window.carInverted ? "#cccccc" : "#111111"
-
                                 roughness: 0.8
-                                metalness: 0.0
-                                lighting: PrincipledMaterial.Fragments // Ensures it reacts to your DirectionalLight
+                                lighting: PrincipledMaterial.Fragments
                             }
                         ]
                     }
-
-                    //NumberAnimation on yaw { from: 0; to: 360; duration: 20000; loops: Animation.Infinite; running: !mouseArea.pressed }
                 }
 
-
-
-
                 PerspectiveCamera {
-                    id: carCamera;
-                    position: Qt.vector3d(0, 150, 600) // Default starting position
-
-                    // --- MANUAL CONSTRAINTS ---
+                    id: carCamera
+                    position: Qt.vector3d(0, 150, 600)
                     onPositionChanged: {
-                        // 1. ZOOM LIMIT (Distance)
-                        // We calculate the length of the vector to the center
                         let distance = Math.sqrt(x*x + y*y + z*z);
-                        if (distance < 750) z = 750; // Too close
-                        if (distance > 800) z = 800; // Too far
-
-                        // 2. HEIGHT LIMIT (Angle/Pitch)
-                        // Prevent camera from going below ground (y=0)
+                        if (distance < 750) z = 750;
+                        if (distance > 800) z = 800;
                         if (y < 20) y = 20;
                     }
                 }
 
                 DirectionalLight {
                     id: cameraLight
-                    // Binds the light direction to the camera so the car is always well-lit
                     eulerRotation: carCamera.eulerRotation
-
-                    // Adjusted brightness:
-                    // Dark mode (carInverted: false) needs more light to see the deep blue.
-                    // Light mode (carInverted: true) needs less to avoid "blinding" white.
                     brightness: window.carInverted ? 1.0 : 2.0
-
                     castsShadow: true
-                    shadowFactor: 15 // Softens the shadow edge
+                    shadowFactor: 15
                 }
 
-                OrbitCameraController { anchors.fill: parent; origin: carOrigin; camera: carCamera }
+                OrbitCameraController {
+                    anchors.fill: parent
+                    origin: carOrigin
+                    camera: carCamera
+                }
 
-
-                MouseArea { id: mouseArea; anchors.fill: parent; propagateComposedEvents: true; onPressed: (m)=> m.accepted = false }
-
-            }
-
-            // safety signal for belt when car move
-            Image {
-                source: "icons/seatbelt_warning.svg"
-                visible: carCan.rpm > 900 && !carCan.beltDriver // Engine running + no belt
-                width: 50; height: 50
-
-                SequentialAnimation on opacity {
-                    running: parent.visible
-                    loops: Animation.Infinite
-                    NumberAnimation { from: 1; to: 0; duration: 500 }
-                    NumberAnimation { from: 0; to: 1; duration: 500 }
+                MouseArea {
+                    id: mouseArea
+                    anchors.fill: parent
+                    propagateComposedEvents: true
+                    onPressed: (m)=> m.accepted = false
                 }
             }
-
         }
+
 
         // ==========================================
         // --- RIGHT PANE: Full Vehicle Vitals ---
