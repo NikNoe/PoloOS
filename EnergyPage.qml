@@ -73,7 +73,7 @@ Item {
                 RowLayout {
                     spacing: 15
                     Image {
-                        source: "icons/battery.svg" // Replace with your icon
+                        source: "qrc:/icons/iconsDashboard/fa-solid--car-battery-2.svg" // Replace with your icon
                         width: 40; height: 40
                         visible: true
                     }

@@ -203,20 +203,116 @@ ApplicationWindow {
 
                     // --- C'EST ICI QU'IL MANQUAIT L'ID ---
                     Column {
-                        id: contentContainer // On donne enfin l'ID attendu
+                        id: contentContainer
                         width: parent.width
-                        spacing: 20
+                        spacing: 30
                         anchors.top: parent.top
-                        anchors.margins: 15
+                        anchors.margins: 20
 
-                        // Ajoute tes éléments ici (Welcome, Textes, Boutons...)
                         Text {
-                            text: "Bienvenue dans votre Polo"
+                            text: "Tableau de Bord"
                             color: window.carInverted ? "black" : "white"
-                            font.pixelSize: 24
+                            font.pixelSize: 28
+                            font.bold: true
+                            anchors.horizontalCenter: parent.horizontalCenter
                         }
 
-                        Rectangle { width: 100; height: 500; color: "blue" } // Juste pour tester le scroll
+                        // --- Ligne des Compteurs ---
+                        Row {
+                            spacing: 40
+                            anchors.horizontalCenter: parent.horizontalCenter
+
+                            // 1. COMPTEUR DE VITESSE
+                            Item {
+                                width: 250; height: 250
+
+                                // Cercle de fond (Arc)
+                                Rectangle {
+                                    anchors.fill: parent
+                                    radius: width/2
+                                    color: "transparent"
+                                    border.color: "#333333"
+                                    border.width: 8
+                                }
+
+                                // Valeur au centre
+                                Column {
+                                    anchors.centerIn: parent
+                                    Text {
+                                        text: Math.floor(carCan.speed) // Ta propriété C++
+                                        font.pixelSize: 48
+                                        font.bold: true
+                                        color: window.carInverted ? "black" : "white"
+                                    }
+                                    Text {
+                                        text: "km/h"
+                                        font.pixelSize: 16
+                                        color: "gray"
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                    }
+                                }
+
+                                // Aiguille
+                                Rectangle {
+                                    id: speedNeedle
+                                    width: 4; height: 100
+                                    color: "#ff3333" // Rouge sport
+                                    anchors.bottom: parent.verticalCenter
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    antialiasing: true
+                                    transformOrigin: Item.Bottom
+                                    // Calcul de l'angle : (vitesse * ratio) + décalage
+                                    rotation: (carCan.speed * 1.2) - 120
+
+                                    Behavior on rotation {
+                                        SpringAnimation { spring: 2; damping: 0.2; modulus: 360 }
+                                    }
+                                }
+                            }
+
+                            // 2. COMPTEUR RÉGIME (RPM)
+                            Item {
+                                width: 250; height: 250
+
+                                Rectangle {
+                                    anchors.fill: parent
+                                    radius: width/2
+                                    color: "transparent"
+                                    border.color: "#333333"
+                                    border.width: 8
+                                }
+
+                                Column {
+                                    anchors.centerIn: parent
+                                    Text {
+                                        text: Math.floor(carCan.rpm)
+                                        font.pixelSize: 40
+                                        color: window.carInverted ? "black" : "white"
+                                    }
+                                    Text {
+                                        text: "RPM"
+                                        font.pixelSize: 14
+                                        color: "gray"
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                    }
+                                }
+
+                                // Aiguille RPM
+                                Rectangle {
+                                    width: 4; height: 100
+                                    color: "#33ccff" // Bleu moderne
+                                    anchors.bottom: parent.verticalCenter
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    transformOrigin: Item.Bottom
+                                    // On divise par 100 car les RPM vont de 0 à 8000
+                                    rotation: (carCan.rpm * 0.03) - 120
+
+                                    Behavior on rotation {
+                                        SpringAnimation { spring: 2; damping: 0.2 }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -343,38 +439,26 @@ ApplicationWindow {
             anchors.leftMargin: 40
             anchors.rightMargin: 40
 
-            // --- GROUP 1: Time & Climate ---
-            Row {
-                spacing: 15
+
+            // --- GROUP 1: Settings ---
+            Button {
+                text: "MENU"
+                flat: true
                 Layout.alignment: Qt.AlignVCenter
 
-                Text {
-                    id: timeDisplay
-                    text: Qt.formatDateTime(new Date(), "hh:mm")
-                    font.pixelSize: 22 // Slightly smaller to match UI balance
-                    font.weight: Font.DemiBold
-                    color: window.carInverted ? "#000000" : "#FFFFFF"
-
-                    Timer {
-                        interval: 1000
-                        running: true
-                        repeat: true
-                        onTriggered: timeDisplay.text = Qt.formatDateTime(new Date(), "hh:mm")
-                    }
+                onClicked: {
+                    // Toggle the entire Menu System (Sidebar + Pages)
+                    mainMenuContainer.visible = !mainMenuContainer.visible
                 }
 
-                Button {
-                    id: tempBtn
-                    flat: true
-                    contentItem: Text {
-                        // Displays the real-time temperature from the API
-                        text: "🌡️ " + weatherService.tempValue
-                        font.pixelSize: 22
-                        font.bold: true
-                        color: window.carInverted ? "black" : "white"
-                    }
+                contentItem: Text {
+                    text: parent.text
+                    font.bold: true
+                    color: window.carInverted ? "black" : "white"
                 }
             }
+
+
 
             Item { Layout.fillWidth: true } // SPACER (Pushes next group to center)
 
@@ -409,21 +493,36 @@ ApplicationWindow {
 
             Item { Layout.fillWidth: true } // SPACER (Pushes next group to right)
 
-            // --- GROUP 3: Settings ---
-            Button {
-                text: "MENU"
-                flat: true
+            // --- GROUP 3: Time & Climate ---
+            Row {
+                spacing: 15
                 Layout.alignment: Qt.AlignVCenter
 
-                onClicked: {
-                    // Toggle the entire Menu System (Sidebar + Pages)
-                    mainMenuContainer.visible = !mainMenuContainer.visible
+                Text {
+                    id: timeDisplay
+                    text: Qt.formatDateTime(new Date(), "hh:mm")
+                    font.pixelSize: 26 // Slightly smaller to match UI balance
+                    font.weight: Font.DemiBold
+                    color: window.carInverted ? "#000000" : "#FFFFFF"
+
+                    Timer {
+                        interval: 1000
+                        running: true
+                        repeat: true
+                        onTriggered: timeDisplay.text = Qt.formatDateTime(new Date(), "hh:mm")
+                    }
                 }
 
-                contentItem: Text {
-                    text: parent.text
-                    font.bold: true
-                    color: window.carInverted ? "black" : "white"
+                Button {
+                    id: tempBtn
+                    flat: true
+                    contentItem: Text {
+                        // Displays the real-time temperature from the API
+                        text: "🌡️ " + weatherService.tempValue
+                        font.pixelSize: 22
+                        font.bold: true
+                        color: window.carInverted ? "black" : "white"
+                    }
                 }
             }
         }
