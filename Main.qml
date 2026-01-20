@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick3D
 import QtQuick3D.Helpers
+import QtQuick.Shapes
 import "."
 
 
@@ -210,110 +211,124 @@ ApplicationWindow {
                         anchors.margins: 20
 
                         Text {
-                            text: "Tableau de Bord"
-                            color: window.carInverted ? "black" : "white"
-                            font.pixelSize: 28
+                            text: "POLO TDI // PERFORMANCE"
+                            color: window.carInverted ? "#222" : "#00f2ff" // Bleu Néon
+                            font.pixelSize: 22
+                            font.letterSpacing: 2
                             font.bold: true
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
 
-                        // --- Ligne des Compteurs ---
                         Row {
-                            spacing: 40
+                            spacing: 50
                             anchors.horizontalCenter: parent.horizontalCenter
 
-                            // 1. COMPTEUR DE VITESSE
-                            Item {
-                                width: 250; height: 250
-
-                                // Cercle de fond (Arc)
-                                Rectangle {
-                                    anchors.fill: parent
-                                    radius: width/2
-                                    color: "transparent"
-                                    border.color: "#333333"
-                                    border.width: 8
-                                }
-
-                                // Valeur au centre
-                                Column {
-                                    anchors.centerIn: parent
-                                    Text {
-                                        text: Math.floor(carCan.speed) // Ta propriété C++
-                                        font.pixelSize: 48
-                                        font.bold: true
-                                        color: window.carInverted ? "black" : "white"
-                                    }
-                                    Text {
-                                        text: "km/h"
-                                        font.pixelSize: 16
-                                        color: "gray"
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                    }
-                                }
-
-                                // Aiguille
-                                Rectangle {
-                                    id: speedNeedle
-                                    width: 4; height: 100
-                                    color: "#ff3333" // Rouge sport
-                                    anchors.bottom: parent.verticalCenter
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    antialiasing: true
-                                    transformOrigin: Item.Bottom
-                                    // Calcul de l'angle : (vitesse * ratio) + décalage
-                                    rotation: (carCan.speed * 1.2) - 120
-
-                                    Behavior on rotation {
-                                        SpringAnimation { spring: 2; damping: 0.2; modulus: 360 }
-                                    }
-                                }
+                            // --- COMPTEUR VITESSE ---
+                            ModernGauge {
+                                id: speedGauge
+                                value: carCan.speed
+                                maxValue: 240
+                                unit: "km/h"
+                                glowColor: "#00f2ff"
+                                numbers: [0, 40, 80, 120, 160, 200, 240]
                             }
 
-                            // 2. COMPTEUR RÉGIME (RPM)
-                            Item {
-                                width: 250; height: 250
-
-                                Rectangle {
-                                    anchors.fill: parent
-                                    radius: width/2
-                                    color: "transparent"
-                                    border.color: "#333333"
-                                    border.width: 8
-                                }
-
-                                Column {
-                                    anchors.centerIn: parent
-                                    Text {
-                                        text: Math.floor(carCan.rpm)
-                                        font.pixelSize: 40
-                                        color: window.carInverted ? "black" : "white"
-                                    }
-                                    Text {
-                                        text: "RPM"
-                                        font.pixelSize: 14
-                                        color: "gray"
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                    }
-                                }
-
-                                // Aiguille RPM
-                                Rectangle {
-                                    width: 4; height: 100
-                                    color: "#33ccff" // Bleu moderne
-                                    anchors.bottom: parent.verticalCenter
-                                    anchors.horizontalCenter: parent.horizontalCenter
-                                    transformOrigin: Item.Bottom
-                                    // On divise par 100 car les RPM vont de 0 à 8000
-                                    rotation: (carCan.rpm * 0.03) - 120
-
-                                    Behavior on rotation {
-                                        SpringAnimation { spring: 2; damping: 0.2 }
-                                    }
-                                }
+                            // --- COMPTEUR RPM ---
+                            ModernGauge {
+                                id: rpmGauge
+                                value: carCan.rpm
+                                maxValue: 8000
+                                unit: "x1000 RPM"
+                                glowColor: "#ff007b" // Rose/Magenta Néon
+                                numbers: [0, 2, 4, 6, 8]
+                                isRpm: true
                             }
                         }
                     }
+
+                    component ModernGauge : Item {
+                        property real value: 0
+                        property real maxValue: 100
+                        property string unit: ""
+                        property color glowColor: "cyan"
+                        property var numbers: []
+                        property bool isRpm: false
+
+                        width: 280; height: 280
+
+                        // Anneau de fond sombre
+                        Shape {
+                            anchors.fill: parent
+                            antialiasing: true
+                            ShapePath {
+                                fillColor: "transparent"
+                                strokeColor: "#1a1a1a"
+                                strokeWidth: 12
+                                capStyle: ShapePath.RoundCap
+                                PathAngleArc {
+                                    centerX: 140; centerY: 140
+                                    radiusX: 110; radiusY: 110
+                                    startAngle: 140
+                                    sweepAngle: 260
+                                }
+                            }
+                        }
+
+                        // Anneau de progression néon
+                        Shape {
+                            anchors.fill: parent
+                            antialiasing: true
+                            ShapePath {
+                                fillColor: "transparent"
+                                strokeColor: glowColor
+                                strokeWidth: 12
+                                capStyle: ShapePath.RoundCap
+                                PathAngleArc {
+                                    centerX: 140; centerY: 140
+                                    radiusX: 110; radiusY: 110
+                                    startAngle: 140
+                                    sweepAngle: (value / maxValue) * 260
+                                }
+                            }
+                        }
+
+                        // Chiffres sur le bord
+                        Repeater {
+                            model: numbers
+                            delegate: Text {
+                                readonly property real angle: (modelData / maxValue) * 260 + 140
+                                readonly property real rad: angle * Math.PI / 180
+                                x: 140 + 135 * Math.cos(rad) - width/2
+                                y: 140 + 135 * Math.sin(rad) - height/2
+                                text: modelData
+                                color: (value >= modelData) ? glowColor : "#444"
+                                font.pixelSize: 14
+                                font.bold: true
+                                Behavior on color { ColorAnimation { duration: 200 } }
+                            }
+                        }
+
+                        // Affichage digital central
+                        Column {
+                            anchors.centerIn: parent
+                            spacing: -5
+                            Text {
+                                text: isRpm ? (value/1000).toFixed(1) : Math.floor(value)
+                                font.pixelSize: 56
+                                font.bold: true
+                                color: "white"
+                                // Effet d'ombre portée pour le "glow"
+                                style: Text.Outline; styleColor: glowColor
+                            }
+                            Text {
+                                text: unit
+                                font.pixelSize: 14
+                                color: "#888"
+                                anchors.horizontalCenter: parent.horizontalCenter
+                            }
+                        }
+                    }
+
                 }
 
             // submenu like tesla
