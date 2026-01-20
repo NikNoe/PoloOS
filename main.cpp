@@ -2,12 +2,14 @@
 #include <QQmlApplicationEngine>
 #include <QUrl>
 #include <QQmlContext>
+#include <QQuickStyle>
 #include "canhandler.h"
 
 int main(int argc, char *argv[])
 {
-    // Use high DPI scaling for your Mac/Pi display
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    // FORCE LE STYLE ICI
+    QQuickStyle::setStyle("Material");
+
     QGuiApplication app(argc, argv);
 
     // --- 1. CREATE THE SHARED INSTANCE ---

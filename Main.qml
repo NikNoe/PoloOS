@@ -95,10 +95,12 @@ ApplicationWindow {
                             iconSource: "qrc:/icons/iconsDashboard/mdi--car-brake-abs-2.svg"
                             isActive: carCan.absActive
                         }
+                        /*
                         DashboardIcon {
                             iconSource: "qrc:/icons/iconsDashboard/fa-solid--oil-can-2.svg"
                             isActive: carCan.oilWarning
                         }
+                        */
                         DashboardIcon {
                             iconSource: "qrc:/icons/iconsDashboard/fa-solid--car-battery-2.svg"
                             isActive: carCan.batteryWarning
@@ -138,7 +140,7 @@ ApplicationWindow {
                             PrincipledMaterial {
                                 baseColor: window.carInverted ? "#cccccc" : "#111111"
                                 roughness: 0.8
-                                lighting: PrincipledMaterial.Fragments
+                                lighting: PrincipledMaterial.FragmentLighting
                             }
                         ]
                     }

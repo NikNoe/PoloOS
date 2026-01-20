@@ -3,7 +3,7 @@ project(PoloOS VERSION 0.1 LANGUAGES CXX)
 
 # --- 1. FIND QT + 3D MODULES ---
 # Added Quick3D and Quick3DHelpers for the Tesla-style view
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick Qml Quick3D Quick3DHelpers SerialBus SerialPort Location Positioning QuickEffects)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick Qml Quick3D Quick3DHelpers SerialBus SerialPort Location Positioning QuickEffects QuickControls2)
 
 # --- 2. SETUP THE PROJECT ---
 qt_standard_project_setup(REQUIRES 6.5)
@@ -94,6 +94,8 @@ target_link_libraries(appPoloOS PRIVATE
     Qt6::Location
     Qt6::Positioning
     Qt6::QuickEffects
+    Qt6::QuickControls2
+
 )
 
 # Add SerialBus to the link list

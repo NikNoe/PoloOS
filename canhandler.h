@@ -52,7 +52,6 @@ class CanHandler : public QObject {
     Q_PROPERTY(bool doorRR READ doorRR WRITE setDoorRR NOTIFY doorChanged)
     Q_PROPERTY(bool trunk READ trunk WRITE setTrunk NOTIFY doorChanged)
     Q_PROPERTY(int windowPos READ windowPos WRITE setWindowPos NOTIFY windowChanged)
-    Q_PROPERTY(int windowPos READ windowPos WRITE setWindowPos NOTIFY windowChanged)
     Q_PROPERTY(int windshieldHeater READ windshieldHeater WRITE setWindshieldHeater NOTIFY windshieldChanged)
     Q_PROPERTY(bool beltDriver READ beltDriver WRITE setBeltDriver NOTIFY beltChanged)
     Q_PROPERTY(bool beltPassenger READ beltPassenger WRITE setBeltPassenger NOTIFY beltChanged)

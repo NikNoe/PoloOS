@@ -10,70 +10,57 @@ Item {
         id: mapPlugin
         name: "osm"
 
-        // 2. Disable the default provider repository to stop the "API Required" message
+        // On force l'adresse du serveur officiel d'OpenStreetMap
+        // Qt 6 utilise le format %z/%x/%y
+        PluginParameter {
+            name: "osm.mapping.custom.host"
+            value: "https://tile.openstreetmap.org/%z/%x/%y.png"
+        }
+
+        // Indispensable pour que le serveur OSM accepte ta connexion
+        PluginParameter {
+            name: "osm.useragent"
+            value: "PoloOS_HMI"
+        }
+
+
+        // On désactive la recherche de serveurs par défaut qui échoue
         PluginParameter {
             name: "osm.mapping.providersrepository.disabled"
             value: true
         }
-
-        // This is the "Secret Sauce" for Qt 6:
-        // We tell the OSM plugin to fetch tiles from Maptiler instead of OpenStreetMap.
-        PluginParameter {
-            name: "osm.mapping.custom.host"
-                        // Note the %z/%x/%y format for Qt 6
-            value: "https://api.maptiler.com/maps/darkmatter/%z/%x/%y.png?key=4yhr2bUQrOxesEe95COD"
-        }
-
-
-
-        // Required by OSM servers to identify the app
-        PluginParameter { name: "osm.useragent"; value: "PoloOS_HMI" }
     }
 
     Map {
         id: mainMap
         anchors.fill: parent
         plugin: mapPlugin
-        center: QtPositioning.coordinate(48.8566, 2.3522)
-        zoomLevel: 12
 
-        // Note: 'tilt' and 'bearing' are limited in the standard OSM plugin compared to Mapbox
-        // but it is the most reliable "Free" way to get a map appearing.
+        // Coordonnées fixes pour éviter les erreurs de positionnement au début
+        center: QtPositioning.coordinate(48.8584, 2.2945) // Tour Eiffel
+        zoomLevel: 13
+
+        // Si le signal onSupportedMapTypesChanged ne marche pas,
+        // on laisse la Map choisir son style par défaut.
     }
 
-    // 3. THIS IS CRITICAL: Tell the map to use the Custom Host we defined above
-    // Instead of direct assignment, we wait for the Map to load its plugins
-            Component.onCompleted: {
-                for (var i = 0; i < supportedMapTypes.length; i++) {
-                    // The CustomMap type is created automatically when osm.mapping.custom.host is set
-                    if (supportedMapTypes[i].style === MapType.CustomMap) {
-                        mainMap.activeMapType = supportedMapTypes[i];
-                        break;
-                    }
-                }
-            }
-
-    // --- ZOOM BUTTONS ---
+    // --- BOUTONS DE ZOOM (Simplifiés) ---
     Column {
         anchors.right: parent.right
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.margins: 20
+        anchors.bottom: parent.bottom
+        anchors.margins: 30
         spacing: 15
+        z: 10
 
         Rectangle {
-            width: 50; height: 50; radius: 25
-            color: window.carInverted ? "#FFFFFF" : "#222222"
-            opacity: 0.9
-            Text { text: "+"; anchors.centerIn: parent; color: window.carInverted ? "black" : "white"; font.pixelSize: 24 }
-            MouseArea { anchors.fill: parent; onClicked: mainMap.zoomLevel += 1 }
+            width: 50; height: 50; radius: 25; color: "#222222"; opacity: 0.8
+            Text { text: "+"; anchors.centerIn: parent; color: "white"; font.pixelSize: 22 }
+            MouseArea { anchors.fill: parent; onClicked: mainMap.zoomLevel++ }
         }
-
         Rectangle {
-            width: 50; height: 50; radius: 25
-            color: window.carInverted ? "#FFFFFF" : "#222222"
-            opacity: 0.9
-            Text { text: "-"; anchors.centerIn: parent; color: window.carInverted ? "black" : "white"; font.pixelSize: 24 }
-            MouseArea { anchors.fill: parent; onClicked: mainMap.zoomLevel -= 1 }
+            width: 50; height: 50; radius: 25; color: "#222222"; opacity: 0.8
+            Text { text: "-"; anchors.centerIn: parent; color: "white"; font.pixelSize: 22 }
+            MouseArea { anchors.fill: parent; onClicked: mainMap.zoomLevel-- }
         }
     }
 }
