@@ -7,7 +7,7 @@ Window {
     height: 900
     visible: true
     title: "9N3 Complete Simulator"
-    color: "#0f0f0f"
+    color: "#ffffff"
 
     ScrollView {
         anchors.fill: parent

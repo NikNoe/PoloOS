@@ -32,5 +32,7 @@
         <file>iconsDashboard/roentgen--engine.svg</file>
         <file>iconsDashboard/streamline-plump--candle-remix.svg</file>
         <file>iconsDashboard/mingcute--car-door-line.svg</file>
+        <file>iconsDashboard/vaadin--unlock.svg</file>
+        <file>iconsDashboard/vaadin--lock.svg</file>
     </qresource>
 </RCC>

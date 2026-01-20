@@ -4,6 +4,7 @@ import QtQuick.Controls
 import QtQuick3D
 import QtQuick3D.Helpers
 import QtQuick.Shapes
+import Qt5Compat.GraphicalEffects
 import "."
 
 
@@ -211,7 +212,7 @@ ApplicationWindow {
                         anchors.margins: 20
 
                         Text {
-                            text: "POLO TDI // PERFORMANCE"
+                            text: "POLO TDI // TECNODJUM"
                             color: window.carInverted ? "#222" : "#00f2ff" // Bleu Néon
                             font.pixelSize: 22
                             font.letterSpacing: 2
@@ -229,7 +230,7 @@ ApplicationWindow {
                                 value: carCan.speed
                                 maxValue: 240
                                 unit: "km/h"
-                                glowColor: "#00f2ff"
+                                glowColor: "#0a84ff"
                                 numbers: [0, 40, 80, 120, 160, 200, 240]
                             }
 
@@ -243,6 +244,164 @@ ApplicationWindow {
                                 numbers: [0, 2, 4, 6, 8]
                                 isRpm: true
                             }
+                        }
+
+                        // --- BARRE DE STATUT & INFOS BASES ---
+
+                        Item {
+                            id: statusArea
+                            width: parent.width
+                            height: 150
+                            anchors.horizontalCenter: parent.horizontalCenter
+
+                            ColumnLayout {
+                                anchors.fill: parent
+                                spacing: 15
+
+                                // --- PARTIE SUPÉRIEURE : RANGE ET GEAR ---
+                                RowLayout {
+                                    Layout.alignment: Qt.AlignHCenter
+                                    spacing: 30
+
+                                    // Bloc Autonomie
+                                    Rectangle {
+                                        Layout.preferredWidth: 200
+                                        Layout.preferredHeight: 80
+                                        radius: 12
+
+                                        // Couleur de fond : Priorité aux alertes, sinon bascule Jour/Nuit
+                                        color: {
+                                            if (carCan.rangePossible < 50) return "#C0392B"; // Rouge Alerte
+                                            if (carCan.rangePossible < 100) return "#D35400"; // Orange Alerte
+                                            return window.carInverted ? "#E0E0E0" : "#1a1a1a"; // Jour: Gris clair / Nuit: Noir
+                                        }
+
+                                        border.color: window.carInverted ? "#BDBDBD" : "#333"
+                                        border.width: 1
+
+                                        Behavior on color { ColorAnimation { duration: 500 } }
+
+                                        Column {
+                                            anchors.centerIn: parent
+                                            spacing: 2
+                                            Text {
+                                                text: "ESTIMATED RANGE"
+                                                color: window.carInverted ? "#666666" : "#888888"
+                                                font.pixelSize: 10
+                                                font.bold: true
+                                                anchors.horizontalCenter: parent.horizontalCenter
+                                            }
+                                            Text {
+                                                text: carCan.rangePossible.toFixed(0) + " km"
+                                                color: (carCan.rangePossible < 100) ? "white" : (window.carInverted ? "black" : "white")
+                                                font.pixelSize: 28
+                                                font.bold: true
+                                                anchors.horizontalCenter: parent.horizontalCenter
+                                            }
+                                        }
+                                    }
+
+                                    // Bloc Rapport Engagé
+                                    Rectangle {
+                                        Layout.preferredWidth: 65
+                                        Layout.preferredHeight: 65
+                                        radius: 10
+                                        // En mode jour, on peut passer sur un bleu plus profond pour la lisibilité
+                                        color: window.carInverted ? "#0097A7" : "#00f2ff"
+
+                                        Text {
+                                            anchors.centerIn: parent
+                                            text: carCan.gear === 0 ? "R" : (carCan.gear === 11 ? "N" : carCan.gear)
+                                            color: "black"
+                                            font.pixelSize: 36
+                                            font.bold: true
+                                        }
+                                    }
+
+                                    // Bloc Température
+                                    Rectangle {
+                                        Layout.preferredWidth: 200
+                                        Layout.preferredHeight: 80
+                                        radius: 12
+                                        color: window.carInverted ? "#E0E0E0" : "#1a1a1a"
+                                        border.color: window.carInverted ? "#BDBDBD" : "#333"
+
+                                        Column {
+                                            anchors.centerIn: parent
+                                            Text {
+                                                text: "OUTSIDE TEMP"
+                                                color: window.carInverted ? "#666666" : "#888888"
+                                                font.pixelSize: 10; font.bold: true
+                                                anchors.horizontalCenter: parent.horizontalCenter
+                                            }
+                                            Text {
+                                                text: weatherService.tempValue + "°C"
+                                                font.pixelSize: 28
+                                                font.bold: true
+                                                anchors.horizontalCenter: parent.horizontalCenter
+                                                color: window.carInverted ? "black" : "white"
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // --- PARTIE INFÉRIEURE : VERROUILLAGE ---
+                                RowLayout {
+                                    Layout.alignment: Qt.AlignHCenter
+                                    spacing: 20
+
+                                    Item {
+                                        id: iconContainer
+                                        Layout.preferredWidth: 40
+                                        Layout.preferredHeight: 40
+
+                                        Image {
+                                            id: lockIcon
+                                            anchors.fill: parent
+                                            source: carCan.isLocked ? "qrc:/icons/iconsDashboard/vaadin--lock.svg" : "qrc:/icons/iconsDashboard/vaadin--unlock.svg"
+                                            fillMode: Image.PreserveAspectFit
+                                            // On cache l'original pour ne voir que la version colorée
+                                            visible: false
+                                        }
+
+                                        // L'effet de couleur qui remplace MultiEffect pour plus de compatibilité
+                                        ColorOverlay {
+                                            anchors.fill: lockIcon
+                                            source: lockIcon
+                                            color: {
+                                                if (!carCan.isLocked) return "#ff4444";
+                                                return window.carInverted ? "#007A7C" : "#00f2ff";
+                                            }
+
+                                            // Animation de pulsation si déverrouillé
+                                            SequentialAnimation on opacity {
+                                                running: !carCan.isLocked
+                                                loops: Animation.Infinite
+                                                NumberAnimation { from: 1.0; to: 0.4; duration: 800; easing.type: Easing.InOutQuad }
+                                                NumberAnimation { from: 0.4; to: 1.0; duration: 800; easing.type: Easing.InOutQuad }
+                                            }
+
+                                            // État stable si verrouillé
+                                            opacity: carCan.isLocked ? 0.8 : 1.0
+
+                                            Behavior on color { ColorAnimation { duration: 400 } }
+                                        }
+
+                                        scale: carCan.isLocked ? 1.0 : 1.2
+                                        Behavior on scale { NumberAnimation { duration: 250; easing.type: Easing.OutBack } }
+                                    }
+
+                                    Text {
+                                        text: carCan.isLocked ? "VEHICLE SECURED" : "VEHICLE UNLOCKED"
+                                        color: carCan.isLocked ? (window.carInverted ? "#007A7C" : "#00f2ff") : "#ff4444"
+                                        font.pixelSize: 12
+                                        font.bold: true
+                                        font.letterSpacing: 1
+                                        Behavior on color { ColorAnimation { duration: 400 } }
+                                    }
+                                }
+                            }
+                        }
                         }
                     }
 
@@ -329,7 +488,9 @@ ApplicationWindow {
                         }
                     }
 
-                }
+
+
+
 
             // submenu like tesla
             // --- 1. THE MAIN MENU CONTAINER ---
@@ -469,6 +630,7 @@ ApplicationWindow {
                 contentItem: Text {
                     text: parent.text
                     font.bold: true
+                    font.pixelSize: 22
                     color: window.carInverted ? "black" : "white"
                 }
             }
@@ -487,6 +649,7 @@ ApplicationWindow {
                     flat: true
                     contentItem: Text {
                         text: parent.text; font.bold: true;
+                        font.pixelSize: 22
                         color: window.carInverted ? "black" : "white"
                     }
                 }
@@ -501,6 +664,7 @@ ApplicationWindow {
                         }
                     contentItem: Text {
                         text: parent.text; font.bold: true;
+                        font.pixelSize: 22
                         color: window.carInverted ? "black" : "white"
                     }
                 }
@@ -516,7 +680,7 @@ ApplicationWindow {
                 Text {
                     id: timeDisplay
                     text: Qt.formatDateTime(new Date(), "hh:mm")
-                    font.pixelSize: 26 // Slightly smaller to match UI balance
+                    font.pixelSize: 30 // Slightly smaller to match UI balance
                     font.weight: Font.DemiBold
                     color: window.carInverted ? "#000000" : "#FFFFFF"
 
@@ -528,17 +692,7 @@ ApplicationWindow {
                     }
                 }
 
-                Button {
-                    id: tempBtn
-                    flat: true
-                    contentItem: Text {
-                        // Displays the real-time temperature from the API
-                        text: "🌡️ " + weatherService.tempValue
-                        font.pixelSize: 22
-                        font.bold: true
-                        color: window.carInverted ? "black" : "white"
-                    }
-                }
+
             }
         }
     }
