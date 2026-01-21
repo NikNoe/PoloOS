@@ -542,7 +542,7 @@ ApplicationWindow {
                                         anchors.centerIn: parent
                                         text: modelData.name.toUpperCase()
                                         color: window.carInverted ? "black" : "white"
-                                        font.pixelSize: 14; font.weight: Font.DemiBold
+                                        font.pixelSize: 18; font.weight: Font.DemiBold
                                     }
 
                                     MouseArea {
