@@ -79,6 +79,8 @@ qt_add_qml_module(appPoloOS
  QML_FILES DashboardIcon.qml
  RESOURCES
  RESOURCES icons.qrc
+ SOURCES CanReader.h
+ SOURCES CanReader.cpp
                 # Add all other .mesh files here, or use a wildcard if using CMake 3.20+
 )
 

@@ -10,6 +10,7 @@ Item {
     readonly property color mainBg: window.carInverted ? "#F5F5F7" : "#111111"
     readonly property color carOutline: window.carInverted ? "#D1D1D6" : "#2C2C2E"
     readonly property color accentColor: "#00f2ff"
+    readonly property color subTextColor: "#888888"
 
     Rectangle { anchors.fill: parent; color: mainBg }
 
@@ -164,6 +165,45 @@ Item {
                         Behavior on scale { NumberAnimation { duration: 250; easing.type: Easing.OutBack } }
                     }
 
+                    // --- VISUALISATION DES VITRES (Gauches et Droites) ---
+                    // Vitres Gauches
+                    Rectangle {
+                        x: -10; y: 90; width: 4; height: 160
+                        color: carOutline; opacity: 0.3; radius: 2
+                        Rectangle {
+                            width: parent.width; height: parent.height * (carCan.windowPos / 100)
+                            color: accentColor; radius: 2; anchors.bottom: parent.bottom
+                            Behavior on height { NumberAnimation { duration: 500 } }
+                        }
+                    }
+                    // Vitres Droites
+                    Rectangle {
+                        x: parent.width + 6; y: 90; width: 4; height: 160
+                        color: carOutline; opacity: 0.3; radius: 2
+                        Rectangle {
+                            width: parent.width; height: parent.height * (carCan.windowPos / 100)
+                            color: accentColor; radius: 2; anchors.bottom: parent.bottom
+                            Behavior on height { NumberAnimation { duration: 500 } }
+                        }
+                    }
+                    // --- PHARES AVANT (HAUTS ET BAS) ---
+                    LightIcon {
+                        id: headLights
+                        x: carShell.x + carShell.width / 2 - width / 2; y: carShell.y - 30 // Positionné devant
+                        isHeadlights: true; isFront: true
+                        lowBeamActive: carCan.lowBeam; highBeamActive: carCan.highBeam
+                        fogLightsActive: carCan.fogLightsFront // Assumant que tu as une variable pour les anti-brouillards avant
+                        isLowBeamSupported: true // Polo 9N3 a les feux de croisement
+                    }
+
+                    // --- PHARES ARRIÈRE (Feux de position et Antibrouillard) ---
+                    LightIcon {
+                        x: carShell.x + carShell.width / 2 - width / 2; y: carShell.y + carShell.height + 10 // Positionné derrière
+                        isHeadlights: false; isFront: false
+                        lowBeamActive: carCan.tailLights // Feux de position arrière
+                        fogLightsActive: carCan.fogLightsRear // Antibrouillard arrière
+                        isLowBeamSupported: true // Feux de position
+                    }
                 }
 
 
@@ -219,4 +259,75 @@ component SeatModule : Item {
     }
 }
 
+    // Nouveau composant pour les icônes de phares avec effet de lumière
+    component LightIcon : Item {
+        property bool isFront: true // Est-ce les phares avant ou arrière?
+        property bool isHeadlights: true // Est-ce les feux principaux (croisement/route) ou juste arrière?
+        property bool lowBeamActive: false // Feux de croisement ou de position
+        property bool highBeamActive: false // Feux de route
+        property bool fogLightsActive: false // Anti-brouillards
+        property bool isLowBeamSupported: false // La Polo a-t-elle des feux de croisement/position
+
+        width: 100; height: 30
+
+        // Effet de halo de lumière (quand les feux sont actifs)
+        Rectangle {
+            id: lightHalo
+            width: parent.width; height: 20
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: lowBeamActive ? "#FFD700" : (highBeamActive ? "#FFFFFF" : (fogLightsActive ? "#FFA500" : "transparent"))
+            opacity: (lowBeamActive || highBeamActive || fogLightsActive) ? 0.3 : 0
+            radius: 10
+            visible: opacity > 0 // Optimisation
+
+            layer.enabled: true
+            layer.effect: GaussianBlur { radius: 15 } // Effet de flou pour le halo
+
+            Behavior on opacity { NumberAnimation { duration: 300 } }
+        }
+
+        // Icône des feux de croisement/position (positionnée sur le côté gauche/avant)
+        Image {
+            id: lowBeamIcon
+            visible: isLowBeamSupported
+            source: isFront ? "qrc:/icons/iconsDashboard/light-low-beam.svg" : "qrc:/icons/iconsDashboard/light-tail.svg"
+            width: 24; height: 24
+            anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter
+            opacity: lowBeamActive ? 1.0 : 0.3
+
+            layer.enabled: true
+            layer.effect: ColorOverlay {
+                color: lowBeamActive ? "#FFD700" : (window.carInverted ? "#444" : "#888") // Jaune chaud actif
+            }
+        }
+
+        // Icône des feux de route (si phares avant)
+        Image {
+            id: highBeamIcon
+            visible: isHeadlights && highBeamActive // Seulement si c'est l'avant et que les feux de route sont actifs
+            source: "qrc:/icons/iconsDashboard/light-high-beam.svg"
+            width: 24; height: 24
+            anchors.centerIn: parent
+            opacity: highBeamActive ? 1.0 : 0.3
+
+            layer.enabled: true
+            layer.effect: ColorOverlay {
+                color: highBeamActive ? "#00f2ff" : (window.carInverted ? "#444" : "#888") // Bleu froid actif
+            }
+        }
+
+        // Icône des anti-brouillards
+        Image {
+            id: fogLightIcon
+            source: isFront ? "qrc:/icons/iconsDashboard/light-fog-front.svg" : "qrc:/icons/iconsDashboard/light-fog-rear.svg"
+            width: 24; height: 24
+            anchors.right: parent.right; anchors.verticalCenter: parent.verticalCenter
+            opacity: fogLightsActive ? 1.0 : 0.3
+
+            layer.enabled: true
+            layer.effect: ColorOverlay {
+                color: fogLightsActive ? "#FFA500" : (window.carInverted ? "#444" : "#888") // Orange actif
+            }
+        }
+    }
 }
