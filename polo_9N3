@@ -1,0 +1,3 @@
+ SG_ Steering_AngleMag : 0|15@1+ (1,0)
+ SG_ Steering_Sign : 15|1@1+
+ SG_ Steering_AngVel : 16|16@1+ (1,0)
