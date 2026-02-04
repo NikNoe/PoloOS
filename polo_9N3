@@ -3,3 +3,7 @@
  SG_ Steering_AngVel : 16|16@1+ (1,0)
 BO_ 208 SteeringAssist: 8 EPS
  SG_ Steering_Assist_Level : 16|8@1+ (1,0) [0|255] "" EPS
+0xD0 / b2 → Steering_Assist_Level
+BO_ 416 VehicleStatus: 8 ABS
+ SG_ Brake_Pedal : 11|1@1+ (1,0) [0|1] "" ABS
+ SG_ Vehicle_Speed : 16|16@1+ (0.03448,0) [0|250] "km/h" ABS
