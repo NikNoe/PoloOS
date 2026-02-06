@@ -1,0 +1,64 @@
+Raspberry Pi 5 & Thinkpad CAN-Bus Setup
+
+Ce dépôt contient les scripts d'automatisation pour configurer et lancer les interfaces CAN sur deux environnements différents : Raspberry Pi 5 (avec HAT Dual CAN) et Thinkpad Ubuntu (avec USB-CAN-A Waveshare).
+📂 Structure du projet
+
+    setup_can_pi5.sh : Configuration du matériel, des overlays et de SocketCAN sur Pi 5.
+
+    setup_thinkpad_auto.sh : Gestion des règles UDEV et création du service système pour l'USB-CAN-A.
+
+    USB-CAN-A/ : Dossier contenant le binaire propriétaire canusb pour Linux.
+    
+
+🥧 1. Installation sur Raspberry Pi 5
+
+Le Pi 5 utilise SocketCAN, ce qui permet d'utiliser les outils standards Linux (can-utils).
+Installation
+
+    Copiez le script sur votre Pi :
+    
+    Bash
+
+    chmod +x setup_can_pi5.sh
+    ./setup_can_pi5.sh
+
+    Redémarrez : sudo reboot
+
+Vérification
+Bash
+
+ip link show can0
+# Pour écouter le trafic :
+candump can0
+
+
+
+💻 2. Installation sur Thinkpad (Ubuntu)
+
+L'adaptateur USB-CAN-A n'est pas natif SocketCAN. Il nécessite le binaire canusb et tourne en tant que Service Système pour être disponible dès le branchement.
+Installation
+
+    Placez le binaire dans ~/USB-CAN-A/canusb.
+
+    Lancez le script d'automatisation :
+    Bash
+
+    chmod +x setup_thinkpad_auto.sh
+    ./setup_thinkpad_auto.sh
+    
+
+Commandes utiles
+
+    Voir les données en temps réel :
+    
+    Bash
+    sudo journalctl -u usb-can.service -f
+
+    Vérifier l'état du service :
+    
+    Bash
+    systemctl status usb-can.service
+
+    Port fixe : L'appareil est toujours lié à /dev/waveshare_can grâce à la règle UDEV, quel que soit le port USB utilisé. Raspberry Pi 5 & Thinkpad CAN-Bus Setup
+
+    Port fixe : L'appareil est toujours lié à /dev/waveshare_can grâce à la règle UDEV, quel que soit le port USB utilisé.
