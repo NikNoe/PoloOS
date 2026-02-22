@@ -25,7 +25,11 @@ int main(int argc, char *argv[])
     // Also keeping "canHandler" alias just in case you used it elsewhere
     engine.rootContext()->setContextProperty("canHandler", canHandler);
 
-    const QUrl url(QStringLiteral("qrc:/qt/qml/PoloOS/Main.qml"));
+    #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+        const QUrl url(QStringLiteral("qrc:/qt/qml/PoloOS/Main.qml"));
+    #else
+        const QUrl url(QStringLiteral("qrc:/PoloOS/Main.qml"));
+    #endif
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
