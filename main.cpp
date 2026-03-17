@@ -1,6 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QUrl>
 #include <QQmlContext>
 #include <QQuickStyle>
 #include "canhandler.h"
@@ -9,7 +8,6 @@ int main(int argc, char *argv[])
 {
     // FORCE LE STYLE ICI
     QQuickStyle::setStyle("Material");
-
     QGuiApplication app(argc, argv);
 
     // --- 1. CREATE THE SHARED INSTANCE ---
@@ -21,23 +19,16 @@ int main(int argc, char *argv[])
     // --- 2. SHARE THE INSTANCE ---
     // We name it "carCan" so it matches your BodyPage code
     engine.rootContext()->setContextProperty("carCan", canHandler);
-
     // Also keeping "canHandler" alias just in case you used it elsewhere
     engine.rootContext()->setContextProperty("canHandler", canHandler);
 
-    #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
-        const QUrl url(QStringLiteral("qrc:/qt/qml/PoloOS/Main.qml"));
-    #else
-        const QUrl url(QStringLiteral("qrc:/PoloOS/Main.qml"));
-    #endif
+    // --- 3. LOAD QML ---
+    // loadFromModule fonctionne sur Qt 6.4, 6.5, 6.10+ sur toutes les plateformes
+    // (Pi, ThinkPad, Mac) sans se soucier du préfixe qrc:/PoloOS/ vs qrc:/qt/qml/PoloOS/
+    engine.loadFromModule("PoloOS", "Main");
 
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-                         if (!obj && url == objUrl)
-                             QCoreApplication::exit(-1);
-                     }, Qt::QueuedConnection);
-
-    engine.load(url);
+    if (engine.rootObjects().isEmpty())
+        return -1;
 
     return app.exec();
 }

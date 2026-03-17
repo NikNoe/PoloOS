@@ -43,6 +43,13 @@ find_package(Qt6 REQUIRED COMPONENTS
     ShaderTools
 )
 
+
+# ── Policy QTP0001 : accepte :/qt/qml/ comme préfixe par défaut (Qt 6.5+)
+# Sans ça, Qt 6.10 ignore RESOURCE_PREFIX et affiche un warning
+if(Qt6_VERSION VERSION_GREATER_EQUAL "6.5.0")
+    qt_policy(SET QTP0001 NEW)
+endif()
+
 # ── Modules optionnels : absents sur Pi (pas dans les dépôts Ubuntu 24.04 arm64)
 find_package(Qt6 OPTIONAL_COMPONENTS Location Positioning)
 
@@ -51,6 +58,7 @@ if(Qt6Location_FOUND)
 else()
     message(WARNING "Qt6Location absent — MapPage désactivée (Pi / Ubuntu 24.04 arm64)")
 endif()
+
 
 # ── Exécutable unique ─────────────────────────────────────────────────────────
 qt_add_executable(appPoloOS
@@ -115,11 +123,14 @@ qt_add_qml_module(appPoloOS
         meshes/wheel_003_mesh.mesh
 )
 
-# ── Désactive la compilation AOT des QML
-# Le fichier C++ généré est trop gros et fait segfault GCC sur Pi
-set_target_properties(appPoloOS PROPERTIES
-    QT_QML_MODULE_NO_CACHEGEN TRUE
-)
+# ── NO_CACHEGEN : uniquement sur Qt < 6.5 (Pi avec Qt 6.4 apt)
+# Sur Qt 6.5+ le cachegen fonctionne correctement et est nécessaire
+if(Qt6_VERSION VERSION_LESS "6.5.0")
+    message(STATUS "Qt ${Qt6_VERSION} détecté — désactivation du QML cachegen (Pi mode)")
+    set_target_properties(appPoloOS PROPERTIES
+        QT_QML_MODULE_NO_CACHEGEN TRUE
+    )
+endif()
 
 # ── Liens — modules obligatoires ─────────────────────────────────────────────
 target_link_libraries(appPoloOS PRIVATE
