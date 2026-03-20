@@ -3,6 +3,7 @@
 #include <QQmlContext>
 #include <QQuickStyle>
 #include "canhandler.h"
+#include "CanReader.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +14,8 @@ int main(int argc, char *argv[])
     // --- 1. CREATE THE SHARED INSTANCE ---
     // This is the SINGLE "Brain" of the car.
     CanHandler *canHandler = new CanHandler(&app);
+    CanReader  *canReader  = new CanReader(canHandler, &app);
+    canReader->connectToBus("can0");
 
     QQmlApplicationEngine engine;
 
