@@ -67,4 +67,5 @@
         <file>iconsDashboard/raphael--settingsalt.svg</file>
         <file>iconsDashboard/volkswagen-1-logo-svgrepo-com.svg</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

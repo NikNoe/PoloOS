@@ -122,6 +122,7 @@ qt_add_qml_module(appPoloOS
         meshes/wheel_002_mesh.mesh
         meshes/wheel_003_mesh.mesh
         SOURCES CanReader.cpp
+        QML_FILES
 )
 
 # ── NO_CACHEGEN : uniquement sur Qt < 6.5 (Pi avec Qt 6.4 apt)

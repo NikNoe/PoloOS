@@ -9,6 +9,21 @@ Window {
     title: "9N3 Complete Simulator"
     color: "#ffffff"
 
+    // ─── Propriété publique : le parent (Main.qml) écrit ici ─────────────────
+    // Quand busEngineActive passe à true, Main.qml met busDetected = true
+    // et la fenêtre se ferme proprement.
+    property bool busDetected: false
+
+    onBusDetectedChanged: {
+        if (busDetected) {
+            console.log("[CockpitWindow] Bus CAN réel détecté → fermeture du simulateur")
+            cockpitWindow.close()
+        } else {
+            console.log("[CockpitWindow] Bus CAN perdu → réouverture du simulateur")
+            cockpitWindow.show()
+        }
+    }
+
     ScrollView {
         anchors.fill: parent
         ScrollBar.vertical.policy: ScrollBar.AlwaysOn
