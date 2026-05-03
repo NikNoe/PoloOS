@@ -1,0 +1,20 @@
+# macOS
+._*
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Build
+build/
+build-raylib/
+build-qt/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.a
+
+# Binaires
+PoloRaylib
+appPoloOS
