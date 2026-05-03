@@ -36,6 +36,12 @@ target_include_directories(PoloRaylib PRIVATE src)
 
 target_link_libraries(PoloRaylib PRIVATE raylib)
 
+add_custom_command(TARGET PoloRaylib POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/assets
+    $<TARGET_FILE_DIR:PoloRaylib>/assets
+)
+
 # ── Pi 5 : math + pthreads ────────────────────────────────────────────────────
 if(UNIX AND NOT APPLE)
     target_link_libraries(PoloRaylib PRIVATE m pthread)
