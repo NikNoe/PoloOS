@@ -1,0 +1,2181 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "appPoloOS"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"_qt_internal_create_executable",
+			"qt6_add_executable",
+			"qt_add_executable",
+			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"find_dependency",
+			"_qt_internal_find_qt_dependencies",
+			"set_property",
+			"_qt_internal_find_third_party_dependencies",
+			"qt6_add_qml_module",
+			"qt_add_qml_module",
+			"add_dependencies",
+			"_qt_internal_qml_copy_files_to_build_dir",
+			"_qt_internal_write_deferred_qmlls_build_ini_file",
+			"_qt_internal_scan_qml_imports",
+			"_qt_internal_generate_deploy_qml_imports_script",
+			"cmake_language",
+			"_qt_internal_finalize_executable",
+			"qt6_finalize_target",
+			"add_definitions",
+			"target_compile_definitions",
+			"target_include_directories",
+			"_qt_internal_qml_type_registration",
+			"target_sources",
+			"qt6_extract_metatypes",
+			"__qt_propagate_generated_resource",
+			"_qt_internal_process_resource",
+			"qt6_add_resources",
+			"qt6_target_qml_sources",
+			"_qt_internal_target_enable_qmlcachegen",
+			"_qt_internal_expose_deferred_files_to_ide"
+		],
+		"files" : 
+		[
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"CMakeLists.txt",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Quick3D/Qt6Quick3DTargets.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Quick3D/Qt6Quick3DConfig.cmake",
+			"build/Desktop_Qt_6_10_2-Debug/.qtc/package-manager/maintenance_tool_provider.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Quick3DRuntimeRender/Qt6Quick3DRuntimeRenderTargets.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Quick3DRuntimeRender/Qt6Quick3DRuntimeRenderConfig.cmake",
+			"/home/tecnodjum/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Quick3D/Qt6Quick3DDependencies.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Location/Qt6LocationTargets.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Location/Qt6LocationConfig.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6/Qt6Config.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Quick/Qt6QuickTargets.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake",
+			"/home/tecnodjum/Qt/Tools/CMake/share/cmake-3.30/Modules/FindOpenGL.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6/FindWrapOpenGL.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Qml/Qt6QmlTargets.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake:1099:EVAL",
+			"/home/tecnodjum/Qt/6.10.2/gcc_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:848:EVAL"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 64,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 1014,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 673,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 749,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 136,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 151,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 1,
+				"line" : 33,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 315,
+				"parent" : 7
+			},
+			{
+				"file" : 3,
+				"parent" : 8
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 52,
+				"parent" : 9
+			},
+			{
+				"file" : 2,
+				"parent" : 10
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 61,
+				"parent" : 11
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 40,
+				"parent" : 9
+			},
+			{
+				"file" : 9,
+				"parent" : 13
+			},
+			{
+				"command" : 9,
+				"file" : 9,
+				"line" : 50,
+				"parent" : 14
+			},
+			{
+				"command" : 8,
+				"file" : 8,
+				"line" : 142,
+				"parent" : 15
+			},
+			{
+				"command" : 7,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 16
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 333,
+				"parent" : 17
+			},
+			{
+				"file" : 6,
+				"parent" : 18
+			},
+			{
+				"command" : 6,
+				"file" : 6,
+				"line" : 52,
+				"parent" : 19
+			},
+			{
+				"file" : 5,
+				"parent" : 20
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 61,
+				"parent" : 21
+			},
+			{
+				"command" : 7,
+				"file" : 1,
+				"line" : 54,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 333,
+				"parent" : 23
+			},
+			{
+				"file" : 12,
+				"parent" : 24
+			},
+			{
+				"command" : 7,
+				"file" : 12,
+				"line" : 241,
+				"parent" : 25
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 333,
+				"parent" : 26
+			},
+			{
+				"file" : 11,
+				"parent" : 27
+			},
+			{
+				"command" : 6,
+				"file" : 11,
+				"line" : 52,
+				"parent" : 28
+			},
+			{
+				"file" : 10,
+				"parent" : 29
+			},
+			{
+				"command" : 5,
+				"file" : 10,
+				"line" : 61,
+				"parent" : 30
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 315,
+				"parent" : 7
+			},
+			{
+				"file" : 14,
+				"parent" : 32
+			},
+			{
+				"command" : 6,
+				"file" : 14,
+				"line" : 52,
+				"parent" : 33
+			},
+			{
+				"file" : 13,
+				"parent" : 34
+			},
+			{
+				"command" : 5,
+				"file" : 13,
+				"line" : 61,
+				"parent" : 35
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 315,
+				"parent" : 7
+			},
+			{
+				"file" : 18,
+				"parent" : 37
+			},
+			{
+				"command" : 6,
+				"file" : 18,
+				"line" : 40,
+				"parent" : 38
+			},
+			{
+				"file" : 17,
+				"parent" : 39
+			},
+			{
+				"command" : 11,
+				"file" : 17,
+				"line" : 37,
+				"parent" : 40
+			},
+			{
+				"command" : 8,
+				"file" : 8,
+				"line" : 36,
+				"parent" : 41
+			},
+			{
+				"command" : 7,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 42
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 340,
+				"parent" : 43
+			},
+			{
+				"file" : 16,
+				"parent" : 44
+			},
+			{
+				"command" : 7,
+				"file" : 16,
+				"line" : 13,
+				"parent" : 45
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 340,
+				"parent" : 46
+			},
+			{
+				"file" : 15,
+				"parent" : 47
+			},
+			{
+				"command" : 10,
+				"file" : 15,
+				"line" : 712,
+				"parent" : 48
+			},
+			{
+				"command" : 5,
+				"file" : 15,
+				"line" : 710,
+				"parent" : 48
+			},
+			{
+				"command" : 13,
+				"file" : 1,
+				"line" : 72,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 19,
+				"line" : 1417,
+				"parent" : 51
+			},
+			{
+				"command" : 4,
+				"file" : 19,
+				"line" : 618,
+				"parent" : 52
+			},
+			{
+				"command" : 6,
+				"file" : 14,
+				"line" : 40,
+				"parent" : 33
+			},
+			{
+				"file" : 22,
+				"parent" : 54
+			},
+			{
+				"command" : 9,
+				"file" : 22,
+				"line" : 50,
+				"parent" : 55
+			},
+			{
+				"command" : 8,
+				"file" : 8,
+				"line" : 142,
+				"parent" : 56
+			},
+			{
+				"command" : 7,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 57
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 333,
+				"parent" : 58
+			},
+			{
+				"file" : 21,
+				"parent" : 59
+			},
+			{
+				"command" : 6,
+				"file" : 21,
+				"line" : 55,
+				"parent" : 60
+			},
+			{
+				"file" : 20,
+				"parent" : 61
+			},
+			{
+				"command" : 5,
+				"file" : 20,
+				"line" : 61,
+				"parent" : 62
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 674,
+				"parent" : 2
+			},
+			{
+				"command" : 15,
+				"file" : 19,
+				"line" : 970,
+				"parent" : 52
+			},
+			{
+				"command" : 14,
+				"file" : 19,
+				"line" : 3083,
+				"parent" : 65
+			},
+			{
+				"command" : 15,
+				"file" : 19,
+				"line" : 976,
+				"parent" : 52
+			},
+			{
+				"command" : 14,
+				"file" : 19,
+				"line" : 3083,
+				"parent" : 67
+			},
+			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 16,
+				"file" : 23,
+				"line" : 1,
+				"parent" : 69
+			},
+			{
+				"command" : 14,
+				"file" : 19,
+				"line" : 1387,
+				"parent" : 70
+			},
+			{
+				"command" : 21,
+				"file" : 24,
+				"line" : 1,
+				"parent" : 69
+			},
+			{
+				"command" : 20,
+				"file" : 0,
+				"line" : 879,
+				"parent" : 72
+			},
+			{
+				"command" : 19,
+				"file" : 0,
+				"line" : 801,
+				"parent" : 73
+			},
+			{
+				"command" : 18,
+				"file" : 0,
+				"line" : 801,
+				"parent" : 74
+			},
+			{
+				"command" : 17,
+				"file" : 19,
+				"line" : 4777,
+				"parent" : 75
+			},
+			{
+				"command" : 14,
+				"file" : 19,
+				"line" : 4552,
+				"parent" : 76
+			},
+			{
+				"command" : 22,
+				"file" : 1,
+				"line" : 25,
+				"parent" : 0
+			},
+			{
+				"command" : 23,
+				"file" : 1,
+				"line" : 152,
+				"parent" : 0
+			},
+			{
+				"command" : 25,
+				"file" : 19,
+				"line" : 835,
+				"parent" : 52
+			},
+			{
+				"command" : 24,
+				"file" : 19,
+				"line" : 4246,
+				"parent" : 80
+			},
+			{
+				"command" : 27,
+				"file" : 19,
+				"line" : 4041,
+				"parent" : 80
+			},
+			{
+				"command" : 26,
+				"file" : 0,
+				"line" : 1579,
+				"parent" : 82
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 4207,
+				"parent" : 80
+			},
+			{
+				"command" : 30,
+				"file" : 19,
+				"line" : 887,
+				"parent" : 52
+			},
+			{
+				"command" : 29,
+				"file" : 0,
+				"line" : 405,
+				"parent" : 85
+			},
+			{
+				"command" : 28,
+				"file" : 0,
+				"line" : 2625,
+				"parent" : 86
+			},
+			{
+				"command" : 26,
+				"file" : 0,
+				"line" : 2165,
+				"parent" : 87
+			},
+			{
+				"command" : 31,
+				"file" : 19,
+				"line" : 960,
+				"parent" : 52
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 32,
+				"file" : 19,
+				"line" : 3691,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 1844,
+				"parent" : 91
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3554,
+				"parent" : 89
+			},
+			{
+				"command" : 26,
+				"file" : 19,
+				"line" : 3747,
+				"parent" : 89
+			},
+			{
+				"command" : 30,
+				"file" : 19,
+				"line" : 3839,
+				"parent" : 89
+			},
+			{
+				"command" : 29,
+				"file" : 0,
+				"line" : 405,
+				"parent" : 128
+			},
+			{
+				"command" : 28,
+				"file" : 0,
+				"line" : 2625,
+				"parent" : 129
+			},
+			{
+				"command" : 26,
+				"file" : 0,
+				"line" : 2165,
+				"parent" : 130
+			},
+			{
+				"command" : 30,
+				"file" : 19,
+				"line" : 3857,
+				"parent" : 89
+			},
+			{
+				"command" : 29,
+				"file" : 0,
+				"line" : 405,
+				"parent" : 132
+			},
+			{
+				"command" : 28,
+				"file" : 0,
+				"line" : 2625,
+				"parent" : 133
+			},
+			{
+				"command" : 26,
+				"file" : 0,
+				"line" : 2165,
+				"parent" : 134
+			},
+			{
+				"command" : 33,
+				"file" : 0,
+				"line" : 873,
+				"parent" : 72
+			},
+			{
+				"command" : 26,
+				"file" : 0,
+				"line" : 2290,
+				"parent" : 136
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 64,
+					"fragment" : "-fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 78,
+					"define" : "BUILD_DATE=\"2026-04-25\""
+				},
+				{
+					"backtrace" : 78,
+					"define" : "GIT_COMMIT_HASH=\"9f07a6d\""
+				},
+				{
+					"backtrace" : 79,
+					"define" : "HAS_QT_LOCATION"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_CONCURRENT_LIB"
+				},
+				{
+					"backtrace" : 64,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_LOCATION_LIB"
+				},
+				{
+					"backtrace" : 53,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_OPENGL_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_POSITIONINGQUICK_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_POSITIONING_LIB"
+				},
+				{
+					"backtrace" : 53,
+					"define" : "QT_QMLINTEGRATION_LIB"
+				},
+				{
+					"backtrace" : 53,
+					"define" : "QT_QML_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_QUICK3DHELPERS_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_QUICK3DRUNTIMERENDER_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_QUICK3DUTILS_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_QUICK3D_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_QUICKCONTROLS2_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_QUICK_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_SERIALBUS_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_SERIALPORT_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_SHADERTOOLS_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug"
+				},
+				{
+					"path" : "/home/tecnodjum/PoloOS"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/appPoloOS_autogen/include"
+				},
+				{
+					"backtrace" : 81,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtQml"
+				},
+				{
+					"backtrace" : 81,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include"
+				},
+				{
+					"backtrace" : 81,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtCore"
+				},
+				{
+					"backtrace" : 81,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/mkspecs/linux-g++"
+				},
+				{
+					"backtrace" : 81,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtQmlIntegration"
+				},
+				{
+					"backtrace" : 81,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtNetwork"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtGui"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtQuick"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtOpenGL"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtQuick3D"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtQuick3DRuntimeRender"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtQuick3DUtils"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtShaderTools"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtConcurrent"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtQuick3DHelpers"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtSerialBus"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtSerialPort"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtQuickControls2"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtLocation"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtPositioning"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/include/QtPositioningQuick"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					64,
+					64
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				4,
+				6,
+				7,
+				9,
+				10,
+				12,
+				14,
+				16,
+				18,
+				20,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				36,
+				38,
+				40,
+				42,
+				44,
+				45,
+				46,
+				81
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 66,
+			"id" : "appPoloOS_copy_qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 68,
+			"id" : "appPoloOS_copy_res::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 71,
+			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 77,
+			"id" : "appPoloOS_qmlimportscan::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "appPoloOS_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "appPoloOS_autogen::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "appPoloOS::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-DQT_QML_DEBUG -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/tecnodjum/Qt/6.10.2/gcc_64/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Quick3DHelpers.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6SerialBus.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6SerialPort.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6QuickControls2.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Location.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Quick3D.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Quick3DRuntimeRender.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6ShaderTools.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 22,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Quick3DUtils.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 22,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Concurrent.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 31,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6PositioningQuick.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Quick.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 36,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6OpenGL.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Gui.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 49,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libGLX.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 50,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libOpenGL.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 53,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Qml.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 63,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Network.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Positioning.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 64,
+				"fragment" : "/home/tecnodjum/Qt/6.10.2/gcc_64/lib/libQt6Core.so.6.10.2",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-Wl,-rpath-link,/home/tecnodjum/Qt/6.10.2/gcc_64/lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "appPoloOS",
+	"nameOnDisk" : "appPoloOS",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				4,
+				8,
+				11,
+				13,
+				15,
+				17,
+				19,
+				21,
+				23,
+				25,
+				27,
+				29,
+				31,
+				33,
+				35,
+				37,
+				39,
+				41,
+				43,
+				81
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				2,
+				3
+			]
+		},
+		{
+			"name" : "Source Files\\Generated",
+			"sourceIndexes" : 
+			[
+				5,
+				6,
+				7,
+				9,
+				10,
+				12,
+				14,
+				16,
+				18,
+				20,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				36,
+				38,
+				40,
+				42,
+				44,
+				45,
+				46,
+				47,
+				49,
+				50
+			]
+		},
+		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				48,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				80,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/appPoloOS_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "canhandler.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "CanReader.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "CanReader.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 83,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/meta_types/qt6apppoloos_metatypes.json.gen",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 84,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/apppoloos_qmltyperegistrations.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 88,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.qt/rcc/qrc_qmake_PoloOS.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 90,
+			"path" : "Main.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 92,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_qmlcache_loader.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 93,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_Main_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 94,
+			"path" : "Polo.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 95,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_Polo_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 96,
+			"path" : "CockpitWindow.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 97,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_CockpitWindow_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 98,
+			"path" : "DashboardIcon.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 99,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_DashboardIcon_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 100,
+			"path" : "VitalsItem.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 101,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_VitalsItem_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 102,
+			"path" : "EnginePage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 103,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EnginePage_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 104,
+			"path" : "EngineLive.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 105,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EngineLive_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 106,
+			"path" : "EnergyPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 107,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EnergyPage_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 108,
+			"path" : "AboutPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 109,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_AboutPage_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 110,
+			"path" : "BodyPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 111,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_BodyPage_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 112,
+			"path" : "DiagnosticsPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 113,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_DiagnosticsPage_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 114,
+			"path" : "SettingsPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 115,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_SettingsPage_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 116,
+			"path" : "ChassisPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 117,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_ChassisPage_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 118,
+			"path" : "MapPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 119,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_MapPage_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 120,
+			"path" : "TempCard.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 121,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_TempCard_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 122,
+			"path" : "BusStatusCard.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 123,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_BusStatusCard_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 124,
+			"path" : "EcuTag.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 125,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EcuTag_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 126,
+			"path" : "EngineerRow.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 127,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EngineerRow_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 131,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.qt/rcc/qrc_appPoloOS_raw_qml_0.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 135,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.qt/rcc/qrc_appPoloOS_raw_res_0.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 137,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.qt/rcc/qmake_PoloOS.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 137,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/qmldir",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.qt/rcc/appPoloOS_raw_qml_0.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 137,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.qt/rcc/appPoloOS_raw_res_0.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 137,
+			"path" : "icons.qrc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/chassis_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/imvlm_lighting_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/interior_And_engine_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/glass_interior_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/taillight_red_glass_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/bonnet_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/boot_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/boot_ok_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/bumper_front_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/bump_rear_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/door_lr_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/door_lf_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/door_lf_ok_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/wing_lf_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/wing_rf_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/door_rf_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/door_rf_ok_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/door_rr_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/windscreen_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/steering_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/speedook_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/tahook_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/vent_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/chassis_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/wheel_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/wheel_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/wheel_002_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 137,
+			"path" : "meshes/wheel_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/appPoloOS_autogen/timestamp",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/appPoloOS_autogen/EWIEGA46WW/qrc_icons.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/meta_types/qt6apppoloos_metatypes.json.gen.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/apppoloos_qmltyperegistrations.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.qt/rcc/qrc_qmake_PoloOS.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_qmlcache_loader.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_Main_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_Polo_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_CockpitWindow_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_DashboardIcon_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_VitalsItem_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EnginePage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EngineLive_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EnergyPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_AboutPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_BodyPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_DiagnosticsPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_SettingsPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_ChassisPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_MapPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_TempCard_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_BusStatusCard_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EcuTag_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.rcc/qmlcache/appPoloOS_EngineerRow_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.qt/rcc/qrc_appPoloOS_raw_qml_0.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/.qt/rcc/qrc_appPoloOS_raw_res_0.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/appPoloOS_autogen/timestamp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/appPoloOS_autogen/EWIEGA46WW/qrc_icons.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_10_2-Debug/meta_types/appPoloOS_json_file_list.txt.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 64,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6core_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 53,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6qml_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 53,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6network_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6gui_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6quick_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6opengl_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6quick3d_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6quick3druntimerender_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6quick3dutils_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6shadertools_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6concurrent_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6quick3dhelpers_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6serialbus_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6serialport_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 5,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6quickcontrols2_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6location_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6positioning_metatypes.json",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/home/tecnodjum/Qt/6.10.2/gcc_64/metatypes/qt6positioningquick_metatypes.json",
+			"sourceGroupIndex" : 4
+		}
+	],
+	"type" : "EXECUTABLE"
+}

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/PoloOS">
+    <file alias="qmldir">/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/qmldir</file>
+  </qresource>
+</RCC>
+

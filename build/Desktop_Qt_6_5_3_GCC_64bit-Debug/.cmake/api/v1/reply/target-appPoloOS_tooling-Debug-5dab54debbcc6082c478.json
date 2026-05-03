@@ -1,0 +1,751 @@
+{
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"qt6_target_qml_sources",
+			"qt6_add_qml_module",
+			"qt_add_qml_module",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"/home/tecnodjum/Qt/6.5.3/gcc_64/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 72,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 686,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 610,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2288,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 2291,
+				"parent" : 3
+			}
+		]
+	},
+	"id" : "appPoloOS_tooling::@6890427a1f51a3e7e1df",
+	"name" : "appPoloOS_tooling",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17
+			]
+		},
+		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				18
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/Main.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/Polo.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/CockpitWindow.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/DashboardIcon.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/VitalsItem.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EnginePage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EngineLive.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EnergyPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/AboutPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/BodyPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/DiagnosticsPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/SettingsPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/ChassisPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/MapPage.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/TempCard.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/BusStatusCard.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EcuTag.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EngineerRow.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/icons.qrc",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/chassis_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/imvlm_lighting_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/interior_And_engine_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/glass_interior_001_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/taillight_red_glass_001_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/bonnet_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/boot_ok_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/boot_ok_003_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/bumper_front_ok_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/bump_rear_ok_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_lr_ok_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_lf_ok_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_lf_ok_003_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wing_lf_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wing_rf_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_rf_ok_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_rf_ok_003_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_rr_ok_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/windscreen_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/steering_ok_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/speedook_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/tahook_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/vent_001_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/chassis_003_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wheel_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wheel_001_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wheel_002_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wheel_003_mesh.mesh",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/Main.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/Polo.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/CockpitWindow.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/DashboardIcon.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/VitalsItem.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EnginePage.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EngineLive.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EnergyPage.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/AboutPage.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/BodyPage.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/DiagnosticsPage.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/SettingsPage.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/ChassisPage.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/MapPage.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/TempCard.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/BusStatusCard.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EcuTag.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/EngineerRow.qml.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/icons.qrc.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/chassis_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/imvlm_lighting_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/interior_And_engine_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/glass_interior_001_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/taillight_red_glass_001_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/bonnet_ok_001_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/boot_ok_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/boot_ok_003_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/bumper_front_ok_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/bump_rear_ok_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_lr_ok_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_lf_ok_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_lf_ok_003_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wing_lf_ok_001_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wing_rf_ok_001_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_rf_ok_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_rf_ok_003_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/door_rr_ok_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/windscreen_ok_001_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/steering_ok_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/speedook_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/tahook_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/vent_001_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/chassis_003_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wheel_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wheel_001_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wheel_002_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_5_3_GCC_64bit-Debug/qml/PoloOS/meshes/wheel_003_mesh.mesh.rule",
+			"sourceGroupIndex" : 3
+		}
+	],
+	"type" : "INTERFACE_LIBRARY"
+}

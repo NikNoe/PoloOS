@@ -1,0 +1,15 @@
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/appPoloOS.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/appPoloOS_qmltyperegistration.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/all_qmltyperegistrations.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/appPoloOS_qmllint.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/appPoloOS_qmllint_json.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/appPoloOS_qmllint_module.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/all_qmllint.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/all_qmllint_json.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/all_qmllint_module.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/appPoloOS_tooling.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/appPoloOS_qmlimportscan.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/appPoloOS_autogen_timestamp_deps.dir
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_5_3_GCC_64bit-Debug/CMakeFiles/appPoloOS_autogen.dir

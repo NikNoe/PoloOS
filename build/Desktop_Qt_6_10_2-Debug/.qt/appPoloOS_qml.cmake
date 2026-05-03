@@ -1,0 +1,43 @@
+
+set(target "appPoloOS")
+set(working_dir "/home/tecnodjum/PoloOS")
+set(src_and_dest_list
+    "/home/tecnodjum/PoloOS/Main.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/Main.qml"
+    "/home/tecnodjum/PoloOS/Polo.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/Polo.qml"
+    "/home/tecnodjum/PoloOS/CockpitWindow.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/CockpitWindow.qml"
+    "/home/tecnodjum/PoloOS/DashboardIcon.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/DashboardIcon.qml"
+    "/home/tecnodjum/PoloOS/VitalsItem.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/VitalsItem.qml"
+    "/home/tecnodjum/PoloOS/EnginePage.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/EnginePage.qml"
+    "/home/tecnodjum/PoloOS/EngineLive.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/EngineLive.qml"
+    "/home/tecnodjum/PoloOS/EnergyPage.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/EnergyPage.qml"
+    "/home/tecnodjum/PoloOS/AboutPage.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/AboutPage.qml"
+    "/home/tecnodjum/PoloOS/BodyPage.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/BodyPage.qml"
+    "/home/tecnodjum/PoloOS/DiagnosticsPage.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/DiagnosticsPage.qml"
+    "/home/tecnodjum/PoloOS/SettingsPage.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/SettingsPage.qml"
+    "/home/tecnodjum/PoloOS/ChassisPage.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/ChassisPage.qml"
+    "/home/tecnodjum/PoloOS/MapPage.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/MapPage.qml"
+    "/home/tecnodjum/PoloOS/TempCard.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/TempCard.qml"
+    "/home/tecnodjum/PoloOS/BusStatusCard.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/BusStatusCard.qml"
+    "/home/tecnodjum/PoloOS/EcuTag.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/EcuTag.qml"
+    "/home/tecnodjum/PoloOS/EngineerRow.qml"
+    "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS/EngineerRow.qml"
+
+)
+set(timestamp_file "/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/.qt/appPoloOS_qml.txt")

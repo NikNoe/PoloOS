@@ -1,0 +1,52 @@
+<RCC>
+  <qresource prefix="/qt/qml/PoloOS/">
+    <file alias="Main.qml">/home/tecnodjum/PoloOS/Main.qml</file>
+    <file alias="Polo.qml">/home/tecnodjum/PoloOS/Polo.qml</file>
+    <file alias="CockpitWindow.qml">/home/tecnodjum/PoloOS/CockpitWindow.qml</file>
+    <file alias="DashboardIcon.qml">/home/tecnodjum/PoloOS/DashboardIcon.qml</file>
+    <file alias="VitalsItem.qml">/home/tecnodjum/PoloOS/VitalsItem.qml</file>
+    <file alias="EnginePage.qml">/home/tecnodjum/PoloOS/EnginePage.qml</file>
+    <file alias="EngineLive.qml">/home/tecnodjum/PoloOS/EngineLive.qml</file>
+    <file alias="EnergyPage.qml">/home/tecnodjum/PoloOS/EnergyPage.qml</file>
+    <file alias="AboutPage.qml">/home/tecnodjum/PoloOS/AboutPage.qml</file>
+    <file alias="BodyPage.qml">/home/tecnodjum/PoloOS/BodyPage.qml</file>
+    <file alias="DiagnosticsPage.qml">/home/tecnodjum/PoloOS/DiagnosticsPage.qml</file>
+    <file alias="SettingsPage.qml">/home/tecnodjum/PoloOS/SettingsPage.qml</file>
+    <file alias="ChassisPage.qml">/home/tecnodjum/PoloOS/ChassisPage.qml</file>
+    <file alias="MapPage.qml">/home/tecnodjum/PoloOS/MapPage.qml</file>
+    <file alias="TempCard.qml">/home/tecnodjum/PoloOS/TempCard.qml</file>
+    <file alias="BusStatusCard.qml">/home/tecnodjum/PoloOS/BusStatusCard.qml</file>
+    <file alias="EcuTag.qml">/home/tecnodjum/PoloOS/EcuTag.qml</file>
+    <file alias="EngineerRow.qml">/home/tecnodjum/PoloOS/EngineerRow.qml</file>
+    <file alias="icons.qrc">/home/tecnodjum/PoloOS/icons.qrc</file>
+    <file alias="meshes/chassis_mesh.mesh">/home/tecnodjum/PoloOS/meshes/chassis_mesh.mesh</file>
+    <file alias="meshes/imvlm_lighting_mesh.mesh">/home/tecnodjum/PoloOS/meshes/imvlm_lighting_mesh.mesh</file>
+    <file alias="meshes/interior_And_engine_mesh.mesh">/home/tecnodjum/PoloOS/meshes/interior_And_engine_mesh.mesh</file>
+    <file alias="meshes/glass_interior_001_mesh.mesh">/home/tecnodjum/PoloOS/meshes/glass_interior_001_mesh.mesh</file>
+    <file alias="meshes/taillight_red_glass_001_mesh.mesh">/home/tecnodjum/PoloOS/meshes/taillight_red_glass_001_mesh.mesh</file>
+    <file alias="meshes/bonnet_ok_001_mesh.mesh">/home/tecnodjum/PoloOS/meshes/bonnet_ok_001_mesh.mesh</file>
+    <file alias="meshes/boot_ok_mesh.mesh">/home/tecnodjum/PoloOS/meshes/boot_ok_mesh.mesh</file>
+    <file alias="meshes/boot_ok_003_mesh.mesh">/home/tecnodjum/PoloOS/meshes/boot_ok_003_mesh.mesh</file>
+    <file alias="meshes/bumper_front_ok_mesh.mesh">/home/tecnodjum/PoloOS/meshes/bumper_front_ok_mesh.mesh</file>
+    <file alias="meshes/bump_rear_ok_mesh.mesh">/home/tecnodjum/PoloOS/meshes/bump_rear_ok_mesh.mesh</file>
+    <file alias="meshes/door_lr_ok_mesh.mesh">/home/tecnodjum/PoloOS/meshes/door_lr_ok_mesh.mesh</file>
+    <file alias="meshes/door_lf_ok_mesh.mesh">/home/tecnodjum/PoloOS/meshes/door_lf_ok_mesh.mesh</file>
+    <file alias="meshes/door_lf_ok_003_mesh.mesh">/home/tecnodjum/PoloOS/meshes/door_lf_ok_003_mesh.mesh</file>
+    <file alias="meshes/wing_lf_ok_001_mesh.mesh">/home/tecnodjum/PoloOS/meshes/wing_lf_ok_001_mesh.mesh</file>
+    <file alias="meshes/wing_rf_ok_001_mesh.mesh">/home/tecnodjum/PoloOS/meshes/wing_rf_ok_001_mesh.mesh</file>
+    <file alias="meshes/door_rf_ok_mesh.mesh">/home/tecnodjum/PoloOS/meshes/door_rf_ok_mesh.mesh</file>
+    <file alias="meshes/door_rf_ok_003_mesh.mesh">/home/tecnodjum/PoloOS/meshes/door_rf_ok_003_mesh.mesh</file>
+    <file alias="meshes/door_rr_ok_mesh.mesh">/home/tecnodjum/PoloOS/meshes/door_rr_ok_mesh.mesh</file>
+    <file alias="meshes/windscreen_ok_001_mesh.mesh">/home/tecnodjum/PoloOS/meshes/windscreen_ok_001_mesh.mesh</file>
+    <file alias="meshes/steering_ok_mesh.mesh">/home/tecnodjum/PoloOS/meshes/steering_ok_mesh.mesh</file>
+    <file alias="meshes/speedook_mesh.mesh">/home/tecnodjum/PoloOS/meshes/speedook_mesh.mesh</file>
+    <file alias="meshes/tahook_mesh.mesh">/home/tecnodjum/PoloOS/meshes/tahook_mesh.mesh</file>
+    <file alias="meshes/vent_001_mesh.mesh">/home/tecnodjum/PoloOS/meshes/vent_001_mesh.mesh</file>
+    <file alias="meshes/chassis_003_mesh.mesh">/home/tecnodjum/PoloOS/meshes/chassis_003_mesh.mesh</file>
+    <file alias="meshes/wheel_mesh.mesh">/home/tecnodjum/PoloOS/meshes/wheel_mesh.mesh</file>
+    <file alias="meshes/wheel_001_mesh.mesh">/home/tecnodjum/PoloOS/meshes/wheel_001_mesh.mesh</file>
+    <file alias="meshes/wheel_002_mesh.mesh">/home/tecnodjum/PoloOS/meshes/wheel_002_mesh.mesh</file>
+    <file alias="meshes/wheel_003_mesh.mesh">/home/tecnodjum/PoloOS/meshes/wheel_003_mesh.mesh</file>
+  </qresource>
+</RCC>
+

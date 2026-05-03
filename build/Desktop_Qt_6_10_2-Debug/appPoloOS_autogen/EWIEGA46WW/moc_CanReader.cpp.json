@@ -1,0 +1,27 @@
+{
+    "classes": [
+        {
+            "className": "CanReader",
+            "lineNumber": 9,
+            "object": true,
+            "qualifiedClassName": "CanReader",
+            "slots": [
+                {
+                    "access": "private",
+                    "index": 0,
+                    "lineNumber": 16,
+                    "name": "processReceivedFrames",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "CanReader.h",
+    "outputRevision": 69
+}

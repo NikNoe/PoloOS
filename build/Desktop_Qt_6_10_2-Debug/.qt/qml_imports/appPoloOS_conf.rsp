@@ -1,0 +1,17 @@
+-rootPath
+/home/tecnodjum/PoloOS
+-cmake-output
+-output-file
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/.qt/qml_imports/appPoloOS_conf.cmake
+-importPath
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug
+-importPath
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml/PoloOS
+-importPath
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/qml
+-importPath
+/home/tecnodjum/Qt/6.10.2/gcc_64/qml
+-qrcFiles
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/.qt/rcc/qmake_PoloOS.qrc
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/.qt/rcc/appPoloOS_raw_qml_0.qrc
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/.qt/rcc/appPoloOS_raw_res_0.qrc

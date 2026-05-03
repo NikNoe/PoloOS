@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_appPoloOS_FILE /home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/appPoloOS)
+set(__QT_DEPLOY_TARGET_appPoloOS_TYPE EXECUTABLE)

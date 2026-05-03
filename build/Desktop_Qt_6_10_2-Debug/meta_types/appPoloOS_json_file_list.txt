@@ -1,0 +1,2 @@
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/appPoloOS_autogen/include/../EWIEGA46WW/moc_CanReader.cpp.json
+/home/tecnodjum/PoloOS/build/Desktop_Qt_6_10_2-Debug/appPoloOS_autogen/include/../EWIEGA46WW/moc_canhandler.cpp.json
