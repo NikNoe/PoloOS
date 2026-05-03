@@ -1,0 +1,199 @@
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 119,
+                            "functionName": "mainText",
+                            "line": 8,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 37,
+                            "durationMicroseconds": 65,
+                            "functionName": "cardBg",
+                            "line": 9,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 23,
+                            "durationMicroseconds": 52,
+                            "functionName": "fill",
+                            "line": 12,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 151,
+                            "functionName": "color",
+                            "line": 25,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 25,
+                            "functionName": "centerIn",
+                            "line": 31,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 127,
+                            "functionName": "text",
+                            "line": 33,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 13,
+                            "functionName": "color",
+                            "line": 39,
+                            "message": "Cannot access value for name cardBg"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 22,
+                            "functionName": "centerIn",
+                            "line": 41,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 112,
+                            "functionName": "text",
+                            "line": 43,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 67,
+                            "durationMicroseconds": 14,
+                            "functionName": "color",
+                            "line": 43,
+                            "message": "Cannot access value for name mainText"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 71,
+                            "functionName": "value",
+                            "line": 55,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 25,
+                            "durationMicroseconds": 131,
+                            "functionName": "accent",
+                            "line": 56,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 45,
+                            "durationMicroseconds": 57,
+                            "functionName": "value",
+                            "line": 58,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 49,
+                            "durationMicroseconds": 56,
+                            "functionName": "value",
+                            "line": 59,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 48,
+                            "durationMicroseconds": 59,
+                            "functionName": "value",
+                            "line": 60,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 46,
+                            "durationMicroseconds": 59,
+                            "functionName": "value",
+                            "line": 61,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 10,
+                            "functionName": "color",
+                            "line": 67,
+                            "message": "Cannot access value for name cardBg"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 90,
+                            "functionName": "fill",
+                            "line": 70,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 343,
+                            "functionName": "text",
+                            "line": 81,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 86,
+                            "durationMicroseconds": 39,
+                            "functionName": "color",
+                            "line": 81,
+                            "message": "Cannot access value for name mainText"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 264,
+                            "functionName": "text",
+                            "line": 83,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 356,
+                            "functionName": "color",
+                            "line": 84,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 46,
+                            "durationMicroseconds": 71,
+                            "functionName": "centerIn",
+                            "line": 94,
+                            "message": ""
+                        }
+                    ],
+                    "filePath": "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EnergyPage.qml"
+                }
+            ],
+            "moduleId": "PoloOS(appPoloOS)"
+        }
+    ]
+}

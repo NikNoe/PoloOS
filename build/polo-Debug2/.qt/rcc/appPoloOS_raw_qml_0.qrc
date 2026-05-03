@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/PoloOS/">
+    <file alias="Main.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/Main.qml</file>
+  </qresource>
+</RCC>
+

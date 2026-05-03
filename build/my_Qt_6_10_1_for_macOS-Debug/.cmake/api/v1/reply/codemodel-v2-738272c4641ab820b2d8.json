@@ -1,0 +1,205 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f7c3a2e4f96de40edbb2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "PoloOS",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-4f6a80b955961bf08840.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-755d2b9481deee87b5bc.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-efaa6f2269132a8f093d.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-8f04adbe0b8ac8c20d87.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-281deb003240e12c0274.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS-Debug-606f50f143046783f8a9.json",
+					"name" : "appPoloOS",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS_autogen-Debug-7b02663742932e032269.json",
+					"name" : "appPoloOS_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS_autogen_timestamp_deps-Debug-90f651daaa8fb2eddbdd.json",
+					"name" : "appPoloOS_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS_copy_qml-Debug-58b22e21a7b2d0942257.json",
+					"name" : "appPoloOS_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS_copy_res-Debug-164e3f2da4762cccb30f.json",
+					"name" : "appPoloOS_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS_qmlimportscan-Debug-ccb0b10a802e49c31856.json",
+					"name" : "appPoloOS_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS_qmllint-Debug-18b423865bd3c5a36ff4.json",
+					"name" : "appPoloOS_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS_qmllint_json-Debug-5bc157f601d93b2348be.json",
+					"name" : "appPoloOS_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS_qmllint_module-Debug-bcab2b55f7d69622ddf6.json",
+					"name" : "appPoloOS_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPoloOS_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPoloOS_qmltyperegistration-Debug-a2703998da61df5f2d50.json",
+					"name" : "appPoloOS_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_qmlls_build_ini_file-Debug-b5fffec78493ba698fb4.json",
+					"name" : "generate_qmlls_build_ini_file",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_appPoloOS_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_appPoloOS_aotstats_target-Debug-74c155082363a9fc7b27.json",
+					"name" : "module_appPoloOS_aotstats_target",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/my_Qt_6_10_1_for_macOS-Debug",
+		"source" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

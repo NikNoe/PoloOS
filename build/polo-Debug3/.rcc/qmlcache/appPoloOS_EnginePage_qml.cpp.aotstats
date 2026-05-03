@@ -1,0 +1,479 @@
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 123,
+                            "functionName": "mainTextColor",
+                            "line": 9,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 43,
+                            "durationMicroseconds": 62,
+                            "functionName": "subTextColor",
+                            "line": 10,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 59,
+                            "functionName": "bgAccent",
+                            "line": 11,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 18,
+                            "durationMicroseconds": 128,
+                            "functionName": "opacity",
+                            "line": 17,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 18,
+                            "durationMicroseconds": 68,
+                            "functionName": "visible",
+                            "line": 18,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 23,
+                            "durationMicroseconds": 29,
+                            "functionName": "fill",
+                            "line": 15,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 19,
+                            "durationMicroseconds": 111,
+                            "functionName": "text",
+                            "line": 23,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 23,
+                            "functionName": "centerIn",
+                            "line": 22,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 23,
+                            "durationMicroseconds": 20,
+                            "functionName": "fill",
+                            "line": 30,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 37,
+                            "durationMicroseconds": 61,
+                            "functionName": "preferredHeight",
+                            "line": 37,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 53,
+                            "durationMicroseconds": 76,
+                            "functionName": "color",
+                            "line": 43,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 22,
+                            "functionName": "centerIn",
+                            "line": 45,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 100,
+                            "functionName": "text",
+                            "line": 46,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 53,
+                            "durationMicroseconds": 14,
+                            "functionName": "color",
+                            "line": 46,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 131,
+                            "durationMicroseconds": 41,
+                            "functionName": "horizontalCenter",
+                            "line": 46,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 48,
+                            "durationMicroseconds": 13,
+                            "functionName": "color",
+                            "line": 47,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 108,
+                            "durationMicroseconds": 31,
+                            "functionName": "horizontalCenter",
+                            "line": 47,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 34,
+                            "functionName": "alignment",
+                            "line": 53,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 98,
+                            "functionName": "text",
+                            "line": 56,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 57,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 32,
+                            "functionName": "alignment",
+                            "line": 58,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 61,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 23,
+                            "functionName": "alignment",
+                            "line": 62,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 71,
+                            "functionName": "color",
+                            "line": 66,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 25,
+                            "functionName": "alignment",
+                            "line": 67,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 5163,
+                            "functionName": "text",
+                            "line": 70,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 6206,
+                            "functionName": "centerIn",
+                            "line": 69,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 46,
+                            "durationMicroseconds": 118,
+                            "functionName": "value",
+                            "line": 78,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 52,
+                            "functionName": "alignment",
+                            "line": 79,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 37,
+                            "durationMicroseconds": 64,
+                            "functionName": "preferredHeight",
+                            "line": 86,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 57,
+                            "durationMicroseconds": 15,
+                            "functionName": "color",
+                            "line": 89,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 46,
+                            "durationMicroseconds": 15,
+                            "functionName": "color",
+                            "line": 93,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "value",
+                            "line": 95,
+                            "message": "Could not find property \"value\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 112,
+                            "functionName": "text",
+                            "line": 98,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 60,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 98,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 49,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 103,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "value",
+                            "line": 105,
+                            "message": "Could not find property \"value\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "highlight",
+                            "line": 108,
+                            "message": "Could not find property \"highlight\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 103,
+                            "functionName": "text",
+                            "line": 110,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 63,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 110,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 10,
+                            "functionName": "color",
+                            "line": 117,
+                            "message": "Cannot access value for name bgAccent"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 65,
+                            "durationMicroseconds": 51,
+                            "functionName": "preferredHeight",
+                            "line": 116,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 25,
+                            "functionName": "fill",
+                            "line": 119,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 53,
+                            "durationMicroseconds": 14,
+                            "functionName": "color",
+                            "line": 123,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 109,
+                            "functionName": "text",
+                            "line": 124,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 82,
+                            "durationMicroseconds": 13,
+                            "functionName": "color",
+                            "line": 124,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 75,
+                            "durationMicroseconds": 11,
+                            "functionName": "color",
+                            "line": 127,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 82,
+                            "durationMicroseconds": 2946,
+                            "functionName": "color",
+                            "line": 134,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 61,
+                            "durationMicroseconds": 54,
+                            "functionName": "color",
+                            "line": 135,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 107,
+                            "durationMicroseconds": 522,
+                            "functionName": "bold",
+                            "line": 135,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 82,
+                            "durationMicroseconds": 858,
+                            "functionName": "color",
+                            "line": 139,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 67,
+                            "durationMicroseconds": 22,
+                            "functionName": "color",
+                            "line": 140,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 113,
+                            "durationMicroseconds": 117,
+                            "functionName": "bold",
+                            "line": 140,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 75,
+                            "durationMicroseconds": 13,
+                            "functionName": "color",
+                            "line": 144,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 82,
+                            "durationMicroseconds": 86,
+                            "functionName": "color",
+                            "line": 150,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 57,
+                            "durationMicroseconds": 14,
+                            "functionName": "color",
+                            "line": 151,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 82,
+                            "durationMicroseconds": 76,
+                            "functionName": "color",
+                            "line": 155,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 59,
+                            "durationMicroseconds": 13,
+                            "functionName": "color",
+                            "line": 156,
+                            "message": "Cannot access value for name mainTextColor"
+                        }
+                    ],
+                    "filePath": "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EnginePage.qml"
+                }
+            ],
+            "moduleId": "PoloOS(appPoloOS)"
+        }
+    ]
+}

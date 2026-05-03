@@ -1,0 +1,12 @@
+-I
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/my_Qt_6_10_1_for_macOS-Debug
+-I
+/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/qml
+--resource
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/qmake_PoloOS.qrc
+--resource
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/appPoloOS_raw_qml_0.qrc
+--resource
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/appPoloOS_raw_res_0.qrc
+--module
+PoloOS

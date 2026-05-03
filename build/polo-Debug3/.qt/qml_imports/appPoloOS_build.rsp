@@ -1,0 +1,15 @@
+-rootPath
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS
+-cmake-output
+-output-file
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/.qt/qml_imports/appPoloOS_build.cmake
+-importPath
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS
+-importPath
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3
+-importPath
+/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/qml
+-qrcFiles
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/.qt/rcc/qmake_PoloOS.qrc
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/.qt/rcc/appPoloOS_raw_qml_0.qrc
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/.qt/rcc/appPoloOS_raw_res_0.qrc

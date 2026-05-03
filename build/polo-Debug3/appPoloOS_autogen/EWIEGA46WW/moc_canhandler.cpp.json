@@ -1,0 +1,2198 @@
+{
+    "classes": [
+        {
+            "className": "CanHandler",
+            "lineNumber": 15,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 19,
+                    "name": "rpm",
+                    "notify": "engineMetricChanged",
+                    "read": "rpm",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setRpm"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 20,
+                    "name": "speed",
+                    "notify": "speedChanged",
+                    "read": "speed",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setSpeed"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 21,
+                    "name": "gear",
+                    "notify": "gearChanged",
+                    "read": "gear",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setGear"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "lineNumber": 22,
+                    "name": "ignitionOn",
+                    "notify": "engineFlagChanged",
+                    "read": "ignitionOn",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setIgnitionOn"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "lineNumber": 23,
+                    "name": "engineRunning",
+                    "notify": "engineFlagChanged",
+                    "read": "engineRunning",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setEngineRunning"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "lineNumber": 24,
+                    "name": "engineLoad",
+                    "notify": "engineMetricChanged",
+                    "read": "engineLoad",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setEngineLoad"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "lineNumber": 25,
+                    "name": "throttlePos",
+                    "notify": "engineMetricChanged",
+                    "read": "throttlePos",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setThrottlePos"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "lineNumber": 26,
+                    "name": "pedalPos",
+                    "notify": "engineMetricChanged",
+                    "read": "pedalPos",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setPedalPos"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "lineNumber": 27,
+                    "name": "torqueActual",
+                    "notify": "engineMetricChanged",
+                    "read": "torqueActual",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setTorqueActual"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "lineNumber": 28,
+                    "name": "torqueRequest",
+                    "notify": "engineMetricChanged",
+                    "read": "torqueRequest",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setTorqueRequest"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 10,
+                    "lineNumber": 29,
+                    "name": "idleState",
+                    "notify": "engineFlagChanged",
+                    "read": "idleState",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setIdleState"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 11,
+                    "lineNumber": 30,
+                    "name": "cruiseActive",
+                    "notify": "engineFlagChanged",
+                    "read": "cruiseActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setCruiseActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 12,
+                    "lineNumber": 31,
+                    "name": "limpMode",
+                    "notify": "engineFlagChanged",
+                    "read": "limpMode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setLimpMode"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 13,
+                    "lineNumber": 32,
+                    "name": "overheat",
+                    "notify": "engineFlagChanged",
+                    "read": "overheat",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setOverheat"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 14,
+                    "lineNumber": 35,
+                    "name": "steeringAngle",
+                    "notify": "steeringAngleChanged",
+                    "read": "steeringAngle",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setSteeringAngle"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 15,
+                    "lineNumber": 36,
+                    "name": "wheelFL",
+                    "notify": "wheelSpeedChanged",
+                    "read": "wheelFL",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setWheelFL"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 16,
+                    "lineNumber": 37,
+                    "name": "wheelFR",
+                    "notify": "wheelSpeedChanged",
+                    "read": "wheelFR",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setWheelFR"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 17,
+                    "lineNumber": 38,
+                    "name": "wheelRL",
+                    "notify": "wheelSpeedChanged",
+                    "read": "wheelRL",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setWheelRL"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 18,
+                    "lineNumber": 39,
+                    "name": "wheelRR",
+                    "notify": "wheelSpeedChanged",
+                    "read": "wheelRR",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setWheelRR"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 19,
+                    "lineNumber": 40,
+                    "name": "absActive",
+                    "notify": "safetyChanged",
+                    "read": "absActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAbsActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 20,
+                    "lineNumber": 41,
+                    "name": "espActive",
+                    "notify": "safetyChanged",
+                    "read": "espActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setEspActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 21,
+                    "lineNumber": 42,
+                    "name": "tractionActive",
+                    "notify": "safetyChanged",
+                    "read": "tractionActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setTractionActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 22,
+                    "lineNumber": 43,
+                    "name": "brakePressed",
+                    "notify": "brakeChanged",
+                    "read": "brakePressed",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setBrakePressed"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 23,
+                    "lineNumber": 44,
+                    "name": "handbrake",
+                    "notify": "handbrakeChanged",
+                    "read": "handbrake",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setHandbrake"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 24,
+                    "lineNumber": 47,
+                    "name": "isLocked",
+                    "notify": "lockStatusChanged",
+                    "read": "isLocked",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setIsLocked"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 25,
+                    "lineNumber": 48,
+                    "name": "anyDoorOpen",
+                    "notify": "doorChanged",
+                    "read": "anyDoorOpen",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 26,
+                    "lineNumber": 49,
+                    "name": "doorFL",
+                    "notify": "doorChanged",
+                    "read": "doorFL",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setDoorFL"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 27,
+                    "lineNumber": 50,
+                    "name": "doorFR",
+                    "notify": "doorChanged",
+                    "read": "doorFR",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setDoorFR"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 28,
+                    "lineNumber": 51,
+                    "name": "doorRL",
+                    "notify": "doorChanged",
+                    "read": "doorRL",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setDoorRL"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 29,
+                    "lineNumber": 52,
+                    "name": "doorRR",
+                    "notify": "doorChanged",
+                    "read": "doorRR",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setDoorRR"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 30,
+                    "lineNumber": 53,
+                    "name": "trunk",
+                    "notify": "doorChanged",
+                    "read": "trunk",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setTrunk"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 31,
+                    "lineNumber": 54,
+                    "name": "windowPos",
+                    "notify": "windowChanged",
+                    "read": "windowPos",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setWindowPos"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 32,
+                    "lineNumber": 55,
+                    "name": "windshieldHeater",
+                    "notify": "windshieldChanged",
+                    "read": "windshieldHeater",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setWindshieldHeater"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 33,
+                    "lineNumber": 56,
+                    "name": "beltDriver",
+                    "notify": "beltChanged",
+                    "read": "beltDriver",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setBeltDriver"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 34,
+                    "lineNumber": 57,
+                    "name": "beltPassenger",
+                    "notify": "beltChanged",
+                    "read": "beltPassenger",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setBeltPassenger"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 35,
+                    "lineNumber": 58,
+                    "name": "blinkerStatus",
+                    "notify": "blinkerChanged",
+                    "read": "blinkerStatus",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setBlinkerStatus"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 36,
+                    "lineNumber": 59,
+                    "name": "wiperLevel",
+                    "notify": "wiperChanged",
+                    "read": "wiperLevel",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setWiperLevel"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 37,
+                    "lineNumber": 60,
+                    "name": "interiorLight",
+                    "notify": "lightChanged",
+                    "read": "interiorLight",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setInteriorLight"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 38,
+                    "lineNumber": 61,
+                    "name": "acActive",
+                    "notify": "acChanged",
+                    "read": "acActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAcActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 39,
+                    "lineNumber": 64,
+                    "name": "tempCoolant",
+                    "notify": "tempChanged",
+                    "read": "tempCoolant",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setTempCoolant"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 40,
+                    "lineNumber": 65,
+                    "name": "tempOil",
+                    "notify": "tempChanged",
+                    "read": "tempOil",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setTempOil"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 41,
+                    "lineNumber": 66,
+                    "name": "tempAmbient",
+                    "notify": "tempChanged",
+                    "read": "tempAmbient",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setTempAmbient"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 42,
+                    "lineNumber": 67,
+                    "name": "tempIntake",
+                    "notify": "tempChanged",
+                    "read": "tempIntake",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setTempIntake"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 43,
+                    "lineNumber": 68,
+                    "name": "tempFuel",
+                    "notify": "tempChanged",
+                    "read": "tempFuel",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setTempFuel"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 44,
+                    "lineNumber": 69,
+                    "name": "batteryVoltage",
+                    "notify": "elecChanged",
+                    "read": "batteryVoltage",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setBatteryVoltage"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 45,
+                    "lineNumber": 70,
+                    "name": "altCharging",
+                    "notify": "elecChanged",
+                    "read": "altCharging",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAltCharging"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 46,
+                    "lineNumber": 71,
+                    "name": "rangePossible",
+                    "notify": "fuelLevelChanged",
+                    "read": "rangePossible",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setRangePossible"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 47,
+                    "lineNumber": 72,
+                    "name": "fuelToFill",
+                    "notify": "fuelLevelChanged",
+                    "read": "fuelToFill",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setFuelToFill"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 48,
+                    "lineNumber": 73,
+                    "name": "fuelInst",
+                    "notify": "fuelChanged",
+                    "read": "fuelInst",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setFuelInst"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 49,
+                    "lineNumber": 74,
+                    "name": "fuelAvg",
+                    "notify": "fuelChanged",
+                    "read": "fuelAvg",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setFuelAvg"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 50,
+                    "lineNumber": 77,
+                    "name": "busEngineActive",
+                    "notify": "diagChanged",
+                    "read": "busEngineActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setBusEngineActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 51,
+                    "lineNumber": 78,
+                    "name": "busComfortActive",
+                    "notify": "diagChanged",
+                    "read": "busComfortActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setBusComfortActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 52,
+                    "lineNumber": 79,
+                    "name": "engineFps",
+                    "notify": "diagChanged",
+                    "read": "engineFps",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setEngineFps"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 53,
+                    "lineNumber": 80,
+                    "name": "comfortFps",
+                    "notify": "diagChanged",
+                    "read": "comfortFps",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setComfortFps"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 54,
+                    "lineNumber": 81,
+                    "name": "errorFrames",
+                    "notify": "diagChanged",
+                    "read": "errorFrames",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setErrorFrames"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 55,
+                    "lineNumber": 82,
+                    "name": "lastFaultCode",
+                    "notify": "diagChanged",
+                    "read": "lastFaultCode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setLastFaultCode"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 56,
+                    "lineNumber": 83,
+                    "name": "ecuEngineOnline",
+                    "notify": "ecuStatusChanged",
+                    "read": "ecuEngineOnline",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setEcuEngineOnline"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 57,
+                    "lineNumber": 84,
+                    "name": "ecuAbsOnline",
+                    "notify": "ecuStatusChanged",
+                    "read": "ecuAbsOnline",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setEcuAbsOnline"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 58,
+                    "lineNumber": 85,
+                    "name": "ecuBodyOnline",
+                    "notify": "ecuStatusChanged",
+                    "read": "ecuBodyOnline",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setEcuBodyOnline"
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 59,
+                    "lineNumber": 88,
+                    "name": "vin",
+                    "read": "vin",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 60,
+                    "lineNumber": 89,
+                    "name": "mileage",
+                    "notify": "mileageChanged",
+                    "read": "mileage",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 61,
+                    "lineNumber": 90,
+                    "name": "gitHash",
+                    "read": "gitHash",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 62,
+                    "lineNumber": 91,
+                    "name": "buildDate",
+                    "read": "buildDate",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 63,
+                    "lineNumber": 94,
+                    "name": "posLights",
+                    "notify": "lightsChanged",
+                    "read": "posLights",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setPosLights"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 64,
+                    "lineNumber": 95,
+                    "name": "lowBeam",
+                    "notify": "lightsChanged",
+                    "read": "lowBeam",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setLowBeam"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 65,
+                    "lineNumber": 96,
+                    "name": "highBeam",
+                    "notify": "lightsChanged",
+                    "read": "highBeam",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setHighBeam"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 66,
+                    "lineNumber": 99,
+                    "name": "epcActive",
+                    "notify": "epcChanged",
+                    "read": "epcActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setEpcActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 67,
+                    "lineNumber": 100,
+                    "name": "checkEngine",
+                    "notify": "checkEngineChanged",
+                    "read": "checkEngine",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setCheckEngine"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 68,
+                    "lineNumber": 101,
+                    "name": "glowPlug",
+                    "notify": "glowPlugChanged",
+                    "read": "glowPlug",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setGlowPlug"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 69,
+                    "lineNumber": 102,
+                    "name": "batteryWarning",
+                    "notify": "batteryWarningChanged",
+                    "read": "batteryWarning",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setBatteryWarning"
+                }
+            ],
+            "qualifiedClassName": "CanHandler",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 293,
+                    "name": "engineMetricChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "lineNumber": 294,
+                    "name": "engineFlagChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "lineNumber": 295,
+                    "name": "speedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "lineNumber": 296,
+                    "name": "gearChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "lineNumber": 297,
+                    "name": "steeringAngleChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "lineNumber": 298,
+                    "name": "wheelSpeedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "lineNumber": 299,
+                    "name": "safetyChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "lineNumber": 300,
+                    "name": "brakeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "lineNumber": 301,
+                    "name": "handbrakeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "lineNumber": 302,
+                    "name": "lockStatusChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 10,
+                    "lineNumber": 303,
+                    "name": "doorChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 11,
+                    "lineNumber": 304,
+                    "name": "windowChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 12,
+                    "lineNumber": 305,
+                    "name": "windshieldChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 13,
+                    "lineNumber": 306,
+                    "name": "beltChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 14,
+                    "lineNumber": 307,
+                    "name": "tempChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 15,
+                    "lineNumber": 308,
+                    "name": "elecChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 16,
+                    "lineNumber": 309,
+                    "name": "fuelLevelChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 17,
+                    "lineNumber": 310,
+                    "name": "fuelChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 18,
+                    "lineNumber": 311,
+                    "name": "diagChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 19,
+                    "lineNumber": 312,
+                    "name": "ecuStatusChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 20,
+                    "lineNumber": 313,
+                    "name": "mileageChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 21,
+                    "lineNumber": 314,
+                    "name": "blinkerChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 22,
+                    "lineNumber": 315,
+                    "name": "wiperChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 23,
+                    "lineNumber": 316,
+                    "name": "lightChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 24,
+                    "lineNumber": 317,
+                    "name": "acChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 25,
+                    "lineNumber": 318,
+                    "name": "lightsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 26,
+                    "lineNumber": 319,
+                    "name": "absChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 27,
+                    "lineNumber": 320,
+                    "name": "epcChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 28,
+                    "lineNumber": 321,
+                    "name": "checkEngineChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 29,
+                    "lineNumber": 322,
+                    "name": "glowPlugChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 30,
+                    "lineNumber": 323,
+                    "name": "batteryWarningChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 31,
+                    "lineNumber": 183,
+                    "name": "setRpm",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 32,
+                    "lineNumber": 184,
+                    "name": "setSpeed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 33,
+                    "lineNumber": 185,
+                    "name": "setGear",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 34,
+                    "lineNumber": 186,
+                    "name": "setIgnitionOn",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 35,
+                    "lineNumber": 187,
+                    "name": "setEngineRunning",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 36,
+                    "lineNumber": 188,
+                    "name": "setEngineLoad",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 37,
+                    "lineNumber": 189,
+                    "name": "setThrottlePos",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 38,
+                    "lineNumber": 190,
+                    "name": "setPedalPos",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 39,
+                    "lineNumber": 191,
+                    "name": "setTorqueActual",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 40,
+                    "lineNumber": 192,
+                    "name": "setTorqueRequest",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 41,
+                    "lineNumber": 193,
+                    "name": "setIdleState",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 42,
+                    "lineNumber": 194,
+                    "name": "setCruiseActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 43,
+                    "lineNumber": 195,
+                    "name": "setLimpMode",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 44,
+                    "lineNumber": 196,
+                    "name": "setOverheat",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 45,
+                    "lineNumber": 197,
+                    "name": "setSteeringAngle",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 46,
+                    "lineNumber": 198,
+                    "name": "setWheelFL",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 47,
+                    "lineNumber": 199,
+                    "name": "setWheelFR",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 48,
+                    "lineNumber": 200,
+                    "name": "setWheelRL",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 49,
+                    "lineNumber": 201,
+                    "name": "setWheelRR",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 50,
+                    "lineNumber": 202,
+                    "name": "setAbsActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 51,
+                    "lineNumber": 203,
+                    "name": "setEspActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 52,
+                    "lineNumber": 204,
+                    "name": "setTractionActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 53,
+                    "lineNumber": 205,
+                    "name": "setBrakePressed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 54,
+                    "lineNumber": 206,
+                    "name": "setHandbrake",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 55,
+                    "lineNumber": 207,
+                    "name": "setIsLocked",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 56,
+                    "lineNumber": 208,
+                    "name": "setDoorFL",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 57,
+                    "lineNumber": 209,
+                    "name": "setDoorFR",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 58,
+                    "lineNumber": 210,
+                    "name": "setDoorRL",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 59,
+                    "lineNumber": 211,
+                    "name": "setDoorRR",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 60,
+                    "lineNumber": 212,
+                    "name": "setTrunk",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 61,
+                    "lineNumber": 213,
+                    "name": "setWindshieldHeater",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 62,
+                    "lineNumber": 214,
+                    "name": "setWindowPos",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 63,
+                    "lineNumber": 215,
+                    "name": "setBeltDriver",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 64,
+                    "lineNumber": 216,
+                    "name": "setBeltPassenger",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 65,
+                    "lineNumber": 217,
+                    "name": "setTempCoolant",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 66,
+                    "lineNumber": 218,
+                    "name": "setTempOil",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 67,
+                    "lineNumber": 219,
+                    "name": "setTempAmbient",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 68,
+                    "lineNumber": 220,
+                    "name": "setTempIntake",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 69,
+                    "lineNumber": 221,
+                    "name": "setTempFuel",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 70,
+                    "lineNumber": 222,
+                    "name": "setBatteryVoltage",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 71,
+                    "lineNumber": 223,
+                    "name": "setAltCharging",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 72,
+                    "lineNumber": 224,
+                    "name": "setRangePossible",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 73,
+                    "lineNumber": 225,
+                    "name": "setFuelToFill",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 74,
+                    "lineNumber": 226,
+                    "name": "setFuelInst",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 75,
+                    "lineNumber": 227,
+                    "name": "setFuelAvg",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 76,
+                    "lineNumber": 228,
+                    "name": "setBusEngineActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 77,
+                    "lineNumber": 229,
+                    "name": "setBusComfortActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 78,
+                    "lineNumber": 230,
+                    "name": "setEngineFps",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 79,
+                    "lineNumber": 231,
+                    "name": "setComfortFps",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 80,
+                    "lineNumber": 232,
+                    "name": "setErrorFrames",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 81,
+                    "lineNumber": 233,
+                    "name": "setLastFaultCode",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 82,
+                    "lineNumber": 234,
+                    "name": "setEcuEngineOnline",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 83,
+                    "lineNumber": 235,
+                    "name": "setEcuAbsOnline",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 84,
+                    "lineNumber": 236,
+                    "name": "setEcuBodyOnline",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 85,
+                    "lineNumber": 237,
+                    "name": "setBlinkerStatus",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 86,
+                    "lineNumber": 244,
+                    "name": "setWiperLevel",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 87,
+                    "lineNumber": 251,
+                    "name": "setInteriorLight",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 88,
+                    "lineNumber": 258,
+                    "name": "setAcActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 89,
+                    "lineNumber": 264,
+                    "name": "setPosLights",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 90,
+                    "lineNumber": 271,
+                    "name": "setLowBeam",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 91,
+                    "lineNumber": 280,
+                    "name": "setHighBeam",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 92,
+                    "lineNumber": 286,
+                    "name": "setEpcActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 93,
+                    "lineNumber": 287,
+                    "name": "setCheckEngine",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 94,
+                    "lineNumber": 288,
+                    "name": "setGlowPlug",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "v",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 95,
+                    "lineNumber": 289,
+                    "name": "setBatteryWarning",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "canhandler.h",
+    "outputRevision": 69
+}

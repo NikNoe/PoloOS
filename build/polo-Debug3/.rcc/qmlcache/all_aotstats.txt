@@ -1,0 +1,1839 @@
+############ AOT COMPILATION STATS ############
+Module PoloOS(appPoloOS):
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/AboutPage.qml
+  2 of 6 (33.33%) bindings or functions compiled to Cpp successfully
+    fill: [AboutPage.qml:8:23]
+      result: Success
+      duration: 90us
+    value: [AboutPage.qml:24:44]
+      result: Error: Cannot access value for name carCan
+      duration: 114us
+    value: [AboutPage.qml:25:52]
+      result: Error: Cannot access value for name carCan
+      duration: 90us
+    value: [AboutPage.qml:32:51]
+      result: Error: Cannot access value for name carCan
+      duration: 59us
+    value: [AboutPage.qml:33:51]
+      result: Error: Cannot access value for name carCan
+      duration: 55us
+    alignment: [AboutPage.qml:43:31]
+      result: Success
+      duration: 42us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/BodyPage.qml
+  5 of 34 (14.71%) bindings or functions compiled to Cpp successfully
+    fill: [BodyPage.qml:9:23]
+      result: Success
+      duration: 51us
+    color: [BodyPage.qml:10:16]
+      result: Error: Cannot access value for name window
+      duration: 130us
+    fill: [BodyPage.qml:14:23]
+      result: Error: Could not find property "fill".
+      duration: 0us
+    contentWidth: [BodyPage.qml:15:23]
+      result: Error: Could not find property "contentWidth".
+      duration: 0us
+    width: [BodyPage.qml:19:20]
+      result: Success
+      duration: 77us
+    horizontalCenter: [BodyPage.qml:20:39]
+      result: Success
+      duration: 40us
+    top: [BodyPage.qml:21:26]
+      result: Success
+      duration: 30us
+    value: [BodyPage.qml:35:28]
+      result: Error: Cannot access value for name carCan
+      duration: 97us
+    iconColor: [BodyPage.qml:36:32]
+      result: Error: Cannot access value for name carCan
+      duration: 78us
+    value: [BodyPage.qml:42:28]
+      result: Error: Cannot access value for name carCan
+      duration: 72us
+    iconColor: [BodyPage.qml:44:32]
+      result: Error: Cannot access value for name carCan
+      duration: 68us
+    value: [BodyPage.qml:49:28]
+      result: Error: Cannot access value for name carCan
+      duration: 65us
+    iconColor: [BodyPage.qml:50:32]
+      result: Error: Cannot access value for name carCan
+      duration: 64us
+    value: [BodyPage.qml:57:28]
+      result: Error: Cannot access value for name carCan
+      duration: 66us
+    iconColor: [BodyPage.qml:58:32]
+      result: Error: Cannot access value for name carCan
+      duration: 257us
+    value: [BodyPage.qml:63:28]
+      result: Error: Cannot access value for name carCan
+      duration: 252us
+    iconColor: [BodyPage.qml:64:32]
+      result: Error: Cannot access value for name carCan
+      duration: 193us
+    value: [BodyPage.qml:70:28]
+      result: Error: Cannot access value for name carCan
+      duration: 74us
+    iconColor: [BodyPage.qml:71:32]
+      result: Error: Cannot access value for name carCan
+      duration: 131us
+    value: [BodyPage.qml:76:28]
+      result: Error: Cannot access value for name carCan
+      duration: 65us
+    iconColor: [BodyPage.qml:77:32]
+      result: Error: Cannot access value for name carCan
+      duration: 126us
+    value: [BodyPage.qml:82:28]
+      result: Error: Cannot access value for name carCan
+      duration: 64us
+    iconColor: [BodyPage.qml:83:32]
+      result: Error: Cannot access value for name carCan
+      duration: 65us
+    value: [BodyPage.qml:96:28]
+      result: Error: Cannot access value for name carCan
+      duration: 63us
+    iconColor: [BodyPage.qml:97:32]
+      result: Error: Cannot access value for name carCan
+      duration: 123us
+    value: [BodyPage.qml:102:28]
+      result: Error: Cannot access value for name carCan
+      duration: 63us
+    value: [BodyPage.qml:108:28]
+      result: Error: Cannot access value for name carCan
+      duration: 75us
+    iconColor: [BodyPage.qml:109:32]
+      result: Error: Cannot access value for name carCan
+      duration: 192us
+    value: [BodyPage.qml:114:28]
+      result: Error: Cannot access value for name carCan
+      duration: 64us
+    iconColor: [BodyPage.qml:115:32]
+      result: Error: Cannot access value for name carCan
+      duration: 122us
+    value: [BodyPage.qml:120:28]
+      result: Error: Cannot access value for name carCan
+      duration: 63us
+    iconColor: [BodyPage.qml:121:32]
+      result: Error: Cannot access value for name carCan
+      duration: 63us
+    target: [BodyPage.qml:128:17]
+      result: Error: Cannot access value for name carCan
+      duration: 21us
+    onDataChanged: [BodyPage.qml:129:9]
+      result: Success
+      duration: 73us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/BusStatusCard.qml
+  5 of 9 (55.56%) bindings or functions compiled to Cpp successfully
+    color: [BusStatusCard.qml:12:46]
+      result: Success
+      duration: 119us
+    centerIn: [BusStatusCard.qml:15:27]
+      result: Success
+      duration: 29us
+    text: [BusStatusCard.qml:16:22]
+      result: Error: Cannot access value for name title
+      duration: 21us
+    alignment: [BusStatusCard.qml:16:82]
+      result: Success
+      duration: 36us
+    text: [BusStatusCard.qml:18:19]
+      result: Error: Cannot access value for name active
+      duration: 15us
+    color: [BusStatusCard.qml:19:20]
+      result: Error: Cannot access value for name active
+      duration: 15us
+    alignment: [BusStatusCard.qml:20:31]
+      result: Success
+      duration: 25us
+    text: [BusStatusCard.qml:22:22]
+      result: Error: Cannot access value for name fps
+      duration: 27us
+    alignment: [BusStatusCard.qml:22:114]
+      result: Success
+      duration: 26us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/ChassisPage.qml
+  1 of 17 (5.882%) bindings or functions compiled to Cpp successfully
+    fill: [ChassisPage.qml:8:23]
+      result: Success
+      duration: 170us
+    value: [ChassisPage.qml:18:43]
+      result: Error: Cannot access value for name carCan
+      duration: 319us
+    iconColor: [ChassisPage.qml:19:28]
+      result: Error: Cannot access value for name carCan
+      duration: 285us
+    value: [ChassisPage.qml:22:46]
+      result: Error: Cannot access value for name carCan
+      duration: 109us
+    iconColor: [ChassisPage.qml:23:28]
+      result: Error: Cannot access value for name carCan
+      duration: 90us
+    value: [ChassisPage.qml:26:44]
+      result: Error: Cannot access value for name carCan
+      duration: 87us
+    iconColor: [ChassisPage.qml:27:28]
+      result: Error: Cannot access value for name carCan
+      duration: 74us
+    value: [ChassisPage.qml:36:52]
+      result: Error: Cannot access value for name carCan
+      duration: 62us
+    value: [ChassisPage.qml:37:52]
+      result: Error: Cannot access value for name carCan
+      duration: 70us
+    value: [ChassisPage.qml:38:52]
+      result: Error: Cannot access value for name carCan
+      duration: 60us
+    value: [ChassisPage.qml:39:52]
+      result: Error: Cannot access value for name carCan
+      duration: 60us
+    value: [ChassisPage.qml:46:38]
+      result: Error: Cannot access value for name carCan
+      duration: 62us
+    iconColor: [ChassisPage.qml:47:28]
+      result: Error: Cannot access value for name carCan
+      duration: 62us
+    value: [ChassisPage.qml:50:42]
+      result: Error: Cannot access value for name carCan
+      duration: 64us
+    iconColor: [ChassisPage.qml:51:28]
+      result: Error: Cannot access value for name carCan
+      duration: 63us
+    value: [ChassisPage.qml:54:43]
+      result: Error: Cannot access value for name carCan
+      duration: 106us
+    iconColor: [ChassisPage.qml:55:28]
+      result: Error: Cannot access value for name carCan
+      duration: 74us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/CockpitWindow.qml
+  12 of 115 (10.43%) bindings or functions compiled to Cpp successfully
+    fill: [CockpitWindow.qml:13:23]
+      result: Error: Could not find property "fill".
+      duration: 0us
+    policy: [CockpitWindow.qml:14:36]
+      result: Error: Could not find property "policy".
+      duration: 0us
+    width: [CockpitWindow.qml:17:20]
+      result: Success
+      duration: 138us
+    horizontalCenter: [CockpitWindow.qml:18:39]
+      result: Success
+      duration: 57us
+    width: [CockpitWindow.qml:27:28]
+      result: Success
+      duration: 29us
+    text: [CockpitWindow.qml:28:34]
+      result: Error: Cannot access value for name carCan
+      duration: 171us
+    value: [CockpitWindow.qml:29:56]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:29:77]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    text: [CockpitWindow.qml:31:34]
+      result: Error: Cannot access value for name carCan
+      duration: 136us
+    model: [CockpitWindow.qml:34:36]
+      result: Error: Cannot generate efficient code for storing an array in a non-sequence type
+      duration: 229us
+    text: [CockpitWindow.qml:36:39]
+      result: Error: Could not find property "text".
+      duration: 0us
+    button: [CockpitWindow.qml:37:49]
+      result: Error: Could not find property "button".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:38:44]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    width: [CockpitWindow.qml:48:40]
+      result: Success
+      duration: 169us
+    checked: [CockpitWindow.qml:51:69]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:52:36]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    checked: [CockpitWindow.qml:56:73]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    enabled: [CockpitWindow.qml:57:34]
+      result: Error: Could not find property "enabled".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:58:36]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    value: [CockpitWindow.qml:64:50]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:65:34]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    width: [CockpitWindow.qml:74:28]
+      result: Success
+      duration: 67us
+    value: [CockpitWindow.qml:79:54]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:80:38]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    checked: [CockpitWindow.qml:91:64]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:91:92]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    checked: [CockpitWindow.qml:92:63]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:92:91]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    checked: [CockpitWindow.qml:93:61]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:93:93]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    width: [CockpitWindow.qml:105:28]
+      result: Success
+      duration: 35us
+    text: [CockpitWindow.qml:112:35]
+      result: Error: Cannot access value for name carCan
+      duration: 187us
+    value: [CockpitWindow.qml:117:36]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:119:38]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    value: [CockpitWindow.qml:131:63]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:131:88]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    value: [CockpitWindow.qml:135:63]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:135:88]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    value: [CockpitWindow.qml:139:63]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:139:88]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    value: [CockpitWindow.qml:143:63]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:143:88]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    checked: [CockpitWindow.qml:153:68]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:154:40]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    checked: [CockpitWindow.qml:158:68]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:159:40]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    checked: [CockpitWindow.qml:163:68]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:164:40]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    highlighted: [CockpitWindow.qml:173:42]
+      result: Error: Could not find property "highlighted".
+      duration: 0us
+    onPressed: [CockpitWindow.qml:174:40]
+      result: Error: Could not find signal "pressed".
+      duration: 0us
+    onReleased: [CockpitWindow.qml:175:41]
+      result: Error: Could not find signal "released".
+      duration: 0us
+    text: [CockpitWindow.qml:179:35]
+      result: Error: Could not find property "text".
+      duration: 0us
+    button: [CockpitWindow.qml:180:45]
+      result: Error: Could not find property "button".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:181:40]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    width: [CockpitWindow.qml:195:28]
+      result: Success
+      duration: 35us
+    text: [CockpitWindow.qml:199:31]
+      result: Error: Could not find property "text".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:210:34]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    value: [CockpitWindow.qml:228:55]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:229:38]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    width: [CockpitWindow.qml:240:28]
+      result: Success
+      duration: 43us
+    onClicked: [CockpitWindow.qml:243:64]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:244:58]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:245:64]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    checked: [CockpitWindow.qml:250:46]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:251:48]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    checked: [CockpitWindow.qml:257:38]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:258:40]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    checked: [CockpitWindow.qml:264:38]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:265:40]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    model: [CockpitWindow.qml:273:36]
+      result: Error: Cannot generate efficient code for storing an array in a non-sequence type
+      duration: 82us
+    text: [CockpitWindow.qml:275:39]
+      result: Error: Could not find property "text".
+      duration: 0us
+    button: [CockpitWindow.qml:276:49]
+      result: Error: Could not find property "button".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:277:44]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    width: [CockpitWindow.qml:292:28]
+      result: Success
+      duration: 96us
+    highlighted: [CockpitWindow.qml:295:38]
+      result: Error: Could not find property "highlighted".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:296:36]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    highlighted: [CockpitWindow.qml:301:38]
+      result: Error: Could not find property "highlighted".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:302:36]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    width: [CockpitWindow.qml:312:28]
+      result: Success
+      duration: 81us
+    checked: [CockpitWindow.qml:314:70]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:315:47]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    checked: [CockpitWindow.qml:316:65]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:317:47]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    checked: [CockpitWindow.qml:319:61]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:320:43]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    text: [CockpitWindow.qml:322:34]
+      result: Error: Cannot access value for name carCan
+      duration: 365us
+    value: [CockpitWindow.qml:323:55]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:323:82]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+    width: [CockpitWindow.qml:335:28]
+      result: Success
+      duration: 93us
+    text: [CockpitWindow.qml:341:31]
+      result: Error: Could not find property "text".
+      duration: 0us
+    highlighted: [CockpitWindow.qml:342:38]
+      result: Error: Could not find property "highlighted".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:344:36]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    text: [CockpitWindow.qml:348:31]
+      result: Error: Could not find property "text".
+      duration: 0us
+    highlighted: [CockpitWindow.qml:349:38]
+      result: Error: Could not find property "highlighted".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:350:36]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    text: [CockpitWindow.qml:356:31]
+      result: Error: Could not find property "text".
+      duration: 0us
+    highlighted: [CockpitWindow.qml:357:38]
+      result: Error: Could not find property "highlighted".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:358:36]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    text: [CockpitWindow.qml:362:31]
+      result: Error: Could not find property "text".
+      duration: 0us
+    highlighted: [CockpitWindow.qml:363:38]
+      result: Error: Could not find property "highlighted".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:364:36]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    text: [CockpitWindow.qml:370:31]
+      result: Error: Could not find property "text".
+      duration: 0us
+    highlighted: [CockpitWindow.qml:371:38]
+      result: Error: Could not find property "highlighted".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:372:36]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    text: [CockpitWindow.qml:377:31]
+      result: Error: Could not find property "text".
+      duration: 0us
+    buttonText: [CockpitWindow.qml:378:45]
+      result: Error: Could not find property "buttonText".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:380:36]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    width: [CockpitWindow.qml:389:28]
+      result: Success
+      duration: 43us
+    checked: [CockpitWindow.qml:392:65]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:392:100]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    checked: [CockpitWindow.qml:393:66]
+      result: Error: Could not find property "checked".
+      duration: 0us
+    onToggled: [CockpitWindow.qml:393:102]
+      result: Error: Could not find signal "toggled".
+      duration: 0us
+    onClicked: [CockpitWindow.qml:398:36]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    value: [CockpitWindow.qml:402:50]
+      result: Error: Could not find property "value".
+      duration: 0us
+    onMoved: [CockpitWindow.qml:403:34]
+      result: Error: Could not find signal "moved".
+      duration: 0us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/DashboardIcon.qml
+  19 of 19 (100%) bindings or functions compiled to Cpp successfully
+    source: [DashboardIcon.qml:19:17]
+      result: Success
+      duration: 42us
+    fill: [DashboardIcon.qml:20:23]
+      result: Success
+      duration: 23us
+    fillMode: [DashboardIcon.qml:22:19]
+      result: Success
+      duration: 35us
+    width: [DashboardIcon.qml:23:27]
+      result: Success
+      duration: 20us
+    height: [DashboardIcon.qml:24:28]
+      result: Success
+      duration: 24us
+    fill: [DashboardIcon.qml:32:23]
+      result: Success
+      duration: 27us
+    source: [DashboardIcon.qml:33:17]
+      result: Success
+      duration: 23us
+    colorizationColor: [DashboardIcon.qml:37:28]
+      result: Success
+      duration: 108us
+    shadowEnabled: [DashboardIcon.qml:40:24]
+      result: Success
+      duration: 28us
+    shadowColor: [DashboardIcon.qml:41:22]
+      result: Success
+      duration: 30us
+    brightness: [DashboardIcon.qml:47:21]
+      result: Success
+      duration: 51us
+    running: [DashboardIcon.qml:56:18]
+      result: Success
+      duration: 58us
+    loops: [DashboardIcon.qml:57:16]
+      result: Success
+      duration: 27us
+    target: [DashboardIcon.qml:60:21]
+      result: Success
+      duration: 21us
+    type: [DashboardIcon.qml:64:26]
+      result: Success
+      duration: 25us
+    target: [DashboardIcon.qml:67:21]
+      result: Success
+      duration: 21us
+    type: [DashboardIcon.qml:71:26]
+      result: Success
+      duration: 22us
+    onIsActiveChanged: [DashboardIcon.qml:76:24]
+      result: Success
+      duration: 156us
+    onIsBlinkingChanged: [DashboardIcon.qml:77:26]
+      result: Success
+      duration: 76us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/DiagnosticsPage.qml
+  8 of 18 (44.44%) bindings or functions compiled to Cpp successfully
+    fill: [DiagnosticsPage.qml:9:23]
+      result: Success
+      duration: 74us
+    active: [DiagnosticsPage.qml:17:53]
+      result: Error: Cannot access value for name carCan
+      duration: 110us
+    fps: [DiagnosticsPage.qml:18:22]
+      result: Error: Cannot access value for name carCan
+      duration: 72us
+    errors: [DiagnosticsPage.qml:18:48]
+      result: Error: Cannot access value for name carCan
+      duration: 61us
+    active: [DiagnosticsPage.qml:21:54]
+      result: Error: Cannot access value for name carCan
+      duration: 61us
+    fps: [DiagnosticsPage.qml:22:22]
+      result: Error: Cannot access value for name carCan
+      duration: 60us
+    online: [DiagnosticsPage.qml:30:43]
+      result: Error: Cannot access value for name carCan
+      duration: 66us
+    online: [DiagnosticsPage.qml:31:43]
+      result: Error: Cannot access value for name carCan
+      duration: 64us
+    online: [DiagnosticsPage.qml:32:43]
+      result: Error: Cannot access value for name carCan
+      duration: 58us
+    fill: [DiagnosticsPage.qml:41:31]
+      result: Success
+      duration: 28us
+    text: [DiagnosticsPage.qml:44:34]
+      result: Error: Cannot access value for name carCan
+      duration: 224us
+    onClicked: [DiagnosticsPage.qml:48:32]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    centerIn: [DiagnosticsPage.qml:61:35]
+      result: Success
+      duration: 23us
+    visible: [DiagnosticsPage.qml:64:26]
+      result: Success
+      duration: 56us
+    fill: [DiagnosticsPage.qml:69:47]
+      result: Success
+      duration: 19us
+    fill: [DiagnosticsPage.qml:76:31]
+      result: Success
+      duration: 20us
+    onPressAndHold: [DiagnosticsPage.qml:77:33]
+      result: Success
+      duration: 55us
+    onReleased: [DiagnosticsPage.qml:78:29]
+      result: Success
+      duration: 45us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EcuTag.qml
+  5 of 8 (62.5%) bindings or functions compiled to Cpp successfully
+    color: [EcuTag.qml:17:12]
+      result: Error: Cannot access value for name window
+      duration: 148us
+    opacity: [EcuTag.qml:18:14]
+      result: Success
+      duration: 95us
+    centerIn: [EcuTag.qml:24:27]
+      result: Success
+      duration: 40us
+    verticalCenter: [EcuTag.qml:30:37]
+      result: Success
+      duration: 48us
+    color: [EcuTag.qml:31:20]
+      result: Error: Cannot access value for name online
+      duration: 23us
+    text: [EcuTag.qml:35:19]
+      result: Success
+      duration: 29us
+    color: [EcuTag.qml:36:20]
+      result: Error: Cannot access value for name online
+      duration: 152us
+    verticalCenter: [EcuTag.qml:39:37]
+      result: Success
+      duration: 48us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EnergyPage.qml
+  5 of 23 (21.74%) bindings or functions compiled to Cpp successfully
+    mainText: [EnergyPage.qml:8:39]
+      result: Error: Cannot access value for name window
+      duration: 117us
+    cardBg: [EnergyPage.qml:9:37]
+      result: Error: Cannot access value for name window
+      duration: 65us
+    fill: [EnergyPage.qml:12:23]
+      result: Success
+      duration: 150us
+    color: [EnergyPage.qml:25:24]
+      result: Error: Cannot access value for name carCan
+      duration: 510us
+    centerIn: [EnergyPage.qml:31:39]
+      result: Success
+      duration: 84us
+    text: [EnergyPage.qml:33:34]
+      result: Error: Cannot access value for name carCan
+      duration: 181us
+    color: [EnergyPage.qml:39:24]
+      result: Error: Cannot access value for name cardBg
+      duration: 28us
+    centerIn: [EnergyPage.qml:41:39]
+      result: Success
+      duration: 99us
+    text: [EnergyPage.qml:43:34]
+      result: Error: Cannot access value for name carCan
+      duration: 216us
+    color: [EnergyPage.qml:43:67]
+      result: Error: Cannot access value for name mainText
+      duration: 22us
+    value: [EnergyPage.qml:55:42]
+      result: Error: Cannot access value for name carCan
+      duration: 165us
+    accent: [EnergyPage.qml:56:25]
+      result: Error: Cannot access value for name carCan
+      duration: 385us
+    value: [EnergyPage.qml:58:45]
+      result: Error: Cannot access value for name carCan
+      duration: 94us
+    value: [EnergyPage.qml:59:49]
+      result: Error: Cannot access value for name carCan
+      duration: 66us
+    value: [EnergyPage.qml:60:48]
+      result: Error: Cannot access value for name carCan
+      duration: 61us
+    value: [EnergyPage.qml:61:46]
+      result: Error: Cannot access value for name carCan
+      duration: 68us
+    color: [EnergyPage.qml:67:20]
+      result: Error: Cannot access value for name cardBg
+      duration: 49us
+    fill: [EnergyPage.qml:70:31]
+      result: Success
+      duration: 93us
+    text: [EnergyPage.qml:81:38]
+      result: Error: Cannot access value for name carCan
+      duration: 240us
+    color: [EnergyPage.qml:81:86]
+      result: Error: Cannot access value for name mainText
+      duration: 68us
+    text: [EnergyPage.qml:83:35]
+      result: Error: Cannot access value for name carCan
+      duration: 178us
+    color: [EnergyPage.qml:84:36]
+      result: Error: Cannot access value for name carCan
+      duration: 99us
+    centerIn: [EnergyPage.qml:94:46]
+      result: Success
+      duration: 52us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EngineLive.qml
+  2 of 4 (50%) bindings or functions compiled to Cpp successfully
+    fill: [EngineLive.qml:7:23]
+      result: Success
+      duration: 470us
+    weight: [EngineLive.qml:14:26]
+      result: Success
+      duration: 108us
+    color: [EngineLive.qml:15:20]
+      result: Error: Cannot access value for name window
+      duration: 11361us
+    color: [EngineLive.qml:22:20]
+      result: Error: Cannot access value for name window
+      duration: 142us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EnginePage.qml
+  17 of 58 (29.31%) bindings or functions compiled to Cpp successfully
+    mainTextColor: [EnginePage.qml:9:44]
+      result: Error: Cannot access value for name window
+      duration: 129us
+    subTextColor: [EnginePage.qml:10:43]
+      result: Error: Cannot access value for name window
+      duration: 65us
+    bgAccent: [EnginePage.qml:11:39]
+      result: Error: Cannot access value for name window
+      duration: 57us
+    fill: [EnginePage.qml:15:23]
+      result: Success
+      duration: 27us
+    opacity: [EnginePage.qml:17:18]
+      result: Error: Cannot access value for name carCan
+      duration: 130us
+    visible: [EnginePage.qml:18:18]
+      result: Success
+      duration: 75us
+    centerIn: [EnginePage.qml:22:31]
+      result: Success
+      duration: 22us
+    text: [EnginePage.qml:23:19]
+      result: Error: Cannot access value for name carCan
+      duration: 113us
+    fill: [EnginePage.qml:30:23]
+      result: Success
+      duration: 22us
+    preferredHeight: [EnginePage.qml:37:37]
+      result: Success
+      duration: 61us
+    color: [EnginePage.qml:43:53]
+      result: Error: Cannot access value for name carCan
+      duration: 82us
+    centerIn: [EnginePage.qml:45:39]
+      result: Success
+      duration: 20us
+    text: [EnginePage.qml:46:34]
+      result: Error: Cannot access value for name carCan
+      duration: 101us
+    color: [EnginePage.qml:46:53]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 15us
+    horizontalCenter: [EnginePage.qml:46:131]
+      result: Success
+      duration: 39us
+    color: [EnginePage.qml:47:48]
+      result: Error: Cannot access value for name subTextColor
+      duration: 13us
+    horizontalCenter: [EnginePage.qml:47:108]
+      result: Success
+      duration: 30us
+    alignment: [EnginePage.qml:53:35]
+      result: Success
+      duration: 33us
+    text: [EnginePage.qml:56:27]
+      result: Error: Cannot access value for name carCan
+      duration: 94us
+    color: [EnginePage.qml:57:28]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 12us
+    alignment: [EnginePage.qml:58:39]
+      result: Success
+      duration: 28us
+    color: [EnginePage.qml:61:42]
+      result: Error: Cannot access value for name subTextColor
+      duration: 12us
+    alignment: [EnginePage.qml:62:39]
+      result: Success
+      duration: 26us
+    color: [EnginePage.qml:66:28]
+      result: Error: Cannot access value for name window
+      duration: 69us
+    alignment: [EnginePage.qml:67:39]
+      result: Success
+      duration: 24us
+    centerIn: [EnginePage.qml:69:43]
+      result: Success
+      duration: 180us
+    text: [EnginePage.qml:70:31]
+      result: Error: Cannot access value for name carCan
+      duration: 295us
+    value: [EnginePage.qml:78:46]
+      result: Error: Cannot access value for name carCan
+      duration: 78us
+    alignment: [EnginePage.qml:79:35]
+      result: Success
+      duration: 25us
+    preferredHeight: [EnginePage.qml:86:37]
+      result: Success
+      duration: 50us
+    color: [EnginePage.qml:89:57]
+      result: Error: Cannot access value for name subTextColor
+      duration: 13us
+    color: [EnginePage.qml:93:46]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 12us
+    value: [EnginePage.qml:95:28]
+      result: Error: Could not find property "value".
+      duration: 0us
+    text: [EnginePage.qml:98:30]
+      result: Error: Cannot access value for name carCan
+      duration: 91us
+    color: [EnginePage.qml:98:60]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 12us
+    color: [EnginePage.qml:103:49]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 12us
+    value: [EnginePage.qml:105:28]
+      result: Error: Could not find property "value".
+      duration: 0us
+    highlight: [EnginePage.qml:108:40]
+      result: Error: Could not find property "highlight".
+      duration: 0us
+    text: [EnginePage.qml:110:30]
+      result: Error: Cannot access value for name carCan
+      duration: 86us
+    color: [EnginePage.qml:110:63]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 11us
+    preferredHeight: [EnginePage.qml:116:65]
+      result: Success
+      duration: 45us
+    color: [EnginePage.qml:117:24]
+      result: Error: Cannot access value for name bgAccent
+      duration: 10us
+    fill: [EnginePage.qml:119:35]
+      result: Success
+      duration: 19us
+    color: [EnginePage.qml:123:53]
+      result: Error: Cannot access value for name subTextColor
+      duration: 13us
+    text: [EnginePage.qml:124:38]
+      result: Error: Cannot access value for name carCan
+      duration: 92us
+    color: [EnginePage.qml:124:82]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 12us
+    color: [EnginePage.qml:127:75]
+      result: Error: Cannot access value for name subTextColor
+      duration: 11us
+    color: [EnginePage.qml:134:82]
+      result: Error: Cannot access value for name carCan
+      duration: 72us
+    color: [EnginePage.qml:135:61]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 14us
+    bold: [EnginePage.qml:135:107]
+      result: Error: Cannot access value for name carCan
+      duration: 86us
+    color: [EnginePage.qml:139:82]
+      result: Error: Cannot access value for name carCan
+      duration: 65us
+    color: [EnginePage.qml:140:67]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 14us
+    bold: [EnginePage.qml:140:113]
+      result: Error: Cannot access value for name carCan
+      duration: 282us
+    color: [EnginePage.qml:144:75]
+      result: Error: Cannot access value for name subTextColor
+      duration: 42us
+    color: [EnginePage.qml:150:82]
+      result: Error: Cannot access value for name carCan
+      duration: 612us
+    color: [EnginePage.qml:151:57]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 48us
+    color: [EnginePage.qml:155:82]
+      result: Error: Cannot access value for name carCan
+      duration: 207us
+    color: [EnginePage.qml:156:59]
+      result: Error: Cannot access value for name mainTextColor
+      duration: 33us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EngineerRow.qml
+  0 of 4 (0%) bindings or functions compiled to Cpp successfully
+    text: [EngineerRow.qml:11:15]
+      result: Error: Cannot access value for name label
+      duration: 50us
+    text: [EngineerRow.qml:19:15]
+      result: Error: Cannot access value for name isCode
+      duration: 43us
+    color: [EngineerRow.qml:20:16]
+      result: Error: Cannot access value for name isCode
+      duration: 15us
+    bold: [EngineerRow.qml:23:20]
+      result: Error: Cannot access value for name isCode
+      duration: 10us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/Main.qml
+  37 of 92 (40.22%) bindings or functions compiled to Cpp successfully
+    color: [Main.qml:16:12]
+      result: Error: Could not find property "color".
+      duration: 0us
+    target: [Main.qml:21:17]
+      result: Error: Cannot access value for name carCan
+      duration: 57us
+    onDoorFLChanged: [Main.qml:22:9]
+      result: Error: Cannot access value for name carCan
+      duration: 65us
+    fill: [Main.qml:28:23]
+      result: Success
+      duration: 65us
+    preferredWidth: [Main.qml:35:36]
+      result: Success
+      duration: 223us
+    color: [Main.qml:38:20]
+      result: Error: Cannot retrieve a non-object type by ID: window
+      duration: 33us
+    top: [Main.qml:41:30]
+      result: Success
+      duration: 284us
+    horizontalCenter: [Main.qml:42:43]
+      result: Success
+      duration: 76us
+    isActive: [Main.qml:52:43]
+      result: Error: Cannot access value for name carCan
+      duration: 94us
+    isActive: [Main.qml:60:43]
+      result: Error: Cannot access value for name carCan
+      duration: 329us
+    isActive: [Main.qml:67:43]
+      result: Error: Cannot access value for name carCan
+      duration: 276us
+    isActive: [Main.qml:74:43]
+      result: Error: Cannot access value for name carCan
+      duration: 179us
+    isActive: [Main.qml:81:43]
+      result: Error: Cannot access value for name carCan
+      duration: 145us
+    isActive: [Main.qml:94:43]
+      result: Error: Cannot access value for name carCan
+      duration: 364us
+    isActive: [Main.qml:101:43]
+      result: Error: Cannot access value for name carCan
+      duration: 73us
+    isActive: [Main.qml:108:43]
+      result: Error: Cannot access value for name carCan
+      duration: 58us
+    isActive: [Main.qml:115:43]
+      result: Error: Cannot access value for name carCan
+      duration: 54us
+    isActive: [Main.qml:122:43]
+      result: Error: Cannot access value for name carCan
+      duration: 52us
+    fill: [Main.qml:129:31]
+      result: Success
+      duration: 90us
+    clearColor: [Main.qml:132:33]
+      result: Error: Cannot retrieve a non-object type by ID: window
+      duration: 22us
+    backgroundMode: [Main.qml:133:37]
+      result: Success
+      duration: 44us
+    eulerRotation: [Main.qml:138:36]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 343us
+    scale: [Main.qml:143:32]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 569us
+    bodyColor: [Main.qml:144:36]
+      result: Error: Cannot retrieve a non-object type by ID: window
+      duration: 95us
+    position: [Main.qml:153:35]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 984us
+    scale: [Main.qml:156:32]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 74us
+    baseColor: [Main.qml:166:44]
+      result: Error: Cannot retrieve a non-object type by ID: window
+      duration: 19us
+    lighting: [Main.qml:170:43]
+      result: Error: Cannot load property Fragments from const QMetaObject.
+      duration: 45us
+    position: [Main.qml:183:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 170us
+    onPositionChanged: [Main.qml:186:40]
+      result: Success
+      duration: 951us
+    eulerRotation: [Main.qml:202:36]
+      result: Success
+      duration: 64us
+    brightness: [Main.qml:207:33]
+      result: Error: Cannot retrieve a non-object type by ID: window
+      duration: 23us
+    fill: [Main.qml:213:55]
+      result: Success
+      duration: 26us
+    origin: [Main.qml:213:71]
+      result: Success
+      duration: 31us
+    camera: [Main.qml:213:90]
+      result: Success
+      duration: 38us
+    fill: [Main.qml:216:58]
+      result: Success
+      duration: 34us
+    onPressed: [Main.qml:216:108]
+      result: Success
+      duration: 59us
+    onPressed: [Main.qml:216:108]
+      result: Success
+      duration: 28us
+    visible: [Main.qml:223:26]
+      result: Error: Cannot access value for name carCan
+      duration: 354us
+    running: [Main.qml:227:30]
+      result: Error: Cannot access value for name parent
+      duration: 16us
+    loops: [Main.qml:228:28]
+      result: Success
+      duration: 32us
+    color: [Main.qml:245:20]
+      result: Error: Cannot retrieve a non-object type by ID: window
+      duration: 24us
+    fill: [Main.qml:250:31]
+      result: Success
+      duration: 31us
+    contentHeight: [Main.qml:251:32]
+      result: Error: Cannot access value for name contentContainer
+      duration: 503us
+    boundsBehavior: [Main.qml:252:33]
+      result: Success
+      duration: 84us
+    policy: [Main.qml:253:57]
+      result: Error: Could not find property "policy".
+      duration: 0us
+    fill: [Main.qml:261:31]
+      result: Success
+      duration: 88us
+    fill: [Main.qml:266:35]
+      result: Success
+      duration: 63us
+    width: [Main.qml:271:32]
+      result: Success
+      duration: 119us
+    height: [Main.qml:272:33]
+      result: Success
+      duration: 61us
+    color: [Main.qml:273:32]
+      result: Error: Cannot retrieve a non-object type by ID: window
+      duration: 41us
+    fill: [Main.qml:276:43]
+      result: Success
+      duration: 47us
+    color: [Main.qml:282:40]
+      result: Error: Cannot retrieve a non-object type by ID: window
+      duration: 73us
+    weight: [Main.qml:283:66]
+      result: Success
+      duration: 59us
+    model: [Main.qml:288:40]
+      result: Error: Cannot generate efficient code for storing an array in a non-sequence type
+      duration: 385us
+    width: [Main.qml:299:44]
+      result: Success
+      duration: 101us
+    color: [Main.qml:300:44]
+      result: Error: Cannot access value for name pageStack
+      duration: 356us
+    centerIn: [Main.qml:304:59]
+      result: Success
+      duration: 26us
+    text: [Main.qml:305:47]
+      result: Error: Cannot access value for name modelData
+      duration: 139us
+    color: [Main.qml:306:48]
+      result: Error: Cannot access value for name window
+      duration: 24us
+    weight: [Main.qml:307:74]
+      result: Success
+      duration: 29us
+    fill: [Main.qml:311:55]
+      result: Success
+      duration: 21us
+    onClicked: [Main.qml:312:52]
+      result: Error: Cannot access value for name pageStack
+      duration: 245us
+    right: [Main.qml:323:44]
+      result: Success
+      duration: 35us
+    height: [Main.qml:325:37]
+      result: Success
+      duration: 52us
+    color: [Main.qml:326:36]
+      result: Error: Cannot retrieve a non-object type by ID: window
+      duration: 13us
+    width: [Main.qml:333:32]
+      result: Error: Could not find property "width".
+      duration: 0us
+    height: [Main.qml:334:33]
+      result: Error: Could not find property "height".
+      duration: 0us
+    color: [Main.qml:350:36]
+      result: Error: Cannot access value for name window
+      duration: 18us
+    color: [Main.qml:366:16]
+      result: Error: Cannot access value for name window
+      duration: 14us
+    color: [Main.qml:369:23]
+      result: Error: Cannot access value for name window
+      duration: 17us
+    fill: [Main.qml:376:27]
+      result: Success
+      duration: 22us
+    alignment: [Main.qml:383:35]
+      result: Success
+      duration: 30us
+    text: [Main.qml:387:27]
+      result: Success
+      duration: 137us
+    weight: [Main.qml:389:34]
+      result: Success
+      duration: 78us
+    color: [Main.qml:390:28]
+      result: Error: Cannot access value for name window
+      duration: 115us
+    onTriggered: [Main.qml:396:38]
+      result: Error: Cannot access value for name timeDisplay
+      duration: 70us
+    text: [Main.qml:405:31]
+      result: Error: Cannot access value for name weatherService
+      duration: 18us
+    color: [Main.qml:408:32]
+      result: Error: Cannot access value for name window
+      duration: 21us
+    alignment: [Main.qml:418:35]
+      result: Success
+      duration: 118us
+    text: [Main.qml:424:31]
+      result: Error: Cannot load property text from (component in /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/Main.qml)::parent with type QQuickItem.
+      duration: 103us
+    color: [Main.qml:425:32]
+      result: Error: Cannot access value for name window
+      duration: 61us
+    onClicked: [Main.qml:431:32]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    text: [Main.qml:438:31]
+      result: Error: Cannot load property text from (component in /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/Main.qml)::parent with type QQuickItem.
+      duration: 75us
+    color: [Main.qml:439:32]
+      result: Error: Cannot access value for name window
+      duration: 46us
+    alignment: [Main.qml:450:35]
+      result: Success
+      duration: 80us
+    onClicked: [Main.qml:452:28]
+      result: Error: Could not find signal "clicked".
+      duration: 0us
+    text: [Main.qml:458:27]
+      result: Error: Cannot load property text from (component in /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/Main.qml)::parent with type QQuickItem.
+      duration: 56us
+    color: [Main.qml:460:28]
+      result: Error: Cannot access value for name window
+      duration: 39us
+    fetchWeather: [Main.qml:478:9]
+      result: Error: Instruction "generate_StoreLocal" not implemented
+      duration: 71us
+    onTriggered: [Main.qml:504:26]
+      result: Success
+      duration: 107us
+    fill: [Main.qml:511:23]
+      result: Success
+      duration: 50us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/MapPage.qml
+  11 of 17 (64.71%) bindings or functions compiled to Cpp successfully
+    fill: [MapPage.qml:7:19]
+      result: Success
+      duration: 76us
+    fill: [MapPage.qml:35:23]
+      result: Success
+      duration: 34us
+    plugin: [MapPage.qml:36:17]
+      result: Success
+      duration: 30us
+    center: [MapPage.qml:37:17]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method coordinate, returning QGeoCoordinate -> call to method coordinate, returning QGeoCoordinate
+      duration: 295us
+    onCompleted: [MapPage.qml:46:36]
+      result: Error: Cannot access value for name supportedMapTypes
+      duration: 1417us
+    right: [MapPage.qml:58:24]
+      result: Success
+      duration: 131us
+    verticalCenter: [MapPage.qml:59:33]
+      result: Success
+      duration: 126us
+    color: [MapPage.qml:65:20]
+      result: Error: Cannot access value for name window
+      duration: 187us
+    centerIn: [MapPage.qml:67:49]
+      result: Success
+      duration: 30us
+    color: [MapPage.qml:67:64]
+      result: Error: Cannot access value for name window
+      duration: 246us
+    fill: [MapPage.qml:68:39]
+      result: Success
+      duration: 24us
+    onClicked: [MapPage.qml:68:58]
+      result: Success
+      duration: 88us
+    color: [MapPage.qml:73:20]
+      result: Error: Cannot access value for name window
+      duration: 75us
+    centerIn: [MapPage.qml:75:49]
+      result: Success
+      duration: 77us
+    color: [MapPage.qml:75:64]
+      result: Error: Cannot access value for name window
+      duration: 128us
+    fill: [MapPage.qml:76:39]
+      result: Success
+      duration: 51us
+    onClicked: [MapPage.qml:76:58]
+      result: Success
+      duration: 170us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/Polo.qml
+  97 of 138 (70.29%) bindings or functions compiled to Cpp successfully
+    baseColor: [Polo.qml:18:32]
+      result: Error: Cannot access value for name polo_root
+      duration: 259us
+    mipFilter: [Polo.qml:32:20]
+      result: Success
+      duration: 77us
+    mipFilter: [Polo.qml:40:20]
+      result: Success
+      duration: 29us
+    mipFilter: [Polo.qml:48:20]
+      result: Success
+      duration: 26us
+    mipFilter: [Polo.qml:56:20]
+      result: Success
+      duration: 25us
+    mipFilter: [Polo.qml:64:20]
+      result: Success
+      duration: 27us
+    mipFilter: [Polo.qml:72:20]
+      result: Success
+      duration: 24us
+    mipFilter: [Polo.qml:80:20]
+      result: Success
+      duration: 21us
+    mipFilter: [Polo.qml:88:20]
+      result: Success
+      duration: 23us
+    mipFilter: [Polo.qml:96:20]
+      result: Success
+      duration: 24us
+    mipFilter: [Polo.qml:104:20]
+      result: Success
+      duration: 24us
+    mipFilter: [Polo.qml:112:20]
+      result: Success
+      duration: 21us
+    mipFilter: [Polo.qml:120:20]
+      result: Success
+      duration: 21us
+    mipFilter: [Polo.qml:128:20]
+      result: Success
+      duration: 25us
+    mipFilter: [Polo.qml:136:20]
+      result: Success
+      duration: 23us
+    mipFilter: [Polo.qml:144:20]
+      result: Success
+      duration: 125us
+    mipFilter: [Polo.qml:152:20]
+      result: Success
+      duration: 79us
+    mipFilter: [Polo.qml:160:20]
+      result: Success
+      duration: 87us
+    mipFilter: [Polo.qml:168:20]
+      result: Success
+      duration: 61us
+    mipFilter: [Polo.qml:176:20]
+      result: Success
+      duration: 59us
+    mipFilter: [Polo.qml:184:20]
+      result: Success
+      duration: 56us
+    mipFilter: [Polo.qml:192:20]
+      result: Success
+      duration: 54us
+    mipFilter: [Polo.qml:200:20]
+      result: Success
+      duration: 59us
+    mipFilter: [Polo.qml:208:20]
+      result: Success
+      duration: 52us
+    mipFilter: [Polo.qml:216:20]
+      result: Success
+      duration: 55us
+    mipFilter: [Polo.qml:224:20]
+      result: Success
+      duration: 70us
+    mipFilter: [Polo.qml:232:20]
+      result: Success
+      duration: 30us
+    mipFilter: [Polo.qml:240:20]
+      result: Success
+      duration: 26us
+    mipFilter: [Polo.qml:248:20]
+      result: Success
+      duration: 24us
+    baseColorMap: [Polo.qml:256:23]
+      result: Success
+      duration: 30us
+    baseColorMap: [Polo.qml:262:23]
+      result: Success
+      duration: 23us
+    baseColorMap: [Polo.qml:268:23]
+      result: Success
+      duration: 22us
+    baseColorMap: [Polo.qml:281:23]
+      result: Success
+      duration: 23us
+    baseColorMap: [Polo.qml:287:23]
+      result: Success
+      duration: 20us
+    baseColorMap: [Polo.qml:311:23]
+      result: Success
+      duration: 21us
+    baseColorMap: [Polo.qml:329:23]
+      result: Success
+      duration: 41us
+    baseColorMap: [Polo.qml:342:23]
+      result: Success
+      duration: 84us
+    baseColorMap: [Polo.qml:348:23]
+      result: Success
+      duration: 83us
+    baseColorMap: [Polo.qml:354:23]
+      result: Success
+      duration: 42us
+    baseColorMap: [Polo.qml:360:23]
+      result: Success
+      duration: 30us
+    baseColorMap: [Polo.qml:366:23]
+      result: Success
+      duration: 21us
+    baseColorMap: [Polo.qml:372:23]
+      result: Success
+      duration: 24us
+    baseColorMap: [Polo.qml:378:23]
+      result: Success
+      duration: 20us
+    baseColorMap: [Polo.qml:384:23]
+      result: Success
+      duration: 20us
+    baseColorMap: [Polo.qml:390:23]
+      result: Success
+      duration: 21us
+    baseColorMap: [Polo.qml:396:23]
+      result: Success
+      duration: 25us
+    baseColorMap: [Polo.qml:402:23]
+      result: Success
+      duration: 26us
+    baseColorMap: [Polo.qml:408:23]
+      result: Success
+      duration: 22us
+    baseColorMap: [Polo.qml:414:23]
+      result: Success
+      duration: 118us
+    baseColorMap: [Polo.qml:420:23]
+      result: Success
+      duration: 30us
+    baseColorMap: [Polo.qml:426:23]
+      result: Success
+      duration: 27us
+    baseColorMap: [Polo.qml:432:23]
+      result: Success
+      duration: 20us
+    baseColorMap: [Polo.qml:438:23]
+      result: Success
+      duration: 23us
+    baseColorMap: [Polo.qml:450:23]
+      result: Success
+      duration: 24us
+    baseColorMap: [Polo.qml:456:23]
+      result: Success
+      duration: 20us
+    baseColorMap: [Polo.qml:462:23]
+      result: Success
+      duration: 25us
+    baseColorMap: [Polo.qml:473:23]
+      result: Success
+      duration: 32us
+    baseColorMap: [Polo.qml:479:23]
+      result: Success
+      duration: 21us
+    baseColorMap: [Polo.qml:485:23]
+      result: Success
+      duration: 21us
+    baseColorMap: [Polo.qml:491:23]
+      result: Success
+      duration: 64us
+    baseColorMap: [Polo.qml:503:23]
+      result: Success
+      duration: 21us
+    baseColorMap: [Polo.qml:509:23]
+      result: Success
+      duration: 22us
+    baseColorMap: [Polo.qml:516:23]
+      result: Success
+      duration: 20us
+    baseColorMap: [Polo.qml:522:23]
+      result: Success
+      duration: 20us
+    baseColorMap: [Polo.qml:528:23]
+      result: Success
+      duration: 21us
+    baseColorMap: [Polo.qml:534:23]
+      result: Success
+      duration: 18us
+    baseColorMap: [Polo.qml:540:23]
+      result: Success
+      duration: 20us
+    baseColorMap: [Polo.qml:546:23]
+      result: Success
+      duration: 19us
+    baseColorMap: [Polo.qml:552:23]
+      result: Success
+      duration: 20us
+    baseColorMap: [Polo.qml:564:23]
+      result: Success
+      duration: 19us
+    position: [Polo.qml:575:23]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 242us
+    rotation: [Polo.qml:576:23]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method quaternion, returning QVariant -> QQuaternion stored as QVariant
+      duration: 219us
+    scale: [Polo.qml:577:20]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 204us
+    position: [Polo.qml:584:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 87us
+    materials: [Polo.qml:586:32]
+      result: Success
+      duration: 660us
+    materials: [Polo.qml:618:36]
+      result: Success
+      duration: 203us
+    materials: [Polo.qml:636:36]
+      result: Success
+      duration: 439us
+    position: [Polo.qml:666:39]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 81us
+    materials: [Polo.qml:668:40]
+      result: Success
+      duration: 40us
+    position: [Polo.qml:676:35]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 76us
+    position: [Polo.qml:681:35]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 65us
+    materials: [Polo.qml:683:36]
+      result: Success
+      duration: 37us
+    position: [Polo.qml:691:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 69us
+    materials: [Polo.qml:696:36]
+      result: Success
+      duration: 41us
+    position: [Polo.qml:704:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 64us
+    materials: [Polo.qml:706:32]
+      result: Success
+      duration: 122us
+    materials: [Polo.qml:718:36]
+      result: Success
+      duration: 38us
+    position: [Polo.qml:726:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 64us
+    materials: [Polo.qml:731:36]
+      result: Success
+      duration: 104us
+    position: [Polo.qml:743:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 64us
+    materials: [Polo.qml:748:36]
+      result: Success
+      duration: 84us
+    position: [Polo.qml:757:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 117us
+    materials: [Polo.qml:762:36]
+      result: Success
+      duration: 157us
+    position: [Polo.qml:775:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 66us
+    materials: [Polo.qml:780:36]
+      result: Success
+      duration: 200us
+    materials: [Polo.qml:793:40]
+      result: Success
+      duration: 55us
+    position: [Polo.qml:802:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 79us
+    materials: [Polo.qml:807:36]
+      result: Success
+      duration: 40us
+    position: [Polo.qml:815:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 64us
+    materials: [Polo.qml:820:36]
+      result: Success
+      duration: 84us
+    position: [Polo.qml:828:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 85us
+    materials: [Polo.qml:833:36]
+      result: Success
+      duration: 374us
+    materials: [Polo.qml:846:40]
+      result: Success
+      duration: 97us
+    position: [Polo.qml:855:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 202us
+    materials: [Polo.qml:860:36]
+      result: Success
+      duration: 157us
+    position: [Polo.qml:874:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 90us
+    materials: [Polo.qml:879:36]
+      result: Success
+      duration: 43us
+    position: [Polo.qml:887:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 73us
+    rotation: [Polo.qml:888:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method quaternion, returning QVariant -> QQuaternion stored as QVariant
+      duration: 77us
+    scale: [Polo.qml:889:28]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 66us
+    materials: [Polo.qml:894:36]
+      result: Success
+      duration: 105us
+    position: [Polo.qml:906:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 64us
+    rotation: [Polo.qml:907:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method quaternion, returning QVariant -> QQuaternion stored as QVariant
+      duration: 73us
+    position: [Polo.qml:911:35]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 65us
+    rotation: [Polo.qml:912:35]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method quaternion, returning QVariant -> QQuaternion stored as QVariant
+      duration: 71us
+    materials: [Polo.qml:914:36]
+      result: Success
+      duration: 57us
+    position: [Polo.qml:922:35]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 65us
+    materials: [Polo.qml:924:36]
+      result: Success
+      duration: 52us
+    position: [Polo.qml:933:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 66us
+    position: [Polo.qml:937:35]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 63us
+    materials: [Polo.qml:942:40]
+      result: Success
+      duration: 39us
+    position: [Polo.qml:951:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 64us
+    materials: [Polo.qml:956:36]
+      result: Success
+      duration: 37us
+    position: [Polo.qml:965:27]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 64us
+    position: [Polo.qml:969:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 64us
+    scale: [Polo.qml:970:28]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 63us
+    materials: [Polo.qml:972:32]
+      result: Success
+      duration: 111us
+    position: [Polo.qml:983:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 70us
+    scale: [Polo.qml:984:28]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 64us
+    materials: [Polo.qml:986:32]
+      result: Success
+      duration: 629us
+    position: [Polo.qml:997:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 94us
+    rotation: [Polo.qml:998:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method quaternion, returning QVariant -> QQuaternion stored as QVariant
+      duration: 82us
+    scale: [Polo.qml:999:28]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 72us
+    materials: [Polo.qml:1001:32]
+      result: Success
+      duration: 105us
+    position: [Polo.qml:1012:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 69us
+    rotation: [Polo.qml:1013:31]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method quaternion, returning QVariant -> QQuaternion stored as QVariant
+      duration: 74us
+    scale: [Polo.qml:1014:28]
+      result: Error: Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector3d, returning QVariant -> QVector3D stored as QVariant
+      duration: 63us
+    materials: [Polo.qml:1016:32]
+      result: Success
+      duration: 275us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/SettingsPage.qml
+  5 of 11 (45.45%) bindings or functions compiled to Cpp successfully
+    right: [SettingsPage.qml:6:24]
+      result: Success
+      duration: 174us
+    bottom: [SettingsPage.qml:6:54]
+      result: Success
+      duration: 87us
+    color: [SettingsPage.qml:8:16]
+      result: Error: Cannot access value for name window
+      duration: 292us
+    centerIn: [SettingsPage.qml:12:31]
+      result: Success
+      duration: 62us
+    text: [SettingsPage.qml:13:26]
+      result: Error: Cannot access value for name window
+      duration: 259us
+    color: [SettingsPage.qml:13:72]
+      result: Error: Cannot access value for name window
+      duration: 223us
+    color: [SettingsPage.qml:14:66]
+      result: Error: Cannot access value for name window
+      duration: 142us
+    x: [SettingsPage.qml:16:24]
+      result: Error: Cannot access value for name window
+      duration: 136us
+    verticalCenter: [SettingsPage.qml:16:77]
+      result: Success
+      duration: 87us
+    fill: [SettingsPage.qml:21:35]
+      result: Success
+      duration: 71us
+    onClicked: [SettingsPage.qml:21:54]
+      result: Error: Cannot access value for name window
+      duration: 342us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/TempCard.qml
+  6 of 11 (54.55%) bindings or functions compiled to Cpp successfully
+    color: [TempCard.qml:11:12]
+      result: Error: Cannot access value for name window
+      duration: 208us
+    left: [TempCard.qml:15:33]
+      result: Success
+      duration: 222us
+    top: [TempCard.qml:15:59]
+      result: Success
+      duration: 125us
+    bottom: [TempCard.qml:16:25]
+      result: Success
+      duration: 49us
+    color: [TempCard.qml:16:47]
+      result: Error: Cannot access value for name accent
+      duration: 12us
+    centerIn: [TempCard.qml:20:27]
+      result: Success
+      duration: 34us
+    text: [TempCard.qml:21:22]
+      result: Error: Cannot access value for name label
+      duration: 16us
+    horizontalCenter: [TempCard.qml:21:90]
+      result: Success
+      duration: 78us
+    text: [TempCard.qml:22:22]
+      result: Error: Cannot access value for name value
+      duration: 25us
+    color: [TempCard.qml:22:54]
+      result: Error: Cannot access value for name window
+      duration: 126us
+    horizontalCenter: [TempCard.qml:22:156]
+      result: Success
+      duration: 34us
+
+--File /Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/VitalsItem.qml
+  2 of 9 (22.22%) bindings or functions compiled to Cpp successfully
+    iconColor: [VitalsItem.qml:7:31]
+      result: Error: Cannot access value for name window
+      duration: 143us
+    text: [VitalsItem.qml:11:15]
+      result: Error: Cannot access value for name label
+      duration: 13us
+    color: [VitalsItem.qml:12:16]
+      result: Error: Cannot access value for name window
+      duration: 121us
+    capitalization: [VitalsItem.qml:13:50]
+      result: Success
+      duration: 55us
+    text: [VitalsItem.qml:18:19]
+      result: Error: Cannot access value for name value
+      duration: 12us
+    color: [VitalsItem.qml:19:20]
+      result: Error: Cannot access value for name iconColor
+      duration: 9us
+    text: [VitalsItem.qml:23:19]
+      result: Error: Cannot access value for name unit
+      duration: 68us
+    color: [VitalsItem.qml:24:20]
+      result: Error: Cannot access value for name window
+      duration: 396us
+    bottom: [VitalsItem.qml:26:29]
+      result: Success
+      duration: 57us
+
+############ AOT COMPILATION STATS SUMMARY ############
+Module PoloOS(appPoloOS): 239 of 593 (40.3%) bindings or functions compiled to Cpp successfully
+Total results: 239 of 593 (40.3%) bindings or functions compiled to Cpp successfully
+Successful codegens took an average of 71us

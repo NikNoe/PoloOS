@@ -1,0 +1,79 @@
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                        {
+                            "codegenResult": 2,
+                            "column": 12,
+                            "durationMicroseconds": 141,
+                            "functionName": "color",
+                            "line": 17,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 14,
+                            "durationMicroseconds": 73,
+                            "functionName": "opacity",
+                            "line": 18,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 29,
+                            "functionName": "centerIn",
+                            "line": 24,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 18,
+                            "functionName": "color",
+                            "line": 31,
+                            "message": "Cannot access value for name online"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 37,
+                            "durationMicroseconds": 41,
+                            "functionName": "verticalCenter",
+                            "line": 30,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 19,
+                            "durationMicroseconds": 28,
+                            "functionName": "text",
+                            "line": 35,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 131,
+                            "functionName": "color",
+                            "line": 36,
+                            "message": "Cannot access value for name online"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 37,
+                            "durationMicroseconds": 34,
+                            "functionName": "verticalCenter",
+                            "line": 39,
+                            "message": ""
+                        }
+                    ],
+                    "filePath": "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EcuTag.qml"
+                }
+            ],
+            "moduleId": "PoloOS(appPoloOS)"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/PoloOS">
+    <file alias="qmldir">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/my_Qt_6_10_1_for_macOS-Debug/PoloOS/qmldir</file>
+  </qresource>
+</RCC>
+

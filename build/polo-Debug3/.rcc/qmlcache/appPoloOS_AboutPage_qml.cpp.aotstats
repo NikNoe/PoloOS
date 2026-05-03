@@ -1,0 +1,63 @@
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                        {
+                            "codegenResult": 0,
+                            "column": 23,
+                            "durationMicroseconds": 235,
+                            "functionName": "fill",
+                            "line": 8,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 119,
+                            "functionName": "value",
+                            "line": 24,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 52,
+                            "durationMicroseconds": 77,
+                            "functionName": "value",
+                            "line": 25,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 51,
+                            "durationMicroseconds": 62,
+                            "functionName": "value",
+                            "line": 32,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 51,
+                            "durationMicroseconds": 59,
+                            "functionName": "value",
+                            "line": 33,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 42,
+                            "functionName": "alignment",
+                            "line": 43,
+                            "message": ""
+                        }
+                    ],
+                    "filePath": "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/AboutPage.qml"
+                }
+            ],
+            "moduleId": "PoloOS(appPoloOS)"
+        }
+    ]
+}

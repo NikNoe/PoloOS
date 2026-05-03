@@ -1,0 +1,11 @@
+# This file is managed by Qt Creator, do not edit!
+
+set("CMAKE_PREFIX_PATH" "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos" CACHE "PATH" "" FORCE)
+set("QT_QMAKE_EXECUTABLE" "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/bin/qmake" CACHE "FILEPATH" "" FORCE)
+set("CMAKE_BUILD_TYPE" "Debug" CACHE "STRING" "" FORCE)
+set("CMAKE_PROJECT_INCLUDE_BEFORE" "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/Qt_6_10_1_for_macOS-Debug/.qtc/package-manager/auto-setup.cmake" CACHE "FILEPATH" "" FORCE)
+set("CMAKE_CXX_FLAGS_INIT" "" CACHE "STRING" "" FORCE)
+set("QT_MAINTENANCE_TOOL" "/Volumes/DJUMData/Tecnodjum/qtproject/MaintenanceTool.app/Contents/MacOS/MaintenanceTool" CACHE "FILEPATH" "" FORCE)
+set("CMAKE_C_COMPILER" "/usr/bin/clang" CACHE "FILEPATH" "" FORCE)
+set("CMAKE_CXX_COMPILER" "/usr/bin/clang++" CACHE "FILEPATH" "" FORCE)
+set("CMAKE_COLOR_DIAGNOSTICS" "ON" CACHE "BOOL" "" FORCE)

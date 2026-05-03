@@ -1,0 +1,743 @@
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 142,
+                            "functionName": "mainTextColor",
+                            "line": 10,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 65,
+                            "functionName": "skeletonColor",
+                            "line": 12,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "contentWidth",
+                            "line": 16,
+                            "message": "Could not find property \"contentWidth\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 15,
+                            "message": "Could not find property \"fill\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 20,
+                            "durationMicroseconds": 106,
+                            "functionName": "width",
+                            "line": 20,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 49,
+                            "functionName": "horizontalCenter",
+                            "line": 21,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 35,
+                            "functionName": "top",
+                            "line": 22,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 16,
+                            "functionName": "color",
+                            "line": 28,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 37,
+                            "functionName": "alignment",
+                            "line": 32,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 30,
+                            "functionName": "alignment",
+                            "line": 40,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 47,
+                            "durationMicroseconds": 103,
+                            "functionName": "value",
+                            "line": 42,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 109,
+                            "functionName": "iconColor",
+                            "line": 43,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 72,
+                            "functionName": "value",
+                            "line": 46,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 67,
+                            "functionName": "iconColor",
+                            "line": 47,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 48,
+                            "durationMicroseconds": 65,
+                            "functionName": "value",
+                            "line": 50,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 67,
+                            "functionName": "iconColor",
+                            "line": 51,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 29,
+                            "functionName": "alignment",
+                            "line": 62,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 24,
+                            "functionName": "centerIn",
+                            "line": 68,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 70,
+                            "message": "Cannot access value for name skeletonColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 53,
+                            "functionName": "height",
+                            "line": 76,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 78,
+                            "message": "Cannot access value for name skeletonColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 19,
+                            "functionName": "centerIn",
+                            "line": 77,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 51,
+                            "functionName": "width",
+                            "line": 83,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 85,
+                            "message": "Cannot access value for name skeletonColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 51,
+                            "durationMicroseconds": 33,
+                            "functionName": "horizontalCenter",
+                            "line": 84,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 45,
+                            "functionName": "width",
+                            "line": 90,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 45,
+                            "functionName": "y",
+                            "line": 92,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 55,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 92,
+                            "message": "Cannot access value for name skeletonColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 51,
+                            "durationMicroseconds": 31,
+                            "functionName": "horizontalCenter",
+                            "line": 91,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 49,
+                            "durationMicroseconds": 66,
+                            "functionName": "speed",
+                            "line": 98,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 57,
+                            "functionName": "steering",
+                            "line": 99,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 29,
+                            "functionName": "left",
+                            "line": 97,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 49,
+                            "durationMicroseconds": 56,
+                            "functionName": "speed",
+                            "line": 105,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 51,
+                            "functionName": "steering",
+                            "line": 106,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 40,
+                            "durationMicroseconds": 31,
+                            "functionName": "right",
+                            "line": 104,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 80,
+                            "durationMicroseconds": 42,
+                            "functionName": "y",
+                            "line": 111,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 49,
+                            "durationMicroseconds": 55,
+                            "functionName": "speed",
+                            "line": 112,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 30,
+                            "functionName": "left",
+                            "line": 111,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 83,
+                            "durationMicroseconds": 42,
+                            "functionName": "y",
+                            "line": 117,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 49,
+                            "durationMicroseconds": 409,
+                            "functionName": "speed",
+                            "line": 118,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 40,
+                            "durationMicroseconds": 120,
+                            "functionName": "right",
+                            "line": 117,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 55,
+                            "functionName": "color",
+                            "line": 133,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 48,
+                            "functionName": "alignment",
+                            "line": 137,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 33,
+                            "functionName": "alignment",
+                            "line": 143,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 180,
+                            "functionName": "isActive",
+                            "line": 149,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 77,
+                            "functionName": "isActive",
+                            "line": 157,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 70,
+                            "functionName": "isActive",
+                            "line": 165,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 179,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 27,
+                            "functionName": "alignment",
+                            "line": 183,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 190,
+                            "message": "Cannot access value for name skeletonColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 20,
+                            "functionName": "centerIn",
+                            "line": 189,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 146,
+                            "functionName": "color",
+                            "line": 197,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 48,
+                            "durationMicroseconds": 134,
+                            "functionName": "xOffset",
+                            "line": 201,
+                            "message": "Cannot access value for name carCan"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 84,
+                            "functionName": "x",
+                            "line": 203,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 49,
+                            "durationMicroseconds": 36,
+                            "functionName": "verticalCenter",
+                            "line": 198,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 12,
+                            "functionName": "color",
+                            "line": 213,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 36,
+                            "functionName": "top",
+                            "line": 210,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 47,
+                            "durationMicroseconds": 33,
+                            "functionName": "horizontalCenter",
+                            "line": 211,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 52,
+                            "durationMicroseconds": 84,
+                            "functionName": "wheelDynamicColor",
+                            "line": 230,
+                            "message": "Cannot access value for name window"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 10,
+                            "functionName": "color",
+                            "line": 240,
+                            "message": "Cannot access value for name wheelDynamicColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 20,
+                            "functionName": "rotation",
+                            "line": 242,
+                            "message": "Cannot access value for name isFront"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 21,
+                            "functionName": "fill",
+                            "line": 239,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 22,
+                            "functionName": "centerIn",
+                            "line": 248,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 82,
+                            "durationMicroseconds": 30,
+                            "functionName": "type",
+                            "line": 252,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 30,
+                            "functionName": "left",
+                            "line": 258,
+                            "message": "Cannot access value for name wheelName"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 25,
+                            "functionName": "right",
+                            "line": 259,
+                            "message": "Cannot access value for name wheelName"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 37,
+                            "durationMicroseconds": 34,
+                            "functionName": "verticalCenter",
+                            "line": 261,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 14,
+                            "functionName": "text",
+                            "line": 264,
+                            "message": "Cannot access value for name speed"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 11,
+                            "functionName": "color",
+                            "line": 266,
+                            "message": "Cannot access value for name mainTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 29,
+                            "functionName": "horizontalAlignment",
+                            "line": 267,
+                            "message": "Cannot access value for name wheelName"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 11,
+                            "functionName": "color",
+                            "line": 271,
+                            "message": "Cannot access value for name subTextColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 25,
+                            "functionName": "horizontalAlignment",
+                            "line": 272,
+                            "message": "Cannot access value for name wheelName"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 33,
+                            "functionName": "horizontalCenter",
+                            "line": 292,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 25,
+                            "durationMicroseconds": 11,
+                            "functionName": "source",
+                            "line": 296,
+                            "message": "Cannot access value for name iconSource"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 216,
+                            "functionName": "fillMode",
+                            "line": 298,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 35,
+                            "functionName": "fill",
+                            "line": 297,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 25,
+                            "durationMicroseconds": 29,
+                            "functionName": "source",
+                            "line": 305,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 359,
+                            "functionName": "color",
+                            "line": 310,
+                            "message": "Cannot access value for name isActive"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 33,
+                            "functionName": "opacity",
+                            "line": 323,
+                            "message": "Cannot access value for name isCritical"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 31,
+                            "functionName": "fill",
+                            "line": 304,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 12,
+                            "functionName": "running",
+                            "line": 317,
+                            "message": "Cannot access value for name isCritical"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 38,
+                            "functionName": "loops",
+                            "line": 318,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 11,
+                            "functionName": "color",
+                            "line": 331,
+                            "message": "Cannot access value for name activeColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 15,
+                            "functionName": "opacity",
+                            "line": 332,
+                            "message": "Cannot access value for name isActive"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 9,
+                            "functionName": "visible",
+                            "line": 333,
+                            "message": "Cannot access value for name isActive"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 25,
+                            "functionName": "centerIn",
+                            "line": 328,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 12,
+                            "functionName": "running",
+                            "line": 336,
+                            "message": "Cannot access value for name isActive"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 24,
+                            "functionName": "loops",
+                            "line": 337,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 19,
+                            "durationMicroseconds": 10,
+                            "functionName": "text",
+                            "line": 345,
+                            "message": "Cannot access value for name label"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 40,
+                            "functionName": "color",
+                            "line": 350,
+                            "message": "Cannot access value for name isCritical"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 39,
+                            "functionName": "horizontalCenter",
+                            "line": 346,
+                            "message": ""
+                        }
+                    ],
+                    "filePath": "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/ChassisPage.qml"
+                }
+            ],
+            "moduleId": "PoloOS(appPoloOS)"
+        }
+    ]
+}

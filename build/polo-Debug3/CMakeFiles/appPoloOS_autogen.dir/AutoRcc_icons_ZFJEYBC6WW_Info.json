@@ -1,0 +1,22 @@
+{
+	"BUILD_DIR" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/appPoloOS_autogen",
+	"CMAKE_BINARY_DIR" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS",
+	"CMAKE_SOURCE_DIR" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/appPoloOS_autogen/include",
+	"INPUTS" : [],
+	"LOCK_FILE" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/CMakeFiles/appPoloOS_autogen.dir/AutoRcc_icons_ZFJEYBC6WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "icons" ],
+	"OUTPUT_CHECKSUM" : "ZFJEYBC6WW",
+	"OUTPUT_NAME" : "qrc_icons.cpp",
+	"RCC_EXECUTABLE" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/CMakeFiles/appPoloOS_autogen.dir/AutoRcc_icons_ZFJEYBC6WW_Used.txt",
+	"SOURCE" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/iconsDashboard/icons.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

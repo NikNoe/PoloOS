@@ -1,0 +1,2321 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "appPoloOS"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"_qt_internal_create_executable",
+			"qt6_add_executable",
+			"qt_add_executable",
+			"install",
+			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"find_dependency",
+			"_qt_internal_find_qt_dependencies",
+			"qt6_add_qml_module",
+			"qt_add_qml_module",
+			"add_dependencies",
+			"_qt_internal_qml_copy_files_to_build_dir",
+			"_qt_internal_write_deferred_qmlls_build_ini_file",
+			"_qt_internal_scan_qml_imports",
+			"_qt_internal_generate_deploy_qml_imports_script",
+			"cmake_language",
+			"_qt_internal_finalize_executable",
+			"qt6_finalize_target",
+			"add_definitions",
+			"target_include_directories",
+			"_qt_internal_qml_type_registration",
+			"include_directories",
+			"target_sources",
+			"qt6_extract_metatypes",
+			"__qt_propagate_generated_resource",
+			"_qt_internal_process_resource",
+			"qt6_add_resources",
+			"qt6_target_qml_sources",
+			"_qt_internal_target_enable_qmlcachegen",
+			"_qt_internal_expose_deferred_files_to_ide"
+		],
+		"files" : 
+		[
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"CMakeLists.txt",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Quick3D/Qt6Quick3DTargets.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Quick3D/Qt6Quick3DConfig.cmake",
+			"build/my_Qt_6_10_1_for_macOS-Debug/.qtc/package-manager/maintenance_tool_provider.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Quick3DRuntimeRender/Qt6Quick3DRuntimeRenderTargets.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Quick3DRuntimeRender/Qt6Quick3DRuntimeRenderConfig.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Quick3D/Qt6Quick3DDependencies.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Location/Qt6LocationTargets.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Location/Qt6LocationConfig.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Quick/Qt6QuickTargets.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Qml/Qt6QmlTargets.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake:1099:EVAL",
+			"/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:846:EVAL"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 23,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 1012,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 671,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 747,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 131,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 95,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 111,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 315,
+				"parent" : 8
+			},
+			{
+				"file" : 3,
+				"parent" : 9
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 52,
+				"parent" : 10
+			},
+			{
+				"file" : 2,
+				"parent" : 11
+			},
+			{
+				"command" : 6,
+				"file" : 2,
+				"line" : 62,
+				"parent" : 12
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 40,
+				"parent" : 10
+			},
+			{
+				"file" : 9,
+				"parent" : 14
+			},
+			{
+				"command" : 10,
+				"file" : 9,
+				"line" : 50,
+				"parent" : 15
+			},
+			{
+				"command" : 9,
+				"file" : 8,
+				"line" : 142,
+				"parent" : 16
+			},
+			{
+				"command" : 8,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 17
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 333,
+				"parent" : 18
+			},
+			{
+				"file" : 6,
+				"parent" : 19
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 52,
+				"parent" : 20
+			},
+			{
+				"file" : 5,
+				"parent" : 21
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 62,
+				"parent" : 22
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 315,
+				"parent" : 8
+			},
+			{
+				"file" : 11,
+				"parent" : 24
+			},
+			{
+				"command" : 7,
+				"file" : 11,
+				"line" : 52,
+				"parent" : 25
+			},
+			{
+				"file" : 10,
+				"parent" : 26
+			},
+			{
+				"command" : 6,
+				"file" : 10,
+				"line" : 62,
+				"parent" : 27
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 315,
+				"parent" : 8
+			},
+			{
+				"file" : 13,
+				"parent" : 29
+			},
+			{
+				"command" : 7,
+				"file" : 13,
+				"line" : 52,
+				"parent" : 30
+			},
+			{
+				"file" : 12,
+				"parent" : 31
+			},
+			{
+				"command" : 6,
+				"file" : 12,
+				"line" : 62,
+				"parent" : 32
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 315,
+				"parent" : 8
+			},
+			{
+				"file" : 15,
+				"parent" : 34
+			},
+			{
+				"command" : 7,
+				"file" : 15,
+				"line" : 52,
+				"parent" : 35
+			},
+			{
+				"file" : 14,
+				"parent" : 36
+			},
+			{
+				"command" : 6,
+				"file" : 14,
+				"line" : 62,
+				"parent" : 37
+			},
+			{
+				"command" : 12,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 0
+			},
+			{
+				"command" : 11,
+				"file" : 16,
+				"line" : 1418,
+				"parent" : 39
+			},
+			{
+				"command" : 5,
+				"file" : 16,
+				"line" : 618,
+				"parent" : 40
+			},
+			{
+				"command" : 7,
+				"file" : 13,
+				"line" : 40,
+				"parent" : 30
+			},
+			{
+				"file" : 19,
+				"parent" : 42
+			},
+			{
+				"command" : 10,
+				"file" : 19,
+				"line" : 50,
+				"parent" : 43
+			},
+			{
+				"command" : 9,
+				"file" : 8,
+				"line" : 142,
+				"parent" : 44
+			},
+			{
+				"command" : 8,
+				"file" : 7,
+				"line" : 76,
+				"parent" : 45
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 333,
+				"parent" : 46
+			},
+			{
+				"file" : 18,
+				"parent" : 47
+			},
+			{
+				"command" : 7,
+				"file" : 18,
+				"line" : 55,
+				"parent" : 48
+			},
+			{
+				"file" : 17,
+				"parent" : 49
+			},
+			{
+				"command" : 6,
+				"file" : 17,
+				"line" : 62,
+				"parent" : 50
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 672,
+				"parent" : 2
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 315,
+				"parent" : 8
+			},
+			{
+				"file" : 21,
+				"parent" : 53
+			},
+			{
+				"command" : 7,
+				"file" : 21,
+				"line" : 54,
+				"parent" : 54
+			},
+			{
+				"file" : 20,
+				"parent" : 55
+			},
+			{
+				"command" : 6,
+				"file" : 20,
+				"line" : 62,
+				"parent" : 56
+			},
+			{
+				"command" : 14,
+				"file" : 16,
+				"line" : 970,
+				"parent" : 40
+			},
+			{
+				"command" : 13,
+				"file" : 16,
+				"line" : 3120,
+				"parent" : 58
+			},
+			{
+				"command" : 14,
+				"file" : 16,
+				"line" : 976,
+				"parent" : 40
+			},
+			{
+				"command" : 13,
+				"file" : 16,
+				"line" : 3120,
+				"parent" : 60
+			},
+			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 15,
+				"file" : 22,
+				"line" : 1,
+				"parent" : 62
+			},
+			{
+				"command" : 13,
+				"file" : 16,
+				"line" : 1388,
+				"parent" : 63
+			},
+			{
+				"command" : 20,
+				"file" : 23,
+				"line" : 1,
+				"parent" : 62
+			},
+			{
+				"command" : 19,
+				"file" : 0,
+				"line" : 877,
+				"parent" : 65
+			},
+			{
+				"command" : 18,
+				"file" : 0,
+				"line" : 799,
+				"parent" : 66
+			},
+			{
+				"command" : 17,
+				"file" : 0,
+				"line" : 799,
+				"parent" : 67
+			},
+			{
+				"command" : 16,
+				"file" : 16,
+				"line" : 4780,
+				"parent" : 68
+			},
+			{
+				"command" : 13,
+				"file" : 16,
+				"line" : 4555,
+				"parent" : 69
+			},
+			{
+				"command" : 21,
+				"file" : 1,
+				"line" : 128,
+				"parent" : 0
+			},
+			{
+				"command" : 21,
+				"file" : 1,
+				"line" : 127,
+				"parent" : 0
+			},
+			{
+				"command" : 23,
+				"file" : 16,
+				"line" : 835,
+				"parent" : 40
+			},
+			{
+				"command" : 22,
+				"file" : 16,
+				"line" : 4253,
+				"parent" : 73
+			},
+			{
+				"command" : 24,
+				"file" : 1,
+				"line" : 155,
+				"parent" : 0
+			},
+			{
+				"command" : 22,
+				"file" : 16,
+				"line" : 4283,
+				"parent" : 73
+			},
+			{
+				"command" : 26,
+				"file" : 16,
+				"line" : 4078,
+				"parent" : 73
+			},
+			{
+				"command" : 25,
+				"file" : 0,
+				"line" : 1577,
+				"parent" : 77
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 4244,
+				"parent" : 73
+			},
+			{
+				"command" : 29,
+				"file" : 16,
+				"line" : 887,
+				"parent" : 40
+			},
+			{
+				"command" : 28,
+				"file" : 0,
+				"line" : 405,
+				"parent" : 80
+			},
+			{
+				"command" : 27,
+				"file" : 0,
+				"line" : 2623,
+				"parent" : 81
+			},
+			{
+				"command" : 25,
+				"file" : 0,
+				"line" : 2163,
+				"parent" : 82
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 934,
+				"parent" : 40
+			},
+			{
+				"command" : 30,
+				"file" : 16,
+				"line" : 960,
+				"parent" : 40
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 31,
+				"file" : 16,
+				"line" : 3728,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 1881,
+				"parent" : 87
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3591,
+				"parent" : 85
+			},
+			{
+				"command" : 25,
+				"file" : 16,
+				"line" : 3784,
+				"parent" : 85
+			},
+			{
+				"command" : 29,
+				"file" : 16,
+				"line" : 3876,
+				"parent" : 85
+			},
+			{
+				"command" : 28,
+				"file" : 0,
+				"line" : 405,
+				"parent" : 124
+			},
+			{
+				"command" : 27,
+				"file" : 0,
+				"line" : 2623,
+				"parent" : 125
+			},
+			{
+				"command" : 25,
+				"file" : 0,
+				"line" : 2163,
+				"parent" : 126
+			},
+			{
+				"command" : 29,
+				"file" : 16,
+				"line" : 3894,
+				"parent" : 85
+			},
+			{
+				"command" : 28,
+				"file" : 0,
+				"line" : 405,
+				"parent" : 128
+			},
+			{
+				"command" : 27,
+				"file" : 0,
+				"line" : 2623,
+				"parent" : 129
+			},
+			{
+				"command" : 25,
+				"file" : 0,
+				"line" : 2163,
+				"parent" : 130
+			},
+			{
+				"command" : 32,
+				"file" : 0,
+				"line" : 871,
+				"parent" : 65
+			},
+			{
+				"command" : 25,
+				"file" : 0,
+				"line" : 2288,
+				"parent" : 132
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DQT_QML_DEBUG --target=aarch64-linux-gnu -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -fcolor-diagnostics"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 71,
+					"define" : "BUILD_DATE=\"2026-02-14\""
+				},
+				{
+					"backtrace" : 72,
+					"define" : "GIT_COMMIT_HASH=\"96f26ff\""
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_CONCURRENT_LIB"
+				},
+				{
+					"backtrace" : 52,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_LOCATION_LIB"
+				},
+				{
+					"backtrace" : 41,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_OPENGL_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_POSITIONINGQUICK_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_POSITIONING_LIB"
+				},
+				{
+					"backtrace" : 41,
+					"define" : "QT_QMLINTEGRATION_LIB"
+				},
+				{
+					"backtrace" : 41,
+					"define" : "QT_QML_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICK3DHELPERS_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICK3DRUNTIMERENDER_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICK3DUTILS_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICK3D_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICKCONTROLS2_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICKEFFECTS_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICK_LIB"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "QT_SERIALBUS_LIB"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "QT_SERIALPORT_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_SHADERTOOLS_LIB"
+				}
+			],
+			"frameworks" : 
+			[
+				{
+					"backtrace" : 76,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQml.framework"
+				},
+				{
+					"backtrace" : 76,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtCore.framework"
+				},
+				{
+					"backtrace" : 76,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtNetwork.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtGui.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtOpenGL.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3D.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3DRuntimeRender.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3DUtils.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtShaderTools.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtConcurrent.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3DHelpers.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtLocation.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtPositioning.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtPositioningQuick.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuickEffects.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuickControls2.framework"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtSerialBus.framework"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtSerialPort.framework"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/my_Qt_6_10_1_for_macOS-Debug/appPoloOS_autogen/include"
+				},
+				{
+					"backtrace" : 74,
+					"path" : "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS"
+				},
+				{
+					"backtrace" : 75,
+					"path" : "/Users/client/PoloOS_SDK/sysroot/usr/include/qt6"
+				},
+				{
+					"backtrace" : 75,
+					"path" : "/Users/client/PoloOS_SDK/sysroot/usr/include/qt6/QtCore"
+				},
+				{
+					"backtrace" : 75,
+					"path" : "/Users/client/PoloOS_SDK/sysroot/usr/include/qt6/QtGui"
+				},
+				{
+					"backtrace" : 75,
+					"path" : "/Users/client/PoloOS_SDK/sysroot/usr/include/qt6/QtWidgets"
+				},
+				{
+					"backtrace" : 76,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQml.framework/Headers"
+				},
+				{
+					"backtrace" : 76,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtCore.framework/Headers"
+				},
+				{
+					"backtrace" : 76,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/mkspecs/macx-clang"
+				},
+				{
+					"backtrace" : 76,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/include"
+				},
+				{
+					"backtrace" : 76,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/include/QtQmlIntegration"
+				},
+				{
+					"backtrace" : 76,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtNetwork.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtGui.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtOpenGL.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3D.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3DRuntimeRender.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3DUtils.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtShaderTools.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtConcurrent.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3DHelpers.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtLocation.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtPositioning.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtPositioningQuick.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuickEffects.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuickControls2.framework/Headers"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtSerialBus.framework/Headers"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtSerialPort.framework/Headers"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					52
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				3,
+				4,
+				7,
+				9,
+				10,
+				12,
+				14,
+				16,
+				18,
+				20,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				36,
+				38,
+				40,
+				42,
+				44,
+				45,
+				46,
+				81
+			],
+			"sysroot" : 
+			{
+				"path" : "/Users/client/PoloOS_SDK/sysroot"
+			}
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "appPoloOS_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "appPoloOS_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 59,
+			"id" : "appPoloOS_copy_qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 61,
+			"id" : "appPoloOS_copy_res::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 64,
+			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 70,
+			"id" : "appPoloOS_qmlimportscan::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "appPoloOS::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 5,
+				"path" : "bin"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/tmp"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-DQT_QML_DEBUG --target=aarch64-linux-gnu -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-F/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib",
+				"role" : "frameworkPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtLocation.framework/Versions/A/QtLocation",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuickEffects.framework/Versions/A/QtQuickEffects",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuickControls2.framework/Versions/A/QtQuickControls2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3DHelpers.framework/Versions/A/QtQuick3DHelpers",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtSerialBus.framework/Versions/A/QtSerialBus",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtSerialPort.framework/Versions/A/QtSerialPort",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3D.framework/Versions/A/QtQuick3D",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3DRuntimeRender.framework/Versions/A/QtQuick3DRuntimeRender",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtShaderTools.framework/Versions/A/QtShaderTools",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 23,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick3DUtils.framework/Versions/A/QtQuick3DUtils",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 23,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtConcurrent.framework/Versions/A/QtConcurrent",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 28,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtPositioningQuick.framework/Versions/A/QtPositioningQuick",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtPositioning.framework/Versions/A/QtPositioning",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQuick.framework/Versions/A/QtQuick",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 33,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtOpenGL.framework/Versions/A/QtOpenGL",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtGui.framework/Versions/A/QtGui",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 38,
+				"fragment" : "-framework AppKit",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 38,
+				"fragment" : "-framework OpenGL",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 38,
+				"fragment" : "-framework ImageIO",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 38,
+				"fragment" : "-framework Metal",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 41,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtQml.framework/Versions/A/QtQml",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 51,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtNetwork.framework/Versions/A/QtNetwork",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 52,
+				"fragment" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/lib/QtCore.framework/Versions/A/QtCore",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 57,
+				"fragment" : "-framework IOKit",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 57,
+				"fragment" : "-framework DiskArbitration",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 57,
+				"fragment" : "-framework UniformTypeIdentifiers",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX",
+		"sysroot" : 
+		{
+			"path" : "/Users/client/PoloOS_SDK/sysroot"
+		}
+	},
+	"name" : "appPoloOS",
+	"nameOnDisk" : "appPoloOS",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files\\Generated",
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				3,
+				4,
+				9,
+				10,
+				12,
+				14,
+				16,
+				18,
+				20,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				36,
+				38,
+				40,
+				42,
+				44,
+				45,
+				46,
+				47,
+				49,
+				50,
+				80,
+				81,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1,
+				7,
+				8,
+				11,
+				13,
+				15,
+				17,
+				19,
+				21,
+				23,
+				25,
+				27,
+				29,
+				31,
+				33,
+				35,
+				37,
+				39,
+				41,
+				43
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				5,
+				6
+			]
+		},
+		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				48,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/appPoloOS_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 78,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/meta_types/qt6apppoloos_metatypes.json.gen",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 79,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/apppoloos_qmltyperegistrations.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 83,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/qrc_qmake_PoloOS.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 84,
+			"path" : "canhandler.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 84,
+			"path" : "CanReader.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 84,
+			"compileGroupIndex" : 0,
+			"path" : "CanReader.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 86,
+			"path" : "Main.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 88,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_qmlcache_loader.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 89,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_Main_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 90,
+			"path" : "Polo.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 91,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_Polo_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 92,
+			"path" : "CockpitWindow.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 93,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_CockpitWindow_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 94,
+			"path" : "DashboardIcon.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 95,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_DashboardIcon_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 96,
+			"path" : "VitalsItem.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 97,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_VitalsItem_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 98,
+			"path" : "EnginePage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 99,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EnginePage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 100,
+			"path" : "EngineLive.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 101,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EngineLive_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 102,
+			"path" : "EnergyPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 103,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EnergyPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 104,
+			"path" : "AboutPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 105,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_AboutPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 106,
+			"path" : "BodyPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 107,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_BodyPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 108,
+			"path" : "DiagnosticsPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 109,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_DiagnosticsPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 110,
+			"path" : "SettingsPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 111,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_SettingsPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 112,
+			"path" : "ChassisPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 113,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_ChassisPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 114,
+			"path" : "MapPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 115,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_MapPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 116,
+			"path" : "TempCard.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 117,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_TempCard_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 118,
+			"path" : "BusStatusCard.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 119,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_BusStatusCard_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 120,
+			"path" : "EcuTag.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 121,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EcuTag_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 122,
+			"path" : "EngineerRow.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 123,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EngineerRow_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 127,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/qrc_appPoloOS_raw_qml_0.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 131,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/qrc_appPoloOS_raw_res_0.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 133,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/qmake_PoloOS.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 133,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/PoloOS/qmldir",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/appPoloOS_raw_qml_0.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 133,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/appPoloOS_raw_res_0.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/chassis_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/imvlm_lighting_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/interior_And_engine_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/glass_interior_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/taillight_red_glass_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/bonnet_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/boot_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/boot_ok_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/bumper_front_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/bump_rear_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/door_lr_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/door_lf_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/door_lf_ok_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/wing_lf_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/wing_rf_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/door_rf_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/door_rf_ok_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/door_rr_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/windscreen_ok_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/steering_ok_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/speedook_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/tahook_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/vent_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/chassis_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/wheel_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/wheel_001_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/wheel_002_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "meshes/wheel_003_mesh.mesh",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 133,
+			"path" : "icons.qrc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/appPoloOS_autogen/timestamp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/appPoloOS_autogen/EWIEGA46WW/qrc_icons.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/meta_types/qt6apppoloos_metatypes.json.gen.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/apppoloos_qmltyperegistrations.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/qrc_qmake_PoloOS.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_qmlcache_loader.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_Main_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_Polo_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_CockpitWindow_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_DashboardIcon_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_VitalsItem_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EnginePage_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EngineLive_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EnergyPage_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_AboutPage_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_BodyPage_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_DiagnosticsPage_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_SettingsPage_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_ChassisPage_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_MapPage_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_TempCard_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_BusStatusCard_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EcuTag_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.rcc/qmlcache/appPoloOS_EngineerRow_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/qrc_appPoloOS_raw_qml_0.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/.qt/rcc/qrc_appPoloOS_raw_res_0.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/appPoloOS_autogen/timestamp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/appPoloOS_autogen/EWIEGA46WW/qrc_icons.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/my_Qt_6_10_1_for_macOS-Debug/meta_types/appPoloOS_json_file_list.txt.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 52,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6core_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 41,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6qml_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 41,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6network_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6gui_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6quick_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6opengl_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6quick3d_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6quick3druntimerender_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6quick3dutils_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6shadertools_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6concurrent_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6quick3dhelpers_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6location_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6positioning_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6positioningquick_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6quickeffects_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6quickcontrols2_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6serialbus_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 7,
+			"path" : "/Volumes/DJUMData/Tecnodjum/qtproject/6.10.1/macos/metatypes/qt6serialport_metatypes.json",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

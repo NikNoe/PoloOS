@@ -1,0 +1,6 @@
+module PoloOS
+typeinfo appPoloOS.qmltypes
+prefer :/qt/qml/PoloOS/
+Main 1.0 Main.qml
+depends QtQuick
+

@@ -1,0 +1,43 @@
+
+set(target "appPoloOS")
+set(working_dir "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS")
+set(src_and_dest_list
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/Main.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/Main.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/Polo.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/Polo.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/CockpitWindow.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/CockpitWindow.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/DashboardIcon.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/DashboardIcon.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/VitalsItem.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/VitalsItem.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EnginePage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/EnginePage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EngineLive.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/EngineLive.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EnergyPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/EnergyPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/AboutPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/AboutPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/BodyPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/BodyPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/DiagnosticsPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/DiagnosticsPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/SettingsPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/SettingsPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/ChassisPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/ChassisPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/MapPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/MapPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/TempCard.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/TempCard.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/BusStatusCard.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/BusStatusCard.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EcuTag.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/EcuTag.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/EngineerRow.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/PoloOS/EngineerRow.qml"
+
+)
+set(timestamp_file "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/.qt/appPoloOS_qml.txt")

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/PoloOS">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3</file>
+
+  </qresource>
+</RCC>

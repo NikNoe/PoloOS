@@ -1,0 +1,2 @@
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/appPoloOS_autogen/include/../EWIEGA46WW/moc_CanReader.cpp.json
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/polo-Debug3/appPoloOS_autogen/include/../EWIEGA46WW/moc_canhandler.cpp.json

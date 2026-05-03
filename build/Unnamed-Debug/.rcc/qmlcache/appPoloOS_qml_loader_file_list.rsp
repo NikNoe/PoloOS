@@ -1,0 +1,5 @@
+--resource
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/Unnamed-Debug/.qt/rcc/qmake_PoloOS.qrc
+--resource
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build/Unnamed-Debug/.qt/rcc/appPoloOS_raw_qml_0.qrc
+/qt/qml/PoloOS/Main.qml
