@@ -60,28 +60,28 @@ void CarRenderer::drawBody(Vector3 origin, float heading)
     // Bas de caisse
     Vector3 base = localToWorld(origin, heading, 0, 0.25f, 0);
     DrawModelEx(
-        LoadModelFromMesh(GenMeshBox(1.72f, 0.5f, 4.2f)),
+        LoadModelFromMesh(GenMeshCube(1.72f, 0.5f, 4.2f)),
         base, {0,1,0}, heading, {1,1,1}, m_bodyColor
     );
 
     // Toit (profil hatchback)
     Vector3 roof = localToWorld(origin, heading, 0, 0.85f, -0.15f);
     DrawModelEx(
-        LoadModelFromMesh(GenMeshBox(1.60f, 0.55f, 2.4f)),
+        LoadModelFromMesh(GenMeshCube(1.60f, 0.55f, 2.4f)),
         roof, {0,1,0}, heading, {1,1,1}, m_bodyColor
     );
 
     // Pare-brise avant (légèrement incliné — simplifié en boîte plate)
     Vector3 windshield = localToWorld(origin, heading, 0, 0.72f, 0.95f);
     DrawModelEx(
-        LoadModelFromMesh(GenMeshBox(1.55f, 0.05f, 0.9f)),
+        LoadModelFromMesh(GenMeshCube(1.55f, 0.05f, 0.9f)),
         windshield, {0,1,0}, heading, {1,1,1}, m_glassColor
     );
 
     // Lunette arrière
     Vector3 rear = localToWorld(origin, heading, 0, 0.72f, -1.05f);
     DrawModelEx(
-        LoadModelFromMesh(GenMeshBox(1.45f, 0.05f, 0.7f)),
+        LoadModelFromMesh(GenMeshCube(1.45f, 0.05f, 0.7f)),
         rear, {0,1,0}, heading, {1,1,1}, m_glassColor
     );
 
@@ -89,7 +89,7 @@ void CarRenderer::drawBody(Vector3 origin, float heading)
     for (int side = -1; side <= 1; side += 2) {
         Vector3 win = localToWorld(origin, heading, side * 0.86f, 0.85f, -0.1f);
         DrawModelEx(
-            LoadModelFromMesh(GenMeshBox(0.05f, 0.42f, 1.9f)),
+            LoadModelFromMesh(GenMeshCube(0.05f, 0.42f, 1.9f)),
             win, {0,1,0}, heading, {1,1,1}, m_glassColor
         );
     }
@@ -97,14 +97,14 @@ void CarRenderer::drawBody(Vector3 origin, float heading)
     // Pare-chocs avant
     Vector3 bumpF = localToWorld(origin, heading, 0, 0.2f, 2.2f);
     DrawModelEx(
-        LoadModelFromMesh(GenMeshBox(1.72f, 0.35f, 0.2f)),
+        LoadModelFromMesh(GenMeshCube(1.72f, 0.35f, 0.2f)),
         bumpF, {0,1,0}, heading, {1,1,1}, {50,50,50,255}
     );
 
     // Pare-chocs arrière
     Vector3 bumpR = localToWorld(origin, heading, 0, 0.2f, -2.2f);
     DrawModelEx(
-        LoadModelFromMesh(GenMeshBox(1.72f, 0.35f, 0.2f)),
+        LoadModelFromMesh(GenMeshCube(1.72f, 0.35f, 0.2f)),
         bumpR, {0,1,0}, heading, {1,1,1}, {50,50,50,255}
     );
 }
@@ -142,7 +142,7 @@ void CarRenderer::drawDoors(Vector3 origin, float heading, const PoloCar& car)
         );
 
         DrawModelEx(
-            LoadModelFromMesh(GenMeshBox(0.08f, 0.8f, 1.1f)),
+            LoadModelFromMesh(GenMeshCube(0.08f, 0.8f, 1.1f)),
             doorCenter,
             {0, 1, 0},
             heading + d.angle * d.side,
@@ -162,7 +162,7 @@ void CarRenderer::drawTrunk(Vector3 origin, float heading, float angle)
 
     Vector3 trunkPos = localToWorld(origin, heading, 0, cy, cz);
     DrawModelEx(
-        LoadModelFromMesh(GenMeshBox(1.55f, 0.06f, 0.75f)),
+        LoadModelFromMesh(GenMeshCube(1.55f, 0.06f, 0.75f)),
         trunkPos,
         {0, 1, 0},
         heading,
@@ -180,7 +180,7 @@ void CarRenderer::drawHood(Vector3 origin, float heading, float angle)
 
     Vector3 hoodPos = localToWorld(origin, heading, 0, cy, cz);
     DrawModelEx(
-        LoadModelFromMesh(GenMeshBox(1.65f, 0.06f, 0.85f)),
+        LoadModelFromMesh(GenMeshCube(1.65f, 0.06f, 0.85f)),
         hoodPos,
         {0, 1, 0},
         heading,
@@ -226,7 +226,7 @@ void CarRenderer::drawLights(Vector3 origin, float heading, const PoloCar& car)
 
         Vector3 lpos = localToWorld(origin, heading, side * 0.65f, 0.45f, 2.12f);
         DrawModelEx(
-            LoadModelFromMesh(GenMeshBox(0.28f, 0.15f, 0.06f)),
+            LoadModelFromMesh(GenMeshCube(0.28f, 0.15f, 0.06f)),
             lpos, {0,1,0}, heading, {1,1,1}, col
         );
 
@@ -243,7 +243,7 @@ void CarRenderer::drawLights(Vector3 origin, float heading, const PoloCar& car)
     for (int side = -1; side <= 1; side += 2) {
         Vector3 lpos = localToWorld(origin, heading, side * 0.65f, 0.45f, -2.12f);
         DrawModelEx(
-            LoadModelFromMesh(GenMeshBox(0.32f, 0.15f, 0.06f)),
+            LoadModelFromMesh(GenMeshCube(0.32f, 0.15f, 0.06f)),
             lpos, {0,1,0}, heading, {1,1,1}, stopCol
         );
     }
@@ -260,12 +260,12 @@ void CarRenderer::drawLights(Vector3 origin, float heading, const PoloCar& car)
     Vector3 blRL = localToWorld(origin, heading, -0.72f, 0.4f, -2.1f);
     Vector3 blRR = localToWorld(origin, heading,  0.72f, 0.4f, -2.1f);
 
-    DrawModelEx(LoadModelFromMesh(GenMeshBox(0.16f,0.12f,0.06f)),
+    DrawModelEx(LoadModelFromMesh(GenMeshCube(0.16f,0.12f,0.06f)),
         blFL, {0,1,0}, heading, {1,1,1}, blinkerColor(true));
-    DrawModelEx(LoadModelFromMesh(GenMeshBox(0.16f,0.12f,0.06f)),
+    DrawModelEx(LoadModelFromMesh(GenMeshCube(0.16f,0.12f,0.06f)),
         blFR, {0,1,0}, heading, {1,1,1}, blinkerColor(false));
-    DrawModelEx(LoadModelFromMesh(GenMeshBox(0.16f,0.12f,0.06f)),
+    DrawModelEx(LoadModelFromMesh(GenMeshCube(0.16f,0.12f,0.06f)),
         blRL, {0,1,0}, heading, {1,1,1}, blinkerColor(true));
-    DrawModelEx(LoadModelFromMesh(GenMeshBox(0.16f,0.12f,0.06f)),
+    DrawModelEx(LoadModelFromMesh(GenMeshCube(0.16f,0.12f,0.06f)),
         blRR, {0,1,0}, heading, {1,1,1}, blinkerColor(false));
 }

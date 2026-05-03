@@ -41,13 +41,18 @@ if [ "$OS" = "Linux" ]; then
 
 elif [ "$OS" = "Darwin" ]; then
     echo "[1/3] Installation des dépendances macOS..."
-    # Vérifie que Homebrew est présent
+
+    # Ajouter Homebrew au PATH (Mac M1/M2/M3)
+    export PATH="/opt/homebrew/bin:$PATH"
+
     if ! command -v brew &>/dev/null; then
-        echo "Homebrew non trouvé — installation..."
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo "Homebrew non trouvé — installe-le manuellement :"
+        echo "  https://brew.sh"
+        exit 1
     fi
-    brew install cmake git pkg-config
-    # Sur macOS les frameworks OpenGL/Cocoa sont natifs, rien d'autre à installer
+
+    brew install cmake git pkg-config raylib
+    
 else
     echo "OS non supporté : $OS"
     exit 1

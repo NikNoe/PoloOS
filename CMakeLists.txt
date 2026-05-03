@@ -21,11 +21,12 @@ if (NOT raylib_FOUND)
 endif()
 
 # ── Sources ────────────────────────────────────────────────────────────────────
-file(GLOB_RECURSE SOURCES
-    src/*.cpp
-    src/car/*.cpp
-    src/scene/*.cpp
-    src/ui/*.cpp
+set(SOURCES
+    src/main.cpp
+    src/car/PoloCar.cpp
+    src/car/CarRenderer.cpp
+    src/scene/RoadMap.cpp
+    src/ui/HUD.cpp
 )
 
 add_executable(PoloRaylib ${SOURCES})

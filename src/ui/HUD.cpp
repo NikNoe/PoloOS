@@ -77,8 +77,8 @@ void HUD::drawBlinkerBar(const PoloCar& car, int sw, int sh)
     bool leftOn  = (car.leftBlinker || car.hazard) && car.blinkerVisible;
     bool rightOn = (car.rightBlinker || car.hazard) && car.blinkerVisible;
 
-    Color lCol = leftOn  ? ORANGE : { 60, 40, 0, 255 };
-    Color rCol = rightOn ? ORANGE : { 60, 40, 0, 255 };
+    Color lCol = leftOn  ? ORANGE : Color{ 60, 40, 0, 255 };
+    Color rCol = rightOn ? ORANGE : Color{ 60, 40, 0, 255 };
 
     // Flèche gauche ◄
     DrawTriangle({ (float)cx - 60, (float)cy },
