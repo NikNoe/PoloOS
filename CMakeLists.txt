@@ -26,6 +26,7 @@ set(SOURCES
     src/car/PoloCar.cpp
     src/car/CarRenderer.cpp
     src/scene/RoadMap.cpp
+    src/scene/Camera.cpp
     src/ui/HUD.cpp
 )
 
