@@ -3,7 +3,8 @@
 #include "car/CarRenderer.h"
 #include "scene/RoadMap.h"
 #include "scene/Camera.h"
-#include "ui/HUD.h"
+#include "world/DayNightCycle.h"
+#include "ui/DebugPanel.h"
 
 int main()
 {
@@ -16,7 +17,8 @@ int main()
     CarRenderer renderer;
     RoadMap     road;
     CarCamera   camera;
-    HUD         hud;
+    DebugPanel debugPanel;
+    DayNightCycle dayNight;
 
     while (!WindowShouldClose())
     {
@@ -27,6 +29,7 @@ int main()
         bool left  = IsKeyDown(KEY_LEFT)  || IsKeyDown(KEY_A);
         bool right = IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D);
         car.applyInput(accel, brake, left, right, dt);
+        debugPanel.update(car, dayNight);
 
         if (IsKeyPressed(KEY_ONE))   car.doorFL = !car.doorFL;
         if (IsKeyPressed(KEY_TWO))   car.doorFR = !car.doorFR;
@@ -40,17 +43,21 @@ int main()
         if (IsKeyPressed(KEY_X))     car.rightBlinker = !car.rightBlinker;
         if (IsKeyPressed(KEY_GRAVE)) car.hazard       = !car.hazard;
         if (IsKeyPressed(KEY_SPACE)) car.handbrake    = !car.handbrake;
+        if (IsKeyDown(KEY_N)) dayNight.setTimeScale(600.f);
+        else dayNight.setTimeScale(60.f);
 
         car.update(dt);
         camera.update(car, dt);
+        dayNight.update(dt);
 
         BeginDrawing();
-            ClearBackground({ 10, 12, 20, 255 });
+            ClearBackground(dayNight.skyColor());
+            dayNight.drawSky();
             BeginMode3D(camera.get());
                 road.draw(car.x, car.z);
                 renderer.draw(car);
             EndMode3D();
-            hud.draw(car, SW, SH);
+            debugPanel.draw(car, dayNight, SW, SH);
             const char* labels[] = { "FOLLOW", "ORBIT", "HOOD" };
             DrawText(labels[camera.mode()], SW/2 - 30, SH - 30, 18, LIME);
         EndDrawing();
