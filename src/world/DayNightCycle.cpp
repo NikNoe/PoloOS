@@ -32,15 +32,15 @@ void DayNightCycle::updatePhase() {
 // ── Couleurs interpolées selon l'heure ────────────────────────────────────────
 void DayNightCycle::updateColors() {
     // Couleurs clés
-    Color nightSky  = {  10,  10,  30, 255 };
-    Color dawnSky   = { 255, 140,  80, 255 };
-    Color daySky    = { 100, 160, 230, 255 };
-    Color duskSky   = { 220,  80,  40, 255 };
+    Color nightSky  = {  8,  10,  25, 255 };
+    Color dawnSky   = { 180, 100,  60, 255 };  // orange chaud → pas rose
+    Color daySky    = {  80, 140, 210, 255 };  // bleu ciel naturel
+    Color duskSky   = { 160,  60,  30, 255 };  // rouge sombre
 
-    Color nightAmb  = {  20,  20,  40, 255 };
-    Color dawnAmb   = { 180, 120,  80, 255 };
-    Color dayAmb    = { 255, 245, 220, 255 };
-    Color duskAmb   = { 200,  80,  40, 255 };
+    Color nightAmb  = {  15,  15,  35, 255 };
+    Color dawnAmb   = { 160, 100,  60, 255 };
+    Color dayAmb    = { 220, 210, 190, 255 };  // lumière chaude naturelle
+    Color duskAmb   = { 160,  60,  25, 255 };
 
     float t = 0.f;
 

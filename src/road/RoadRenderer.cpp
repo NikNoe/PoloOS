@@ -85,34 +85,62 @@ void RoadRenderer::drawSegment(const RoadSegment& seg,
 {
     if (seg.curvePoints.size() < 2) return;
 
-    float roadW     = seg.lanes * 3.5f;   // 3.5m par voie
+    float roadW     = seg.lanes * 3.5f;
     float sidewalkW = 1.8f;
-    Color rc  = roadColor(day);
-    Color sc  = sidewalkColor(day);
+    Color rc = roadColor(day);
+    Color sc = sidewalkColor(day);
 
-    for (int i = 0; i < (int)seg.curvePoints.size() - 1; i++) {
+    // Trim : évite de dessiner dans le rayon des nœuds extrémités
+    float trimStart = 8.f;  // mètres à ignorer au début
+    float trimEnd   = 8.f;  // mètres à ignorer à la fin
+
+    // Calcule la longueur totale
+    float totalLen = 0.f;
+    for (int i = 0; i < (int)seg.curvePoints.size()-1; i++) {
+        float dx = seg.curvePoints[i+1].x - seg.curvePoints[i].x;
+        float dz = seg.curvePoints[i+1].z - seg.curvePoints[i].z;
+        totalLen += std::sqrt(dx*dx + dz*dz);
+    }
+
+    // Nœuds from/to — trim seulement si intersection ou roundabout
+    const RoadNode& fromNode = net.nodes()[seg.fromId];
+    const RoadNode& toNode   = net.nodes()[seg.toId];
+    float ts = (fromNode.type != NodeType::SIMPLE) ? 4.f : 0.f;
+    float te = (toNode.type   != NodeType::SIMPLE) ? 4.f : 0.f;
+
+    float accumulated = 0.f;
+    for (int i = 0; i < (int)seg.curvePoints.size()-1; i++) {
+        float dx  = seg.curvePoints[i+1].x - seg.curvePoints[i].x;
+        float dz  = seg.curvePoints[i+1].z - seg.curvePoints[i].z;
+        float len = std::sqrt(dx*dx + dz*dz);
+
+        float segStart = accumulated;
+        float segEnd   = accumulated + len;
+
+        // Skip si dans la zone trim
+        if (segEnd   <= ts)              { accumulated += len; continue; }
+        if (segStart >= totalLen - te)   { accumulated += len; continue; }
+
         Vector3 a = { seg.curvePoints[i].x,   0.f, seg.curvePoints[i].z   };
         Vector3 b = { seg.curvePoints[i+1].x, 0.f, seg.curvePoints[i+1].z };
 
-        // Chaussée
         drawThickLine(a, b, roadW, rc);
 
         // Trottoirs
-        Vector3 sa1 = perpendicular(a, b,  roadW * 0.5f + sidewalkW * 0.5f);
-        Vector3 sb1 = perpendicular(b, a, -roadW * 0.5f - sidewalkW * 0.5f);
-        drawThickLine(sa1, { perpendicular(b, a, -(roadW*0.5f+sidewalkW*0.5f)).x,
-                              0.05f,
-                              perpendicular(b, a, -(roadW*0.5f+sidewalkW*0.5f)).z },
-                      sidewalkW, sc);
+        float off = roadW * 0.5f + sidewalkW * 0.5f;
+        Vector3 sa = perpendicular(a, b,  off);
+        Vector3 sb = { perpendicular(b, a, -off).x, 0.05f,
+                       perpendicular(b, a, -off).z };
+        Vector3 ra = perpendicular(a, b, -off);
+        Vector3 rb = { perpendicular(b, a,  off).x, 0.05f,
+                       perpendicular(b, a,  off).z };
 
-        Vector3 sa2 = perpendicular(a, b, -(roadW * 0.5f + sidewalkW * 0.5f));
-        drawThickLine(sa2, { perpendicular(b, a, roadW*0.5f+sidewalkW*0.5f).x,
-                              0.05f,
-                              perpendicular(b, a, roadW*0.5f+sidewalkW*0.5f).z },
-                      sidewalkW, sc);
+        drawThickLine(sa, sb, sidewalkW, sc);
+        drawThickLine(ra, rb, sidewalkW, sc);
+
+        accumulated += len;
     }
 
-    // Marquages
     drawMarkings(seg, day);
 }
 
@@ -168,43 +196,102 @@ void RoadRenderer::drawRoundabout(const RoadNode& node, const DayNightCycle& day
     Vector3 center = { node.x, 0.f, node.z };
     float   r      = node.radius > 0.f ? node.radius : 22.f;
     float   roadW  = 7.f;
+    float   outer  = r + roadW;
 
     Color rc = roadColor(day);
-    Color gc = { 30, 90, 30, 255 };  // vert îlot central
-
-    // Anneau routier
-    DrawCylinder(center, r + roadW, r + roadW, 0.05f, 32, rc);
-    // Trou central vert
-    DrawCylinder(center, r, r, 0.08f, 32, gc);
-    // Marquage blanc anneau
+    Color gc = { 35, 85, 30, 255 };   // vert îlot
     Color mc = markingColor(day);
-    DrawCircle3D(center, r + 0.3f,  { 1,0,0 }, 90.f, mc);
-    DrawCircle3D(center, r + roadW - 0.3f, { 1,0,0 }, 90.f, mc);
+    Color cc = { 60, 60, 65, 255 };   // bordure
 
-    // Indicateur nœud (debug)
-    DrawCylinder({ node.x, 0.1f, node.z }, 1.f, 1.f, 0.3f, 8,
-                 { 0, 200, 255, 80 });
+    // Anneau extérieur (chaussée)
+    int steps = 32;
+    for (int i = 0; i < steps; i++) {
+        float a0 = (float)i     / steps * 2.f * PI;
+        float a1 = (float)(i+1) / steps * 2.f * PI;
+
+        // Triangle externe
+        Vector3 o0  = { center.x + outer * std::cos(a0), 0.001f, center.z + outer * std::sin(a0) };
+        Vector3 o1  = { center.x + outer * std::cos(a1), 0.001f, center.z + outer * std::sin(a1) };
+        Vector3 i0  = { center.x + r     * std::cos(a0), 0.001f, center.z + r     * std::sin(a0) };
+        Vector3 i1  = { center.x + r     * std::cos(a1), 0.001f, center.z + r     * std::sin(a1) };
+
+        DrawTriangle3D(o0, i0, o1, rc);
+        DrawTriangle3D(i0, i1, o1, rc);
+
+        // Marquage blanc bord extérieur
+        DrawLine3D(o0, o1, mc);
+        // Marquage blanc bord intérieur
+        DrawLine3D(i0, i1, mc);
+
+        // Îlot central vert
+        Vector3 c0 = { center.x + (r-0.5f) * std::cos(a0), 0.002f, center.z + (r-0.5f) * std::sin(a0) };
+        Vector3 c1 = { center.x + (r-0.5f) * std::cos(a1), 0.002f, center.z + (r-0.5f) * std::sin(a1) };
+        DrawTriangle3D(c0, center, c1, gc);
+
+        // Bordure îlot
+        DrawCube({ center.x + (r-0.3f) * std::cos((a0+a1)*0.5f),
+                   0.08f,
+                   center.z + (r-0.3f) * std::sin((a0+a1)*0.5f) },
+                  0.3f, 0.15f, 0.3f, cc);
+    }
+
+    // Flèches directionnelles sur l'anneau
+    for (int i = 0; i < 4; i++) {
+        float angle = i * PI * 0.5f;
+        float mx    = center.x + (r + roadW*0.5f) * std::cos(angle);
+        float mz    = center.z + (r + roadW*0.5f) * std::sin(angle);
+        // Petite flèche blanche
+        Vector3 tip  = { mx + std::cos(angle+PI*0.5f)*1.5f, 0.02f,
+                         mz + std::sin(angle+PI*0.5f)*1.5f };
+        Vector3 bl   = { mx + std::cos(angle+PI*0.8f)*1.f,  0.02f,
+                         mz + std::sin(angle+PI*0.8f)*1.f };
+        Vector3 br   = { mx + std::cos(angle+PI*0.2f)*1.f,  0.02f,
+                         mz + std::sin(angle+PI*0.2f)*1.f };
+        DrawTriangle3D(tip, bl, br, mc);
+    }
 }
 
 // ── Intersection ──────────────────────────────────────────────────────────────
 void RoadRenderer::drawIntersection(const RoadNode& node, const DayNightCycle& day) {
-    float size = 8.f;
     Color rc = roadColor(day);
-    DrawCube({ node.x, 0.f, node.z }, size*2, 0.05f, size*2, rc);
+    Color mc = markingColor(day);
 
-    // Passage piéton
-    Color wc = markingColor(day);
-    for (int i = -3; i <= 3; i++) {
-        if (i == 0) continue;
-        DrawCube({ node.x + i*1.2f, 0.02f, node.z + size },
-                  0.8f, 0.01f, 2.5f, wc);
-        DrawCube({ node.x + i*1.2f, 0.02f, node.z - size },
-                  0.8f, 0.01f, 2.5f, wc);
+    // Calcule la largeur max des segments connectés
+    float size = 10.f;
+
+    // Dalle centrale qui couvre le croisement
+    DrawCylinder({ node.x, 0.001f, node.z }, size, size, 0.05f, 16, rc);
+
+    // Passages piétons sur les 4 côtés
+    for (int dir = 0; dir < 4; dir++) {
+        float angle = dir * 90.f * DEG2RAD;
+        float cx = node.x + std::cos(angle) * (size + 1.5f);
+        float cz = node.z + std::sin(angle) * (size + 1.5f);
+
+        // Bandes du passage piéton
+        for (int b = -2; b <= 2; b++) {
+            float bx = cx + std::cos(angle + 1.5708f) * b * 0.9f;
+            float bz = cz + std::sin(angle + 1.5708f) * b * 0.9f;
+            DrawCube({ bx, 0.02f, bz },
+                     std::abs(std::cos(angle)) < 0.5f ? 0.6f : 3.f,
+                     0.01f,
+                     std::abs(std::cos(angle)) < 0.5f ? 3.f : 0.6f,
+                     mc);
+        }
     }
 
-    // Indicateur debug
-    DrawCylinder({ node.x, 0.1f, node.z }, 0.8f, 0.8f, 0.3f, 4,
-                 { 255, 200, 0, 80 });
+    // Ligne stop sur chaque entrée
+    for (int dir = 0; dir < 4; dir++) {
+        float angle  = dir * 90.f * DEG2RAD;
+        float lx     = node.x + std::cos(angle) * (size - 1.f);
+        float lz     = node.z + std::sin(angle) * (size - 1.f);
+        float perpAx = std::cos(angle + 1.5708f);
+        float perpAz = std::sin(angle + 1.5708f);
+
+        Vector3 a = { lx + perpAx * 3.5f, 0.02f, lz + perpAz * 3.5f };
+        Vector3 b = { lx - perpAx * 3.5f, 0.02f, lz - perpAz * 3.5f };
+        drawThickLine(a, b, 0.25f, { 255, 255, 255, 220 });
+    }
 }
 
 // ── Bâtiments le long des routes ──────────────────────────────────────────────
@@ -217,27 +304,40 @@ void RoadRenderer::drawBuildings(const RoadNetwork& net) {
             Vector3 a = { seg.curvePoints[i].x,   0.f, seg.curvePoints[i].z };
             Vector3 b = { seg.curvePoints[i+1].x, 0.f, seg.curvePoints[i+1].z };
 
-            float roadW = seg.lanes * 3.5f * 0.5f + 3.f;
+            float roadW = seg.lanes * 3.5f * 0.5f + 8.f;
 
             for (int side = -1; side <= 1; side += 2) {
                 Vector3 bp = perpendicular(a, b, side * (roadW + 6.f));
-                float h = 4.f + ((int)(bp.x * 7 + bp.z * 3) % 12);
+                float h = 6.f + ((int)(bp.x * 7 + bp.z * 3) % 20);  // hauteur variable
                 Color bc = {
                     (unsigned char)(40 + ((int)(bp.x*3) % 30)),
                     (unsigned char)(40 + ((int)(bp.z*2) % 25)),
                     (unsigned char)(50 + ((int)(bp.x+bp.z) % 20)),
                     255
                 };
-                DrawCube({ bp.x, h*0.5f, bp.z }, 8.f, h, 8.f, bc);
-                DrawCubeWires({ bp.x, h*0.5f, bp.z }, 8.f, h, 8.f,
-                              { 60, 60, 70, 255 });
-
+                DrawCube({ bp.x, h*0.5f, bp.z }, 5.f, h, 5.f, bc);   // moins large
+                DrawCubeWires({ bp.x, h*0.5f, bp.z }, 5.f, h, 5.f, { 60, 60, 70, 255 });
                 // Fenêtres
-                for (int row = 0; row < (int)(h/2.f); row++) {
-                    bool lit = ((int)(bp.x + row) % 3) != 0;
-                    if (lit) DrawCube({ bp.x + side*3.5f, 1.5f + row*2.f, bp.z },
-                                      0.5f, 0.8f, 0.05f,
-                                      { 255, 220, 120, 180 });
+                // Fenêtres sur les 4 faces
+                for (int row = 0; row < (int)(h / 2.5f); row++) {
+                    for (int col = -1; col <= 1; col++) {
+                        bool lit = ((int)(bp.x + bp.z + row + col) % 3) != 0;
+                        if (!lit) continue;
+                        Color wc = { 255, 220, 120, 200 };
+
+                        // Face avant
+                        DrawCube({ bp.x + col * 1.4f, 1.8f + row * 2.5f, bp.z + 2.51f },
+                                0.7f, 0.9f, 0.05f, wc);
+                        // Face arrière
+                        DrawCube({ bp.x + col * 1.4f, 1.8f + row * 2.5f, bp.z - 2.51f },
+                                0.7f, 0.9f, 0.05f, wc);
+                        // Face gauche
+                        DrawCube({ bp.x - 2.51f, 1.8f + row * 2.5f, bp.z + col * 1.4f },
+                                0.05f, 0.9f, 0.7f, wc);
+                        // Face droite
+                        DrawCube({ bp.x + 2.51f, 1.8f + row * 2.5f, bp.z + col * 1.4f },
+                                0.05f, 0.9f, 0.7f, wc);
+                    }
                 }
             }
         }

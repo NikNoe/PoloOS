@@ -31,8 +31,8 @@ int main()
 
         bool accel = IsKeyDown(KEY_UP)    || IsKeyDown(KEY_W);
         bool brake = IsKeyDown(KEY_DOWN)  || IsKeyDown(KEY_S);
-        bool left  = IsKeyDown(KEY_LEFT)  || IsKeyDown(KEY_A);
-        bool right = IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D);
+        bool left  = IsKeyDown(KEY_RIGHT)  || IsKeyDown(KEY_A);
+        bool right = IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_D);
         car.applyInput(accel, brake, left, right, dt);
         debugPanel.update(car, dayNight);
 
