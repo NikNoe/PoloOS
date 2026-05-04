@@ -1,0 +1,33 @@
+{
+  "name": "PoloOS City",
+  "nodes": [
+    { "id": 0, "type": "simple",       "x":    0.0, "z":    0.0 },
+    { "id": 1, "type": "simple",       "x":  200.0, "z":   80.0 },
+    { "id": 2, "type": "intersection", "x":  450.0, "z":   60.0 },
+    { "id": 3, "type": "roundabout",   "x":  700.0, "z":  150.0, "radius": 25.0 },
+    { "id": 4, "type": "simple",       "x":  600.0, "z":  350.0 },
+    { "id": 5, "type": "simple",       "x":  300.0, "z":  400.0 },
+    { "id": 6, "type": "intersection", "x":   50.0, "z":  300.0 },
+    { "id": 7, "type": "simple",       "x": -200.0, "z":  200.0 },
+    { "id": 8, "type": "simple",       "x": -300.0, "z":   50.0 },
+    { "id": 9, "type": "simple",       "x": -150.0, "z": -200.0 },
+    { "id":10, "type": "simple",       "x":  100.0, "z": -300.0 },
+    { "id":11, "type": "roundabout",   "x":  350.0, "z": -200.0, "radius": 20.0 }
+  ],
+  "segments": [
+    { "from": 0,  "to": 1,  "lanes": 2, "speedLimit": 50 },
+    { "from": 1,  "to": 2,  "lanes": 2, "speedLimit": 50 },
+    { "from": 2,  "to": 3,  "lanes": 2, "speedLimit": 30 },
+    { "from": 3,  "to": 4,  "lanes": 2, "speedLimit": 30 },
+    { "from": 4,  "to": 5,  "lanes": 2, "speedLimit": 50 },
+    { "from": 5,  "to": 6,  "lanes": 2, "speedLimit": 50 },
+    { "from": 6,  "to": 7,  "lanes": 2, "speedLimit": 50 },
+    { "from": 7,  "to": 8,  "lanes": 2, "speedLimit": 50 },
+    { "from": 8,  "to": 9,  "lanes": 2, "speedLimit": 70 },
+    { "from": 9,  "to": 10, "lanes": 2, "speedLimit": 70 },
+    { "from": 10, "to": 11, "lanes": 2, "speedLimit": 50 },
+    { "from": 11, "to": 2,  "lanes": 2, "speedLimit": 30 },
+    { "from": 6,  "to": 0,  "lanes": 2, "speedLimit": 50 },
+    { "from": 2,  "to": 6,  "lanes": 2, "speedLimit": 50 }
+  ]
+}

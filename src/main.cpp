@@ -5,6 +5,8 @@
 #include "scene/Camera.h"
 #include "world/DayNightCycle.h"
 #include "ui/DebugPanel.h"
+#include "road/RoadNetwork.h"
+#include "road/RoadRenderer.h"
 
 int main()
 {
@@ -19,6 +21,9 @@ int main()
     CarCamera   camera;
     DebugPanel debugPanel;
     DayNightCycle dayNight;
+    RoadNetwork  roadNet;
+    RoadRenderer roadRend;
+    roadNet.load("assets/maps/city.json");
 
     while (!WindowShouldClose())
     {
@@ -54,7 +59,7 @@ int main()
             ClearBackground(dayNight.skyColor());
             dayNight.drawSky();
             BeginMode3D(camera.get());
-                road.draw(car.x, car.z);
+                roadRend.draw(roadNet, dayNight);
                 renderer.draw(car);
             EndMode3D();
             debugPanel.draw(car, dayNight, SW, SH);

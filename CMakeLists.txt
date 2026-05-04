@@ -29,6 +29,8 @@ set(SOURCES
     src/scene/Camera.cpp
     src/world/DayNightCycle.cpp
     src/ui/DebugPanel.cpp
+    src/road/RoadNetwork.cpp
+    src/road/RoadRenderer.cpp
 )
 
 add_executable(PoloRaylib ${SOURCES})
