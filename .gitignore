@@ -18,3 +18,13 @@ Makefile
 # Binaires
 PoloRaylib
 appPoloOS
+
+# Vidéos et gros fichiers
+assets/circulation-video/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.glb
+*.venv/
+.venv/
