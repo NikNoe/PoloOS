@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+"""
+PoloOS — detector.py
+YOLO + OpenCV → détection objets → envoi UDP vers Raylib
+Usage : python3 yolo/detector.py --video assets/circulation-video/video.mp4
+"""
+
+import cv2
+import argparse
+import time
+import math
+from ultralytics import YOLO
+from socket_sender import SocketSender
+
+# ── Classes YOLO à détecter ───────────────────────────────────────────────────
+TRACKED_CLASSES = {
+    0:  "pedestrian",
+    1:  "bicycle",
+    2:  "car",
+    3:  "motorcycle",
+    5:  "bus",
+    7:  "truck",
+    9:  "traffic_light",
+    11: "stop_sign",
+    13: "bench",
+}
+
+# ── Paramètres caméra (estimations dashcam) ───────────────────────────────────
+CAMERA_HEIGHT_M   = 1.2    # hauteur caméra au-dessus du sol (m)
+CAMERA_FOV_DEG    = 60.0   # champ de vision horizontal
+CAMERA_PITCH_DEG  = -5.0   # inclinaison vers le bas
+
+
+def estimate_distance(bbox_h: float, frame_h: float, obj_class: str) -> float:
+    """
+    Estime la distance en mètres depuis la hauteur de la bounding box.
+    Basé sur la taille réelle connue des objets.
+    """
+    real_heights = {
+        "car":        1.5,
+        "truck":      3.5,
+        "bus":        3.0,
+        "pedestrian": 1.75,
+        "bicycle":    1.1,
+        "motorcycle": 1.2,
+        "traffic_light": 0.6,
+        "stop_sign":  0.75,
+    }
+    real_h = real_heights.get(obj_class, 1.5)
+
+    # focal length estimée
+    focal = frame_h / (2.0 * math.tan(math.radians(CAMERA_FOV_DEG / 2.0)))
+
+    if bbox_h < 1:
+        return 999.0
+
+    distance = (real_h * focal) / bbox_h
+    return round(distance, 2)
+
+
+def bbox_to_world(cx_norm: float, distance: float,
+                  frame_w: float) -> tuple[float, float]:
+    """
+    Convertit position 2D normalisée + distance → coordonnées monde (x, z).
+    x = latéral, z = profondeur (devant la voiture)
+    """
+    # Angle horizontal depuis le centre
+    angle_h = (cx_norm - 0.5) * math.radians(CAMERA_FOV_DEG)
+    x = distance * math.sin(angle_h)
+    z = distance * math.cos(angle_h)
+    return round(x, 2), round(z, 2)
+
+
+def run(video_path: str, model_size: str, conf: float,
+        host: str, port: int, show: bool, skip: int):
+
+    print(f"[PoloOS] Chargement YOLO {model_size}...")
+    model = YOLO(f"yolov{model_size}.pt")
+
+    print(f"[PoloOS] Ouverture vidéo : {video_path}")
+    cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        print(f"[ERREUR] Impossible d'ouvrir : {video_path}")
+        return
+
+    fps        = cap.get(cv2.CAP_PROP_FPS) or 30.0
+    frame_w    = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+    frame_h    = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+    total      = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+
+    print(f"[PoloOS] Vidéo : {frame_w}x{frame_h} @ {fps}fps — {total} frames")
+    print(f"[PoloOS] Envoi UDP → {host}:{port}")
+
+    sender    = SocketSender(host, port)
+    frame_idx = 0
+    t_start   = time.time()
+
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            print("[PoloOS] Fin de vidéo")
+            break
+
+        frame_idx += 1
+
+        # Skip frames pour alléger le CPU
+        if frame_idx % (skip + 1) != 0:
+            continue
+
+        timestamp = frame_idx / fps
+
+        # ── Détection YOLO ────────────────────────────────────────────────────
+        results = model(frame, conf=conf, verbose=False)[0]
+
+        objects = []
+        for box in results.boxes:
+            cls_id = int(box.cls[0])
+            if cls_id not in TRACKED_CLASSES:
+                continue
+
+            cls_name   = TRACKED_CLASSES[cls_id]
+            confidence = float(box.conf[0])
+
+            # Bounding box
+            x1, y1, x2, y2 = box.xyxy[0].tolist()
+            bbox_w = x2 - x1
+            bbox_h = y2 - y1
+            cx     = (x1 + x2) / 2.0
+            cy     = (y1 + y2) / 2.0
+
+            # Normalisation
+            cx_norm = cx / frame_w
+            cy_norm = cy / frame_h
+
+            # Estimation distance + position monde
+            distance      = estimate_distance(bbox_h, frame_h, cls_name)
+            world_x, world_z = bbox_to_world(cx_norm, distance, frame_w)
+
+            # Heading estimé (simplifié — sera amélioré avec tracking)
+            heading = 180.0 if world_z > 0 else 0.0
+
+            obj = {
+                "class":      cls_name,
+                "x":          world_x,
+                "z":          world_z,
+                "heading":    heading,
+                "confidence": round(confidence, 3),
+                "distance":   distance,
+                "bbox":       [round(x1), round(y1),
+                               round(x2), round(y2)],
+            }
+            objects.append(obj)
+
+        # ── Envoi UDP ─────────────────────────────────────────────────────────
+        sender.send(frame_idx, timestamp, objects)
+
+        # ── Affichage optionnel ───────────────────────────────────────────────
+        if show:
+            annotated = results.plot()
+
+            # Overlay infos
+            elapsed = time.time() - t_start
+            real_fps = frame_idx / elapsed if elapsed > 0 else 0
+            cv2.putText(annotated,
+                        f"Frame {frame_idx}/{total} | "
+                        f"{real_fps:.1f} fps | "
+                        f"{len(objects)} objets",
+                        (10, 30), cv2.FONT_HERSHEY_SIMPLEX,
+                        0.7, (0, 255, 0), 2)
+
+            cv2.imshow("PoloOS — YOLO Detector", annotated)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+
+        # ── Throttle pour coller au FPS vidéo ────────────────────────────────
+        elapsed   = time.time() - t_start
+        expected  = frame_idx / fps
+        sleep_for = expected - elapsed
+        if sleep_for > 0:
+            time.sleep(sleep_for)
+
+    cap.release()
+    if show:
+        cv2.destroyAllWindows()
+    sender.close()
+    print("[PoloOS] Détection terminée")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="PoloOS YOLO Detector")
+    parser.add_argument("--video",  default="0",
+                        help="Chemin vidéo ou index caméra (défaut: 0)")
+    parser.add_argument("--model",  default="8n",
+                        help="Taille modèle YOLO : 8n, 8s, 8m (défaut: 8n)")
+    parser.add_argument("--conf",   type=float, default=0.45,
+                        help="Seuil confiance (défaut: 0.45)")
+    parser.add_argument("--host",   default="127.0.0.1",
+                        help="IP Raylib (défaut: localhost)")
+    parser.add_argument("--port",   type=int, default=5005,
+                        help="Port UDP (défaut: 5005)")
+    parser.add_argument("--show",   action="store_true",
+                        help="Affiche la fenêtre OpenCV")
+    parser.add_argument("--skip",   type=int, default=1,
+                        help="Skip N frames entre chaque détection (défaut: 1)")
+    args = parser.parse_args()
+
+    run(
+        video_path = args.video,
+        model_size = args.model,
+        conf       = args.conf,
+        host       = args.host,
+        port       = args.port,
+        show       = args.show,
+        skip       = args.skip,
+    )

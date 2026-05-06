@@ -7,6 +7,7 @@
 #include "ui/DebugPanel.h"
 #include "road/RoadNetwork.h"
 #include "road/RoadRenderer.h"
+#include "network/SceneReceiver.h"
 
 int main()
 {
@@ -23,6 +24,8 @@ int main()
     DayNightCycle dayNight;
     RoadNetwork  roadNet;
     RoadRenderer roadRend;
+    SceneReceiver receiver;
+    receiver.init("127.0.0.1", 5005);
     roadNet.load("assets/maps/city.json");
 
     while (!WindowShouldClose())
@@ -54,6 +57,15 @@ int main()
         car.update(dt);
         camera.update(car, dt);
         dayNight.update(dt);
+        receiver.poll(dt);
+        // Log temporaire — à supprimer après confirmation
+        static int lastCount = 0;
+        if (receiver.packetCount() != lastCount) {
+            lastCount = receiver.packetCount();
+            printf("[UDP] Paquet #%d | Objets: %zu\n",
+                   lastCount,
+                   receiver.objects().size());
+        }
 
         BeginDrawing();
             ClearBackground(dayNight.skyColor());
