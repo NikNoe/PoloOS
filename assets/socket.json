@@ -1,0 +1,9 @@
+{
+  "frame": 1042,
+  "timestamp": 1.23,
+  "objects": [
+    { "class": "car",        "x": 12.3, "z": 45.1, "heading": 180.0, "confidence": 0.92 },
+    { "class": "pedestrian", "x":  8.1, "z": 38.5, "heading":  90.0, "confidence": 0.87 },
+    { "class": "stop_sign",  "x": 15.0, "z": 50.0, "heading":   0.0, "confidence": 0.95 }
+  ]
+}
