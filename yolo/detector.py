@@ -146,8 +146,7 @@ def run(video_path: str, model_size: str, conf: float,
                 "heading":    heading,
                 "confidence": round(confidence, 3),
                 "distance":   distance,
-                "bbox":       [round(x1), round(y1),
-                               round(x2), round(y2)],
+    
             }
             objects.append(obj)
 

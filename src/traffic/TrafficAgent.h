@@ -23,6 +23,8 @@ public:
     float ttl()        const { return m_ttl; }
     ObjectClass cls()  const { return m_cls; }
     bool  isAlive()    const { return m_ttl > 0.f; }
+    static void loadSharedModels();
+    static void unloadSharedModels();
 
 private:
     float       m_x          = 0.f;
@@ -41,4 +43,10 @@ private:
 
     // Label affiché au-dessus
     void drawLabel(Vector3 pos) const;
+
+    // Meshes statiques partagés — chargés une seule fois
+    static Model s_carModel;
+    static Model s_personModel;
+    static Model s_boxModel;
+    static bool  s_modelsLoaded;
 };

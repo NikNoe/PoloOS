@@ -15,7 +15,7 @@ public:
 
 private:
     Camera3D   m_cam      = {};
-    AppCamMode m_mode     = CAM_FOLLOW;
+    AppCamMode m_mode     = CAM_HOOD;
     float      m_angle    = 0.f;
     float      m_pitch    = 20.f;
     float      m_dist     = 18.f;

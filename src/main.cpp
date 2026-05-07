@@ -41,7 +41,7 @@ int main()
         bool brake = IsKeyDown(KEY_DOWN)  || IsKeyDown(KEY_S);
         bool left  = IsKeyDown(KEY_RIGHT)  || IsKeyDown(KEY_A);
         bool right = IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_D);
-        car.applyInput(accel, brake, left, right, dt);
+        //car.applyInput(accel, brake, left, right, dt);
         debugPanel.update(car, dayNight);
 
         if (IsKeyPressed(KEY_ONE))   car.doorFL = !car.doorFL;
@@ -64,28 +64,50 @@ int main()
         dayNight.update(dt);
         receiver.poll(dt);
 
-        // Sync agents avec objets détectés
         for (const auto& det : receiver.objects()) {
+            // Transforme coordonnées relatives → monde
+            float rad = car.heading * DEG2RAD;
+            float wx = car.x + det.x * std::cos(rad) - det.z * std::sin(rad);
+            float wz = car.z + det.x * std::sin(rad) + det.z * std::cos(rad);
+
+            DetectedObject worldDet = det;
+            worldDet.x = wx;
+            worldDet.z = wz;
+
             bool found = false;
             for (auto& agent : agents) {
-                float dx = agent.x() - det.x;
-                float dz = agent.z() - det.z;
-                if (agent.cls() == det.cls &&
+                float dx = agent.x() - worldDet.x;
+                float dz = agent.z() - worldDet.z;
+                if (agent.cls() == worldDet.cls &&
                     std::sqrt(dx*dx + dz*dz) < 5.f) {
-                    agent.update(det, dt);
+                    agent.update(worldDet, dt);
                     found = true;
                     break;
                 }
             }
             if (!found)
-                agents.emplace_back(det);
+                agents.emplace_back(worldDet);
+                printf("[Agent NEW] cls=%s x=%.1f z=%.1f ttl=%.2f\n",
+                    worldDet.className.c_str(), worldDet.x, worldDet.z, worldDet.ttl);
+                agents.emplace_back(worldDet);
         }
+
+        
         // Supprime les agents morts
         agents.erase(
             std::remove_if(agents.begin(), agents.end(),
                         [](const TrafficAgent& a) { return !a.isAlive(); }),
             agents.end()
         );
+
+        if (!agents.empty()) {
+            printf("[Agents] Count: %zu | First: cls=%d x=%.1f z=%.1f ttl=%.2f\n",
+                agents.size(),
+                (int)agents[0].cls(),
+                agents[0].x(),
+                agents[0].z(),
+                agents[0].ttl());
+        }
 
         // Log temporaire — à supprimer après confirmation
         static int lastCount = 0;

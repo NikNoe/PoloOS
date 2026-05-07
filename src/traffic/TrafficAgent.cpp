@@ -8,6 +8,27 @@
 #define DEG2RAD 0.0174532925f
 #endif
 
+// En haut du fichier
+Model TrafficAgent::s_carModel    = {};
+Model TrafficAgent::s_personModel = {};
+Model TrafficAgent::s_boxModel    = {};
+bool  TrafficAgent::s_modelsLoaded = false;
+
+void TrafficAgent::loadSharedModels() {
+    if (s_modelsLoaded) return;
+    s_carModel    = LoadModelFromMesh(GenMeshCube(2.f, 1.5f, 4.f));
+    s_personModel = LoadModelFromMesh(GenMeshCylinder(0.3f, 1.75f, 8));
+    s_boxModel    = LoadModelFromMesh(GenMeshCube(1.f, 1.5f, 1.f));
+    s_modelsLoaded = true;
+}
+
+void TrafficAgent::unloadSharedModels() {
+    UnloadModel(s_carModel);
+    UnloadModel(s_personModel);
+    UnloadModel(s_boxModel);
+    s_modelsLoaded = false;
+}
+
 TrafficAgent::TrafficAgent(const DetectedObject& det) {
     m_x          = det.x;
     m_z          = det.z;
@@ -86,7 +107,7 @@ void TrafficAgent::draw() const {
     // Corps principal
     if (m_cls == ObjectClass::PEDESTRIAN) {
         // Piéton — capsule simplifiée (cylindre + sphère)
-        DrawCylinder(pos, r * 0.4f, r * 0.4f, h * 0.75f, 8, col);
+        DrawModelEx(s_personModel, pos, {0,1,0}, 0.f, {1,1,1}, col);
         DrawSphere({ pos.x, h * 0.75f + r * 0.35f, pos.z },
                    r * 0.35f, col);
     } else if (m_cls == ObjectClass::TRAFFIC_LIGHT) {
@@ -104,7 +125,7 @@ void TrafficAgent::draw() const {
         float rad = m_heading * DEG2RAD;
         Vector3 center = { pos.x, h * 0.5f, pos.z };
         DrawModelEx(
-            LoadModelFromMesh(GenMeshCube(r * 2.f, h, r * 3.f)),
+            s_carModel,
             center,
             { 0.f, 1.f, 0.f },
             m_heading,
