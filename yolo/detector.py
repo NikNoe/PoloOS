@@ -9,6 +9,7 @@ import cv2
 import argparse
 import time
 import math
+import numpy as np
 from ultralytics import YOLO
 from socket_sender import SocketSender
 
@@ -70,6 +71,72 @@ def bbox_to_world(cx_norm: float, distance: float,
     z = distance * math.cos(angle_h)
     return round(x, 2), round(z, 2)
 
+class EgoMotion:
+    """Estime vitesse + rotation depuis optical flow entre deux frames."""
+
+    def __init__(self):
+        self.prev_gray  = None
+        self.prev_pts   = None
+        self.fps        = 30.0
+
+    def update(self, frame: np.ndarray, fps: float) -> dict:
+        self.fps   = fps
+        gray       = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        result     = {"speed": 0.0, "heading_delta": 0.0}
+
+        if self.prev_gray is None:
+            self.prev_gray = gray
+            return result
+
+        # Détecte points d'intérêt sur frame précédente
+        pts = cv2.goodFeaturesToTrack(
+            self.prev_gray,
+            maxCorners=120,
+            qualityLevel=0.01,
+            minDistance=10,
+            blockSize=7
+        )
+
+        if pts is None or len(pts) < 8:
+            self.prev_gray = gray
+            return result
+
+        # Suit les points sur la frame courante
+        next_pts, status, _ = cv2.calcOpticalFlowPyrLK(
+            self.prev_gray, gray, pts, None,
+            winSize=(21, 21), maxLevel=3
+        )
+
+        # Garde uniquement les points bien trackés
+        good_prev = pts[status == 1]
+        good_next = next_pts[status == 1]
+
+        if len(good_prev) < 6:
+            self.prev_gray = gray
+            return result
+
+        h, w = gray.shape
+        cx, cy = w / 2.0, h / 2.0
+
+        # Mouvement moyen des points
+        dx = float(np.median(good_next[:, 0] - good_prev[:, 0]))
+        dy = float(np.median(good_next[:, 1] - good_prev[:, 1]))
+
+        # Vitesse estimée depuis le flux optique vertical
+        # dy > 0 = route s'éloigne = on avance
+        pixel_per_meter = h / 20.0   # estimation grossière
+        speed_mps = max(0.0, -dy) / pixel_per_meter * fps
+        speed_kmh = round(speed_mps * 3.6, 1)
+
+        # Rotation estimée depuis le flux horizontal
+        heading_delta = round(-dx / w * 15.0, 2)  # degrés/frame
+
+        self.prev_gray = gray
+        return {
+            "speed":         speed_kmh,
+            "heading_delta": heading_delta
+        }
+
 
 def run(video_path: str, model_size: str, conf: float,
         host: str, port: int, show: bool, skip: int):
@@ -79,6 +146,7 @@ def run(video_path: str, model_size: str, conf: float,
 
     print(f"[PoloOS] Ouverture vidéo : {video_path}")
     cap = cv2.VideoCapture(video_path)
+    ego_motion = EgoMotion()
     if not cap.isOpened():
         print(f"[ERREUR] Impossible d'ouvrir : {video_path}")
         return
@@ -111,6 +179,8 @@ def run(video_path: str, model_size: str, conf: float,
 
         # ── Détection YOLO ────────────────────────────────────────────────────
         results = model(frame, conf=conf, verbose=False)[0]
+
+        ego = ego_motion.update(frame, fps)
 
         objects = []
         for box in results.boxes:
@@ -151,7 +221,7 @@ def run(video_path: str, model_size: str, conf: float,
             objects.append(obj)
 
         # ── Envoi UDP ─────────────────────────────────────────────────────────
-        sender.send(frame_idx, timestamp, objects)
+        sender.send(frame_idx, timestamp, objects, ego)
 
         # ── Affichage optionnel ───────────────────────────────────────────────
         if show:

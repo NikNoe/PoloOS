@@ -101,6 +101,16 @@ int SceneReceiver::extractInt(const std::string& json,
 
 void SceneReceiver::parsePacket(const std::string& json) {
     m_lastFrame = extractInt(json, "frame");
+
+    // Ego motion
+    auto egoStart = json.find("\"ego\"");
+    if (egoStart != std::string::npos) {
+        auto egoEnd = json.find('}', egoStart);
+        std::string egoBlock = json.substr(egoStart, egoEnd - egoStart);
+        m_egoSpeed        = extractFloat(egoBlock, "speed");
+        m_egoHeadingDelta = extractFloat(egoBlock, "heading_delta");
+    }
+
     float ts    = extractFloat(json, "timestamp");
 
     // Trouve le tableau "objects"

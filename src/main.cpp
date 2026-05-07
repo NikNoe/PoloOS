@@ -41,7 +41,14 @@ int main()
         bool brake = IsKeyDown(KEY_DOWN)  || IsKeyDown(KEY_S);
         bool left  = IsKeyDown(KEY_RIGHT)  || IsKeyDown(KEY_A);
         bool right = IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_D);
-        //car.applyInput(accel, brake, left, right, dt);
+        // Pilote la voiture depuis l'optical flow YOLO
+        if (receiver.egoSpeed() > 0.f || receiver.egoHeadingDelta() != 0.f) {
+            car.speed        = receiver.egoSpeed();
+            car.heading     += receiver.egoHeadingDelta();
+            car.update(dt);
+        } else {
+            car.update(dt);
+        }
         debugPanel.update(car, dayNight);
 
         if (IsKeyPressed(KEY_ONE))   car.doorFL = !car.doorFL;

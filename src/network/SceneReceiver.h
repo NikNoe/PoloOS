@@ -33,11 +33,17 @@ public:
     bool isConnected() const { return m_socket >= 0; }
     int  lastFrame()   const { return m_lastFrame; }
     int  packetCount() const { return m_packetCount; }
+    float egoSpeed()        const { return m_egoSpeed; }
+    float egoHeadingDelta() const { return m_egoHeadingDelta; }
+
+
 
 private:
     int    m_socket     = -1;
     int    m_lastFrame  = 0;
     int    m_packetCount = 0;
+    float m_egoSpeed        = 0.f;
+    float m_egoHeadingDelta = 0.f;
 
     std::vector<DetectedObject> m_objects;
 
