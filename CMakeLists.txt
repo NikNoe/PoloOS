@@ -32,6 +32,7 @@ set(SOURCES
     src/road/RoadNetwork.cpp
     src/road/RoadRenderer.cpp
     src/network/SceneReceiver.cpp
+    src/traffic/TrafficAgent.cpp
 )
 
 add_executable(PoloRaylib ${SOURCES})

@@ -4,6 +4,9 @@
 #include <cmath>
 #include <algorithm>
 #include <sstream>
+#include <errno.h> 
+#include <sys/time.h>
+#include <fcntl.h>
 
 // ─── SceneReceiver.cpp ────────────────────────────────────────────────────────
 
@@ -18,18 +21,21 @@ bool SceneReceiver::init(const std::string& host, int port) {
         return false;
     }
 
+    int reuse = 1;
+    setsockopt(m_socket, SOL_SOCKET, SO_REUSEPORT, &reuse, sizeof(reuse));
+    setsockopt(m_socket, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));
+
     // Non-bloquant
-#ifdef _WIN32
-    u_long mode = 1;
-    ioctlsocket(m_socket, FIONBIO, &mode);
-#else
-    fcntl(m_socket, F_SETFL, O_NONBLOCK);
+#ifndef _WIN32
+    int flags = fcntl(m_socket, F_GETFL, 0);
+    fcntl(m_socket, F_SETFL, flags | O_NONBLOCK);
+    printf("[SceneReceiver] Socket non-bloquant : flags=%d\n", fcntl(m_socket, F_GETFL, 0));
 #endif
 
     struct sockaddr_in addr{};
     addr.sin_family      = AF_INET;
     addr.sin_port        = htons(port);
-    addr.sin_addr.s_addr = INADDR_ANY;
+    addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
     if (bind(m_socket, (struct sockaddr*)&addr, sizeof(addr)) < 0) {
         printf("[SceneReceiver] Erreur bind sur port %d\n", port);
@@ -50,13 +56,12 @@ void SceneReceiver::poll(float dt) {
     struct sockaddr_in sender{};
     socklen_t senderLen = sizeof(sender);
 
-    // Vide la file — lit tous les paquets disponibles
-    while (true) {
-        int n = recvfrom(m_socket, buf, sizeof(buf)-1, 0,
-                         (struct sockaddr*)&sender, &senderLen);
-        if (n <= 0) break;
+    int n = recvfrom(m_socket, buf, sizeof(buf)-1, 0,
+                 (struct sockaddr*)&sender, &senderLen);
 
+    if (n > 0) {
         buf[n] = '\0';
+        printf("[SceneReceiver] Paquet recu : %d bytes\n", n);
         parsePacket(std::string(buf, n));
         m_packetCount++;
     }

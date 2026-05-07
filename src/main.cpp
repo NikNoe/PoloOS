@@ -8,6 +8,9 @@
 #include "road/RoadNetwork.h"
 #include "road/RoadRenderer.h"
 #include "network/SceneReceiver.h"
+#include "traffic/TrafficAgent.h"
+#include <vector>
+#include <algorithm>
 
 int main()
 {
@@ -15,6 +18,7 @@ int main()
     InitWindow(SW, SH, "PoloOS — Route 3D (raylib-proto)");
     SetTargetFPS(60);
     SetMouseCursor(MOUSE_CURSOR_DEFAULT);
+    std::vector<TrafficAgent> agents;
 
     PoloCar     car;
     CarRenderer renderer;
@@ -27,6 +31,7 @@ int main()
     SceneReceiver receiver;
     receiver.init("127.0.0.1", 5005);
     roadNet.load("assets/maps/city.json");
+
 
     while (!WindowShouldClose())
     {
@@ -58,6 +63,30 @@ int main()
         camera.update(car, dt);
         dayNight.update(dt);
         receiver.poll(dt);
+
+        // Sync agents avec objets détectés
+        for (const auto& det : receiver.objects()) {
+            bool found = false;
+            for (auto& agent : agents) {
+                float dx = agent.x() - det.x;
+                float dz = agent.z() - det.z;
+                if (agent.cls() == det.cls &&
+                    std::sqrt(dx*dx + dz*dz) < 5.f) {
+                    agent.update(det, dt);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+                agents.emplace_back(det);
+        }
+        // Supprime les agents morts
+        agents.erase(
+            std::remove_if(agents.begin(), agents.end(),
+                        [](const TrafficAgent& a) { return !a.isAlive(); }),
+            agents.end()
+        );
+
         // Log temporaire — à supprimer après confirmation
         static int lastCount = 0;
         if (receiver.packetCount() != lastCount) {
@@ -73,6 +102,10 @@ int main()
             BeginMode3D(camera.get());
                 roadRend.draw(roadNet, dayNight);
                 renderer.draw(car);
+                for (const auto& agent : agents)
+                {
+                    agent.draw();
+                }
             EndMode3D();
             debugPanel.draw(car, dayNight, SW, SH);
             const char* labels[] = { "FOLLOW", "ORBIT", "HOOD" };
