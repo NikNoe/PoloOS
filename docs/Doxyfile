@@ -1,0 +1,16 @@
+PROJECT_NAME        = "PoloOS — Qt Dashboard"
+PROJECT_BRIEF       = "Qt6/QML instrument cluster for Volkswagen Polo 9N3"
+PROJECT_NUMBER      = 0.1
+OUTPUT_DIRECTORY    = docs/
+INPUT               = src/
+RECURSIVE           = YES
+EXTRACT_ALL         = YES
+GENERATE_HTML       = YES
+HTML_OUTPUT         = html
+GENERATE_LATEX      = YES
+LATEX_OUTPUT        = ../latex
+PDF_HYPERLINKS      = YES
+HAVE_DOT            = YES
+CALL_GRAPH          = YES
+CALLER_GRAPH        = YES
+QUIET               = YES

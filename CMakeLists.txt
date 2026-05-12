@@ -62,66 +62,69 @@ endif()
 
 # ── Exécutable unique ─────────────────────────────────────────────────────────
 qt_add_executable(appPoloOS
-    main.cpp
-    canhandler.h
-    CanReader.h
-    CanReader.cpp
+    src/main.cpp
+    src/can/canhandler.h
+    src/can/CanReader.h
+    src/can/CanReader.cpp
 )
+
+# ── src/can/ headers must be on the include path for main.cpp and moc
+target_include_directories(appPoloOS PRIVATE src/can)
 
 # ── Module QML ────────────────────────────────────────────────────────────────
 qt_add_qml_module(appPoloOS
     URI PoloOS
     VERSION 1.0
     QML_FILES
-        Main.qml
-        Polo.qml
-        CockpitWindow.qml
-        DashboardIcon.qml
-        VitalsItem.qml
-        EnginePage.qml
-        EngineLive.qml
-        EnergyPage.qml
-        AboutPage.qml
-        BodyPage.qml
-        DiagnosticsPage.qml
-        SettingsPage.qml
-        ChassisPage.qml
-        MapPage.qml
-        TempCard.qml
-        BusStatusCard.qml
-        EcuTag.qml
-        EngineerRow.qml
+        qml/Main.qml
+        qml/vehicle/Polo.qml
+        qml/vehicle/CockpitWindow.qml
+        qml/components/DashboardIcon.qml
+        qml/components/VitalsItem.qml
+        qml/pages/EnginePage.qml
+        qml/components/EngineLive.qml
+        qml/pages/EnergyPage.qml
+        qml/pages/AboutPage.qml
+        qml/pages/BodyPage.qml
+        qml/pages/DiagnosticsPage.qml
+        qml/pages/SettingsPage.qml
+        qml/pages/ChassisPage.qml
+        qml/pages/MapPage.qml
+        qml/components/TempCard.qml
+        qml/components/BusStatusCard.qml
+        qml/components/EcuTag.qml
+        qml/components/EngineerRow.qml
     RESOURCES
-        icons.qrc
-        meshes/chassis_mesh.mesh
-        meshes/imvlm_lighting_mesh.mesh
-        meshes/interior_And_engine_mesh.mesh
-        meshes/glass_interior_001_mesh.mesh
-        meshes/taillight_red_glass_001_mesh.mesh
-        meshes/bonnet_ok_001_mesh.mesh
-        meshes/boot_ok_mesh.mesh
-        meshes/boot_ok_003_mesh.mesh
-        meshes/bumper_front_ok_mesh.mesh
-        meshes/bump_rear_ok_mesh.mesh
-        meshes/door_lr_ok_mesh.mesh
-        meshes/door_lf_ok_mesh.mesh
-        meshes/door_lf_ok_003_mesh.mesh
-        meshes/wing_lf_ok_001_mesh.mesh
-        meshes/wing_rf_ok_001_mesh.mesh
-        meshes/door_rf_ok_mesh.mesh
-        meshes/door_rf_ok_003_mesh.mesh
-        meshes/door_rr_ok_mesh.mesh
-        meshes/windscreen_ok_001_mesh.mesh
-        meshes/steering_ok_mesh.mesh
-        meshes/speedook_mesh.mesh
-        meshes/tahook_mesh.mesh
-        meshes/vent_001_mesh.mesh
-        meshes/chassis_003_mesh.mesh
-        meshes/wheel_mesh.mesh
-        meshes/wheel_001_mesh.mesh
-        meshes/wheel_002_mesh.mesh
-        meshes/wheel_003_mesh.mesh
-        SOURCES CanReader.cpp
+        assets/icons/icons.qrc
+        assets/meshes/chassis_mesh.mesh
+        assets/meshes/imvlm_lighting_mesh.mesh
+        assets/meshes/interior_And_engine_mesh.mesh
+        assets/meshes/glass_interior_001_mesh.mesh
+        assets/meshes/taillight_red_glass_001_mesh.mesh
+        assets/meshes/bonnet_ok_001_mesh.mesh
+        assets/meshes/boot_ok_mesh.mesh
+        assets/meshes/boot_ok_003_mesh.mesh
+        assets/meshes/bumper_front_ok_mesh.mesh
+        assets/meshes/bump_rear_ok_mesh.mesh
+        assets/meshes/door_lr_ok_mesh.mesh
+        assets/meshes/door_lf_ok_mesh.mesh
+        assets/meshes/door_lf_ok_003_mesh.mesh
+        assets/meshes/wing_lf_ok_001_mesh.mesh
+        assets/meshes/wing_rf_ok_001_mesh.mesh
+        assets/meshes/door_rf_ok_mesh.mesh
+        assets/meshes/door_rf_ok_003_mesh.mesh
+        assets/meshes/door_rr_ok_mesh.mesh
+        assets/meshes/windscreen_ok_001_mesh.mesh
+        assets/meshes/steering_ok_mesh.mesh
+        assets/meshes/speedook_mesh.mesh
+        assets/meshes/tahook_mesh.mesh
+        assets/meshes/vent_001_mesh.mesh
+        assets/meshes/chassis_003_mesh.mesh
+        assets/meshes/wheel_mesh.mesh
+        assets/meshes/wheel_001_mesh.mesh
+        assets/meshes/wheel_002_mesh.mesh
+        assets/meshes/wheel_003_mesh.mesh
+        SOURCES src/can/CanReader.cpp
         QML_FILES
 )
 

@@ -9,6 +9,7 @@
 
 # --- Qt Creator / CMake (Cleaned up) ---
 build/
+build-raylib/
 .qtc_clangd/
 *.user
 
