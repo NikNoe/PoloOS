@@ -1,0 +1,61 @@
+name: "Docs — Qt branch"
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      # ── Checkout ───────────────────────────────────────────────────────────
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      # ── System dependencies ────────────────────────────────────────────────
+      - name: Install Doxygen, Graphviz and TeX Live
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y doxygen graphviz texlive-full
+
+      # ── Doxygen HTML + LaTeX ───────────────────────────────────────────────
+      - name: Run Doxygen
+        run: doxygen docs/Doxyfile
+
+      # ── LaTeX → PDF ────────────────────────────────────────────────────────
+      # docs/Doxyfile: OUTPUT_DIRECTORY=docs/ + LATEX_OUTPUT=../latex
+      # → LaTeX sources land at ./latex/ (repo root)
+      - name: Compile PDF
+        run: make -C latex
+
+      # ── Publish PDF ────────────────────────────────────────────────────────
+      - name: Copy PDF to docs/
+        run: |
+          rm -f docs/PoloOS-Qt.pdf
+          cp latex/refman.pdf docs/PoloOS-Qt.pdf
+
+      # ── Commit PDF back to main ────────────────────────────────────────────
+      - name: Commit and push PoloOS-Qt.pdf
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/PoloOS-Qt.pdf
+          git diff --cached --quiet && echo "PDF unchanged, skipping commit" && exit 0
+          git commit -m "docs: regenerate PoloOS-Qt.pdf"
+          git push origin main
+
+      # ── Deploy HTML to GitHub Pages (destination: /qt/) ───────────────────
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+          destination_dir: qt
