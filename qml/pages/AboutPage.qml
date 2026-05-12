@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import "../components"
 
 Rectangle {
     color: "#050505" // Deep black

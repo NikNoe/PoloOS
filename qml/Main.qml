@@ -5,7 +5,8 @@ import QtQuick3D
 import QtQuick3D.Helpers
 import QtQuick.Shapes
 import Qt5Compat.GraphicalEffects
-import "."
+import "./vehicle"
+import "./components"
 
 
 ApplicationWindow {
@@ -591,13 +592,13 @@ ApplicationWindow {
 
                             Repeater {
                                 model: [
-                                    { name: "Engine", file: "EnginePage.qml" },
-                                    { name: "Chassis", file: "ChassisPage.qml" },
-                                    { name: "Energy", file: "EnergyPage.qml" },
-                                   { name: "Body", file: "BodyPage.qml" },
-                                   { name: "Diagnostics", file: "DiagnosticsPage.qml" },
-                                   { name: "Settings", file: "SettingsPage.qml" },
-                                    { name: "About", file: "AboutPage.qml" }
+                                    { name: "Engine", file: "pages/EnginePage.qml" },
+                                    { name: "Chassis", file: "pages/ChassisPage.qml" },
+                                    { name: "Energy", file: "pages/EnergyPage.qml" },
+                                   { name: "Body", file: "pages/BodyPage.qml" },
+                                   { name: "Diagnostics", file: "pages/DiagnosticsPage.qml" },
+                                   { name: "Settings", file: "pages/SettingsPage.qml" },
+                                    { name: "About", file: "pages/AboutPage.qml" }
                                 ]
 
                                 Rectangle {
@@ -640,7 +641,7 @@ ApplicationWindow {
                         clip: true
 
                         property string currentItemName: "Engine"
-                        initialItem: "EnginePage.qml"
+                        initialItem: "pages/EnginePage.qml"
 
                         // --- REMOVE ALL ANIMATIONS ---
                             replaceEnter: Transition { }
@@ -811,7 +812,7 @@ ApplicationWindow {
         id: mapOverlay
         anchors.fill: parent
         visible: false
-        source: "MapPage.qml"
+        source: "pages/MapPage.qml"
 
         // Ensure the top bar and footer are still visible over the map
         z: 5

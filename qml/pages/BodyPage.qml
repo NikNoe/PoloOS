@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import Qt5Compat.GraphicalEffects // Pour les effets de couleur SVG
+import "../components"
 
 Item {
     id: bodyPageRoot
