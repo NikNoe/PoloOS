@@ -25,6 +25,7 @@ public:
     bool  isAlive()    const { return m_ttl > 0.f; }
     static void loadSharedModels();
     static void unloadSharedModels();
+    int trackId() const { return m_trackId; }
 
 private:
     float       m_x          = 0.f;
@@ -35,6 +36,7 @@ private:
     float       m_scale      = 1.f;
     ObjectClass m_cls        = ObjectClass::UNKNOWN;
     std::string m_className;
+    int m_trackId = -1;
 
     // Couleur selon classe
     Color classColor() const;

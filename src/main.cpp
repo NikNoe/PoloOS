@@ -83,10 +83,8 @@ int main()
 
             bool found = false;
             for (auto& agent : agents) {
-                float dx = agent.x() - worldDet.x;
-                float dz = agent.z() - worldDet.z;
-                if (agent.cls() == worldDet.cls &&
-                    std::sqrt(dx*dx + dz*dz) < 5.f) {
+            // Match par ID unique — plus fiable que la distance
+                if (agent.trackId() == worldDet.trackId) {
                     agent.update(worldDet, dt);
                     found = true;
                     break;
@@ -94,6 +92,8 @@ int main()
             }
             if (!found)
                 agents.emplace_back(worldDet);
+                if (agents.size() > 20)
+                    agents.erase(agents.begin());
                 printf("[Agent NEW] cls=%s x=%.1f z=%.1f ttl=%.2f\n",
                     worldDet.className.c_str(), worldDet.x, worldDet.z, worldDet.ttl);
                 agents.emplace_back(worldDet);

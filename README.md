@@ -215,7 +215,7 @@ Raylib (rendu)
 - [x] Cycle jour/nuit
 - [x] Debug Panel (F1)
 - [x] Pipeline YOLO + OpenCV installé
-- [ ] detector.py → SceneReceiver UDP
+- [x] detector.py → SceneReceiver UDP
 - [ ] TrafficAgent (voitures IA)
 - [ ] Piétons
 - [ ] Signalisation (feux, panneaux)

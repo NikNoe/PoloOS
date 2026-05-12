@@ -1,0 +1,14 @@
+PROJECT_NAME        = "PoloOS — Raylib"
+PROJECT_NUMBER      = 0.1
+OUTPUT_DIRECTORY    = docs/
+INPUT               = src/
+RECURSIVE           = YES
+FILE_PATTERNS       = *.h *.cpp
+GENERATE_HTML       = YES
+GENERATE_LATEX      = NO
+EXTRACT_ALL         = YES
+HAVE_DOT            = YES        # graphes de dépendances (Graphviz)
+CALL_GRAPH          = YES
+CALLER_GRAPH        = YES
+HTML_EXTRA_STYLESHEET =          # laisse vide = thème Doxygen par défaut
+QUIET               = YES

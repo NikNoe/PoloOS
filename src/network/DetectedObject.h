@@ -22,6 +22,7 @@ struct DetectedObject {
     float       distance   = 0.f;   // distance estimée (m)
     int         frame      = 0;
     float       timestamp  = 0.f;
+    int trackId = -1;
 
     // Durée de vie — objet supprimé si pas mis à jour
     float       ttl        = 1.5f;  // secondes

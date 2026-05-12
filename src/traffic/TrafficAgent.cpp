@@ -16,9 +16,9 @@ bool  TrafficAgent::s_modelsLoaded = false;
 
 void TrafficAgent::loadSharedModels() {
     if (s_modelsLoaded) return;
-    s_carModel    = LoadModelFromMesh(GenMeshCube(2.f, 1.5f, 4.f));
-    s_personModel = LoadModelFromMesh(GenMeshCylinder(0.3f, 1.75f, 8));
-    s_boxModel    = LoadModelFromMesh(GenMeshCube(1.f, 1.5f, 1.f));
+    s_carModel    = LoadModelFromMesh(GenMeshCube(1.8f, 1.4f, 3.8f));
+    s_personModel = LoadModelFromMesh(GenMeshCylinder(0.25f, 1.6f, 8));
+    s_boxModel    = LoadModelFromMesh(GenMeshCube(0.8f, 1.2f, 0.8f));
     s_modelsLoaded = true;
 }
 
@@ -37,10 +37,12 @@ TrafficAgent::TrafficAgent(const DetectedObject& det) {
     m_cls        = det.cls;
     m_className  = det.className;
     m_ttl        = det.ttl;
+    m_trackId = det.trackId;
 }
 
 void TrafficAgent::update(const DetectedObject& det, float dt) {
     // Interpolation smooth
+    m_trackId = det.trackId;
     m_x          = m_x * 0.4f + det.x * 0.6f;
     m_z          = m_z * 0.4f + det.z * 0.6f;
     m_heading    = det.heading;

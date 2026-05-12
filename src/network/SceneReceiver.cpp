@@ -141,6 +141,7 @@ void SceneReceiver::parsePacket(const std::string& json) {
         det.heading    = extractFloat(obj, "heading");
         det.confidence = extractFloat(obj, "confidence");
         det.distance   = extractFloat(obj, "distance");
+        det.trackId = extractInt(obj, "id");
         det.frame      = m_lastFrame;
         det.timestamp  = ts;
         det.ttl        = 1.5f;

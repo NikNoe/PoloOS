@@ -1,0 +1,27 @@
+name: 📚 Docs — Raylib branch
+
+on:
+  push:
+    branches: [ raylib-proto ]
+  workflow_dispatch:
+
+jobs:
+  doxygen:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen + Graphviz
+        run: sudo apt-get install -y doxygen graphviz
+
+      - name: Generate docs
+        run: doxygen docs/Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+          destination_dir: raylib   # ← dispo sur /PoloOS/raylib/
