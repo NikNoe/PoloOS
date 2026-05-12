@@ -1,3 +1,8 @@
+/**
+ * @file CarRenderer.cpp
+ * @brief Implementation of the Polo 3D rendering via Raylib.
+ */
+
 #include "CarRenderer.h"
 #include "raymath.h"
 

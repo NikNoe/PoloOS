@@ -1,11 +1,11 @@
 # PoloOS
 
-Interface embarquée style Tesla pour VW Polo 9N3, tournant sur Raspberry Pi 5.  
-Prototype Raylib isolé sur branche `raylib-proto`, fusion Qt prévue.
+Tesla-style embedded interface for a VW Polo 9N3, running on a Raspberry Pi 5.  
+Raylib prototype isolated on the `raylib-proto` branch; Qt merge planned.
 
 ---
 
-## Architecture générale
+## General Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -17,67 +17,67 @@ Prototype Raylib isolé sur branche `raylib-proto`, fusion Qt prévue.
 │  │  detector.py │               │   TrafficAgent       │   │
 │  └──────┬───────┘               └──────────┬──────────┘   │
 │         │                                   │              │
-│    Vidéo circulation                   RoadNetwork         │
-│    (dashcam / caméra)                  DayNightCycle       │
+│    Traffic video                       RoadNetwork         │
+│    (dashcam / camera)                  DayNightCycle       │
 │                                        CarRenderer         │
 └─────────────────────────────────────────────────────────────┘
                               │
                     ┌─────────▼──────────┐
-                    │   Qt 6 / QML       │  ← fusion future
+                    │   Qt 6 / QML       │  ← future merge
                     │   Raspberry Pi 5   │
                     │   CAN bus          │
                     └────────────────────┘
 ```
 
-## Structure du projet
+## Project Structure
 
 ```
 PoloOS/
 ├── assets/
 │   ├── maps/
-│   │   └── city.json              ← carte fixe (nœuds + segments)
-│   ├── models/                    ← meshes .glb (Blender export)
+│   │   └── city.json              ← static map (nodes + segments)
+│   ├── models/                    ← .glb meshes (Blender export)
 │   │   ├── polo.glb
 │   │   ├── door_lf.glb / door_rf.glb ...
 │   │   └── wheel_fl.glb ...
-│   └── circulation-video/         ← vidéos dashcam pour YOLO
+│   └── circulation-video/         ← dashcam videos for YOLO
 │
 ├── src/
-│   ├── main.cpp                   ← boucle principale (léger)
+│   ├── main.cpp                   ← main loop (lightweight)
 │   ├── car/
-│   │   ├── PoloCar.h/.cpp         ← état pur voiture (YOLO-ready)
-│   │   └── CarRenderer.h/.cpp     ← rendu 3D Raylib
+│   │   ├── PoloCar.h/.cpp         ← pure car state (YOLO-ready)
+│   │   └── CarRenderer.h/.cpp     ← Raylib 3D renderer
 │   ├── scene/
-│   │   ├── Camera.h/.cpp          ← gestion caméra 3D
-│   │   └── RoadMap.h/.cpp         ← route de base (legacy)
+│   │   ├── Camera.h/.cpp          ← 3D camera controller
+│   │   └── RoadMap.h/.cpp         ← legacy basic road
 │   ├── road/
-│   │   ├── RoadNode.h             ← nœud (intersection, rond-point)
-│   │   ├── RoadSegment.h          ← segment + courbes Bezier
-│   │   ├── RoadNetwork.h/.cpp     ← graphe + chargement JSON
-│   │   └── RoadRenderer.h/.cpp    ← rendu route + bâtiments
+│   │   ├── RoadNode.h             ← node (intersection, roundabout)
+│   │   ├── RoadSegment.h          ← segment + Bezier curves
+│   │   ├── RoadNetwork.h/.cpp     ← graph + JSON loading
+│   │   └── RoadRenderer.h/.cpp    ← road + buildings renderer
 │   ├── world/
-│   │   ├── DayNightCycle.h/.cpp   ← cycle jour/nuit + visibilité
-│   │   └── WorldManager.h/.cpp    ← orchestration globale
+│   │   ├── DayNightCycle.h/.cpp   ← day/night cycle + visibility
+│   │   └── WorldManager.h/.cpp    ← global orchestration
 │   ├── traffic/
-│   │   ├── TrafficAgent.h/.cpp    ← voiture IA / objet YOLO
-│   │   └── Pedestrian.h/.cpp      ← piéton
+│   │   ├── TrafficAgent.h/.cpp    ← AI car / YOLO object
+│   │   └── Pedestrian.h/.cpp      ← pedestrian
 │   ├── network/
-│   │   ├── DetectedObject.h       ← struct partagée YOLO↔Raylib
-│   │   └── SceneReceiver.h/.cpp   ← réception UDP + parse JSON
+│   │   ├── DetectedObject.h       ← shared struct YOLO↔Raylib
+│   │   └── SceneReceiver.h/.cpp   ← UDP receiver + JSON parser
 │   └── ui/
-│       ├── DebugPanel.h/.cpp      ← panneau debug (F1)
-│       └── HUD.h/.cpp             ← speedomètre
+│       ├── DebugPanel.h/.cpp      ← debug overlay (F1)
+│       └── HUD.h/.cpp             ← speedometer
 │
 ├── yolo/
 │   ├── detector.py                ← YOLO + OpenCV → UDP
-│   ├── socket_sender.py           ← envoi UDP JSON
-│   └── fake_camera.py             ← lit vidéo comme caméra
+│   ├── socket_sender.py           ← UDP JSON sender
+│   └── fake_camera.py             ← reads video as camera feed
 │
 ├── requirements/
-│   ├── install.sh                 ← script maître multi-plateforme
-│   ├── requirements.txt           ← dépendances Python
-│   ├── apt.txt                    ← paquets Linux/Pi
-│   └── brew.txt                   ← paquets macOS
+│   ├── install.sh                 ← master cross-platform script
+│   ├── requirements.txt           ← Python dependencies
+│   ├── apt.txt                    ← Linux/Pi packages
+│   └── brew.txt                   ← macOS packages
 │
 ├── CMakeLists.txt
 └── README.md
@@ -87,44 +87,44 @@ PoloOS/
 
 ## Installation
 
-### Prérequis
+### Prerequisites
 
-| Plateforme | Prérequis |
+| Platform | Requirements |
 |---|---|
 | macOS M1/M2/M3 | Homebrew (`brew.sh`) |
-| Ubuntu / ThinkPad | apt (inclus) |
+| Ubuntu / ThinkPad | apt (included) |
 | Raspberry Pi 5 | Ubuntu 24.04 arm64 |
 
-### Installation automatique (une seule commande)
+### Automated installation (single command)
 
 ```bash
 chmod +x requirements/install.sh && ./requirements/install.sh
 ```
 
-Ce script fait tout :
-1. Dépendances système (brew ou apt selon l'OS)
-2. Raylib 5.5 (brew sur Mac, compilé sur Linux/Pi)
-3. Build C++ (cmake + make)
+This script handles everything:
+1. System dependencies (brew or apt depending on OS)
+2. Raylib 5.5 (brew on Mac, compiled from source on Linux/Pi)
+3. C++ build (cmake + make)
 4. Python 3.13 venv + YOLO + OpenCV
 
 ---
 
-## Lancer PoloOS
+## Running PoloOS
 
-### 1. Interface 3D Raylib seule
+### 1. Raylib 3D interface only
 
 ```bash
 cd build-raylib && ./PoloRaylib
 ```
 
-### 2. Avec détection YOLO (pipeline complet)
+### 2. With YOLO detection (full pipeline)
 
-Terminal 1 — Raylib :
+Terminal 1 — Raylib:
 ```bash
 cd build-raylib && ./PoloRaylib
 ```
 
-Terminal 2 — YOLO :
+Terminal 2 — YOLO:
 ```bash
 source .venv/bin/activate
 python3 yolo/detector.py --video assets/circulation-video/Paris\ Drive\ 4K\ -\ Sunset\ Drive\ -\ France.mp4
@@ -132,52 +132,52 @@ python3 yolo/detector.py --video assets/circulation-video/Paris\ Drive\ 4K\ -\ S
 
 ---
 
-## Contrôles clavier
+## Keyboard Controls
 
-| Touche | Action |
+| Key | Action |
 |---|---|
-| ↑ / ↓ | Accélérer / Freiner |
-| ← / → | Direction |
-| `C` | Changer mode caméra (Follow / Orbit / Hood) |
-| Clic droit + glisser | Orbite caméra (mode Orbit) |
-| Molette | Zoom |
-| `Q` / `E` | Rotation orbite |
-| `1` `2` `3` `4` | Portes FL FR RL RR |
-| `T` | Coffre |
-| `O` | Capot |
-| `L` | Feux de croisement |
-| `H` | Feux de route |
-| `Z` / `X` | Clignotant gauche / droite |
-| `ESPACE` | Frein à main |
+| ↑ / ↓ | Accelerate / Brake |
+| ← / → | Steer |
+| `C` | Cycle camera mode (Follow / Orbit / Hood) |
+| Right-click + drag | Orbit camera (Orbit mode) |
+| Scroll wheel | Zoom |
+| `Q` / `E` | Orbit rotation |
+| `1` `2` `3` `4` | Doors FL FR RL RR |
+| `T` | Boot / trunk |
+| `O` | Hood / bonnet |
+| `L` | Dipped headlights |
+| `H` | Full-beam headlights |
+| `Z` / `X` | Left / right turn signal |
+| `SPACE` | Handbrake |
 | `F1` | Debug Panel |
-| `N` (maintenu) | Accélérer le cycle jour/nuit |
+| `N` (held) | Speed up day/night cycle |
 
 ---
 
-## Pipeline YOLO → Raylib
+## YOLO → Raylib Pipeline
 
 ```
-Vidéo dashcam
+Dashcam video
      │
      ▼
 detector.py (Python)
-  - Lit frame par frame (OpenCV)
-  - Détecte objets (YOLOv8)
-  - Estime position 3D approximative
-  - Sérialise en JSON
+  - Reads frames (OpenCV)
+  - Detects objects (YOLOv8)
+  - Estimates approximate 3D position
+  - Serialises to JSON
      │
      ▼  UDP port 5005
 SceneReceiver.cpp (C++)
-  - Reçoit paquets UDP
-  - Parse JSON → DetectedObject[]
-  - Met à jour TrafficAgent[]
+  - Receives UDP packets
+  - Parses JSON → DetectedObject[]
+  - Updates TrafficAgent[]
      │
      ▼
-Raylib (rendu)
-  - Affiche voitures/piétons détectés sur la map
+Raylib (rendering)
+  - Displays detected cars/pedestrians on the map
 ```
 
-### Format JSON socket
+### Socket JSON format
 
 ```json
 {
@@ -193,33 +193,33 @@ Raylib (rendu)
 
 ---
 
-## Stack technique
+## Tech Stack
 
-| Composant | Technologie |
+| Component | Technology |
 |---|---|
-| Interface 3D (proto) | Raylib 5.5 + C++17 |
-| Interface 3D (prod) | Qt 6 / QML / Qt Quick3D |
-| Détection IA | YOLOv8 (Ultralytics) |
-| Vision | OpenCV 4.13 |
+| 3D interface (prototype) | Raylib 5.5 + C++17 |
+| 3D interface (production) | Qt 6 / QML / Qt Quick3D |
+| AI detection | YOLOv8 (Ultralytics) |
+| Computer vision | OpenCV 4.13 |
 | Communication | UDP socket (JSON) |
-| Meshes 3D | Blender → glTF/glb |
+| 3D meshes | Blender → glTF/glb |
 | CAN bus | SocketCAN + Qt SerialBus |
-| Cible | Raspberry Pi 5 (Ubuntu 24.04 arm64) |
+| Target platform | Raspberry Pi 5 (Ubuntu 24.04 arm64) |
 
 ---
 
 ## Roadmap
 
-- [x] Interface 3D Raylib avec Polo glb
-- [x] Route procédurale avec courbes Bezier
-- [x] Cycle jour/nuit
+- [x] Raylib 3D interface with Polo glb model
+- [x] Procedural road with Bezier curves
+- [x] Day/night cycle
 - [x] Debug Panel (F1)
-- [x] Pipeline YOLO + OpenCV installé
+- [x] YOLO + OpenCV pipeline installed
 - [x] detector.py → SceneReceiver UDP
-- [ ] TrafficAgent (voitures IA)
-- [ ] Piétons
-- [ ] Signalisation (feux, panneaux)
-- [ ] Animations portes/coffre (Blender armature)
-- [ ] Fusion Qt 6 / QML
-- [ ] Intégration CAN bus (RPM, vitesse, portes)
-- [ ] Déploiement Raspberry Pi 5
+- [ ] TrafficAgent (AI vehicles)
+- [ ] Pedestrians
+- [ ] Road signs and traffic lights
+- [ ] Door/boot animations (Blender armature)
+- [ ] Qt 6 / QML merge
+- [ ] CAN bus integration (RPM, speed, doors)
+- [ ] Raspberry Pi 5 deployment

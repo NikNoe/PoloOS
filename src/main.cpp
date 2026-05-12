@@ -1,3 +1,11 @@
+/**
+ * @file main.cpp
+ * @brief PoloOS Raylib prototype — main loop.
+ *
+ * Initialises all subsystems (car, renderer, road network, camera, day/night,
+ * debug panel, UDP receiver and traffic agents) and runs the 60 fps game loop.
+ */
+
 #include "raylib.h"
 #include "car/PoloCar.h"
 #include "car/CarRenderer.h"
@@ -24,7 +32,7 @@ int main()
     CarRenderer renderer;
     RoadMap     road;
     CarCamera   camera;
-    DebugPanel debugPanel;
+    DebugPanel  debugPanel;
     DayNightCycle dayNight;
     RoadNetwork  roadNet;
     RoadRenderer roadRend;
@@ -41,7 +49,8 @@ int main()
         bool brake = IsKeyDown(KEY_DOWN)  || IsKeyDown(KEY_S);
         bool left  = IsKeyDown(KEY_RIGHT)  || IsKeyDown(KEY_A);
         bool right = IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_D);
-        // Pilote la voiture depuis l'optical flow YOLO
+
+        // Drive from YOLO optical-flow ego-motion when available
         if (receiver.egoSpeed() > 0.f || receiver.egoHeadingDelta() != 0.f) {
             car.speed        = receiver.egoSpeed();
             car.heading     += receiver.egoHeadingDelta();
@@ -71,8 +80,9 @@ int main()
         dayNight.update(dt);
         receiver.poll(dt);
 
+        // Merge incoming detections into the agent list
         for (const auto& det : receiver.objects()) {
-            // Transforme coordonnées relatives → monde
+            // Convert relative camera coords → world coords using ego heading
             float rad = car.heading * DEG2RAD;
             float wx = car.x + det.x * std::cos(rad) - det.z * std::sin(rad);
             float wz = car.z + det.x * std::sin(rad) + det.z * std::cos(rad);
@@ -83,7 +93,7 @@ int main()
 
             bool found = false;
             for (auto& agent : agents) {
-            // Match par ID unique — plus fiable que la distance
+                // Match by unique track ID — more reliable than distance
                 if (agent.trackId() == worldDet.trackId) {
                     agent.update(worldDet, dt);
                     found = true;
@@ -99,8 +109,7 @@ int main()
                 agents.emplace_back(worldDet);
         }
 
-        
-        // Supprime les agents morts
+        // Remove dead agents
         agents.erase(
             std::remove_if(agents.begin(), agents.end(),
                         [](const TrafficAgent& a) { return !a.isAlive(); }),
@@ -116,11 +125,11 @@ int main()
                 agents[0].ttl());
         }
 
-        // Log temporaire — à supprimer après confirmation
+        // Temporary UDP packet log — remove after confirming pipeline
         static int lastCount = 0;
         if (receiver.packetCount() != lastCount) {
             lastCount = receiver.packetCount();
-            printf("[UDP] Paquet #%d | Objets: %zu\n",
+            printf("[UDP] Packet #%d | Objects: %zu\n",
                    lastCount,
                    receiver.objects().size());
         }

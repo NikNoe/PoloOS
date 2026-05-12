@@ -1,3 +1,8 @@
+/**
+ * @file Camera.cpp
+ * @brief Implementation of the car-tracking 3D camera controller.
+ */
+
 #include "Camera.h"
 
 CarCamera::CarCamera() {

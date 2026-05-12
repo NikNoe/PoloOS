@@ -1,23 +1,33 @@
+/**
+ * @file PoloCar.cpp
+ * @brief Implementation of PoloCar dynamics and animations.
+ */
+
 #include "PoloCar.h"
 #include <cmath>
 #include <algorithm>
-
-// ─── PoloCar.cpp ──────────────────────────────────────────────────────────────
 
 #ifndef DEG2RAD
 #define DEG2RAD 0.0174532925f
 #endif
 
+/**
+ * @brief Linear interpolation between two values.
+ * @param a Start value.
+ * @param b End value.
+ * @param t Interpolation factor (clamped to 1.0).
+ * @return Interpolated value between @p a and @p b.
+ */
 static float lerp(float a, float b, float t) {
     return a + (b - a) * std::min(t, 1.f);
 }
 
 void PoloCar::applyInput(bool accel, bool brake, bool left, bool right, float dt)
 {
-    // ── Accélération / freinage ───────────────────────────────────────────────
+    // ── Acceleration / braking ────────────────────────────────────────────────
     const float maxSpeed    =  120.f;  // km/h
     const float maxReverse  =  -20.f;
-    const float accelRate   =   60.f;  // km/h par seconde
+    const float accelRate   =   60.f;  // km/h per second
     const float brakeRate   =  120.f;
     const float friction    =   30.f;
 
@@ -27,17 +37,17 @@ void PoloCar::applyInput(bool accel, bool brake, bool left, bool right, float dt
     } else if (brake) {
         if (speed > 0.5f)       speed -= brakeRate * dt;
         else if (speed > -0.5f) speed  = 0.f;
-        else                    speed += accelRate * dt * 0.5f; // marche arrière lente
+        else                    speed += accelRate * dt * 0.5f; // slow reverse
     } else {
-        // Friction naturelle
+        // Natural friction
         if (speed > 0.f)       speed = std::max(0.f,  speed - friction * dt);
         else if (speed < 0.f)  speed = std::min(0.f,  speed + friction * dt);
     }
 
     speed = std::clamp(speed, maxReverse, maxSpeed);
 
-    // ── Direction ─────────────────────────────────────────────────────────────
-    const float maxSteer = 35.f;   // degrés roues
+    // ── Steering ──────────────────────────────────────────────────────────────
+    const float maxSteer = 35.f;   // degrees
     const float steerRate = 90.f;
 
     if (left)       wheelAngle -= steerRate * dt;
@@ -45,14 +55,14 @@ void PoloCar::applyInput(bool accel, bool brake, bool left, bool right, float dt
     else            wheelAngle  = lerp(wheelAngle, 0.f, dt * 6.f);
 
     wheelAngle = std::clamp(wheelAngle, -maxSteer, maxSteer);
-    steeringAngle = wheelAngle * 12.f; // ratio volant ~12:1
+    steeringAngle = wheelAngle * 12.f; // steering ratio ~12:1
 }
 
 void PoloCar::update(float dt)
 {
-    // ── Déplacement ───────────────────────────────────────────────────────────
+    // ── Movement ──────────────────────────────────────────────────────────────
     if (std::abs(speed) > 0.1f) {
-        float turnRadius = 4.5f; // empattement Polo en mètres
+        float turnRadius = 4.5f; // Polo wheelbase in metres
         float angularVel = (speedMs() / turnRadius)
                            * std::sin(wheelAngle * DEG2RAD)
                            * (180.f / M_PI);
@@ -64,12 +74,12 @@ void PoloCar::update(float dt)
         z += std::cos(rad) * speedMs() * dt;
     }
 
-    // ── Rotation roues ────────────────────────────────────────────────────────
-    // Circonférence roue Polo ~185cm → rayon ~0.295m
+    // ── Wheel rotation ────────────────────────────────────────────────────────
+    // Polo tyre circumference ~185cm → radius ~0.295m
     wheelRoll += (speedMs() / 0.295f) * dt * (180.f / M_PI);
 
-    // ── Smooth door/trunk/hood animations ────────────────────────────────────
-    const float doorSpeed  = 5.f;  // degrés/s factor
+    // ── Smooth door / trunk / hood animations ─────────────────────────────────
+    const float doorSpeed  = 5.f;
     const float trunkSpeed = 3.f;
     const float hoodSpeed  = 3.f;
 

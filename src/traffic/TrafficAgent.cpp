@@ -1,14 +1,17 @@
+/**
+ * @file TrafficAgent.cpp
+ * @brief Implementation of the YOLO-detected 3D scene agent.
+ */
+
 #include "TrafficAgent.h"
 #include <cmath>
 #include <cstdio>
-
-// ─── TrafficAgent.cpp ─────────────────────────────────────────────────────────
 
 #ifndef DEG2RAD
 #define DEG2RAD 0.0174532925f
 #endif
 
-// En haut du fichier
+// Static shared model storage
 Model TrafficAgent::s_carModel    = {};
 Model TrafficAgent::s_personModel = {};
 Model TrafficAgent::s_boxModel    = {};
@@ -37,12 +40,12 @@ TrafficAgent::TrafficAgent(const DetectedObject& det) {
     m_cls        = det.cls;
     m_className  = det.className;
     m_ttl        = det.ttl;
-    m_trackId = det.trackId;
+    m_trackId    = det.trackId;
 }
 
 void TrafficAgent::update(const DetectedObject& det, float dt) {
-    // Interpolation smooth
-    m_trackId = det.trackId;
+    // Weighted smooth blend to reduce position jitter
+    m_trackId    = det.trackId;
     m_x          = m_x * 0.4f + det.x * 0.6f;
     m_z          = m_z * 0.4f + det.z * 0.6f;
     m_heading    = det.heading;
@@ -50,7 +53,8 @@ void TrafficAgent::update(const DetectedObject& det, float dt) {
     m_ttl        = det.ttl;
 }
 
-// ── Couleurs par classe ───────────────────────────────────────────────────────
+// ── Class colour lookup ───────────────────────────────────────────────────────
+
 Color TrafficAgent::classColor() const {
     switch (m_cls) {
         case ObjectClass::CAR:           return { 0,   180, 255, 220 };
@@ -93,37 +97,38 @@ float TrafficAgent::classRadius() const {
     }
 }
 
-// ── Rendu 3D ──────────────────────────────────────────────────────────────────
+// ── 3D rendering ──────────────────────────────────────────────────────────────
+
 void TrafficAgent::draw() const {
     if (!isAlive()) return;
 
-    Vector3 pos    = { m_x, 0.f, m_z };
-    Color   col    = classColor();
-    float   h      = classHeight();
-    float   r      = classRadius();
+    Vector3 pos = { m_x, 0.f, m_z };
+    Color   col = classColor();
+    float   h   = classHeight();
+    float   r   = classRadius();
 
-    // Fade selon TTL
+    // Alpha fade as TTL decreases
     float fade = m_ttl / 1.5f;
     col.a = (unsigned char)(col.a * fade);
 
-    // Corps principal
+    // Main body — geometry varies by class
     if (m_cls == ObjectClass::PEDESTRIAN) {
-        // Piéton — capsule simplifiée (cylindre + sphère)
+        // Simplified capsule: cylinder + head sphere
         DrawModelEx(s_personModel, pos, {0,1,0}, 0.f, {1,1,1}, col);
         DrawSphere({ pos.x, h * 0.75f + r * 0.35f, pos.z },
                    r * 0.35f, col);
     } else if (m_cls == ObjectClass::TRAFFIC_LIGHT) {
-        // Feu tricolore — poteau + boîtier
+        // Pole + housing box
         DrawCylinder(pos, 0.05f, 0.05f, 2.5f, 6,
                      { 60, 60, 60, (unsigned char)(200 * fade) });
         DrawCube({ pos.x, 2.6f, pos.z }, 0.3f, 0.7f, 0.2f, col);
     } else if (m_cls == ObjectClass::STOP_SIGN) {
-        // Panneau stop — poteau + panneau rouge
+        // Pole + sign panel
         DrawCylinder(pos, 0.04f, 0.04f, 2.0f, 6,
                      { 60, 60, 60, (unsigned char)(200 * fade) });
         DrawCube({ pos.x, 2.1f, pos.z }, 0.6f, 0.6f, 0.05f, col);
     } else {
-        // Véhicule — boîte orientée
+        // Vehicle — oriented bounding box
         float rad = m_heading * DEG2RAD;
         Vector3 center = { pos.x, h * 0.5f, pos.z };
         DrawModelEx(
@@ -135,7 +140,7 @@ void TrafficAgent::draw() const {
             col
         );
 
-        // Indicateur direction (flèche)
+        // Direction arrow
         Vector3 arrow = {
             pos.x + std::sin(rad) * r * 2.f,
             0.1f,
@@ -145,11 +150,10 @@ void TrafficAgent::draw() const {
                    { 255, 255, 255, (unsigned char)(180 * fade) });
     }
 
-    // Cercle au sol
+    // Ground ring
     DrawCircle3D(pos, r * 1.2f, { 1, 0, 0 }, 90.f,
                  { col.r, col.g, col.b, (unsigned char)(120 * fade) });
 
-    // Label
     drawLabel({ pos.x, h + 0.3f, pos.z });
 }
 
@@ -158,8 +162,7 @@ void TrafficAgent::drawLabel(Vector3 pos) const {
     std::snprintf(buf, sizeof(buf), "%s %.0f%%",
                   m_className.c_str(), m_confidence * 100.f);
 
-    // Billboard 2D via DrawText3D n'existe pas en Raylib de base
-    // On utilise DrawLine3D comme indicateur vertical à la place
+    // Raylib has no built-in DrawText3D billboard; use a vertical line as indicator
     Color col = classColor();
     float fade = m_ttl / 1.5f;
     DrawLine3D({ pos.x, 0.f, pos.z },

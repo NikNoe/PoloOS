@@ -1,7 +1,10 @@
+/**
+ * @file RoadMap.cpp
+ * @brief Implementation of the legacy infinite road scene.
+ */
+
 #include "RoadMap.h"
 #include <cmath>
-
-// ─── RoadMap.cpp ──────────────────────────────────────────────────────────────
 
 RoadMap::RoadMap() {}
 
@@ -13,29 +16,27 @@ void RoadMap::draw(float carX, float carZ)
     drawBuildings(carX, carZ);
 }
 
-// ── Sol + route ────────────────────────────────────────────────────────────────
 void RoadMap::drawRoad(float cx, float cz)
 {
     float L = m_roadLength;
     float W = m_roadWidth;
 
-    // Herbe large
+    // Wide grass ground plane
     DrawPlane({ cx, 0.f, cz }, { L * 2.f, L * 2.f }, m_grassColor);
 
-    // Chaussée
+    // Road carriageway
     DrawCube({ cx, 0.01f, cz }, W, 0.02f, L * 2.f, m_roadColor);
 
-    // Trottoirs
+    // Raised sidewalk kerbs
     DrawCube({ cx - W * 0.5f - 0.5f, 0.05f, cz }, 0.8f, 0.1f, L * 2.f, {80, 80, 85, 255});
     DrawCube({ cx + W * 0.5f + 0.5f, 0.05f, cz }, 0.8f, 0.1f, L * 2.f, {80, 80, 85, 255});
 }
 
-// ── Marquages routiers ────────────────────────────────────────────────────────
 void RoadMap::drawMarkings(float cx, float cz)
 {
     float L = m_roadLength;
 
-    // Ligne centrale jaune discontinue
+    // Dashed yellow centre line scrolling with the car
     float dashLen  = 3.0f;
     float dashGap  = 3.0f;
     float step     = dashLen + dashGap;
@@ -45,14 +46,13 @@ void RoadMap::drawMarkings(float cx, float cz)
         DrawCube({ cx, 0.02f, z }, 0.12f, 0.01f, dashLen, m_lineColor);
     }
 
-    // Lignes de bord blanches continues
+    // Solid white edge lines
     DrawCube({ cx - m_roadWidth * 0.5f + 0.15f, 0.02f, cz },
               0.12f, 0.01f, L * 2.f, m_sideColor);
     DrawCube({ cx + m_roadWidth * 0.5f - 0.15f, 0.02f, cz },
               0.12f, 0.01f, L * 2.f, m_sideColor);
 }
 
-// ── Bâtiments décoratifs répétés ──────────────────────────────────────────────
 void RoadMap::drawBuildings(float cx, float cz)
 {
     float spacing = 25.f;
@@ -60,21 +60,21 @@ void RoadMap::drawBuildings(float cx, float cz)
     float startZ  = std::floor((cz - 150.f) / spacing) * spacing;
 
     for (float z = startZ; z < cz + 150.f; z += spacing) {
-        // Côté gauche
+        // Left side
         float hL = 5.f + std::fmod(std::abs(z) * 0.3f, 8.f);
         DrawCube({ cx - W * 0.5f - 6.f, hL * 0.5f, z },
                   4.f, hL, 4.f, { 55, 55, 70, 255 });
         DrawCubeWires({ cx - W * 0.5f - 6.f, hL * 0.5f, z },
                        4.f, hL, 4.f, {80, 80, 100, 255});
 
-        // Côté droit
+        // Right side
         float hR = 4.f + std::fmod(std::abs(z + 12.f) * 0.4f, 10.f);
         DrawCube({ cx + W * 0.5f + 6.f, hR * 0.5f, z },
                   4.f, hR, 4.f, { 50, 60, 65, 255 });
         DrawCubeWires({ cx + W * 0.5f + 6.f, hR * 0.5f, z },
                        4.f, hR, 4.f, {80, 100, 100, 255});
 
-        // Fenêtres (petits cubes lumineux)
+        // Lit windows on the left building
         for (int row = 0; row < (int)(hL / 1.8f); row++) {
             for (int col = -1; col <= 1; col++) {
                 bool lit = ((int)(z + row + col) % 3) != 0;
@@ -88,12 +88,9 @@ void RoadMap::drawBuildings(float cx, float cz)
     }
 }
 
-// ── Skybox simple ─────────────────────────────────────────────────────────────
 void RoadMap::drawSkybox()
 {
-    // Fond ciel nocturne (grand cube inversé)
-    // Raylib efface le fond avec ClearBackground donc pas besoin de sphère,
-    // on dessine juste quelques étoiles statiques
+    // ClearBackground handles the sky; draw static star points here
     for (int i = 0; i < 80; i++) {
         float x = ((i * 137) % 200) - 100.f;
         float y = 20.f + (i * 73) % 40;

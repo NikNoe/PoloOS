@@ -1,12 +1,22 @@
+/**
+ * @file RoadNetwork.cpp
+ * @brief Implementation of road network loading, parsing and dynamic spawning.
+ */
+
 #include "RoadNetwork.h"
 #include <fstream>
 #include <sstream>
 #include <cmath>
 #include <cstdio>
 
-// ─── Parser JSON minimal ──────────────────────────────────────────────────────
-// Pas de dépendance nlohmann — parsing basique suffisant pour notre format
+// ── Minimal JSON helpers — no external dependency ─────────────────────────────
 
+/**
+ * @brief Extracts a float value from a flat JSON string.
+ * @param s   JSON string.
+ * @param key Key to look up.
+ * @return Parsed float, or 0.0 on failure.
+ */
 static float parseFloat(const std::string& s, const std::string& key) {
     auto pos = s.find("\"" + key + "\"");
     if (pos == std::string::npos) return 0.f;
@@ -14,6 +24,12 @@ static float parseFloat(const std::string& s, const std::string& key) {
     return std::stof(s.substr(colon + 1));
 }
 
+/**
+ * @brief Extracts an integer value from a flat JSON string.
+ * @param s   JSON string.
+ * @param key Key to look up.
+ * @return Parsed integer, or 0 on failure.
+ */
 static int parseInt(const std::string& s, const std::string& key) {
     auto pos = s.find("\"" + key + "\"");
     if (pos == std::string::npos) return 0;
@@ -21,6 +37,12 @@ static int parseInt(const std::string& s, const std::string& key) {
     return std::stoi(s.substr(colon + 1));
 }
 
+/**
+ * @brief Extracts a string value from a flat JSON string.
+ * @param s   JSON string.
+ * @param key Key to look up.
+ * @return Parsed string value, or empty string on failure.
+ */
 static std::string parseString(const std::string& s, const std::string& key) {
     auto pos = s.find("\"" + key + "\"");
     if (pos == std::string::npos) return "";
@@ -36,7 +58,7 @@ RoadNetwork::RoadNetwork() {}
 bool RoadNetwork::load(const std::string& jsonPath) {
     std::ifstream f(jsonPath);
     if (!f.is_open()) {
-        printf("[RoadNetwork] Fichier non trouvé : %s\n", jsonPath.c_str());
+        printf("[RoadNetwork] File not found: %s\n", jsonPath.c_str());
         return false;
     }
 
@@ -99,12 +121,13 @@ bool RoadNetwork::parseJson(const std::string& content) {
         pos = end + 1;
     }
 
-    printf("[RoadNetwork] Chargé : %zu nœuds, %zu segments\n",
+    printf("[RoadNetwork] Loaded: %zu nodes, %zu segments\n",
            m_nodes.size(), m_segments.size());
     return true;
 }
 
-// ── Courbes organiques ────────────────────────────────────────────────────────
+// ── Bezier curve generation ────────────────────────────────────────────────────
+
 void RoadSegment::computeCurve(const RoadNode& from, const RoadNode& to) {
     curvePoints.clear();
 
@@ -112,17 +135,17 @@ void RoadSegment::computeCurve(const RoadNode& from, const RoadNode& to) {
     float dz = to.z - from.z;
     float len = std::sqrt(dx*dx + dz*dz);
 
-    // Point de contrôle Bezier décalé perpendiculairement
+    // Bezier control point offset perpendicularly from the midpoint
     float offset = len * 0.3f;
-    float nx = -dz / len;  // normale
+    float nx = -dz / len;  // normal direction
     float nz =  dx / len;
 
-    // Décalage pseudo-aléatoire basé sur les IDs
+    // Alternate offset sign based on node IDs for organic variety
     float sign = ((from.id + to.id) % 2 == 0) ? 1.f : -1.f;
     float cpx = (from.x + to.x) * 0.5f + nx * offset * sign;
     float cpz = (from.z + to.z) * 0.5f + nz * offset * sign;
 
-    // Génère 20 points le long de la courbe de Bezier quadratique
+    // Sample 20 points along the quadratic Bezier curve
     int steps = 20;
     for (int i = 0; i <= steps; i++) {
         float t  = (float)i / steps;
@@ -135,7 +158,8 @@ void RoadSegment::computeCurve(const RoadNode& from, const RoadNode& to) {
     m_length = len;
 }
 
-// ── Spawn dynamique ───────────────────────────────────────────────────────────
+// ── Dynamic spawning ──────────────────────────────────────────────────────────
+
 void RoadNetwork::spawnRoundabout(float x, float z) {
     RoadNode node;
     node.id     = nextId();
@@ -145,7 +169,7 @@ void RoadNetwork::spawnRoundabout(float x, float z) {
     node.radius = 22.f;
     m_nodes.push_back(node);
 
-    // Connecte au nœud le plus proche
+    // Connect to the nearest existing node
     float minDist = 9999.f;
     int   nearest = 0;
     for (int i = 0; i < (int)m_nodes.size()-1; i++) {
@@ -163,7 +187,7 @@ void RoadNetwork::spawnRoundabout(float x, float z) {
     seg.computeCurve(m_nodes[nearest], node);
     m_segments.push_back(seg);
 
-    printf("[RoadNetwork] Rond-point spawné en (%.1f, %.1f)\n", x, z);
+    printf("[RoadNetwork] Roundabout spawned at (%.1f, %.1f)\n", x, z);
 }
 
 void RoadNetwork::spawnIntersection(float x, float z) {
@@ -174,7 +198,7 @@ void RoadNetwork::spawnIntersection(float x, float z) {
     node.z    = z;
     m_nodes.push_back(node);
 
-    // Connecte aux 2 nœuds les plus proches
+    // Connect to the 2 nearest existing nodes
     std::vector<std::pair<float,int>> dists;
     for (int i = 0; i < (int)m_nodes.size()-1; i++) {
         float dx = m_nodes[i].x - x;
@@ -193,11 +217,11 @@ void RoadNetwork::spawnIntersection(float x, float z) {
         m_segments.push_back(seg);
     }
 
-    printf("[RoadNetwork] Intersection spawnée en (%.1f, %.1f)\n", x, z);
+    printf("[RoadNetwork] Intersection spawned at (%.1f, %.1f)\n", x, z);
 }
 
 void RoadNetwork::injectDetectedNode(float x, float z, NodeType type, float confidence) {
-    // Interface future YOLO
+    // Future YOLO interface
     RoadNode node;
     node.id                 = nextId();
     node.type               = type;

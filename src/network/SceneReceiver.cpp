@@ -1,14 +1,17 @@
+/**
+ * @file SceneReceiver.cpp
+ * @brief Implementation of the UDP receiver and minimal JSON parser.
+ */
+
 #include "SceneReceiver.h"
 #include <cstdio>
 #include <cstring>
 #include <cmath>
 #include <algorithm>
 #include <sstream>
-#include <errno.h> 
+#include <errno.h>
 #include <sys/time.h>
 #include <fcntl.h>
-
-// ─── SceneReceiver.cpp ────────────────────────────────────────────────────────
 
 SceneReceiver::SceneReceiver() {}
 
@@ -17,7 +20,7 @@ SceneReceiver::~SceneReceiver() { close(); }
 bool SceneReceiver::init(const std::string& host, int port) {
     m_socket = socket(AF_INET, SOCK_DGRAM, 0);
     if (m_socket < 0) {
-        printf("[SceneReceiver] Erreur création socket\n");
+        printf("[SceneReceiver] Socket creation error\n");
         return false;
     }
 
@@ -25,11 +28,11 @@ bool SceneReceiver::init(const std::string& host, int port) {
     setsockopt(m_socket, SOL_SOCKET, SO_REUSEPORT, &reuse, sizeof(reuse));
     setsockopt(m_socket, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));
 
-    // Non-bloquant
+    // Set non-blocking mode
 #ifndef _WIN32
     int flags = fcntl(m_socket, F_GETFL, 0);
     fcntl(m_socket, F_SETFL, flags | O_NONBLOCK);
-    printf("[SceneReceiver] Socket non-bloquant : flags=%d\n", fcntl(m_socket, F_GETFL, 0));
+    printf("[SceneReceiver] Non-blocking socket: flags=%d\n", fcntl(m_socket, F_GETFL, 0));
 #endif
 
     struct sockaddr_in addr{};
@@ -38,15 +41,14 @@ bool SceneReceiver::init(const std::string& host, int port) {
     addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
     if (bind(m_socket, (struct sockaddr*)&addr, sizeof(addr)) < 0) {
-        printf("[SceneReceiver] Erreur bind sur port %d\n", port);
+        printf("[SceneReceiver] Bind error on port %d\n", port);
         return false;
     }
 
-    printf("[SceneReceiver] Écoute UDP sur %s:%d\n", host.c_str(), port);
+    printf("[SceneReceiver] Listening on UDP %s:%d\n", host.c_str(), port);
     return true;
 }
 
-// ── Poll — appelé chaque frame ────────────────────────────────────────────────
 void SceneReceiver::poll(float dt) {
     if (m_socket < 0) return;
 
@@ -61,13 +63,14 @@ void SceneReceiver::poll(float dt) {
 
     if (n > 0) {
         buf[n] = '\0';
-        printf("[SceneReceiver] Paquet recu : %d bytes\n", n);
+        printf("[SceneReceiver] Packet received: %d bytes\n", n);
         parsePacket(std::string(buf, n));
         m_packetCount++;
     }
 }
 
-// ── Parser JSON minimal ───────────────────────────────────────────────────────
+// ── Minimal JSON parser ───────────────────────────────────────────────────────
+
 std::string SceneReceiver::extractString(const std::string& json,
                                           const std::string& key) {
     auto pos = json.find("\"" + key + "\"");
@@ -102,7 +105,7 @@ int SceneReceiver::extractInt(const std::string& json,
 void SceneReceiver::parsePacket(const std::string& json) {
     m_lastFrame = extractInt(json, "frame");
 
-    // Ego motion
+    // Ego motion block
     auto egoStart = json.find("\"ego\"");
     if (egoStart != std::string::npos) {
         auto egoEnd = json.find('}', egoStart);
@@ -111,9 +114,9 @@ void SceneReceiver::parsePacket(const std::string& json) {
         m_egoHeadingDelta = extractFloat(egoBlock, "heading_delta");
     }
 
-    float ts    = extractFloat(json, "timestamp");
+    float ts = extractFloat(json, "timestamp");
 
-    // Trouve le tableau "objects"
+    // Find the "objects" array
     auto objStart = json.find("\"objects\"");
     if (objStart == std::string::npos) return;
 
@@ -123,7 +126,7 @@ void SceneReceiver::parsePacket(const std::string& json) {
 
     std::string arr = json.substr(arrStart + 1, arrEnd - arrStart - 1);
 
-    // Parse chaque objet { ... }
+    // Parse each { ... } object block
     std::vector<DetectedObject> newObjects;
     size_t pos = 0;
 
@@ -141,7 +144,7 @@ void SceneReceiver::parsePacket(const std::string& json) {
         det.heading    = extractFloat(obj, "heading");
         det.confidence = extractFloat(obj, "confidence");
         det.distance   = extractFloat(obj, "distance");
-        det.trackId = extractInt(obj, "id");
+        det.trackId    = extractInt(obj, "id");
         det.frame      = m_lastFrame;
         det.timestamp  = ts;
         det.ttl        = 1.5f;
@@ -152,7 +155,7 @@ void SceneReceiver::parsePacket(const std::string& json) {
         pos = end + 1;
     }
 
-    // Fusionne avec les objets existants (évite le flickering)
+    // Merge with existing objects to avoid flickering
     for (auto& newObj : newObjects) {
         bool found = false;
         for (auto& existing : m_objects) {
@@ -160,9 +163,9 @@ void SceneReceiver::parsePacket(const std::string& json) {
             float dz = existing.z - newObj.z;
             float dist = std::sqrt(dx*dx + dz*dz);
 
-            // Même objet si même classe et distance < 5m
+            // Same object if same class and distance < 5 m
             if (existing.cls == newObj.cls && dist < 5.f) {
-                // Smooth update
+                // Smooth position update
                 existing.x          = existing.x * 0.3f + newObj.x * 0.7f;
                 existing.z          = existing.z * 0.3f + newObj.z * 0.7f;
                 existing.confidence = newObj.confidence;
@@ -176,7 +179,6 @@ void SceneReceiver::parsePacket(const std::string& json) {
     }
 }
 
-// ── TTL — supprime les objets expirés ────────────────────────────────────────
 void SceneReceiver::updateTTL(float dt) {
     for (auto& obj : m_objects)
         obj.ttl -= dt;
