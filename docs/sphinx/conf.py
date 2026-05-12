@@ -21,6 +21,7 @@ extensions = [
     "sphinx.ext.napoleon",      # Google-style docstring parser
     "sphinx.ext.viewcode",      # adds [source] links next to documented items
     "sphinx.ext.intersphinx",   # cross-references to Python stdlib docs
+    "rst2pdf.pdfbuilder",       # enables: sphinx-build -b pdf
 ]
 
 # ── Napoleon (Google-style docstring) settings ────────────────────────────────

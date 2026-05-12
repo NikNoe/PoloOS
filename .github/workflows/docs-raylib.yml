@@ -6,22 +6,91 @@ on:
   workflow_dispatch:
 
 jobs:
-  doxygen:
+  build-docs:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write   # needed for git push
+      pages: write
+      id-token: write
+
     steps:
-      - name: Checkout
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout raylib-proto
         uses: actions/checkout@v4
+        with:
+          ref: raylib-proto
+          # Full history lets git push work without --allow-unrelated-histories
+          fetch-depth: 0
 
-      - name: Install Doxygen + Graphviz
-        run: sudo apt-get install -y doxygen graphviz
+      # ── 2. System dependencies ───────────────────────────────────────────────
+      - name: Install Doxygen, Graphviz and TeX Live
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            doxygen \
+            graphviz \
+            texlive-full
 
-      - name: Generate docs
+      # ── 3. Python dependencies (Sphinx + rst2pdf) ─────────────────────────
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Sphinx dependencies
+        run: pip install -r docs/sphinx/requirements-sphinx.txt
+
+      # ════════════════════════════════════════════════════════════════════════
+      # DOXYGEN PDF
+      # LATEX_OUTPUT = ../latex  +  OUTPUT_DIRECTORY = docs/
+      # → Doxygen appends the two paths → LaTeX files land at ./latex/
+      # ════════════════════════════════════════════════════════════════════════
+
+      - name: Generate Doxygen (HTML + LaTeX)
         run: doxygen docs/Doxyfile
 
-      - name: Deploy to GitHub Pages
+      - name: Compile LaTeX → refman.pdf
+        run: make -C latex
+
+      - name: Publish Doxygen PDF
+        run: |
+          rm -f docs/PoloOS-Raylib.pdf
+          cp latex/refman.pdf docs/PoloOS-Raylib.pdf
+
+      # ════════════════════════════════════════════════════════════════════════
+      # SPHINX PDF
+      # Source dir : docs/sphinx  (where conf.py lives)
+      # Builder    : pdf  (provided by rst2pdf via sphinx.ext.rst2pdf.pdfbuilder)
+      # Output dir : docs/sphinx/_build/pdf
+      # ════════════════════════════════════════════════════════════════════════
+
+      - name: Generate Sphinx PDF
+        run: |
+          sphinx-build -b pdf docs/sphinx docs/sphinx/_build/pdf
+
+      - name: Publish Sphinx PDF
+        run: |
+          rm -f docs/PoloOS-YOLO.pdf
+          # rst2pdf names the output after master_doc (index) → index.pdf
+          cp docs/sphinx/_build/pdf/index.pdf docs/PoloOS-YOLO.pdf
+
+      # ── 4. Commit both PDFs back to raylib-proto ─────────────────────────
+      - name: Commit and push generated PDFs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/PoloOS-Raylib.pdf docs/PoloOS-YOLO.pdf
+          # Exit cleanly when there is nothing new to commit
+          git diff --cached --quiet && echo "No changes to commit." && exit 0
+          git commit -m "docs: regenerate Doxygen and Sphinx PDFs"
+          git push origin raylib-proto
+
+      # ── 5. Deploy Doxygen HTML to GitHub Pages ───────────────────────────
+      - name: Deploy Doxygen HTML to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/html
-          destination_dir: raylib   # ← dispo sur /PoloOS/raylib/
+          destination_dir: raylib

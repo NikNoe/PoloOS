@@ -18,5 +18,8 @@ furo>=2024.1.29
 # Type-hint rendering in autodoc descriptions
 sphinx-autodoc-typehints>=2.2,<3
 
+# PDF output via sphinx-build -b pdf (provides the 'pdf' builder)
+rst2pdf>=0.102
+
 # Optional: live-reload server for local development
 sphinx-autobuild>=2024.2.4
