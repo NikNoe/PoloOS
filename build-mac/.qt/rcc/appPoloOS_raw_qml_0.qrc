@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="/qt/qml/PoloOS/">
+    <file alias="qml/Main.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/Main.qml</file>
+    <file alias="qml/vehicle/Polo.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/vehicle/Polo.qml</file>
+    <file alias="qml/vehicle/CockpitWindow.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/vehicle/CockpitWindow.qml</file>
+    <file alias="qml/components/DashboardIcon.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/DashboardIcon.qml</file>
+    <file alias="qml/components/VitalsItem.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/VitalsItem.qml</file>
+    <file alias="qml/pages/EnginePage.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/EnginePage.qml</file>
+    <file alias="qml/components/EngineLive.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/EngineLive.qml</file>
+    <file alias="qml/pages/EnergyPage.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/EnergyPage.qml</file>
+    <file alias="qml/pages/AboutPage.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/AboutPage.qml</file>
+    <file alias="qml/pages/BodyPage.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/BodyPage.qml</file>
+    <file alias="qml/pages/DiagnosticsPage.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/DiagnosticsPage.qml</file>
+    <file alias="qml/pages/SettingsPage.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/SettingsPage.qml</file>
+    <file alias="qml/pages/ChassisPage.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/ChassisPage.qml</file>
+    <file alias="qml/pages/MapPage.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/MapPage.qml</file>
+    <file alias="qml/components/TempCard.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/TempCard.qml</file>
+    <file alias="qml/components/BusStatusCard.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/BusStatusCard.qml</file>
+    <file alias="qml/components/EcuTag.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/EcuTag.qml</file>
+    <file alias="qml/components/EngineerRow.qml">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/EngineerRow.qml</file>
+  </qresource>
+</RCC>
+

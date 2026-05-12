@@ -1,0 +1,23 @@
+module PoloOS
+typeinfo appPoloOS.qmltypes
+prefer :/qt/qml/PoloOS/
+Main 1.0 qml/Main.qml
+Polo 1.0 qml/vehicle/Polo.qml
+CockpitWindow 1.0 qml/vehicle/CockpitWindow.qml
+DashboardIcon 1.0 qml/components/DashboardIcon.qml
+VitalsItem 1.0 qml/components/VitalsItem.qml
+EnginePage 1.0 qml/pages/EnginePage.qml
+EngineLive 1.0 qml/components/EngineLive.qml
+EnergyPage 1.0 qml/pages/EnergyPage.qml
+AboutPage 1.0 qml/pages/AboutPage.qml
+BodyPage 1.0 qml/pages/BodyPage.qml
+DiagnosticsPage 1.0 qml/pages/DiagnosticsPage.qml
+SettingsPage 1.0 qml/pages/SettingsPage.qml
+ChassisPage 1.0 qml/pages/ChassisPage.qml
+MapPage 1.0 qml/pages/MapPage.qml
+TempCard 1.0 qml/components/TempCard.qml
+BusStatusCard 1.0 qml/components/BusStatusCard.qml
+EcuTag 1.0 qml/components/EcuTag.qml
+EngineerRow 1.0 qml/components/EngineerRow.qml
+depends QtQuick
+

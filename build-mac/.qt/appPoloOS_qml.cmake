@@ -1,0 +1,43 @@
+
+set(target "appPoloOS")
+set(working_dir "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS")
+set(src_and_dest_list
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/Main.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/Main.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/vehicle/Polo.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/vehicle/Polo.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/vehicle/CockpitWindow.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/vehicle/CockpitWindow.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/DashboardIcon.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/components/DashboardIcon.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/VitalsItem.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/components/VitalsItem.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/EnginePage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/pages/EnginePage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/EngineLive.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/components/EngineLive.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/EnergyPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/pages/EnergyPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/AboutPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/pages/AboutPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/BodyPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/pages/BodyPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/DiagnosticsPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/pages/DiagnosticsPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/SettingsPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/pages/SettingsPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/ChassisPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/pages/ChassisPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/pages/MapPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/pages/MapPage.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/TempCard.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/components/TempCard.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/BusStatusCard.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/components/BusStatusCard.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/EcuTag.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/components/EcuTag.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/qml/components/EngineerRow.qml"
+    "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/qml/PoloOS/qml/components/EngineerRow.qml"
+
+)
+set(timestamp_file "/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/.qt/appPoloOS_qml.txt")

@@ -1,0 +1,34 @@
+<RCC>
+  <qresource prefix="/qt/qml/PoloOS/">
+    <file alias="assets/icons/icons.qrc">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/icons/icons.qrc</file>
+    <file alias="assets/meshes/chassis_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/chassis_mesh.mesh</file>
+    <file alias="assets/meshes/imvlm_lighting_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/imvlm_lighting_mesh.mesh</file>
+    <file alias="assets/meshes/interior_And_engine_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/interior_And_engine_mesh.mesh</file>
+    <file alias="assets/meshes/glass_interior_001_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/glass_interior_001_mesh.mesh</file>
+    <file alias="assets/meshes/taillight_red_glass_001_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/taillight_red_glass_001_mesh.mesh</file>
+    <file alias="assets/meshes/bonnet_ok_001_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/bonnet_ok_001_mesh.mesh</file>
+    <file alias="assets/meshes/boot_ok_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/boot_ok_mesh.mesh</file>
+    <file alias="assets/meshes/boot_ok_003_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/boot_ok_003_mesh.mesh</file>
+    <file alias="assets/meshes/bumper_front_ok_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/bumper_front_ok_mesh.mesh</file>
+    <file alias="assets/meshes/bump_rear_ok_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/bump_rear_ok_mesh.mesh</file>
+    <file alias="assets/meshes/door_lr_ok_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/door_lr_ok_mesh.mesh</file>
+    <file alias="assets/meshes/door_lf_ok_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/door_lf_ok_mesh.mesh</file>
+    <file alias="assets/meshes/door_lf_ok_003_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/door_lf_ok_003_mesh.mesh</file>
+    <file alias="assets/meshes/wing_lf_ok_001_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/wing_lf_ok_001_mesh.mesh</file>
+    <file alias="assets/meshes/wing_rf_ok_001_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/wing_rf_ok_001_mesh.mesh</file>
+    <file alias="assets/meshes/door_rf_ok_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/door_rf_ok_mesh.mesh</file>
+    <file alias="assets/meshes/door_rf_ok_003_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/door_rf_ok_003_mesh.mesh</file>
+    <file alias="assets/meshes/door_rr_ok_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/door_rr_ok_mesh.mesh</file>
+    <file alias="assets/meshes/windscreen_ok_001_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/windscreen_ok_001_mesh.mesh</file>
+    <file alias="assets/meshes/steering_ok_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/steering_ok_mesh.mesh</file>
+    <file alias="assets/meshes/speedook_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/speedook_mesh.mesh</file>
+    <file alias="assets/meshes/tahook_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/tahook_mesh.mesh</file>
+    <file alias="assets/meshes/vent_001_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/vent_001_mesh.mesh</file>
+    <file alias="assets/meshes/chassis_003_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/chassis_003_mesh.mesh</file>
+    <file alias="assets/meshes/wheel_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/wheel_mesh.mesh</file>
+    <file alias="assets/meshes/wheel_001_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/wheel_001_mesh.mesh</file>
+    <file alias="assets/meshes/wheel_002_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/wheel_002_mesh.mesh</file>
+    <file alias="assets/meshes/wheel_003_mesh.mesh">/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/assets/meshes/wheel_003_mesh.mesh</file>
+  </qresource>
+</RCC>
+

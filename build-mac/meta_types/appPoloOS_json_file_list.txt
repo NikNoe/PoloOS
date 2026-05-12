@@ -1,0 +1,2 @@
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/appPoloOS_autogen/include/../7Q42T34KNJ/moc_CanReader.cpp.json
+/Volumes/DJUMData/Tecnodjum/poloTDI/PoloOS/build-mac/appPoloOS_autogen/include/../7Q42T34KNJ/moc_canhandler.cpp.json
