@@ -16,7 +16,7 @@ void DayNightCycle::update(float dt) {
     m_timeOfDay += dt * m_timeScale / 3600.f;
     if (m_timeOfDay >= 24.f) m_timeOfDay -= 24.f;
 
-    // Sun angle: 0h = -90°, 6h = 0°, 12h = 90°, 18h = 180°, 24h = 270°
+    // Sun angle: 0h = -90 deg, 6h = 0 deg, 12h = 90 deg, 18h = 180 deg, 24h = 270 deg
     m_sunAngle = (m_timeOfDay / 24.f) * 360.f - 90.f;
 
     updatePhase();

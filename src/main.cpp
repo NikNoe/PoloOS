@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @brief PoloOS Raylib prototype — main loop.
+ * @brief PoloOS Raylib prototype -- main loop.
  *
  * Initialises all subsystems (car, renderer, road network, camera, day/night,
  * debug panel, UDP receiver and traffic agents) and runs the 60 fps game loop.
@@ -23,7 +23,7 @@
 int main()
 {
     const int SW = 1280, SH = 720;
-    InitWindow(SW, SH, "PoloOS — Route 3D (raylib-proto)");
+    InitWindow(SW, SH, "PoloOS -- Route 3D (raylib-proto)");
     SetTargetFPS(60);
     SetMouseCursor(MOUSE_CURSOR_DEFAULT);
     std::vector<TrafficAgent> agents;
@@ -82,7 +82,7 @@ int main()
 
         // Merge incoming detections into the agent list
         for (const auto& det : receiver.objects()) {
-            // Convert relative camera coords → world coords using ego heading
+            // Convert relative camera coords -> world coords using ego heading
             float rad = car.heading * DEG2RAD;
             float wx = car.x + det.x * std::cos(rad) - det.z * std::sin(rad);
             float wz = car.z + det.x * std::sin(rad) + det.z * std::cos(rad);
@@ -93,7 +93,7 @@ int main()
 
             bool found = false;
             for (auto& agent : agents) {
-                // Match by unique track ID — more reliable than distance
+                // Match by unique track ID -- more reliable than distance
                 if (agent.trackId() == worldDet.trackId) {
                     agent.update(worldDet, dt);
                     found = true;
@@ -125,7 +125,7 @@ int main()
                 agents[0].ttl());
         }
 
-        // Temporary UDP packet log — remove after confirming pipeline
+        // Temporary UDP packet log -- remove after confirming pipeline
         static int lastCount = 0;
         if (receiver.packetCount() != lastCount) {
             lastCount = receiver.packetCount();

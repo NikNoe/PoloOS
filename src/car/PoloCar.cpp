@@ -24,7 +24,7 @@ static float lerp(float a, float b, float t) {
 
 void PoloCar::applyInput(bool accel, bool brake, bool left, bool right, float dt)
 {
-    // ── Acceleration / braking ────────────────────────────────────────────────
+    // -- Acceleration / braking ------------------------------------------------
     const float maxSpeed    =  120.f;  // km/h
     const float maxReverse  =  -20.f;
     const float accelRate   =   60.f;  // km/h per second
@@ -46,7 +46,7 @@ void PoloCar::applyInput(bool accel, bool brake, bool left, bool right, float dt
 
     speed = std::clamp(speed, maxReverse, maxSpeed);
 
-    // ── Steering ──────────────────────────────────────────────────────────────
+    // -- Steering --------------------------------------------------------------
     const float maxSteer = 35.f;   // degrees
     const float steerRate = 90.f;
 
@@ -60,7 +60,7 @@ void PoloCar::applyInput(bool accel, bool brake, bool left, bool right, float dt
 
 void PoloCar::update(float dt)
 {
-    // ── Movement ──────────────────────────────────────────────────────────────
+    // -- Movement --------------------------------------------------------------
     if (std::abs(speed) > 0.1f) {
         float turnRadius = 4.5f; // Polo wheelbase in metres
         float angularVel = (speedMs() / turnRadius)
@@ -74,11 +74,11 @@ void PoloCar::update(float dt)
         z += std::cos(rad) * speedMs() * dt;
     }
 
-    // ── Wheel rotation ────────────────────────────────────────────────────────
-    // Polo tyre circumference ~185cm → radius ~0.295m
+    // -- Wheel rotation --------------------------------------------------------
+    // Polo tyre circumference ~185cm -> radius ~0.295m
     wheelRoll += (speedMs() / 0.295f) * dt * (180.f / M_PI);
 
-    // ── Smooth door / trunk / hood animations ─────────────────────────────────
+    // -- Smooth door / trunk / hood animations ---------------------------------
     const float doorSpeed  = 5.f;
     const float trunkSpeed = 3.f;
     const float hoodSpeed  = 3.f;
@@ -90,7 +90,7 @@ void PoloCar::update(float dt)
     trunkAngle  = lerp(trunkAngle,  trunk  ? 70.f : 0.f, dt * trunkSpeed);
     hoodAngle   = lerp(hoodAngle,   hood   ? 60.f : 0.f, dt * hoodSpeed);
 
-    // ── Blinker timer ─────────────────────────────────────────────────────────
+    // -- Blinker timer ---------------------------------------------------------
     if (leftBlinker || rightBlinker || hazard) {
         blinkerTimer += dt;
         if (blinkerTimer >= 0.5f) {

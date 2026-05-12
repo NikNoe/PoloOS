@@ -53,7 +53,7 @@ void TrafficAgent::update(const DetectedObject& det, float dt) {
     m_ttl        = det.ttl;
 }
 
-// ── Class colour lookup ───────────────────────────────────────────────────────
+// -- Class colour lookup -------------------------------------------------------
 
 Color TrafficAgent::classColor() const {
     switch (m_cls) {
@@ -97,7 +97,7 @@ float TrafficAgent::classRadius() const {
     }
 }
 
-// ── 3D rendering ──────────────────────────────────────────────────────────────
+// -- 3D rendering --------------------------------------------------------------
 
 void TrafficAgent::draw() const {
     if (!isAlive()) return;
@@ -111,7 +111,7 @@ void TrafficAgent::draw() const {
     float fade = m_ttl / 1.5f;
     col.a = (unsigned char)(col.a * fade);
 
-    // Main body — geometry varies by class
+    // Main body -- geometry varies by class
     if (m_cls == ObjectClass::PEDESTRIAN) {
         // Simplified capsule: cylinder + head sphere
         DrawModelEx(s_personModel, pos, {0,1,0}, 0.f, {1,1,1}, col);
@@ -128,7 +128,7 @@ void TrafficAgent::draw() const {
                      { 60, 60, 60, (unsigned char)(200 * fade) });
         DrawCube({ pos.x, 2.1f, pos.z }, 0.6f, 0.6f, 0.05f, col);
     } else {
-        // Vehicle — oriented bounding box
+        // Vehicle -- oriented bounding box
         float rad = m_heading * DEG2RAD;
         Vector3 center = { pos.x, h * 0.5f, pos.z };
         DrawModelEx(

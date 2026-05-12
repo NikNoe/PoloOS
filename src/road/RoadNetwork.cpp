@@ -9,7 +9,7 @@
 #include <cmath>
 #include <cstdio>
 
-// ── Minimal JSON helpers — no external dependency ─────────────────────────────
+// -- Minimal JSON helpers -- no external dependency -----------------------------
 
 /**
  * @brief Extracts a float value from a flat JSON string.
@@ -51,7 +51,7 @@ static std::string parseString(const std::string& s, const std::string& key) {
     return s.substr(q1 + 1, q2 - q1 - 1);
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// -----------------------------------------------------------------------------
 
 RoadNetwork::RoadNetwork() {}
 
@@ -73,7 +73,7 @@ bool RoadNetwork::parseJson(const std::string& content) {
     m_nodes.clear();
     m_segments.clear();
 
-    // ── Parse nodes ───────────────────────────────────────────────────────────
+    // -- Parse nodes -----------------------------------------------------------
     auto nodesStart = content.find("\"nodes\"");
     auto nodesEnd   = content.find("\"segments\"");
     std::string nodesBlock = content.substr(nodesStart, nodesEnd - nodesStart);
@@ -98,7 +98,7 @@ bool RoadNetwork::parseJson(const std::string& content) {
         pos = end + 1;
     }
 
-    // ── Parse segments ────────────────────────────────────────────────────────
+    // -- Parse segments --------------------------------------------------------
     auto segStart = content.find("\"segments\"");
     std::string segBlock = content.substr(segStart);
 
@@ -126,7 +126,7 @@ bool RoadNetwork::parseJson(const std::string& content) {
     return true;
 }
 
-// ── Bezier curve generation ────────────────────────────────────────────────────
+// -- Bezier curve generation ----------------------------------------------------
 
 void RoadSegment::computeCurve(const RoadNode& from, const RoadNode& to) {
     curvePoints.clear();
@@ -158,7 +158,7 @@ void RoadSegment::computeCurve(const RoadNode& from, const RoadNode& to) {
     m_length = len;
 }
 
-// ── Dynamic spawning ──────────────────────────────────────────────────────────
+// -- Dynamic spawning ----------------------------------------------------------
 
 void RoadNetwork::spawnRoundabout(float x, float z) {
     RoadNode node;

@@ -21,8 +21,8 @@ public:
 
     /**
      * @brief Draws the complete road scene for the current frame.
-     * @param carX Car world X position (metres) — used to centre the scene.
-     * @param carZ Car world Z position (metres) — used to scroll markings and buildings.
+     * @param carX Car world X position (metres) -- used to centre the scene.
+     * @param carZ Car world Z position (metres) -- used to scroll markings and buildings.
      */
     void draw(float carX, float carZ);
 
@@ -42,7 +42,7 @@ private:
     void drawMarkings(float cx, float cz);
 
     /**
-     * @brief Draws the static starfield (not used — ClearBackground handles the sky).
+     * @brief Draws the static starfield (not used -- ClearBackground handles the sky).
      */
     void drawGrid(float cx, float cz);
 

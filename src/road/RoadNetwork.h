@@ -72,7 +72,7 @@ public:
      * @param x          World X position (metres).
      * @param z          World Z position (metres).
      * @param type       Semantic node type.
-     * @param confidence Detection confidence (0.0–1.0).
+     * @param confidence Detection confidence (0.0-1.0).
      */
     void injectDetectedNode(float x, float z, NodeType type, float confidence);
 

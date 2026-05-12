@@ -29,5 +29,5 @@ struct RoadNode {
     float    radius = 0.f;             ///< Roundabout radius (metres, 0 for non-roundabouts).
 
     bool     detectedByCamera = false; ///< True if this node was detected via camera (future YOLO use).
-    float    confidence       = 1.f;   ///< Detection confidence (0.0–1.0).
+    float    confidence       = 1.f;   ///< Detection confidence (0.0-1.0).
 };

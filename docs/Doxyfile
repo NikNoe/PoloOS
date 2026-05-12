@@ -14,3 +14,6 @@ CALL_GRAPH          = YES
 CALLER_GRAPH        = YES
 HTML_EXTRA_STYLESHEET =          # laisse vide = thème Doxygen par défaut
 QUIET               = YES
+OUTPUT_ENCODING        = UTF-8
+LATEX_EXTRA_PACKAGES   = inputenc
+LATEX_HEADER           =

@@ -57,7 +57,7 @@ private:
     float m_panelY    = 20.f;  ///< Panel top edge Y (pixels).
     float m_panelW    = 260.f; ///< Panel width (pixels).
 
-    // ── Section draw helpers ──────────────────────────────────────────────────
+    // -- Section draw helpers --------------------------------------------------
 
     /**
      * @brief Draws the panel title bar.
@@ -101,7 +101,7 @@ private:
      */
     void drawSpeedometer(const PoloCar& car, int sw, int sh);
 
-    // ── Widget helpers ────────────────────────────────────────────────────────
+    // -- Widget helpers --------------------------------------------------------
 
     /**
      * @brief Draws a clickable button and returns true on click.

@@ -36,7 +36,7 @@ void DebugPanel::update(PoloCar& car, DayNightCycle& day)
     int px = (int)m_panelX;
     int pw = (int)m_panelW;
 
-    // ── Quick time preset buttons ─────────────────────────────────────────────
+    // -- Quick time preset buttons ---------------------------------------------
     if (click) {
         if (CheckCollisionPointRec(mouse, { m_panelX+10, 90, 55, 20 }))
             day.setTimeOfDay(6.f);   // Dawn
@@ -76,7 +76,7 @@ void DebugPanel::update(PoloCar& car, DayNightCycle& day)
             car.hood = !car.hood;
     }
 
-    // ── Time-of-day slider ────────────────────────────────────────────────────
+    // -- Time-of-day slider ----------------------------------------------------
     Rectangle sliderArea = { m_panelX+10, 118, m_panelW-20, 16 };
     if (IsMouseButtonDown(MOUSE_LEFT_BUTTON) &&
         CheckCollisionPointRec(mouse, sliderArea)) {
@@ -84,7 +84,7 @@ void DebugPanel::update(PoloCar& car, DayNightCycle& day)
         day.setTimeOfDay(Clamp(t * 24.f, 0.f, 24.f));
     }
 
-    // ── Simulation speed override ─────────────────────────────────────────────
+    // -- Simulation speed override ---------------------------------------------
     if (IsKeyDown(KEY_N)) day.setTimeScale(600.f);
     else                  day.setTimeScale(60.f);
 }
@@ -95,7 +95,7 @@ void DebugPanel::draw(const PoloCar& car, const DayNightCycle& day, int sw, int 
     drawSpeedometer(car, sw, sh);
 
     // Shortcut hint
-    DrawText("F1 — Debug Panel", sw - 180, sh - 24, 13, { 120,120,120,180 });
+    DrawText("F1 -- Debug Panel", sw - 180, sh - 24, 13, { 120,120,120,180 });
 
     if (!m_visible) return;
 
@@ -103,16 +103,16 @@ void DebugPanel::draw(const PoloCar& car, const DayNightCycle& day, int sw, int 
     int py = (int)m_panelY;
     int pw = (int)m_panelW;
 
-    // ── Panel background ──────────────────────────────────────────────────────
+    // -- Panel background ------------------------------------------------------
     DrawRectangle(px, py, pw, 400, BG);
     DrawRectangleLines(px, py, pw, 400, BORDER);
 
-    // ── Header ───────────────────────────────────────────────────────────────
+    // -- Header ---------------------------------------------------------------
     DrawRectangle(px, py, pw, 26, { 0, 180, 230, 60 });
-    DrawText("PoloOS — Debug Panel", px+8, py+6, FONT, HEAD_COL);
+    DrawText("PoloOS -- Debug Panel", px+8, py+6, FONT, HEAD_COL);
     DrawText("[F1]", px+pw-36, py+6, FONT, { 100,100,100,255 });
 
-    // ── Day / night section ───────────────────────────────────────────────────
+    // -- Day / night section ---------------------------------------------------
     int y = py + 36;
     DrawText("DAY / NIGHT", px+8, y, FONT, ACCENT);
     y += 18;
@@ -148,7 +148,7 @@ void DebugPanel::draw(const PoloCar& car, const DayNightCycle& day, int sw, int 
     DrawText("24h", px+10+(int)sliderW-18, y+18, 11, TEXT_COL);
     y += 38;
 
-    // ── Lighting section ──────────────────────────────────────────────────────
+    // -- Lighting section ------------------------------------------------------
     DrawText("LIGHTING", px+8, y, FONT, ACCENT);
     y += 18;
 
@@ -173,7 +173,7 @@ void DebugPanel::draw(const PoloCar& car, const DayNightCycle& day, int sw, int 
     DrawText(car.hazard ? "HAZARD LIGHTS  ON" : "HAZARD LIGHTS  --", px+18, y+4, 12, WHITE);
     y += 34;
 
-    // ── Doors section ─────────────────────────────────────────────────────────
+    // -- Doors section ---------------------------------------------------------
     DrawText("DOORS / BOOT", px+8, y, FONT, ACCENT);
     y += 18;
 
@@ -186,7 +186,7 @@ void DebugPanel::draw(const PoloCar& car, const DayNightCycle& day, int sw, int 
     toggleBtn(car.trunk ? "Boot  OPEN" : "Boot  --", car.trunk, px+10,  y);
     toggleBtn(car.hood  ? "Hood  OPEN" : "Hood  --", car.hood,  px+130, y);
 
-    // ── Footer hint ───────────────────────────────────────────────────────────
+    // -- Footer hint -----------------------------------------------------------
     DrawText("N = speed up time", px+8, py+385, 11, {80,80,80,255});
 }
 

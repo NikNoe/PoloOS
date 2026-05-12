@@ -69,7 +69,7 @@ void SceneReceiver::poll(float dt) {
     }
 }
 
-// ── Minimal JSON parser ───────────────────────────────────────────────────────
+// -- Minimal JSON parser -------------------------------------------------------
 
 std::string SceneReceiver::extractString(const std::string& json,
                                           const std::string& key) {

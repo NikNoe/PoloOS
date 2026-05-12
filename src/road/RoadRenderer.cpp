@@ -13,7 +13,7 @@
 
 RoadRenderer::RoadRenderer() {}
 
-// ── Day/night colour helpers ──────────────────────────────────────────────────
+// -- Day/night colour helpers --------------------------------------------------
 
 Color RoadRenderer::roadColor(const DayNightCycle& day) {
     float v = day.visibility();
@@ -33,7 +33,7 @@ Color RoadRenderer::sidewalkColor(const DayNightCycle& day) {
     return { b, b, b, 255 };
 }
 
-// ── Perpendicular offset helper ───────────────────────────────────────────────
+// -- Perpendicular offset helper -----------------------------------------------
 
 Vector3 RoadRenderer::perpendicular(Vector3 a, Vector3 b, float offset) {
     float dx = b.x - a.x;
@@ -43,7 +43,7 @@ Vector3 RoadRenderer::perpendicular(Vector3 a, Vector3 b, float offset) {
     return { a.x - dz/len * offset, a.y, a.z + dx/len * offset };
 }
 
-// ── Thick line via two triangles ──────────────────────────────────────────────
+// -- Thick line via two triangles ----------------------------------------------
 
 void RoadRenderer::drawThickLine(Vector3 a, Vector3 b, float width, Color col) {
     float dx = b.x - a.x;
@@ -63,7 +63,7 @@ void RoadRenderer::drawThickLine(Vector3 a, Vector3 b, float width, Color col) {
     DrawTriangle3D(b1, b2, a2, col);
 }
 
-// ── Main draw ─────────────────────────────────────────────────────────────────
+// -- Main draw -----------------------------------------------------------------
 
 void RoadRenderer::draw(const RoadNetwork& network, const DayNightCycle& day) {
     // Grass ground plane
@@ -83,7 +83,7 @@ void RoadRenderer::draw(const RoadNetwork& network, const DayNightCycle& day) {
     drawBuildings(network);
 }
 
-// ── Road segment ──────────────────────────────────────────────────────────────
+// -- Road segment --------------------------------------------------------------
 
 void RoadRenderer::drawSegment(const RoadSegment& seg,
                                 const RoadNetwork& net,
@@ -150,7 +150,7 @@ void RoadRenderer::drawSegment(const RoadSegment& seg,
     drawMarkings(seg, day);
 }
 
-// ── Road markings ─────────────────────────────────────────────────────────────
+// -- Road markings -------------------------------------------------------------
 
 void RoadRenderer::drawMarkings(const RoadSegment& seg, const DayNightCycle& day) {
     if (seg.curvePoints.size() < 2) return;
@@ -198,7 +198,7 @@ void RoadRenderer::drawMarkings(const RoadSegment& seg, const DayNightCycle& day
     }
 }
 
-// ── Roundabout ────────────────────────────────────────────────────────────────
+// -- Roundabout ----------------------------------------------------------------
 
 void RoadRenderer::drawRoundabout(const RoadNode& node, const DayNightCycle& day) {
     Vector3 center = { node.x, 0.f, node.z };
@@ -257,7 +257,7 @@ void RoadRenderer::drawRoundabout(const RoadNode& node, const DayNightCycle& day
     }
 }
 
-// ── Intersection ──────────────────────────────────────────────────────────────
+// -- Intersection --------------------------------------------------------------
 
 void RoadRenderer::drawIntersection(const RoadNode& node, const DayNightCycle& day) {
     Color rc = roadColor(day);
@@ -299,7 +299,7 @@ void RoadRenderer::drawIntersection(const RoadNode& node, const DayNightCycle& d
     }
 }
 
-// ── Buildings alongside roads ─────────────────────────────────────────────────
+// -- Buildings alongside roads -------------------------------------------------
 
 void RoadRenderer::drawBuildings(const RoadNetwork& net) {
     for (const auto& seg : net.segments()) {

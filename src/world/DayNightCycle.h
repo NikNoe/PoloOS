@@ -14,10 +14,10 @@
  * @brief Phase of the day, used for colour interpolation decisions.
  */
 enum class DayPhase {
-    DAWN,  ///< Sunrise transition (05:00–07:00).
-    DAY,   ///< Full daylight (07:00–19:00).
-    DUSK,  ///< Sunset transition (19:00–21:00).
-    NIGHT  ///< Night (21:00–05:00).
+    DAWN,  ///< Sunrise transition (05:00-07:00).
+    DAY,   ///< Full daylight (07:00-19:00).
+    DUSK,  ///< Sunset transition (19:00-21:00).
+    NIGHT  ///< Night (21:00-05:00).
 };
 
 /**
@@ -75,7 +75,7 @@ public:
 
     /**
      * @brief Returns the current sun position angle.
-     * @return Sun angle in degrees (0h = -90°, 6h = 0°, 12h = 90°).
+     * @return Sun angle in degrees (0h = -90 deg, 6h = 0 deg, 12h = 90 deg).
      */
     float      sunAngle()     const { return m_sunAngle; }
 
@@ -101,10 +101,10 @@ public:
     float visibility() const { return m_visibility; }
 
 private:
-    float     m_timeOfDay  = 8.f;   ///< Current simulated hour (0–24).
+    float     m_timeOfDay  = 8.f;   ///< Current simulated hour (0-24).
     float     m_timeScale  = 60.f;  ///< 1 real second = m_timeScale simulated seconds.
     float     m_sunAngle   = 0.f;   ///< Sun/moon position angle (degrees).
-    float     m_visibility = 1.f;   ///< Visibility factor (0–1).
+    float     m_visibility = 1.f;   ///< Visibility factor (0-1).
 
     DayPhase  m_phase      = DayPhase::DAY;              ///< Current phase.
     Color     m_ambient    = WHITE;                       ///< Ambient light colour.

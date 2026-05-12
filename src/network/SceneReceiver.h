@@ -6,7 +6,7 @@
  *
  * Receives JSON packets from detector.py, parses them into DetectedObject
  * instances, merges them with existing objects and manages their TTL.
- * Must be polled every Raylib frame — never blocks.
+ * Must be polled every Raylib frame -- never blocks.
  */
 
 #include "DetectedObject.h"
@@ -49,7 +49,7 @@ public:
     /**
      * @brief Reads one pending UDP datagram and updates the object list.
      *
-     * Non-blocking — returns immediately if no datagram is available.
+     * Non-blocking -- returns immediately if no datagram is available.
      * Also decrements TTL of all tracked objects and removes expired ones.
      *
      * @param dt Time step since the last frame (seconds).

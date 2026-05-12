@@ -56,7 +56,7 @@ public:
     /** @return Current heading estimate (degrees). */
     float heading()    const { return m_heading; }
 
-    /** @return Detection confidence (0.0–1.0). */
+    /** @return Detection confidence (0.0-1.0). */
     float confidence() const { return m_confidence; }
 
     /** @return Remaining time-to-live (seconds). */
@@ -74,7 +74,7 @@ public:
     /**
      * @brief Loads the shared mesh models (car box, person cylinder, generic box).
      *
-     * Idempotent — does nothing if models are already loaded.
+     * Idempotent -- does nothing if models are already loaded.
      */
     static void loadSharedModels();
 

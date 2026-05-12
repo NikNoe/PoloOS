@@ -4,7 +4,7 @@
  * @file DetectedObject.h
  * @brief Shared data structure between the YOLO detector (Python) and the 3D engine (Raylib).
  *
- * The layout matches the UDP socket JSON format exactly —
+ * The layout matches the UDP socket JSON format exactly --
  * no conversion is needed between the two processes.
  */
 
@@ -37,13 +37,13 @@ struct DetectedObject {
     float       x          = 0.f;   ///< Lateral world position (metres).
     float       z          = 0.f;   ///< Depth world position (metres).
     float       heading    = 0.f;   ///< Estimated heading (degrees).
-    float       confidence = 0.f;   ///< YOLO confidence score (0.0–1.0).
+    float       confidence = 0.f;   ///< YOLO confidence score (0.0-1.0).
     float       distance   = 0.f;   ///< Estimated distance from ego vehicle (metres).
     int         frame      = 0;     ///< Source frame number.
     float       timestamp  = 0.f;   ///< Packet timestamp (seconds).
     int         trackId    = -1;    ///< Inter-frame tracking ID (-1 = unassigned).
 
-    float       ttl        = 1.5f;  ///< Time-to-live — object removed when ttl <= 0.
+    float       ttl        = 1.5f;  ///< Time-to-live -- object removed when ttl <= 0.
 
     /**
      * @brief Converts a class name string to the corresponding enum value.

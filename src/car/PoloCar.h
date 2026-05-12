@@ -11,11 +11,11 @@
  * @brief Represents the complete state of a simulated Volkswagen Polo.
  *
  * Holds position, driving dynamics, animated part angles (doors, trunk, hood)
- * and lighting states. No dependency on Raylib or Qt — pure transferable state.
+ * and lighting states. No dependency on Raylib or Qt -- pure transferable state.
  */
 struct PoloCar {
 
-    // ── Position & motion ─────────────────────────────────────────────────────
+    // -- Position & motion -----------------------------------------------------
 
     float x        = 0.f;      ///< World position X (metres).
     float z        = 0.f;      ///< World position Z (metres).
@@ -25,17 +25,17 @@ struct PoloCar {
     float steeringAngle = 0.f; ///< Steering wheel angle: -450 to +450 degrees.
     float wheelAngle    = 0.f; ///< Front wheel angle: -35 to +35 degrees (computed).
 
-    // ── Animations (smooth, 0.0 = closed → target angle = open) ─────────────
+    // -- Animations (smooth, 0.0 = closed -> target angle = open) -------------
 
-    float doorFLAngle = 0.f;   ///< Front-left door angle (degrees, 0–65).
-    float doorFRAngle = 0.f;   ///< Front-right door angle (degrees, 0–65).
-    float doorRLAngle = 0.f;   ///< Rear-left door angle (degrees, 0–55).
-    float doorRRAngle = 0.f;   ///< Rear-right door angle (degrees, 0–55).
-    float trunkAngle  = 0.f;   ///< Boot/trunk angle (degrees, 0–70).
-    float hoodAngle   = 0.f;   ///< Hood/bonnet angle (degrees, 0–60).
+    float doorFLAngle = 0.f;   ///< Front-left door angle (degrees, 0-65).
+    float doorFRAngle = 0.f;   ///< Front-right door angle (degrees, 0-65).
+    float doorRLAngle = 0.f;   ///< Rear-left door angle (degrees, 0-55).
+    float doorRRAngle = 0.f;   ///< Rear-right door angle (degrees, 0-55).
+    float trunkAngle  = 0.f;   ///< Boot/trunk angle (degrees, 0-70).
+    float hoodAngle   = 0.f;   ///< Hood/bonnet angle (degrees, 0-60).
     float wheelRoll   = 0.f;   ///< Cumulative wheel rotation (degrees).
 
-    // ── Boolean states ────────────────────────────────────────────────────────
+    // -- Boolean states --------------------------------------------------------
 
     bool doorFL = false; ///< Front-left door open.
     bool doorFR = false; ///< Front-right door open.
@@ -52,12 +52,12 @@ struct PoloCar {
 
     bool handbrake = true; ///< Handbrake engaged.
 
-    // ── Blinker timer (internal) ──────────────────────────────────────────────
+    // -- Blinker timer (internal) ----------------------------------------------
 
     float blinkerTimer   = 0.f;  ///< Time accumulator for blink cycle (seconds).
     bool  blinkerVisible = true; ///< Current blinker display state.
 
-    // ── Methods ───────────────────────────────────────────────────────────────
+    // -- Methods ---------------------------------------------------------------
 
     /**
      * @brief Updates physics, animations and blinker state.
