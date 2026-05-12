@@ -1,0 +1,27 @@
+<map id="src/road/RoadRenderer.cpp" name="src/road/RoadRenderer.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the road network 3D renderer." alt="" coords="281,5,477,31"/>
+<area shape="rect" id="Node000002" href="$RoadRenderer_8h.html" title="Raylib renderer for the road network (segments, nodes, buildings)." alt="" coords="198,79,323,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="361,33,293,74,290,69,359,28"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="348,79,410,104"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="382,31,382,65,376,65,376,31"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="435,79,496,104"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="395,29,443,68,439,72,391,33"/>
+<area shape="rect" id="Node000003" href="$RoadNetwork_8h.html" title="Road network graph: nodes, segments, JSON loading and dynamic spawning." alt="" coords="22,152,144,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,106,125,149,123,144,231,102"/>
+<area shape="rect" id="Node000008" href="$DayNightCycle_8h.html" title="Simulates the 24&#45;hour day/night cycle: time, ambient light, sky colour, sun and moon." alt="" coords="169,152,352,177"/>
+<area shape="poly" id="edge10_Node000002_Node000008" title=" " alt="" coords="263,104,263,138,258,138,258,104"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="313,225,384,251"/>
+<area shape="poly" id="edge12_Node000002_Node000009" title=" " alt="" coords="301,102,337,120,353,134,367,151,372,166,372,183,364,213,359,212,367,182,367,167,362,153,350,138,334,125,298,106"/>
+<area shape="rect" id="Node000004" href="$RoadNode_8h.html" title="Represents a single node (vertex) in the road network graph." alt="" coords="108,299,210,324"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="138,175,178,193,196,207,211,224,216,242,211,260,187,291,183,288,206,258,210,242,206,227,192,210,175,198,136,180"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="42,372,100,397"/>
+<area shape="poly" id="edge9_Node000003_Node000005" title=" " alt="" coords="76,179,42,229,24,263,11,299,8,312,11,323,25,344,43,362,40,366,21,348,6,325,3,312,6,298,19,261,37,227,71,176"/>
+<area shape="rect" id="Node000006" href="$RoadSegment_8h.html" title="Represents a directed road segment between two nodes, with Bezier curve geometry." alt="" coords="71,225,196,251"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="93,176,120,213,115,216,89,179"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="21,299,84,324"/>
+<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="80,178,62,226,55,285,50,284,56,225,75,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="146,326,98,365,94,361,143,322"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="140,250,153,285,148,287,135,252"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="122,253,78,292,74,288,119,249"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="276,175,325,214,322,219,273,179"/>
+</map>

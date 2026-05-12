@@ -1,0 +1,18 @@
+<map id="src/ui/DebugPanel.cpp" name="src/ui/DebugPanel.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the debug overlay panel and speedometer." alt="" coords="172,5,338,31"/>
+<area shape="rect" id="Node000002" href="$DebugPanel_8h.html" title="On&#45;screen debug overlay toggled with F1." alt="" coords="26,79,137,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,33,124,76,122,71,226,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="161,79,250,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="249,33,224,69,219,66,245,29"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="275,79,336,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="266,29,292,66,287,69,261,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="361,79,424,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="278,28,359,70,357,75,276,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="85,225,156,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,106,40,120,20,137,9,157,8,166,12,176,24,191,39,203,73,221,70,226,36,208,20,195,7,179,3,167,4,155,16,134,36,116,58,102"/>
+<area shape="rect" id="Node000004" href="$PoloCar_8h.html" title="Pure car state: no Raylib, no Qt dependencies." alt="" coords="22,152,141,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="84,104,84,138,79,138,79,104"/>
+<area shape="rect" id="Node000005" href="$DayNightCycle_8h.html" title="Simulates the 24&#45;hour day/night cycle: time, ambient light, sky colour, sun and moon." alt="" coords="165,152,348,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="111,102,216,144,214,149,109,106"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="236,180,156,221,153,217,233,175"/>
+</map>

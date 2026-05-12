@@ -1,0 +1,17 @@
+<map id="src/road/RoadNode.h" name="src/road/RoadNode.h">
+<area shape="rect" id="Node000001" title="Represents a single node (vertex) in the road network graph." alt="" coords="40,5,198,31"/>
+<area shape="rect" id="Node000002" href="$RoadNetwork_8h.html" title="Road network graph: nodes, segments, JSON loading and dynamic spawning." alt="" coords="30,152,208,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,43,85,72,81,87,83,103,95,129,111,150,106,153,91,132,78,105,76,87,80,70,97,40"/>
+<area shape="rect" id="Node000007" href="$RoadSegment_8h.html" title="Represents a directed road segment between two nodes, with Bezier curve geometry." alt="" coords="92,79,274,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="141,39,175,77,171,80,137,43"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="PoloOS Raylib prototype — main loop." alt="" coords="18,299,124,324"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,185,35,202,12,227,9,236,9,245,18,265,35,282,54,296,50,301,31,286,14,268,4,247,3,235,7,224,32,198,62,180"/>
+<area shape="rect" id="Node000004" href="$RoadNetwork_8cpp.html" title="Implementation of road network loading, parsing and dynamic spawning." alt="" coords="22,225,216,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="122,191,122,225,116,225,116,191"/>
+<area shape="rect" id="Node000005" href="$RoadRenderer_8h.html" title="Raylib renderer for the road network (segments, nodes, buildings)." alt="" coords="240,225,422,251"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="167,179,298,223,296,228,165,184"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="277,257,114,301,112,296,275,252"/>
+<area shape="rect" id="Node000006" href="$RoadRenderer_8cpp.html" title="Implementation of the road network 3D renderer." alt="" coords="233,299,429,324"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="334,264,334,299,328,299,328,264"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="165,116,131,154,127,150,161,113"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="RoadSegment::computeCurve" name="RoadSegment::computeCurve">
+<area shape="rect" id="Node000001" title="Generates the quadratic Bezier polyline between two nodes." alt="" coords="292,31,508,56"/>
+<area shape="rect" id="Node000002" href="$classRoadNetwork.html#a3b18976e4cfa038468e65d1da79ec640" title="Spawns an intersection node and connects it to the two nearest nodes." alt="" coords="6,5,243,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,35,243,32,244,26,278,29"/>
+<area shape="rect" id="Node000003" href="$classRoadNetwork.html#aecda9e19d9627ca6d93ecc429ccdf651" title="Spawns a roundabout node at the given position and connects it to the nearest node." alt="" coords="5,55,244,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="278,57,245,60,244,54,278,51"/>
+</map>

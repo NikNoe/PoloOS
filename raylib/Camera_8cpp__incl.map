@@ -1,0 +1,13 @@
+<map id="src/scene/Camera.cpp" name="src/scene/Camera.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the car&#45;tracking 3D camera controller." alt="" coords="126,5,291,31"/>
+<area shape="rect" id="Node000002" href="$Camera_8h.html" title="3D camera controller with Follow, Orbit and Hood modes." alt="" coords="166,79,251,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,31,211,65,206,65,206,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,76,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="183,106,82,149,80,144,181,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="100,152,189,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="200,106,166,144,162,140,196,103"/>
+<area shape="rect" id="Node000005" href="$PoloCar_8h.html" title="Pure car state: no Raylib, no Qt dependencies." alt="" coords="213,152,332,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="221,103,255,140,251,144,217,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="356,152,419,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="238,102,347,144,345,149,236,107"/>
+</map>

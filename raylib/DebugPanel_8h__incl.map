@@ -1,0 +1,10 @@
+<map id="src/ui/DebugPanel.h" name="src/ui/DebugPanel.h">
+<area shape="rect" id="Node000001" title="On&#45;screen debug overlay toggled with F1." alt="" coords="6,5,157,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="85,152,156,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,33,40,47,20,64,9,83,8,93,12,103,24,118,39,130,73,148,70,152,36,134,20,121,7,105,3,94,4,82,16,61,36,42,58,28"/>
+<area shape="rect" id="Node000003" href="$PoloCar_8h.html" title="Pure car state: no Raylib, no Qt dependencies." alt="" coords="22,79,141,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="84,31,84,65,79,65,79,31"/>
+<area shape="rect" id="Node000004" href="$DayNightCycle_8h.html" title="Simulates the 24&#45;hour day/night cycle: time, ambient light, sky colour, sun and moon." alt="" coords="165,79,348,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="111,28,216,71,214,76,109,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="236,106,156,148,153,143,233,102"/>
+</map>

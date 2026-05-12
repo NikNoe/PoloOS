@@ -1,0 +1,21 @@
+<map id="src/road/RoadRenderer.h" name="src/road/RoadRenderer.h">
+<area shape="rect" id="Node000001" title="Raylib renderer for the road network (segments, nodes, buildings)." alt="" coords="170,5,351,31"/>
+<area shape="rect" id="Node000002" href="$RoadNetwork_8h.html" title="Road network graph: nodes, segments, JSON loading and dynamic spawning." alt="" coords="22,79,144,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,33,125,76,123,71,231,28"/>
+<area shape="rect" id="Node000007" href="$DayNightCycle_8h.html" title="Simulates the 24&#45;hour day/night cycle: time, ambient light, sky colour, sun and moon." alt="" coords="169,79,352,104"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="263,31,263,65,258,65,258,31"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="313,152,384,177"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="301,28,337,47,353,60,367,77,372,93,372,110,364,140,359,139,367,109,367,94,362,80,350,64,334,51,298,33"/>
+<area shape="rect" id="Node000003" href="$RoadNode_8h.html" title="Represents a single node (vertex) in the road network graph." alt="" coords="108,225,210,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="138,102,178,120,196,133,211,151,216,169,211,187,187,217,183,214,206,184,210,169,206,153,192,137,175,124,136,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="42,299,100,324"/>
+<area shape="poly" id="edge8_Node000002_Node000004" title=" " alt="" coords="76,106,42,156,24,190,11,226,8,238,11,250,25,271,43,289,40,292,21,274,6,252,3,238,6,225,19,188,37,153,71,103"/>
+<area shape="rect" id="Node000005" href="$RoadSegment_8h.html" title="Represents a directed road segment between two nodes, with Bezier curve geometry." alt="" coords="71,152,196,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="93,103,120,139,115,142,89,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="21,225,84,251"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="80,105,62,153,55,212,50,211,56,151,75,103"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="146,253,98,292,94,288,143,249"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="140,177,153,212,148,213,135,179"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="122,179,78,218,74,214,119,175"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="276,102,325,141,322,145,273,106"/>
+</map>

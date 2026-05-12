@@ -1,0 +1,7 @@
+<map id="src/traffic/TrafficAgent.h" name="src/traffic/TrafficAgent.h">
+<area shape="rect" id="Node000001" title="3D scene agent representing a YOLO&#45;detected object with smooth interpolation." alt="" coords="55,5,231,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html" title="PoloOS Raylib prototype — main loop." alt="" coords="5,79,111,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,41,74,80,70,76,118,37"/>
+<area shape="rect" id="Node000003" href="$TrafficAgent_8cpp.html" title="Implementation of the YOLO&#45;detected 3D scene agent." alt="" coords="135,79,325,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,37,218,76,214,81,166,41"/>
+</map>

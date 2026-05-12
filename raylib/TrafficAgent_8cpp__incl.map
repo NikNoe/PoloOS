@@ -1,0 +1,17 @@
+<map id="src/traffic/TrafficAgent.cpp" name="src/traffic/TrafficAgent.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the YOLO&#45;detected 3D scene agent." alt="" coords="284,5,475,31"/>
+<area shape="rect" id="Node000002" href="$TrafficAgent_8h.html" title="3D scene agent representing a YOLO&#45;detected object with smooth interpolation." alt="" coords="213,79,324,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="363,33,300,73,297,69,360,28"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="348,79,411,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="382,31,382,65,377,65,377,31"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="435,79,497,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="395,29,443,68,440,72,392,33"/>
+<area shape="rect" id="Node000003" href="$DetectedObject_8h.html" title="Shared data structure between the YOLO detector (Python) and the 3D engine (Raylib)." alt="" coords="5,152,209,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="244,106,147,149,145,144,242,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="233,152,304,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="271,104,271,138,266,138,266,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="328,152,417,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="287,102,346,142,343,146,284,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="78,225,137,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="110,178,110,212,105,212,105,178"/>
+</map>

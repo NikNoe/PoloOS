@@ -1,0 +1,14 @@
+<map id="src/road/RoadSegment.h" name="src/road/RoadSegment.h">
+<area shape="rect" id="Node000001" title="Represents a directed road segment between two nodes, with Bezier curve geometry." alt="" coords="28,5,210,31"/>
+<area shape="rect" id="Node000002" href="$RoadNetwork_8h.html" title="Road network graph: nodes, segments, JSON loading and dynamic spawning." alt="" coords="30,79,208,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,44,122,79,116,79,116,44"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="PoloOS Raylib prototype — main loop." alt="" coords="18,225,124,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,112,35,129,12,153,9,163,9,172,18,191,35,209,54,223,50,227,31,213,14,194,4,173,3,162,7,151,32,124,62,107"/>
+<area shape="rect" id="Node000004" href="$RoadNetwork_8cpp.html" title="Implementation of road network loading, parsing and dynamic spawning." alt="" coords="22,152,216,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="122,118,122,152,116,152,116,118"/>
+<area shape="rect" id="Node000005" href="$RoadRenderer_8h.html" title="Raylib renderer for the road network (segments, nodes, buildings)." alt="" coords="240,152,422,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="167,106,298,149,296,154,165,111"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="277,183,114,228,112,223,275,178"/>
+<area shape="rect" id="Node000006" href="$RoadRenderer_8cpp.html" title="Implementation of the road network 3D renderer." alt="" coords="233,225,429,251"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="334,191,334,225,328,225,328,191"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="src/network/SceneReceiver.h" name="src/network/SceneReceiver.h">
+<area shape="rect" id="Node000001" title="Non&#45;blocking UDP receiver for YOLO detection packets." alt="" coords="47,5,256,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html" title="PoloOS Raylib prototype — main loop." alt="" coords="5,79,111,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,41,75,81,72,76,124,37"/>
+<area shape="rect" id="Node000003" href="$SceneReceiver_8cpp.html" title="Implementation of the UDP receiver and minimal JSON parser." alt="" coords="134,79,358,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,37,232,76,229,81,176,41"/>
+</map>

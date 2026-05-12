@@ -1,0 +1,17 @@
+<map id="src/world/DayNightCycle.h" name="src/world/DayNightCycle.h">
+<area shape="rect" id="Node000001" title="Simulates the 24&#45;hour day/night cycle: time, ambient light, sky colour, sun and moon." alt="" coords="237,5,431,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html" title="PoloOS Raylib prototype — main loop." alt="" coords="225,152,331,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="323,44,306,80,283,152,278,151,301,78,318,41"/>
+<area shape="rect" id="Node000003" href="$RoadRenderer_8h.html" title="Raylib renderer for the road network (segments, nodes, buildings)." alt="" coords="59,79,241,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="293,38,181,81,179,76,291,33"/>
+<area shape="rect" id="Node000005" href="$DebugPanel_8h.html" title="On&#45;screen debug overlay toggled with F1." alt="" coords="316,79,467,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="354,40,384,77,380,80,350,43"/>
+<area shape="rect" id="Node000007" href="$DayNightCycle_8cpp.html" title="Implementation of the 24&#45;hour day/night cycle simulation." alt="" coords="491,79,700,104"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="390,32,554,76,552,81,388,37"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="184,108,258,149,256,154,181,113"/>
+<area shape="rect" id="Node000004" href="$RoadRenderer_8cpp.html" title="Implementation of the road network 3D renderer." alt="" coords="5,152,201,177"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="137,117,113,153,109,150,133,114"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="363,114,298,154,295,150,360,109"/>
+<area shape="rect" id="Node000006" href="$DebugPanel_8cpp.html" title="Implementation of the debug overlay panel and speedometer." alt="" coords="354,152,519,177"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="408,114,432,150,427,153,404,117"/>
+</map>

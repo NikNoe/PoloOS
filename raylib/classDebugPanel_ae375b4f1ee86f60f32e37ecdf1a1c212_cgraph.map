@@ -1,0 +1,7 @@
+<map id="DebugPanel::draw" name="DebugPanel::draw">
+<area shape="rect" id="Node000001" title="Draws the overlay panel and speedometer for the current frame." alt="" coords="5,31,144,56"/>
+<area shape="rect" id="Node000002" href="$classDayNightCycle.html#a9d8169548a820967847c8a625e9c98af" title="Returns the current simulated time of day." alt="" coords="192,5,391,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,33,178,29,179,34,145,38"/>
+<area shape="rect" id="Node000003" href="$classDayNightCycle.html#a5ca2ea02dddaf2413e1c65e1c19e3af7" title="Returns the estimated visibility factor for the current phase." alt="" coords="200,55,383,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,48,186,53,186,58,144,54"/>
+</map>

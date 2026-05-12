@@ -1,0 +1,6 @@
+<map id="SceneReceiver::close" name="SceneReceiver::close">
+<area shape="rect" id="Node000001" title="Closes the UDP socket." alt="" coords="287,29,447,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="410,20,407,15,400,12,367,8,341,10,327,15,324,20,331,27,327,31,319,21,323,11,340,5,367,3,401,7,411,11,414,17"/>
+<area shape="rect" id="Node000002" href="$classSceneReceiver.html#adc4d5dc72454fe16f33541187e29bada" title="Closes the UDP socket if open." alt="" coords="5,29,239,55"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="273,45,239,45,239,39,273,39"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="RoadNetwork::spawnRoundabout" name="RoadNetwork::spawnRoundabout">
+<area shape="rect" id="Node000001" title="Spawns a roundabout node at the given position and connects it to the nearest node." alt="" coords="5,5,244,31"/>
+<area shape="rect" id="Node000002" href="$structRoadSegment.html#ae3389e9059c28d47037ddedc027dba93" title="Generates the quadratic Bezier polyline between two nodes." alt="" coords="292,5,508,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,15,278,15,278,21,244,21"/>
+</map>
