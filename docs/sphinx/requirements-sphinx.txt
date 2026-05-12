@@ -1,0 +1,22 @@
+# Sphinx documentation dependencies for the PoloOS YOLO Pipeline.
+#
+# Install with:
+#   pip install -r docs/sphinx/requirements-sphinx.txt
+#
+# Build the docs from the repo root:
+#   sphinx-build -b html docs/sphinx docs/sphinx/_build/html
+#
+# Live-reload during editing:
+#   sphinx-autobuild docs/sphinx docs/sphinx/_build/html
+
+# Core
+sphinx>=7.3,<9
+
+# Theme
+furo>=2024.1.29
+
+# Type-hint rendering in autodoc descriptions
+sphinx-autodoc-typehints>=2.2,<3
+
+# Optional: live-reload server for local development
+sphinx-autobuild>=2024.2.4
