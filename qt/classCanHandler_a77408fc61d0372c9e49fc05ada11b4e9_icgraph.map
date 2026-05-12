@@ -1,0 +1,11 @@
+<map id="CanHandler::ecuStatusChanged" name="CanHandler::ecuStatusChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="496,55,723,80"/>
+<area shape="rect" id="Node000002" href="$classCanHandler.html#a1734379c221af6b595d4a3e486e318cf" title=" " alt="" coords="229,5,443,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="524,55,407,33,408,28,525,50"/>
+<area shape="rect" id="Node000003" href="$classCanHandler.html#a7e852005a4cd974cec5f605af75d77cb" title=" " alt="" coords="224,55,448,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="483,70,448,70,448,65,483,65"/>
+<area shape="rect" id="Node000004" href="$classCanHandler.html#aabfd94f8dffe4e17bce333af3303e7fe" title=" " alt="" coords="239,105,433,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="535,85,432,107,431,102,534,80"/>
+<area shape="rect" id="Node000005" href="$classCanReader.html#ad505d8e21d1bca62e551b0815aa064ff" title=" " alt="" coords="5,112,176,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="225,127,176,127,176,122,225,122"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="CanHandler::safetyChanged" name="CanHandler::safetyChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="272,55,476,80"/>
+<area shape="rect" id="Node000002" href="$classCanHandler.html#ae39c84ac2938726df760e6c8bb5657f6" title=" " alt="" coords="19,5,210,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="293,55,182,33,183,28,294,49"/>
+<area shape="rect" id="Node000003" href="$classCanHandler.html#a505a7deaab806e2ae3ae6b1adbfc74e5" title=" " alt="" coords="19,55,210,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="258,70,210,70,210,65,258,65"/>
+<area shape="rect" id="Node000004" href="$classCanHandler.html#a86929f495b3d0fbfe0316c13c7f43bf7" title=" " alt="" coords="5,104,224,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="294,85,183,107,182,101,293,80"/>
+</map>

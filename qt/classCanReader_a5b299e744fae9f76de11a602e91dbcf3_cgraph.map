@@ -1,0 +1,14 @@
+<map id="CanReader::connectToBus" name="CanReader::connectToBus">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,84,196,109"/>
+<area shape="rect" id="Node000002" href="$classCanReader.html#a472e18edbed2ab73c634a914ae0385e2" title=" " alt="" coords="250,5,443,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,81,243,39,272,31,273,37,245,45,132,86"/>
+<area shape="rect" id="Node000003" href="$classCanReader.html#afa97426e65d9fc4e272e584648cf0da4" title=" " alt="" coords="269,55,424,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,83,256,75,256,81,196,88"/>
+<area shape="rect" id="Node000004" href="$classCanHandler.html#ad782308f9148d728401db873f234c226" title=" " alt="" coords="249,105,444,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="196,105,236,109,235,115,196,110"/>
+<area shape="rect" id="Node000006" href="$classCanHandler.html#a1f39626a062e35322c9cdfb65d9f28ba" title=" " alt="" coords="244,169,449,195"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="130,107,183,130,245,154,276,163,274,168,243,159,181,135,128,112"/>
+<area shape="rect" id="Node000005" href="$classCanHandler.html#a47ac6e888afa35046ffc2ad1ec534bd3" title=" " alt="" coords="497,141,688,167"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="444,134,484,138,483,144,444,139"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="449,168,483,164,484,169,450,173"/>
+</map>

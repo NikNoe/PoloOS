@@ -1,0 +1,10 @@
+<map id="CanHandler::lightsChanged" name="CanHandler::lightsChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="487,56,685,81"/>
+<area shape="rect" id="Node000002" href="$classCanHandler.html#aca3d1e8257a5062511f0fdf1b6c0446c" title=" " alt="" coords="244,5,439,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="510,56,403,33,404,28,511,50"/>
+<area shape="rect" id="Node000003" href="$classCanHandler.html#aa59fc49e2caa7d7539f64075731f08a9" title=" " alt="" coords="5,31,196,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="473,65,196,51,196,46,473,60"/>
+<area shape="rect" id="Node000004" href="$classCanHandler.html#ab0e232fca4ae6feead35952ed5e30ab8" title=" " alt="" coords="247,107,435,132"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="511,87,404,109,403,104,510,82"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="231,32,196,36,196,31,230,27"/>
+</map>

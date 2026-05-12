@@ -1,0 +1,7 @@
+<map id="CanHandler::fuelChanged" name="CanHandler::fuelChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="231,31,419,56"/>
+<area shape="rect" id="Node000002" href="$classCanHandler.html#aea2c5a48e35b3204aa882c09ffe421ea" title=" " alt="" coords="5,5,183,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,34,183,30,183,25,217,29"/>
+<area shape="rect" id="Node000003" href="$classCanHandler.html#a594a9bc78df18fb82a0427bc09c8086b" title=" " alt="" coords="5,55,183,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,57,183,61,183,55,217,52"/>
+</map>
