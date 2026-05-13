@@ -32,7 +32,7 @@ jobs:
             graphviz \
             texlive-full
 
-      # ── 3. Python dependencies (Sphinx + rst2pdf) ─────────────────────────
+      # ── 3. Python dependencies (Sphinx + latex builder) ──────────────────
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -62,19 +62,19 @@ jobs:
       # ════════════════════════════════════════════════════════════════════════
       # SPHINX PDF
       # Source dir : docs/sphinx  (where conf.py lives)
-      # Builder    : pdf  (provided by rst2pdf via sphinx.ext.rst2pdf.pdfbuilder)
-      # Output dir : docs/sphinx/_build/pdf
+      # Builder    : latex  → pdflatex via make
+      # Output dir : docs/sphinx/_build/latex
       # ════════════════════════════════════════════════════════════════════════
 
       - name: Generate Sphinx PDF
         run: |
-          sphinx-build -b pdf docs/sphinx docs/sphinx/_build/pdf
+          sphinx-build -b latex docs/sphinx docs/sphinx/_build/latex
+          make -C docs/sphinx/_build/latex
 
       - name: Publish Sphinx PDF
         run: |
           rm -f docs/PoloOS-YOLO.pdf
-          # rst2pdf names the output after master_doc (index) → index.pdf
-          cp docs/sphinx/_build/pdf/index.pdf docs/PoloOS-YOLO.pdf
+          cp docs/sphinx/_build/latex/*.pdf docs/PoloOS-YOLO.pdf
 
       # ── 4. Commit both PDFs back to raylib-proto ─────────────────────────
       - name: Commit and push generated PDFs
