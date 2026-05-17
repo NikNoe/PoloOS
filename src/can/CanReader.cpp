@@ -1,4 +1,4 @@
-#include "canreader.h"
+#include "CanReader.h"
 #include <QDebug>
 #include <QDateTime>
 
