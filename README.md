@@ -133,21 +133,36 @@ git clone https://github.com/NikNoe/PoloOS.git
 cd PoloOS
 ```
 
-| Platform | Command |
-|----------|---------|
-| macOS (M1/M2/M3) | `./requirements/install.sh` |
-| Ubuntu x86\_64 | `./requirements/install.sh` |
-| Raspberry Pi 5 | `./requirements/install.sh` |
+| Platform | Method | Qt Version |
+|----------|--------|------------|
+| macOS M1/M2/M3 | qt-cmake + terminal or Qt Creator | 6.10.1 |
+| Ubuntu / ThinkPad | Qt Creator (recommended) or qt-cmake | 6.10.2 |
+| Raspberry Pi 5 | qt-cmake terminal | 6.10.x |
 
 The script auto-detects the platform, installs Qt6 dependencies, sets up the Python venv, and builds `appPoloOS` into `build-mac/`, `build-linux/`, or `build-pi/` respectively.
 
 > **macOS note:** Qt 6 must be installed first via the [Qt online installer](https://www.qt.io/download-open-source). The script locates `qt-cmake` automatically.
+
+### Qt Creator (recommended)
+
+1. Open Qt Creator
+2. **File → Open File or Project** → select `CMakeLists.txt`
+3. Qt Creator auto-detects Qt 6.10.x and configures the project
+4. Click **Build** (hammer icon)
 
 To include Raylib support (`raylib-proto` branch):
 
 ```bash
 ./requirements/install.sh --raylib
 ```
+
+---
+
+## Known Limitations
+
+- **SocketCAN not available on macOS** — CAN bus is disabled; the app runs in UI-only mode
+- **Qt 6.4.2 (Ubuntu `apt`) is broken for Quick3DHelpers** — use the [Qt Online Installer](https://www.qt.io/download-open-source) to get Qt 6.10.x
+- **Qt6Location not available on Pi via `apt`** — MapPage is disabled on Raspberry Pi builds
 
 ---
 
