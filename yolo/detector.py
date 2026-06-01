@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-PoloOS — detector.py
-YOLO + OpenCV + EgoMotion → UDP vers Raylib
+PoloOS -- detector.py
+YOLO + OpenCV + EgoMotion -> UDP to Raylib
 """
 
 import cv2
@@ -108,7 +108,7 @@ def run(video_path, model_size, conf, host, port, show, skip):
     print(f"[PoloOS] Chargement YOLO {model_size}...")
     model = YOLO(f"yolov{model_size}.pt")
 
-    print(f"[PoloOS] Ouverture vidéo : {video_path}")
+    print(f"[PoloOS] Opening video: {video_path}")
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         print(f"[ERREUR] Impossible d'ouvrir : {video_path}")
@@ -119,7 +119,7 @@ def run(video_path, model_size, conf, host, port, show, skip):
     frame_h = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
     total   = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
-    print(f"[PoloOS] {frame_w}x{frame_h} @ {fps}fps — {total} frames")
+    print(f"[PoloOS] {frame_w}x{frame_h} @ {fps}fps -- {total} frames")
 
     sender     = SocketSender(host, port)
     ego_motion = EgoMotion()
@@ -140,7 +140,7 @@ def run(video_path, model_size, conf, host, port, show, skip):
         # Ego motion
         ego = ego_motion.update(frame, fps)
 
-        # Détection YOLO
+        # YOLO detection
         results = model.track(frame, conf=conf, iou=0.45, 
                       persist=True, verbose=False)[0]
         objects = []
@@ -156,7 +156,7 @@ def run(video_path, model_size, conf, host, port, show, skip):
             cx_norm = ((x1 + x2) / 2.0) / frame_w
 
             distance          = estimate_distance(bbox_h, frame_h, cls_name)
-            # Dans la boucle objects, après estimate_distance :
+            # In the objects loop, after estimate_distance:
             if distance < 3.0 or distance > 80.0:
                 continue
             world_x, world_z  = bbox_to_world(cx_norm, distance, frame_w)
@@ -177,10 +177,10 @@ def run(video_path, model_size, conf, host, port, show, skip):
             if cls_id not in TRACKED_CLASSES:
                 continue
 
-            # ID unique du tracker — None si pas encore assigné
+            # Unique tracker ID -- None if not yet assigned
             track_id = int(box.id[0]) if box.id is not None else -1
             if track_id == -1:
-                continue  # ignore les détections sans ID stable
+                continue  # skip detections without a stable ID
 
             cls_name   = TRACKED_CLASSES[cls_id]
             confidence = float(box.conf[0])
@@ -199,7 +199,7 @@ def run(video_path, model_size, conf, host, port, show, skip):
 
             objects.append({
                 "class":      cls_name,
-                "id":         track_id,    # ← ID stable
+                "id":         track_id,    # <- stable tracking ID
                 "x":          world_x,
                 "z":          world_z,
                 "heading":    180.0,
@@ -212,11 +212,11 @@ def run(video_path, model_size, conf, host, port, show, skip):
             cv2.putText(annotated,
                         f"Frame {frame_idx}/{total} | spd:{ego['speed']}km/h | {len(objects)} obj",
                         (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-            cv2.imshow("PoloOS — YOLO", annotated)
+            cv2.imshow("PoloOS -- YOLO", annotated)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
 
-        # Throttle précis
+        # Precise frame throttle
         target_time = frame_idx / fps
         elapsed     = time.time() - t_start
         sleep_for   = target_time - elapsed
@@ -227,7 +227,7 @@ def run(video_path, model_size, conf, host, port, show, skip):
     if show:
         cv2.destroyAllWindows()
     sender.close()
-    print("[PoloOS] Terminé")
+    print("[PoloOS] Done")
 
 
 if __name__ == "__main__":

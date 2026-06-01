@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-PoloOS — fake_camera.py
-Simule une caméra depuis un fichier vidéo.
-Utile pour tester sans caméra physique.
+PoloOS -- fake_camera.py
+Simulates a camera from a video file.
+Useful for testing without a physical camera.
 """
 
 import cv2

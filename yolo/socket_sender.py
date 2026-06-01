@@ -9,7 +9,7 @@ class SocketSender:
         self.port = port
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.seq  = 0
-        print(f"[SocketSender] UDP → {host}:{port}")
+        print(f"[SocketSender] UDP -> {host}:{port}")
 
     def send(self, frame: int, timestamp: float,
              objects: list, ego: dict = None) -> bool:
@@ -31,4 +31,4 @@ class SocketSender:
 
     def close(self):
         self.sock.close()
-        print("[SocketSender] Socket fermé")
+        print("[SocketSender] Socket closed")

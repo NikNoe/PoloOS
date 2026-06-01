@@ -70,6 +70,14 @@ html_theme_options = {
 
 html_title = "PoloOS — YOLO Pipeline"
 
+# ── LaTeX output ──────────────────────────────────────────────────────────────
+latex_elements = {
+    'preamble': r'''
+\usepackage{newunicodechar}
+\newunicodechar{▼}{$\blacktriangledown$}
+''',
+}
+
 # ── Source files ──────────────────────────────────────────────────────────────
 templates_path    = ["_templates"]
 exclude_patterns  = ["_build", "Thumbs.db", ".DS_Store"]
